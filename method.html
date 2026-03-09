@@ -515,8 +515,16 @@
     }
 
     .modality-body-wrap {
-      padding: 2rem 2.5rem 2.5rem;
       background: var(--cream);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 2.5rem;
+    }
+
+    .modality-card[aria-expanded="true"] .modality-body-wrap {
+      max-height: 800px;
+      padding: 2rem 2.5rem 2.5rem;
     }
 
     .modality-body-grid {
@@ -1090,6 +1098,127 @@
       .definition-block { padding: 1.8rem; }
     }
 
+    /* ── PHASES ACCORDION ── */
+    .phase-header {
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .phase-header-text { flex: 1; }
+
+    .phase-toggle {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+
+    .phase-toggle svg {
+      width: 16px;
+      height: 16px;
+      color: var(--stone);
+      transition: transform 0.3s;
+    }
+
+    .phase-card[aria-expanded="true"] .phase-toggle svg {
+      transform: rotate(180deg);
+    }
+
+    .phase-collapse {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .phase-card[aria-expanded="true"] .phase-collapse {
+      max-height: 600px;
+    }
+
+    .phase-subtitle {
+      margin-bottom: 0;
+    }
+
+    .phase-card[aria-expanded="true"] .phase-subtitle {
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── LAYER DETAIL REVEAL ── */
+    .layer-detail {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      color: var(--mocha);
+      line-height: 1.55;
+    }
+
+    .layer-item:hover .layer-detail {
+      max-height: 60px;
+      opacity: 1;
+      margin-top: 0.4rem;
+    }
+
+    /* ── INTEGRATION CIRCLE PULSE ── */
+    @keyframes circle-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 transparent; }
+      50% { box-shadow: 0 0 20px 4px rgba(255,255,255,0.08); }
+    }
+
+    .integration-circle {
+      animation: circle-pulse 3s ease-in-out infinite;
+    }
+
+    .integration-circle:nth-child(2) { animation-delay: 1s; }
+    .integration-circle:nth-child(3) { animation-delay: 2s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .integration-circle { animation: none; }
+    }
+
+    /* ── MODALITY EXPAND/COLLAPSE ── */
+    .modality-header-bar { cursor: pointer; }
+
+    .modality-toggle {
+      margin-left: auto;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .modality-toggle svg {
+      width: 16px;
+      height: 16px;
+      color: var(--stone);
+      transition: transform 0.3s;
+    }
+
+    .modality-card[aria-expanded="true"] .modality-toggle svg {
+      transform: rotate(180deg);
+    }
+
+    /* ── SCROLL PROGRESS ── */
+    .scroll-progress {
+      position: fixed;
+      top: 64px;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: var(--coral);
+      z-index: 201;
+      transition: none;
+    }
+
     /* ── STICKY MOBILE CTA ── */
     .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: var(--coral); padding: 0.9rem 1.5rem; display: none; justify-content: space-between; align-items: center; z-index: 150; transform: translateY(100%); transition: transform 0.3s ease; }
     .sticky-cta.visible { transform: translateY(0); }
@@ -1121,7 +1250,7 @@
       .phase-content-grid { grid-template-columns: 1fr; gap: 1.5rem; }
 
       .modality-header-bar { padding: 1.5rem; }
-      .modality-body-wrap { padding: 1.5rem; }
+      .modality-card[aria-expanded="true"] .modality-body-wrap { padding: 1.5rem; }
       .modality-body-grid { grid-template-columns: 1fr; gap: 1.5rem; }
       .modality-role-box { position: static; }
 
@@ -1169,6 +1298,8 @@
     </div>
   </nav>
 
+  <div class="scroll-progress" id="scrollProgress"></div>
+
   <div class="mobile-menu" id="mobileMenu">
     <a href="/about" class="mobile-nav-link">About</a>
     <a href="/method" class="mobile-nav-link">The Method</a>
@@ -1206,6 +1337,7 @@
             <div class="layer-text">
               <div class="layer-name">Conscious</div>
               <div class="layer-desc">The beliefs running your decisions &mdash; conscious patterns, rules, assumptions</div>
+              <div class="layer-detail">Addressed through cognitive behavioural frameworks &mdash; identifying and restructuring the thoughts that keep patterns in place.</div>
             </div>
           </div>
           <div class="layer-item">
@@ -1213,6 +1345,7 @@
             <div class="layer-text">
               <div class="layer-name">Subconscious</div>
               <div class="layer-desc">The programming installed before you had words &mdash; emotional wiring, identity rules</div>
+              <div class="layer-detail">Reached through hypnosis and regression &mdash; accessing and rewriting the beliefs at the level where they were first formed.</div>
             </div>
           </div>
           <div class="layer-item">
@@ -1220,6 +1353,7 @@
             <div class="layer-text">
               <div class="layer-name">Somatic</div>
               <div class="layer-desc">The charge your nervous system is holding &mdash; survival energy that never completed</div>
+              <div class="layer-detail">Released through somatic techniques &mdash; completing the survival responses the body has been holding.</div>
             </div>
           </div>
         </div>
@@ -1239,23 +1373,30 @@
       </div>
 
       <!-- Phase 1: Notice -->
-      <div class="phase-card reveal">
+      <div class="phase-card reveal" aria-expanded="true">
         <div class="phase-marker">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
         </div>
         <div>
-          <h3 class="phase-name">Notice</h3>
-          <div class="phase-subtitle">Phase 1 &mdash; Seeing what's been running on autopilot</div>
-          <div class="phase-content-grid">
-            <div class="phase-main">
-              <div class="phase-sub-label">What happens</div>
-              <p>We map your patterns. Not just what you do, but the belief system underneath it &mdash; the rules, the assumptions, the &ldquo;I have to&rdquo; and &ldquo;I should&rdquo; and &ldquo;I'm not allowed to&rdquo; that run quietly in the background of every decision you make.</p>
-              <p>This phase draws on cognitive behavioural frameworks to identify the specific thoughts, beliefs, and behavioural loops that are keeping the pattern in place.</p>
+          <div class="phase-header" role="button" tabindex="0">
+            <div class="phase-header-text">
+              <h3 class="phase-name">Notice</h3>
+              <div class="phase-subtitle">Phase 1 &mdash; Seeing what's been running on autopilot</div>
             </div>
-            <div class="phase-callout">
-              <div class="callout-box">
-                <div class="callout-label">What it feels like</div>
-                <div class="callout-text">Like seeing the matrix. Clients often say, &ldquo;I never realised I was doing that.&rdquo; Most of these patterns are so deeply embedded they feel like personality. They're not. They're programming.</div>
+            <span class="phase-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+          </div>
+          <div class="phase-collapse" aria-hidden="false">
+            <div class="phase-content-grid">
+              <div class="phase-main">
+                <div class="phase-sub-label">What happens</div>
+                <p>We map your patterns. Not just what you do, but the belief system underneath it &mdash; the rules, the assumptions, the &ldquo;I have to&rdquo; and &ldquo;I should&rdquo; and &ldquo;I'm not allowed to&rdquo; that run quietly in the background of every decision you make.</p>
+                <p>This phase draws on cognitive behavioural frameworks to identify the specific thoughts, beliefs, and behavioural loops that are keeping the pattern in place.</p>
+              </div>
+              <div class="phase-callout">
+                <div class="callout-box">
+                  <div class="callout-label">What it feels like</div>
+                  <div class="callout-text">Like seeing the matrix. Clients often say, &ldquo;I never realised I was doing that.&rdquo; Most of these patterns are so deeply embedded they feel like personality. They're not. They're programming.</div>
+                </div>
               </div>
             </div>
           </div>
@@ -1263,23 +1404,30 @@
       </div>
 
       <!-- Phase 2: Feel -->
-      <div class="phase-card reveal">
+      <div class="phase-card reveal" aria-expanded="false">
         <div class="phase-marker">
           <svg viewBox="0 0 24 24" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         </div>
         <div>
-          <h3 class="phase-name">Feel</h3>
-          <div class="phase-subtitle">Phase 2 &mdash; Reconnecting with the body's record</div>
-          <div class="phase-content-grid">
-            <div class="phase-main">
-              <div class="phase-sub-label">What happens</div>
-              <p>We go underneath the story. Before we can release anything, we need to reconnect with what the body is actually holding. Most people are so disconnected from physical sensation that they don't realise they've been bracing for years.</p>
-              <p>We slow down. We listen inward. Not releasing yet &mdash; just noticing what's there. You can't let go of something you haven't fully acknowledged.</p>
+          <div class="phase-header" role="button" tabindex="0">
+            <div class="phase-header-text">
+              <h3 class="phase-name">Feel</h3>
+              <div class="phase-subtitle">Phase 2 &mdash; Reconnecting with the body's record</div>
             </div>
-            <div class="phase-callout">
-              <div class="callout-box">
-                <div class="callout-label">What it feels like</div>
-                <div class="callout-text">Uncomfortable, sometimes. Revealing, always. Many clients are surprised to discover they've been numb to sensations they assumed were normal &mdash; the tight chest, the held breath, the tension they carry as baseline.</div>
+            <span class="phase-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+          </div>
+          <div class="phase-collapse" aria-hidden="true">
+            <div class="phase-content-grid">
+              <div class="phase-main">
+                <div class="phase-sub-label">What happens</div>
+                <p>We go underneath the story. Before we can release anything, we need to reconnect with what the body is actually holding. Most people are so disconnected from physical sensation that they don't realise they've been bracing for years.</p>
+                <p>We slow down. We listen inward. Not releasing yet &mdash; just noticing what's there. You can't let go of something you haven't fully acknowledged.</p>
+              </div>
+              <div class="phase-callout">
+                <div class="callout-box">
+                  <div class="callout-label">What it feels like</div>
+                  <div class="callout-text">Uncomfortable, sometimes. Revealing, always. Many clients are surprised to discover they've been numb to sensations they assumed were normal &mdash; the tight chest, the held breath, the tension they carry as baseline.</div>
+                </div>
               </div>
             </div>
           </div>
@@ -1287,23 +1435,30 @@
       </div>
 
       <!-- Phase 3: Release -->
-      <div class="phase-card reveal">
+      <div class="phase-card reveal" aria-expanded="false">
         <div class="phase-marker">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14"/><path d="M5 12l7 7 7-7"/></svg>
         </div>
         <div>
-          <h3 class="phase-name">Release</h3>
-          <div class="phase-subtitle">Phase 3 &mdash; Letting the body let go</div>
-          <div class="phase-content-grid">
-            <div class="phase-main">
-              <div class="phase-sub-label">What happens</div>
-              <p>This is where the body lets go of what it's been holding. Using somatic techniques, we work with your nervous system to discharge the trapped survival energy &mdash; the fight-or-flight responses that got frozen in place because they had nowhere to go at the time.</p>
-              <p>We go slowly &mdash; approaching the activation in small, manageable doses, moving between the difficult sensation and safety, so your nervous system learns it can let go without falling apart.</p>
+          <div class="phase-header" role="button" tabindex="0">
+            <div class="phase-header-text">
+              <h3 class="phase-name">Release</h3>
+              <div class="phase-subtitle">Phase 3 &mdash; Letting the body let go</div>
             </div>
-            <div class="phase-callout">
-              <div class="callout-box">
-                <div class="callout-label">What it feels like</div>
-                <div class="callout-text">Different for everyone. Some clients feel physical warmth, shaking, deep breaths, or a sudden wave of emotion. Some feel lighter. Some feel nothing dramatic &mdash; just a quiet &ldquo;something shifted.&rdquo; There's no right way to release.</div>
+            <span class="phase-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+          </div>
+          <div class="phase-collapse" aria-hidden="true">
+            <div class="phase-content-grid">
+              <div class="phase-main">
+                <div class="phase-sub-label">What happens</div>
+                <p>This is where the body lets go of what it's been holding. Using somatic techniques, we work with your nervous system to discharge the trapped survival energy &mdash; the fight-or-flight responses that got frozen in place because they had nowhere to go at the time.</p>
+                <p>We go slowly &mdash; approaching the activation in small, manageable doses, moving between the difficult sensation and safety, so your nervous system learns it can let go without falling apart.</p>
+              </div>
+              <div class="phase-callout">
+                <div class="callout-box">
+                  <div class="callout-label">What it feels like</div>
+                  <div class="callout-text">Different for everyone. Some clients feel physical warmth, shaking, deep breaths, or a sudden wave of emotion. Some feel lighter. Some feel nothing dramatic &mdash; just a quiet &ldquo;something shifted.&rdquo; There's no right way to release.</div>
+                </div>
               </div>
             </div>
           </div>
@@ -1311,23 +1466,30 @@
       </div>
 
       <!-- Phase 4: Rewire -->
-      <div class="phase-card reveal">
+      <div class="phase-card reveal" aria-expanded="false">
         <div class="phase-marker">
           <svg viewBox="0 0 24 24" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         </div>
         <div>
-          <h3 class="phase-name">Rewire</h3>
-          <div class="phase-subtitle">Phase 4 &mdash; Changing the programme at its core</div>
-          <div class="phase-content-grid">
-            <div class="phase-main">
-              <div class="phase-sub-label">What happens</div>
-              <p>This is where we change the meaning. The old beliefs &mdash; &ldquo;I'm not enough,&rdquo; &ldquo;I have to earn love,&rdquo; &ldquo;it's not safe to be seen&rdquo; &mdash; get identified, challenged, and replaced. Through cognitive restructuring and hypnosis, we rewrite the core beliefs that have been running your identity, your decisions, and your emotional reactions.</p>
-              <p>Sometimes that involves regression &mdash; going back to the moment a belief was first formed and reprocessing it from your adult perspective. Sometimes it's done through direct cognitive work: disputing the old rule, building a new one, and installing it under hypnosis where it can reach the subconscious. The tool depends on the client. The result is the same: the old programme loses its authority. A new one takes its place.</p>
+          <div class="phase-header" role="button" tabindex="0">
+            <div class="phase-header-text">
+              <h3 class="phase-name">Rewire</h3>
+              <div class="phase-subtitle">Phase 4 &mdash; Changing the programme at its core</div>
             </div>
-            <div class="phase-callout">
-              <div class="callout-box">
-                <div class="callout-label">What it feels like</div>
-                <div class="callout-text">Like something clicks into place. Not just intellectually &mdash; you feel it shift. The belief that ran everything quietly in the background suddenly looks like what it is: a decision a child made to survive. And you get to make a different one.</div>
+            <span class="phase-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+          </div>
+          <div class="phase-collapse" aria-hidden="true">
+            <div class="phase-content-grid">
+              <div class="phase-main">
+                <div class="phase-sub-label">What happens</div>
+                <p>This is where we change the meaning. The old beliefs &mdash; &ldquo;I'm not enough,&rdquo; &ldquo;I have to earn love,&rdquo; &ldquo;it's not safe to be seen&rdquo; &mdash; get identified, challenged, and replaced. Through cognitive restructuring and hypnosis, we rewrite the core beliefs that have been running your identity, your decisions, and your emotional reactions.</p>
+                <p>Sometimes that involves regression &mdash; going back to the moment a belief was first formed and reprocessing it from your adult perspective. Sometimes it's done through direct cognitive work: disputing the old rule, building a new one, and installing it under hypnosis where it can reach the subconscious. The tool depends on the client. The result is the same: the old programme loses its authority. A new one takes its place.</p>
+              </div>
+              <div class="phase-callout">
+                <div class="callout-box">
+                  <div class="callout-label">What it feels like</div>
+                  <div class="callout-text">Like something clicks into place. Not just intellectually &mdash; you feel it shift. The belief that ran everything quietly in the background suddenly looks like what it is: a decision a child made to survive. And you get to make a different one.</div>
+                </div>
               </div>
             </div>
           </div>
@@ -1335,23 +1497,30 @@
       </div>
 
       <!-- Phase 5: Become -->
-      <div class="phase-card reveal">
+      <div class="phase-card reveal" aria-expanded="false">
         <div class="phase-marker">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4" fill="currentColor" fill-opacity="0.2"/><path d="M12 2v3M12 19v3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M2 12h3M19 12h3M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/></svg>
         </div>
         <div>
-          <h3 class="phase-name">Become</h3>
-          <div class="phase-subtitle">Phase 5 &mdash; Living from the new wiring</div>
-          <div class="phase-content-grid">
-            <div class="phase-main">
-              <div class="phase-sub-label">What happens</div>
-              <p>Integration. This is where you learn to maintain the shift. We build practical scaffolding &mdash; self-hypnosis you can use on your own, thought restructuring skills, coping strategies for when old patterns resurface &mdash; so the rewiring holds.</p>
-              <p>The goal of CBH is to make you your own therapist. Not to create dependency on sessions, but to equip you with the tools to catch old patterns when they resurface and redirect them yourself.</p>
+          <div class="phase-header" role="button" tabindex="0">
+            <div class="phase-header-text">
+              <h3 class="phase-name">Become</h3>
+              <div class="phase-subtitle">Phase 5 &mdash; Living from the new wiring</div>
             </div>
-            <div class="phase-callout">
-              <div class="callout-box">
-                <div class="callout-label">What it feels like</div>
-                <div class="callout-text">Like growing into someone you already were underneath. Not performing a new identity &mdash; shedding the one you built to survive. The old triggers still exist &mdash; but they've lost their charge.</div>
+            <span class="phase-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+          </div>
+          <div class="phase-collapse" aria-hidden="true">
+            <div class="phase-content-grid">
+              <div class="phase-main">
+                <div class="phase-sub-label">What happens</div>
+                <p>Integration. This is where you learn to maintain the shift. We build practical scaffolding &mdash; self-hypnosis you can use on your own, thought restructuring skills, coping strategies for when old patterns resurface &mdash; so the rewiring holds.</p>
+                <p>The goal of CBH is to make you your own therapist. Not to create dependency on sessions, but to equip you with the tools to catch old patterns when they resurface and redirect them yourself.</p>
+              </div>
+              <div class="phase-callout">
+                <div class="callout-box">
+                  <div class="callout-label">What it feels like</div>
+                  <div class="callout-text">Like growing into someone you already were underneath. Not performing a new identity &mdash; shedding the one you built to survive. The old triggers still exist &mdash; but they've lost their charge.</div>
+                </div>
               </div>
             </div>
           </div>
@@ -1380,7 +1549,7 @@
       </div>
 
       <!-- CBH -->
-      <div class="modality-card reveal">
+      <div class="modality-card reveal" aria-expanded="true">
         <div class="modality-header-bar">
           <div class="modality-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
@@ -1390,6 +1559,7 @@
             <h3 class="modality-name">Cognitive Behavioural Hypnotherapy (CBH)</h3>
             <div class="modality-tagline">The structure. The resilience. The tools you keep.</div>
           </div>
+          <span class="modality-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
         </div>
         <div class="modality-body-wrap">
           <div class="modality-body-grid">
@@ -1417,7 +1587,7 @@
       </div>
 
       <!-- RTT -->
-      <div class="modality-card reveal">
+      <div class="modality-card reveal" aria-expanded="false">
         <div class="modality-header-bar">
           <div class="modality-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
@@ -1427,6 +1597,7 @@
             <h3 class="modality-name">Rapid Transformational Therapy (RTT)</h3>
             <div class="modality-tagline">The deep access. The root cause. The rewrite.</div>
           </div>
+          <span class="modality-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
         </div>
         <div class="modality-body-wrap">
           <div class="modality-body-grid">
@@ -1444,7 +1615,7 @@
       </div>
 
       <!-- Somatic -->
-      <div class="modality-card reveal">
+      <div class="modality-card reveal" aria-expanded="false">
         <div class="modality-header-bar">
           <div class="modality-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="3"/><circle cx="12" cy="12" r="10"/></svg>
@@ -1454,6 +1625,7 @@
             <h3 class="modality-name">Somatic Release Work</h3>
             <div class="modality-tagline">The body's record. The nervous system reset.</div>
           </div>
+          <span class="modality-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
         </div>
         <div class="modality-body-wrap">
           <div class="modality-body-grid">
@@ -1647,6 +1819,7 @@
     const nav = document.getElementById('nav');
     const stickyCta = document.getElementById('stickyCta');
     const pageHero = document.querySelector('.page-hero');
+    const scrollProgress = document.getElementById('scrollProgress');
 
     function onScroll() {
       const y = window.scrollY;
@@ -1654,6 +1827,11 @@
       if (pageHero) {
         const heroBottom = pageHero.offsetTop + pageHero.offsetHeight;
         stickyCta.classList.toggle('visible', y > heroBottom - 100);
+      }
+      // Scroll progress
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (docHeight > 0) {
+        scrollProgress.style.width = (y / docHeight * 100) + '%';
       }
     }
 
@@ -1694,6 +1872,31 @@
           e.preventDefault();
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
+      });
+    });
+
+    // Phase accordion
+    document.querySelectorAll('.phase-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const card = header.closest('.phase-card');
+        const isOpen = card.getAttribute('aria-expanded') === 'true';
+        card.setAttribute('aria-expanded', !isOpen);
+        card.querySelector('.phase-collapse').setAttribute('aria-hidden', isOpen);
+      });
+      header.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          header.click();
+        }
+      });
+    });
+
+    // Modality expand/collapse
+    document.querySelectorAll('.modality-header-bar').forEach(header => {
+      header.addEventListener('click', () => {
+        const card = header.closest('.modality-card');
+        const isOpen = card.getAttribute('aria-expanded') === 'true';
+        card.setAttribute('aria-expanded', !isOpen);
       });
     });
   </script>
