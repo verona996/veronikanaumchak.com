@@ -797,29 +797,13 @@
       pointer-events: none;
     }
 
-    /* Photo placeholder — editorial styling until real photo is added */
-    .founder-photo-inner {
-      text-align: center;
+    .founder-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
       position: relative;
       z-index: 1;
-    }
-    .founder-photo-placeholder {
-      font-family: var(--serif);
-      font-size: 6rem;
-      font-style: italic;
-      font-weight: 300;
-      color: var(--coral);
-      display: block;
-      line-height: 1;
-      margin-bottom: 1rem;
-    }
-    .founder-photo-hint {
-      font-family: var(--display);
-      font-size: 0.55rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.2);
     }
 
     .founder-headline {
@@ -1656,11 +1640,7 @@
         <div class="section-label reveal">The Practitioner</div>
         <div class="founder-layout">
           <div class="founder-photo-frame reveal">
-            <!-- TODO: Replace with editorial portrait photo — dark/moody lighting, muted palette, authentic not staged -->
-            <div class="founder-photo-inner">
-              <span class="founder-photo-placeholder">V</span>
-              <span class="founder-photo-hint">Photo coming soon</span>
-            </div>
+            <img src="veronika.jpg" alt="Veronika Naumchak — hypnotherapist and somatic coach" loading="lazy">
           </div>
           <div class="reveal" style="transition-delay: 0.15s;">
             <h2 class="founder-headline">I teach what I had to <em>learn the hard way.</em></h2>
