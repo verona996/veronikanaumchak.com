@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Inner Shift Method | Hypnotherapy & CBH | Veronika Naumchak</title>
+  <meta name="description" content="An integrated approach combining cognitive behavioural hypnotherapy (CBH), rapid transformational therapy (RTT), and somatic release work. Evidence-based, root-cause focused, and designed to create lasting change.">
+  <meta property="og:title" content="The Inner Shift Method — Veronika Naumchak">
+  <meta property="og:description" content="CBH, RTT, and somatic work integrated into one method. Not more understanding — real change.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E◆%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Fraunces:ital,opsz,wght,WONK@0,9..144,300,0;0,9..144,400,0;0,9..144,500,0;0,9..144,600,0;0,9..144,700,0;1,9..144,300,0;1,9..144,400,0;1,9..144,500,0;1,9..144,600,0;1,9..144,700,0&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { font-variation-settings: 'WONK' 0 !important; }
+    .page-hero h1, .page-hero h1 *,
+    .section-headline, .section-headline *,
+    .phase-name, .modality-name,
+    .nav-logo, .footer-logo,
+    .closing-headline, .closing-headline *,
+    .pull-quote, .pull-quote *,
+    .callout-text, .insight-stat,
+    .prose-highlight, .integration-emphasis,
+    .modality-tagline, .layer-name,
+    .evidence-num, .mid-pull-text {
+      font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
+    }
+
+    :root {
+      --cream: #FDF6EE;
+      --ivory: #FAF0E4;
+      --linen: #F3E8DA;
+      --sand: #E8D9C8;
+      --taupe: #C4B5A4;
+      --espresso: #2A1F1A;
+      --coffee: #3D302A;
+      --mocha: #5C4D42;
+      --stone: #8A7B70;
+      --muted: #A89888;
+      --coral: #E8503A;
+      --coral-hot: #D43D28;
+      --coral-light: #F06B55;
+      --coral-glow: rgba(232, 80, 58, 0.12);
+      --coral-soft: rgba(232, 80, 58, 0.06);
+      --plum: #5C2751;
+      --plum-deep: #3E1A36;
+      --plum-light: #7A3B6B;
+      --terracotta: #C87B5A;
+      --gold: #D4A856;
+      --serif: 'Fraunces', Georgia, serif;
+      --display: 'Syne', sans-serif;
+      --sans: 'Bricolage Grotesque', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--espresso);
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    .page-wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── NAVIGATION ── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: var(--cream);
+      border-bottom: 1px solid var(--sand);
+      transition: box-shadow 0.3s;
+    }
+    .nav.scrolled { box-shadow: 0 2px 20px rgba(42, 31, 26, 0.06); }
+    .nav-inner {
+      max-width: 1080px; margin: 0 auto; padding: 0 1.5rem;
+      display: flex; justify-content: space-between; align-items: center; height: 64px;
+    }
+    .nav-logo { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; color: var(--espresso); text-decoration: none; letter-spacing: -0.01em; }
+    .nav-links { display: flex; gap: 2.2rem; align-items: center; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.75rem; color: var(--stone); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.3s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--espresso); }
+    .nav-cta { font-family: var(--sans) !important; font-size: 0.7rem !important; font-weight: 600 !important; color: var(--coral) !important; letter-spacing: 0.1em !important; padding: 0.55rem 1.3rem; border: 1.5px solid var(--coral); transition: all 0.3s !important; }
+    .nav-cta:hover { background: var(--coral-glow) !important; }
+    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; width: 28px; height: 20px; position: relative; z-index: 300; }
+    .nav-hamburger span { display: block; width: 100%; height: 1.5px; background: var(--espresso); position: absolute; left: 0; transition: all 0.3s; }
+    .nav-hamburger span:nth-child(1) { top: 0; }
+    .nav-hamburger span:nth-child(2) { top: 9px; }
+    .nav-hamburger span:nth-child(3) { top: 18px; }
+    .nav-hamburger.open span:nth-child(1) { top: 9px; transform: rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { top: 9px; transform: rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; background: var(--cream); z-index: 199; padding: 2rem 1.5rem; flex-direction: column; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: var(--sans); font-size: 1rem; color: var(--espresso); text-decoration: none; padding: 1.2rem 0; border-bottom: 1px solid var(--sand); display: block; }
+    .mobile-menu .mobile-cta { margin-top: 2rem; display: inline-block; background: var(--coral); color: #fff; padding: 1rem 2rem; font-weight: 600; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-align: center; border-bottom: none; }
+
+    /* ── BUTTONS ── */
+    .btn-primary { background: var(--coral); color: #fff; padding: 1rem 2.5rem; font-family: var(--sans); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border: none; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .btn-primary:hover { background: var(--coral-hot); transform: translateY(-2px); box-shadow: 0 8px 30px var(--coral-glow); }
+    .btn-primary svg { width: 16px; height: 16px; transition: transform 0.3s; }
+    .btn-primary:hover svg { transform: translateX(4px); }
+
+    /* ── SECTION LABELS ── */
+    .section-label { font-family: var(--display); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.4em; text-transform: uppercase; color: var(--coral); margin-bottom: 1.5rem; }
+
+    .section-divider { height: 3px; background: linear-gradient(90deg, transparent, var(--coral) 20%, var(--plum) 50%, var(--coral) 80%, transparent); opacity: 0.15; margin: 0; }
+    .section-divider-subtle { height: 1px; background: linear-gradient(90deg, transparent, var(--sand) 20%, var(--taupe) 50%, var(--sand) 80%, transparent); margin: 0; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      padding: 10rem 1.5rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -40%);
+      width: 700px; height: 700px;
+      background:
+        radial-gradient(circle at 30% 50%, rgba(232, 80, 58, 0.07) 0%, transparent 50%),
+        radial-gradient(circle at 70% 40%, rgba(92, 39, 81, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 50% 60%, rgba(212, 168, 86, 0.03) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    /* Decorative elements */
+    .hero-ring { position: absolute; top: 15%; right: 10%; width: 160px; height: 160px; border: 1px solid var(--sand); border-radius: 50%; opacity: 0.35; pointer-events: none; }
+    .hero-ring-2 { position: absolute; bottom: 20%; left: 8%; width: 100px; height: 100px; border: 1px solid var(--coral); border-radius: 50%; opacity: 0.1; pointer-events: none; }
+    .hero-line { position: absolute; top: 25%; left: -3%; width: 200px; height: 1px; background: linear-gradient(90deg, transparent, var(--taupe), transparent); transform: rotate(-20deg); opacity: 0.3; pointer-events: none; }
+
+    .page-hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .page-hero h1 { font-family: var(--serif); font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 300; color: var(--espresso); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.5rem; opacity: 0; transform: translateY(20px); animation: fade-up 0.6s ease-out 0.2s forwards; }
+    .page-hero h1 em { font-style: italic; font-weight: 500; color: var(--coral); }
+    .page-hero-sub { font-family: var(--sans); font-size: 1rem; color: var(--stone); line-height: 1.7; max-width: 480px; margin: 0 auto; opacity: 0; transform: translateY(20px); animation: fade-up 0.6s ease-out 0.35s forwards; }
+
+    @keyframes fade-up { to { opacity: 1; transform: translateY(0); } }
+
+    /* ── SECTIONS ── */
+    .section { padding: 5rem 0; }
+    .section-ivory { background: var(--ivory); }
+    .section-linen { background: var(--linen); }
+
+    .section-headline { font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 400; color: var(--espresso); line-height: 1.25; margin-bottom: 2.5rem; max-width: 600px; }
+    .section-headline em { font-style: italic; color: var(--coral); }
+
+    /* ── UNDERSTANDING SECTION — two-column layout ── */
+    .understanding-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .prose { max-width: 680px; }
+    .prose p { font-family: var(--sans); font-size: 0.95rem; color: var(--mocha); line-height: 1.9; margin-bottom: 1.5rem; }
+    .prose p:last-child { margin-bottom: 0; }
+    .prose-highlight { font-family: var(--sans); font-size: 0.95rem; font-weight: 500; color: var(--espresso); line-height: 1.9; margin-bottom: 1.5rem; }
+
+    /* Insight sidebar — visual block for the right column */
+    .insight-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding-top: 0.5rem;
+    }
+
+    .insight-card {
+      padding: 2.2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .insight-card-dark {
+      background: linear-gradient(145deg, var(--plum-deep) 0%, var(--plum) 100%);
+    }
+
+    .insight-card-dark::after {
+      content: '';
+      position: absolute;
+      top: -20px; right: -20px;
+      width: 100px; height: 100px;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .insight-label {
+      font-family: var(--display);
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 0.8rem;
+    }
+
+    .insight-stat {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--coral-light);
+      margin-bottom: 0.8rem;
+      line-height: 1.2;
+    }
+
+    .insight-text {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+    }
+
+    .insight-card-light {
+      border: 1px solid var(--sand);
+      background: var(--cream);
+    }
+
+    .insight-card-light .insight-label { color: var(--coral); }
+    .insight-card-light .insight-text { color: var(--mocha); }
+
+    /* Pull quote — visual break between sections */
+    .pull-quote-section {
+      padding: 3.5rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pull-quote-section::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 350px; height: 350px;
+      background: radial-gradient(circle, var(--coral-soft) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .pull-quote {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--plum);
+      max-width: 550px;
+      margin: 0 auto;
+      line-height: 1.55;
+      position: relative;
+      z-index: 1;
+    }
+
+    .pull-quote-mark {
+      font-family: var(--serif);
+      font-size: 3.5rem;
+      color: var(--coral);
+      opacity: 0.15;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── PHASES — alternating visual cards ── */
+    .phases-intro { max-width: 680px; margin-bottom: 3rem; }
+    .phases-intro p { font-family: var(--sans); font-size: 0.95rem; color: var(--mocha); line-height: 1.9; margin-bottom: 1rem; }
+
+    .phase-card {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 2.5rem;
+      padding: 3rem 0;
+      align-items: start;
+      position: relative;
+    }
+
+    .phase-card + .phase-card {
+      border-top: 1px solid var(--sand);
+    }
+
+    /* Phase marker — coloured circle with number */
+    .phase-marker {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .phase-marker-num {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #fff;
+    }
+
+    /* Distinct colours per phase */
+    .phase-card:nth-child(1) .phase-marker { background: var(--coral); }
+    .phase-card:nth-child(2) .phase-marker { background: var(--terracotta); }
+    .phase-card:nth-child(3) .phase-marker { background: var(--plum); }
+    .phase-card:nth-child(4) .phase-marker { background: var(--espresso); }
+    .phase-card:nth-child(5) .phase-marker { background: var(--coral); }
+
+    /* Connecting line between phases */
+    .phase-card {
+      position: relative;
+    }
+    .phase-card + .phase-card::after {
+      content: '';
+      position: absolute;
+      left: 35px;
+      top: -1px;
+      width: 2px;
+      height: 3rem;
+      background: linear-gradient(to bottom, var(--sand), transparent);
+      z-index: 0;
+    }
+
+    /* Phase icon inside marker */
+    .phase-marker svg {
+      width: 26px;
+      height: 26px;
+      color: #fff;
+      stroke-width: 2;
+    }
+
+    .phase-name {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--espresso);
+      margin-bottom: 0.3rem;
+    }
+
+    .phase-subtitle {
+      font-family: var(--display);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .phase-main p {
+      font-family: var(--sans);
+      font-size: 0.92rem;
+      color: var(--mocha);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    .phase-main p:last-child { margin-bottom: 0; }
+
+    .phase-sub-label {
+      font-family: var(--display);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Callout — "What it feels like" as visual aside */
+    .phase-callout {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .callout-box {
+      padding: 1.8rem;
+      border-left: 3px solid var(--coral);
+      background: var(--coral-soft);
+    }
+
+    .callout-label {
+      font-family: var(--display);
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 0.6rem;
+    }
+
+    .callout-text {
+      font-family: var(--serif);
+      font-size: 0.92rem;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--coffee);
+      line-height: 1.7;
+    }
+
+    .why-box {
+      padding: 1.8rem;
+      border: 1px solid var(--sand);
+      background: var(--cream);
+    }
+
+    .why-box .callout-label { color: var(--plum); }
+
+    .why-box p {
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      color: var(--mocha);
+      line-height: 1.75;
+    }
+
+    /* ── MODALITIES — visual cards ── */
+    .modalities-intro { max-width: 680px; margin-bottom: 3rem; }
+    .modalities-intro p { font-family: var(--sans); font-size: 0.95rem; color: var(--mocha); line-height: 1.9; }
+
+    .modality-card {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-bottom: 2rem;
+      border: 1px solid var(--sand);
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+
+    .modality-card:hover {
+      box-shadow: 0 6px 24px rgba(42, 31, 26, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .modality-card:last-child { margin-bottom: 0; }
+
+    .modality-header-bar {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 2rem 2.5rem;
+      position: relative;
+    }
+
+    /* Colour-coded top border per modality */
+    .modality-card:nth-child(1) .modality-header-bar { background: var(--ivory); border-left: 4px solid var(--coral); }
+    .modality-card:nth-child(2) .modality-header-bar { background: var(--ivory); border-left: 4px solid var(--plum); }
+    .modality-card:nth-child(3) .modality-header-bar { background: var(--ivory); border-left: 4px solid var(--terracotta); }
+
+    .modality-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .modality-card:nth-child(1) .modality-icon { background: var(--coral-glow); }
+    .modality-card:nth-child(2) .modality-icon { background: rgba(92, 39, 81, 0.1); }
+    .modality-card:nth-child(3) .modality-icon { background: rgba(200, 123, 90, 0.12); }
+
+    .modality-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .modality-card:nth-child(1) .modality-icon svg { color: var(--coral); }
+    .modality-card:nth-child(2) .modality-icon svg { color: var(--plum); }
+    .modality-card:nth-child(3) .modality-icon svg { color: var(--terracotta); }
+
+    .modality-header-text { flex: 1; }
+
+    .modality-num {
+      font-family: var(--display);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--coral);
+      margin-bottom: 0.2rem;
+    }
+
+    .modality-name {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--espresso);
+    }
+
+    .modality-tagline {
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--plum);
+    }
+
+    .modality-body-wrap {
+      padding: 2rem 2.5rem 2.5rem;
+      background: var(--cream);
+    }
+
+    .modality-body-grid {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .modality-body p {
+      font-family: var(--sans);
+      font-size: 0.92rem;
+      color: var(--mocha);
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+    }
+    .modality-body p:last-child { margin-bottom: 0; }
+
+    .modality-role-box {
+      padding: 1.5rem;
+      background: var(--ivory);
+      border: 1px solid var(--sand);
+      align-self: start;
+      position: sticky;
+      top: 80px;
+    }
+
+    .modality-role-label {
+      font-family: var(--display);
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 0.6rem;
+    }
+
+    .modality-role-text {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-style: italic;
+      color: var(--stone);
+      line-height: 1.7;
+    }
+
+    /* ── INTEGRATION — dark visual block ── */
+    .integration-section {
+      background: linear-gradient(160deg, var(--plum-deep) 0%, var(--plum) 100%);
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .integration-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .integration-section .section-label { color: var(--coral-light); }
+
+    .integration-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .integration-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .integration-text p {
+      font-family: var(--sans);
+      font-size: 1rem;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .integration-emphasis {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--coral-light);
+      line-height: 1.5;
+      margin: 2rem 0;
+    }
+
+    /* Visual diagram — three circles */
+    .integration-visual {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      position: relative;
+    }
+
+    .integration-circle {
+      width: 175px;
+      height: 175px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .integration-circle:nth-child(1) {
+      background: rgba(232, 80, 58, 0.15);
+      border: 1px solid rgba(232, 80, 58, 0.3);
+    }
+
+    .integration-circle:nth-child(2) {
+      background: rgba(92, 39, 81, 0.2);
+      border: 1px solid rgba(122, 59, 107, 0.3);
+      margin-top: -30px;
+      z-index: 2;
+    }
+
+    .integration-circle:nth-child(3) {
+      background: rgba(200, 123, 90, 0.15);
+      border: 1px solid rgba(200, 123, 90, 0.3);
+      margin-top: -30px;
+      z-index: 3;
+    }
+
+    .integration-circle-label {
+      font-family: var(--display);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 0.3rem;
+    }
+
+    .integration-circle-name {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    .integration-circle-where {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.3rem;
+      font-style: italic;
+    }
+
+    /* ── BRIDGE VISUAL — 3-layer diagram ── */
+    .bridge-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .layer-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .layer-item {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 1.4rem 1.8rem;
+      border: 1px solid var(--sand);
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    .layer-item:not(:last-child) {
+      border-bottom: none;
+    }
+
+    .layer-item:first-child {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .layer-item:last-child {
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+
+    .layer-item:hover {
+      background: var(--coral-soft);
+      border-color: var(--coral);
+      z-index: 1;
+    }
+
+    .layer-item:hover + .layer-item {
+      border-top-color: var(--coral);
+    }
+
+    .layer-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .layer-item:nth-child(1) .layer-dot { background: var(--coral); }
+    .layer-item:nth-child(2) .layer-dot { background: var(--plum); }
+    .layer-item:nth-child(3) .layer-dot { background: var(--terracotta); }
+
+    .layer-text {
+      flex: 1;
+    }
+
+    .layer-name {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--espresso);
+      margin-bottom: 0.15rem;
+    }
+
+    .layer-desc {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      color: var(--stone);
+      line-height: 1.5;
+    }
+
+    .layer-arrow {
+      display: flex;
+      justify-content: center;
+      padding: 0.4rem 0;
+    }
+
+    .layer-arrow svg {
+      width: 16px;
+      height: 16px;
+      color: var(--taupe);
+    }
+
+    /* ── EVIDENCE CALLOUT — for research stats ── */
+    .evidence-strip {
+      display: flex;
+      gap: 1.5rem;
+      margin: 1.5rem 0 1.2rem;
+    }
+
+    .evidence-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.7rem 1rem;
+      background: var(--ivory);
+      border: 1px solid var(--sand);
+      border-radius: 4px;
+      flex: 1;
+    }
+
+    .evidence-num {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--coral);
+      line-height: 1;
+    }
+
+    .evidence-detail {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      color: var(--stone);
+      line-height: 1.4;
+    }
+
+    /* ── MID-PAGE PULL QUOTE ── */
+    .mid-pull-section {
+      background: linear-gradient(160deg, var(--espresso) 0%, var(--coffee) 100%);
+      padding: 3.5rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mid-pull-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .mid-pull-text {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--cream);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.55;
+      position: relative;
+      z-index: 1;
+    }
+
+    .mid-pull-attr {
+      font-family: var(--display);
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--coral-light);
+      margin-top: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── CLOSING CTA ── */
+    .closing {
+      text-align: center;
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .closing::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, var(--coral-soft) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .closing-headline { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2rem); font-weight: 400; color: var(--espresso); margin-bottom: 1rem; line-height: 1.35; position: relative; z-index: 1; }
+    .closing-headline em { font-style: italic; color: var(--coral); }
+    .closing-sub { font-family: var(--sans); font-size: 0.95rem; color: var(--mocha); margin-bottom: 2rem; position: relative; z-index: 1; }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--espresso); padding: 3rem 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem; }
+    .footer-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--cream); margin-bottom: 0.4rem; }
+    .footer-tagline { font-family: var(--display); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase; color: var(--muted); }
+    .footer-right { text-align: right; }
+    .footer-links { display: flex; gap: 1.5rem; margin-bottom: 0.8rem; }
+    .footer-links a { font-family: var(--sans); font-size: 0.78rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s; }
+    .footer-links a:hover { color: var(--cream); }
+    .footer-legal { font-family: var(--sans); font-size: 0.7rem; color: rgba(255,255,255,0.3); line-height: 1.8; }
+    .footer-legal a { color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.3s; }
+    .footer-legal a:hover { color: rgba(255,255,255,0.5); }
+
+    /* ── STICKY MOBILE CTA ── */
+    .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: var(--coral); padding: 0.9rem 1.5rem; display: none; justify-content: space-between; align-items: center; z-index: 150; transform: translateY(100%); transition: transform 0.3s ease; }
+    .sticky-cta.visible { transform: translateY(0); }
+    .sticky-cta-text { font-family: var(--sans); font-size: 0.8rem; color: #fff; }
+    .sticky-cta-link { font-family: var(--sans); font-size: 0.8rem; color: #fff; font-weight: 700; text-decoration: none; letter-spacing: 0.05em; }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: block; }
+      .nav-inner { justify-content: center; position: relative; }
+      .nav-hamburger { position: absolute; right: 1.5rem; }
+
+      .section { padding: 3.5rem 0; }
+      .page-hero { padding: 8rem 1.5rem 3rem; }
+      .hero-ring, .hero-ring-2, .hero-line { display: none; }
+
+      .understanding-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .bridge-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .evidence-strip { flex-direction: column; gap: 0.75rem; }
+      .phase-card { grid-template-columns: 56px 1fr; gap: 1.5rem; }
+      .phase-marker { width: 56px; height: 56px; }
+      .phase-marker-num { font-size: 1rem; }
+      .phase-marker svg { width: 22px; height: 22px; }
+      .phase-content-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+
+      .modality-header-bar { padding: 1.5rem; }
+      .modality-body-wrap { padding: 1.5rem; }
+      .modality-body-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .modality-role-box { position: static; }
+
+      .integration-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .integration-visual { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+      .integration-circle { width: 130px; height: 130px; }
+      .integration-circle:nth-child(2),
+      .integration-circle:nth-child(3) { margin-top: 0; margin-left: -20px; }
+
+      .sticky-cta { display: flex; }
+      .footer-inner { flex-direction: column; align-items: center; text-align: center; }
+      .footer-right { text-align: center; }
+      .footer-links { justify-content: center; }
+      .footer { padding-bottom: 5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .page-hero h1 { font-size: 1.8rem; }
+      .phase-card { grid-template-columns: 48px 1fr; gap: 1rem; }
+      .phase-marker { width: 48px; height: 48px; }
+      .phase-marker svg { width: 18px; height: 18px; }
+      .integration-circle { width: 110px; height: 110px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Veronika Naumchak</a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="method.html" class="active">The Method</a></li>
+        <li><a href="index.html#work">Work With Me</a></li>
+        <li><a href="index.html#intake" class="nav-cta">Start Here</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="method.html" class="mobile-nav-link">The Method</a>
+    <a href="index.html#work" class="mobile-nav-link">Work With Me</a>
+    <a href="index.html#intake" class="mobile-cta mobile-nav-link">Start Here</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="hero-ring"></div>
+    <div class="hero-ring-2"></div>
+    <div class="hero-line"></div>
+    <div class="page-hero-content">
+      <div class="section-label">The Method</div>
+      <h1>You already know the problem.<br>This is how you actually <em>change it.</em></h1>
+      <p class="page-hero-sub">An integrated approach that reaches the pattern everywhere it lives &mdash; in your thinking, your subconscious, and your body.</p>
+    </div>
+  </section>
+
+  <div class="section-divider-subtle"></div>
+
+  <!-- BRIDGE — tight setup before the method -->
+  <section class="section">
+    <div class="page-wrap">
+      <div class="bridge-grid">
+        <div class="prose reveal">
+          <p>You already know understanding isn't enough. You've done the reading, the journaling, the therapy. You can name the pattern &mdash; and you still repeat it. That gap between knowing and feeling isn't a willpower failure. It's a wiring issue.</p>
+          <p class="prose-highlight">Real change requires tools that reach the pattern where it actually lives &mdash; not just in your thinking, but in your subconscious programming and your body.</p>
+          <p>That's what this method was built to do.</p>
+        </div>
+        <div class="layer-stack reveal" style="transition-delay: 0.15s;">
+          <div class="layer-item">
+            <div class="layer-dot"></div>
+            <div class="layer-text">
+              <div class="layer-name">Thinking</div>
+              <div class="layer-desc">The beliefs running your decisions &mdash; conscious patterns, rules, assumptions</div>
+            </div>
+          </div>
+          <div class="layer-item">
+            <div class="layer-dot"></div>
+            <div class="layer-text">
+              <div class="layer-name">Subconscious</div>
+              <div class="layer-desc">The programming installed before you had words &mdash; emotional wiring, identity rules</div>
+            </div>
+          </div>
+          <div class="layer-item">
+            <div class="layer-dot"></div>
+            <div class="layer-text">
+              <div class="layer-name">Body</div>
+              <div class="layer-desc">The charge your nervous system is holding &mdash; survival energy that never completed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- SECTION 2: THE INNER SHIFT METHOD — 5 PHASES -->
+  <section class="section section-ivory">
+    <div class="page-wrap">
+      <div class="section-label reveal">The Inner Shift Method</div>
+      <div class="phases-intro reveal">
+        <p>Three clinical modalities &mdash; cognitive behavioural hypnotherapy, rapid transformational therapy, and somatic release work &mdash; integrated into one system. Not a menu. A method designed to reach the pattern everywhere it lives.</p>
+        <p class="prose-highlight" style="font-family: var(--sans); margin-bottom: 0;">Five phases. Each one builds on the last.</p>
+      </div>
+
+      <!-- Phase 1: Notice -->
+      <div class="phase-card reveal">
+        <div class="phase-marker">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+        </div>
+        <div>
+          <h3 class="phase-name">Notice</h3>
+          <div class="phase-subtitle">Phase 1 &mdash; Seeing what's been running on autopilot</div>
+          <div class="phase-content-grid">
+            <div class="phase-main">
+              <div class="phase-sub-label">What happens</div>
+              <p>We map your patterns. Not just what you do, but the belief system underneath it &mdash; the rules, the assumptions, the &ldquo;I have to&rdquo; and &ldquo;I should&rdquo; and &ldquo;I'm not allowed to&rdquo; that run quietly in the background of every decision you make.</p>
+              <p>This phase draws on cognitive behavioural frameworks to identify the specific thoughts, beliefs, and behavioural loops that are keeping the pattern in place.</p>
+            </div>
+            <div class="phase-callout">
+              <div class="callout-box">
+                <div class="callout-label">What it feels like</div>
+                <div class="callout-text">Like seeing the matrix. Clients often say, &ldquo;I never realised I was doing that.&rdquo; Most of these patterns are so deeply embedded they feel like personality. They're not. They're programming.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 2: Feel -->
+      <div class="phase-card reveal">
+        <div class="phase-marker">
+          <svg viewBox="0 0 24 24" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div>
+          <h3 class="phase-name">Feel</h3>
+          <div class="phase-subtitle">Phase 2 &mdash; Reconnecting with the body's record</div>
+          <div class="phase-content-grid">
+            <div class="phase-main">
+              <div class="phase-sub-label">What happens</div>
+              <p>We go underneath the story. Before we can release anything, we need to reconnect with what the body is actually holding. Most people are so disconnected from physical sensation that they don't realise they've been bracing for years.</p>
+              <p>We slow down. We listen inward. Not releasing yet &mdash; just noticing what's there. You can't let go of something you haven't fully acknowledged.</p>
+            </div>
+            <div class="phase-callout">
+              <div class="callout-box">
+                <div class="callout-label">What it feels like</div>
+                <div class="callout-text">Uncomfortable, sometimes. Revealing, always. Many clients are surprised to discover they've been numb to sensations they assumed were normal &mdash; the tight chest, the held breath, the tension they carry as baseline.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 3: Release -->
+      <div class="phase-card reveal">
+        <div class="phase-marker">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14"/><path d="M5 12l7 7 7-7"/></svg>
+        </div>
+        <div>
+          <h3 class="phase-name">Release</h3>
+          <div class="phase-subtitle">Phase 3 &mdash; Letting the body let go</div>
+          <div class="phase-content-grid">
+            <div class="phase-main">
+              <div class="phase-sub-label">What happens</div>
+              <p>This is where the body lets go of what it's been holding. Using somatic techniques, we work with your nervous system to discharge the trapped survival energy &mdash; the fight-or-flight responses that got frozen in place because they had nowhere to go at the time.</p>
+              <p>We go slowly &mdash; approaching the activation in small, manageable doses, moving between the difficult sensation and safety, so your nervous system learns it can let go without falling apart.</p>
+            </div>
+            <div class="phase-callout">
+              <div class="callout-box">
+                <div class="callout-label">What it feels like</div>
+                <div class="callout-text">Different for everyone. Some clients feel physical warmth, shaking, deep breaths, or a sudden wave of emotion. Some feel lighter. Some feel nothing dramatic &mdash; just a quiet &ldquo;something shifted.&rdquo; There's no right way to release.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 4: Rewire -->
+      <div class="phase-card reveal">
+        <div class="phase-marker">
+          <svg viewBox="0 0 24 24" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div>
+          <h3 class="phase-name">Rewire</h3>
+          <div class="phase-subtitle">Phase 4 &mdash; Changing the programme at its core</div>
+          <div class="phase-content-grid">
+            <div class="phase-main">
+              <div class="phase-sub-label">What happens</div>
+              <p>This is where we change the meaning. The old beliefs &mdash; &ldquo;I'm not enough,&rdquo; &ldquo;I have to earn love,&rdquo; &ldquo;it's not safe to be seen&rdquo; &mdash; get identified, challenged, and replaced. Through cognitive restructuring and hypnosis, we rewrite the core beliefs that have been running your identity, your decisions, and your emotional reactions.</p>
+              <p>Sometimes that involves regression &mdash; going back to the moment a belief was first formed and reprocessing it from your adult perspective. Sometimes it's done through direct cognitive work: disputing the old rule, building a new one, and installing it under hypnosis where it can reach the subconscious. The tool depends on the client. The result is the same: the old programme loses its authority. A new one takes its place.</p>
+            </div>
+            <div class="phase-callout">
+              <div class="callout-box">
+                <div class="callout-label">What it feels like</div>
+                <div class="callout-text">Like something clicks into place. Not just intellectually &mdash; you feel it shift. The belief that ran everything quietly in the background suddenly looks like what it is: a decision a child made to survive. And you get to make a different one.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 5: Become -->
+      <div class="phase-card reveal">
+        <div class="phase-marker">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4" fill="currentColor" fill-opacity="0.2"/><path d="M12 2v3M12 19v3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M2 12h3M19 12h3M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/></svg>
+        </div>
+        <div>
+          <h3 class="phase-name">Become</h3>
+          <div class="phase-subtitle">Phase 5 &mdash; Living from the new wiring</div>
+          <div class="phase-content-grid">
+            <div class="phase-main">
+              <div class="phase-sub-label">What happens</div>
+              <p>Integration. This is where you learn to maintain the shift. We build practical scaffolding &mdash; self-hypnosis you can use on your own, thought restructuring skills, coping strategies for when old patterns resurface &mdash; so the rewiring holds.</p>
+              <p>The goal of CBH is to make you your own therapist. Not to create dependency on sessions, but to equip you with the tools to catch old patterns when they resurface and redirect them yourself.</p>
+            </div>
+            <div class="phase-callout">
+              <div class="callout-box">
+                <div class="callout-label">What it feels like</div>
+                <div class="callout-text">Like growing into someone you already were underneath. Not performing a new identity &mdash; shedding the one you built to survive. The old triggers still exist &mdash; but they've lost their charge.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MID-PAGE PULL QUOTE — visual breath between phases and modalities -->
+  <div class="mid-pull-section">
+    <div class="page-wrap">
+      <div class="mid-pull-text reveal">The goal isn't to become someone new. It's to stop betraying the person you already are.</div>
+      <div class="mid-pull-attr reveal">The Inner Shift Method</div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- SECTION 3: THE CLINICAL FOUNDATIONS -->
+  <section class="section" id="foundations">
+    <div class="page-wrap">
+      <div class="section-label reveal">For the Curious</div>
+      <div class="modalities-intro reveal">
+        <p>If you're the kind of person who wants to know what's under the hood before committing &mdash; here's what each modality brings and why it's in the method.</p>
+      </div>
+
+      <!-- CBH -->
+      <div class="modality-card reveal">
+        <div class="modality-header-bar">
+          <div class="modality-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          </div>
+          <div class="modality-header-text">
+            <div class="modality-num">01</div>
+            <h3 class="modality-name">Cognitive Behavioural Hypnotherapy (CBH)</h3>
+            <div class="modality-tagline">The structure. The resilience. The tools you keep.</div>
+          </div>
+        </div>
+        <div class="modality-body-wrap">
+          <div class="modality-body-grid">
+            <div class="modality-body">
+              <p>Most people hear &ldquo;hypnotherapy&rdquo; and picture someone swinging a watch. CBH is nothing like that. It's an evidence-based clinical method that combines the structured framework of cognitive behavioural therapy with the focused attention state of hypnosis &mdash; and the research behind it is substantial.</p>
+              <div class="evidence-strip">
+                <div class="evidence-badge">
+                  <div class="evidence-num">72%</div>
+                  <div class="evidence-detail">of clients showed sustained gains at follow-up<br><span style="opacity: 0.6;">Ramondo et al., 2021 &mdash; 48 studies, ~2,000 participants</span></div>
+                </div>
+                <div class="evidence-badge">
+                  <div class="evidence-num">70&ndash;90%</div>
+                  <div class="evidence-detail">showed greater improvement with hypnosis + CBT vs CBT alone<br><span style="opacity: 0.6;">Kirsch et al., 1995</span></div>
+                </div>
+              </div>
+              <p>What makes CBH different from traditional hypnotherapy is the framework. It uses structured cognitive restructuring &mdash; identifying the beliefs that drive your patterns, disputing them with precision, and replacing them with new ones. Then hypnosis installs those new beliefs at the subconscious level, where they can actually take hold. Add imagery rehearsal (mentally rehearsing new responses until they feel natural) and self-hypnosis training (so you can reinforce the work between sessions), and you have a method designed to make you your own therapist &mdash; not dependent on one.</p>
+              <p>I hold a Level 5 Practitioner Diploma in Cognitive Behavioural Hypnotherapy &mdash; a 500-hour clinical training programme from the UK College of Hypnosis &amp; Hypnotherapy, externally verified by NCFE, one of the UK's national awarding bodies.</p>
+            </div>
+            <div class="modality-role-box">
+              <div class="modality-role-label">Role in the method</div>
+              <div class="modality-role-text">CBH is the backbone. It provides the cognitive mapping in Notice, the belief restructuring in Rewire, and the practical skills in Become &mdash; it runs through the entire method.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RTT -->
+      <div class="modality-card reveal">
+        <div class="modality-header-bar">
+          <div class="modality-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <div class="modality-header-text">
+            <div class="modality-num">02</div>
+            <h3 class="modality-name">Rapid Transformational Therapy (RTT)</h3>
+            <div class="modality-tagline">The deep access. The root cause. The rewrite.</div>
+          </div>
+        </div>
+        <div class="modality-body-wrap">
+          <div class="modality-body-grid">
+            <div class="modality-body">
+              <p>Developed by Marisa Peer, RTT combines principles from hypnotherapy, psychotherapy, and cognitive behavioural techniques to access and transform the root cause of an issue &mdash; not just manage symptoms.</p>
+              <p>The core mechanism is regression under hypnosis. You're guided back to the moments where a limiting belief was first formed &mdash; not to relive them, but to reprocess them from your adult perspective. RTT works directly with the subconscious mind, accessing the programming at the level where it was installed.</p>
+              <p>After the session, you receive a personalised recording to reinforce the new beliefs over the following weeks &mdash; the difference between having a breakthrough and maintaining it.</p>
+            </div>
+            <div class="modality-role-box">
+              <div class="modality-role-label">Role in the method</div>
+              <div class="modality-role-text">RTT contributes to the Rewire phase &mdash; particularly when regression to root cause moments is the right tool for the client's situation.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Somatic -->
+      <div class="modality-card reveal">
+        <div class="modality-header-bar">
+          <div class="modality-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="3"/><circle cx="12" cy="12" r="10"/></svg>
+          </div>
+          <div class="modality-header-text">
+            <div class="modality-num">03</div>
+            <h3 class="modality-name">Somatic Release Work</h3>
+            <div class="modality-tagline">The body's record. The nervous system reset.</div>
+          </div>
+        </div>
+        <div class="modality-body-wrap">
+          <div class="modality-body-grid">
+            <div class="modality-body">
+              <p>The body stores what the mind can't process. When a survival response &mdash; fight, flight, or freeze &mdash; doesn't complete, the energy stays trapped. This is why you can understand a pattern intellectually and still feel the anxiety in your chest.</p>
+              <p>Rooted in the work of trauma researcher Peter Levine, somatic techniques focus on completing those interrupted responses &mdash; not through re-telling the story, but through the body itself. Your nervous system learns it can face what it's been avoiding and return to calm.</p>
+            </div>
+            <div class="modality-role-box">
+              <div class="modality-role-label">Role in the method</div>
+              <div class="modality-role-text">Somatic work is central to the Feel and Release phases &mdash; locating what the body is holding and giving it a way to finally let go.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 4: WHY ALL THREE — dark visual block -->
+  <section class="integration-section">
+    <div class="page-wrap">
+      <div class="integration-inner">
+        <div class="section-label reveal">Why The Full Integration</div>
+        <div class="integration-grid">
+          <div class="integration-text reveal">
+            <p>Most practitioners specialise in one modality. They're either cognitive, or they're body-based, or they do regression work. The problem is that patterns don't live in just one place.</p>
+            <div class="integration-emphasis">The belief lives in your thinking. The original installation lives in your subconscious. The charge lives in your body.</div>
+            <p>If you only address one, the others keep the pattern alive.</p>
+            <p>The value isn't in having three modalities &mdash; it's in the clinical judgment to know which tool to reach for in any given moment, and how to sequence them so they reinforce each other.</p>
+          </div>
+          <div class="integration-visual reveal" style="transition-delay: 0.15s;">
+            <div class="integration-circle">
+              <div class="integration-circle-label">CBT</div>
+              <div class="integration-circle-name">Conscious Mind</div>
+              <div class="integration-circle-where">present-moment patterns</div>
+            </div>
+            <div class="integration-circle">
+              <div class="integration-circle-label">Hypnotherapy</div>
+              <div class="integration-circle-name">Subconscious</div>
+              <div class="integration-circle-where">the emotional brain</div>
+            </div>
+            <div class="integration-circle">
+              <div class="integration-circle-label">Somatic</div>
+              <div class="integration-circle-name">Body</div>
+              <div class="integration-circle-where">nervous system</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="closing">
+    <div class="page-wrap">
+      <h2 class="closing-headline reveal">You've read enough. <em>Let's start.</em></h2>
+      <p class="closing-sub reveal">If you're here, the understanding part isn't what's missing. It's the next step.</p>
+      <div class="reveal" style="position: relative; z-index: 1;">
+        <a href="index.html#intake" class="btn-primary">Tell Me What's Going On <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="page-wrap">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-logo">Veronika Naumchak</div>
+          <div class="footer-tagline">Stop explaining the pattern. Break it.</div>
+        </div>
+        <div class="footer-right">
+          <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="method.html">The Method</a>
+            <a href="index.html#work">Work With Me</a>
+            <a href="https://instagram.com/veronika_mindbodysoul" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://tiktok.com/@veronika_mindbodysoul" target="_blank" rel="noopener">TikTok</a>
+            <a href="mailto:hello@veronikanaumchak.com">Email</a>
+          </div>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a> &middot; <a href="#">Terms</a> &middot; &copy; 2026 Veronika Naumchak
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- STICKY MOBILE CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <span class="sticky-cta-text">Something needs to change.</span>
+    <a href="index.html#intake" class="sticky-cta-link">Tell Me What's Going On &rarr;</a>
+  </div>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const stickyCta = document.getElementById('stickyCta');
+    const pageHero = document.querySelector('.page-hero');
+
+    function onScroll() {
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 10);
+      if (pageHero) {
+        const heroBottom = pageHero.offsetTop + pageHero.offsetHeight;
+        stickyCta.classList.toggle('visible', y > heroBottom - 100);
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

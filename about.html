@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Veronika Naumchak | Hypnotherapist & CBH Practitioner in Zürich</title>
+  <meta name="description" content="Certified CBH and RTT practitioner in Zürich. Level 5 Diploma in cognitive behavioural hypnotherapy, rapid transformational therapy, and somatic release work. The Inner Shift Method.">
+  <meta property="og:title" content="About Veronika Naumchak — Hypnotherapist & CBH Practitioner">
+  <meta property="og:description" content="Certified CBH and RTT practitioner. Level 5 Diploma in cognitive behavioural hypnotherapy, rapid transformational therapy, and somatic release work.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E◆%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Fraunces:ital,opsz,wght,WONK@0,9..144,300,0;0,9..144,400,0;0,9..144,500,0;0,9..144,600,0;0,9..144,700,0;1,9..144,300,0;1,9..144,400,0;1,9..144,500,0;1,9..144,600,0;1,9..144,700,0&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { font-variation-settings: 'WONK' 0 !important; }
+    .page-hero h1, .page-hero h1 *,
+    .section-headline, .section-headline *,
+    .nav-logo, .footer-logo,
+    .closing-headline, .closing-headline *,
+    .prose-lead, .prose-closer,
+    .cred-title, .hero-photo-placeholder {
+      font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
+    }
+
+    :root {
+      --cream: #FDF6EE;
+      --ivory: #FAF0E4;
+      --linen: #F3E8DA;
+      --sand: #E8D9C8;
+      --taupe: #C4B5A4;
+      --espresso: #2A1F1A;
+      --coffee: #3D302A;
+      --mocha: #5C4D42;
+      --stone: #8A7B70;
+      --muted: #A89888;
+      --coral: #E8503A;
+      --coral-hot: #D43D28;
+      --coral-light: #F06B55;
+      --coral-glow: rgba(232, 80, 58, 0.12);
+      --coral-soft: rgba(232, 80, 58, 0.06);
+      --plum: #5C2751;
+      --plum-deep: #3E1A36;
+      --plum-light: #7A3B6B;
+      --terracotta: #C87B5A;
+      --gold: #D4A856;
+      --serif: 'Fraunces', Georgia, serif;
+      --display: 'Syne', sans-serif;
+      --sans: 'Bricolage Grotesque', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--espresso);
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    .page-wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── NAVIGATION ── */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: var(--cream); border-bottom: 1px solid var(--sand); transition: box-shadow 0.3s; }
+    .nav.scrolled { box-shadow: 0 2px 20px rgba(42, 31, 26, 0.06); }
+    .nav-inner { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .nav-logo { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; color: var(--espresso); text-decoration: none; letter-spacing: -0.01em; }
+    .nav-links { display: flex; gap: 2.2rem; align-items: center; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.75rem; color: var(--stone); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.3s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--espresso); }
+    .nav-cta { font-family: var(--sans) !important; font-size: 0.7rem !important; font-weight: 600 !important; color: var(--coral) !important; letter-spacing: 0.1em !important; padding: 0.55rem 1.3rem; border: 1.5px solid var(--coral); transition: all 0.3s !important; }
+    .nav-cta:hover { background: var(--coral-glow) !important; }
+    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; width: 28px; height: 20px; position: relative; z-index: 300; }
+    .nav-hamburger span { display: block; width: 100%; height: 1.5px; background: var(--espresso); position: absolute; left: 0; transition: all 0.3s; }
+    .nav-hamburger span:nth-child(1) { top: 0; }
+    .nav-hamburger span:nth-child(2) { top: 9px; }
+    .nav-hamburger span:nth-child(3) { top: 18px; }
+    .nav-hamburger.open span:nth-child(1) { top: 9px; transform: rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { top: 9px; transform: rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; background: var(--cream); z-index: 199; padding: 2rem 1.5rem; flex-direction: column; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: var(--sans); font-size: 1rem; color: var(--espresso); text-decoration: none; padding: 1.2rem 0; border-bottom: 1px solid var(--sand); display: block; }
+    .mobile-menu .mobile-cta { margin-top: 2rem; display: inline-block; background: var(--coral); color: #fff; padding: 1rem 2rem; font-weight: 600; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-align: center; border-bottom: none; }
+
+    /* ── BUTTONS ── */
+    .btn-primary { background: var(--coral); color: #fff; padding: 1rem 2.5rem; font-family: var(--sans); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border: none; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .btn-primary:hover { background: var(--coral-hot); transform: translateY(-2px); box-shadow: 0 8px 30px var(--coral-glow); }
+    .btn-primary svg { width: 16px; height: 16px; transition: transform 0.3s; }
+    .btn-primary:hover svg { transform: translateX(4px); }
+
+    /* ── SECTION LABELS ── */
+    .section-label { font-family: var(--display); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.4em; text-transform: uppercase; color: var(--coral); margin-bottom: 1.5rem; }
+
+    .section-divider { height: 3px; background: linear-gradient(90deg, transparent, var(--coral) 20%, var(--plum) 50%, var(--coral) 80%, transparent); opacity: 0.15; margin: 0; }
+    .section-divider-subtle { height: 1px; background: linear-gradient(90deg, transparent, var(--sand) 20%, var(--taupe) 50%, var(--sand) 80%, transparent); margin: 0; }
+
+    /* ── PAGE HERO — about page variant ── */
+    .page-hero {
+      padding: 10rem 1.5rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: 40%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px; height: 700px;
+      background:
+        radial-gradient(circle at 30% 50%, rgba(232, 80, 58, 0.07) 0%, transparent 50%),
+        radial-gradient(circle at 70% 40%, rgba(92, 39, 81, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 50% 60%, rgba(212, 168, 86, 0.03) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    /* Decorative elements */
+    .hero-ring { position: absolute; top: 15%; right: 8%; width: 160px; height: 160px; border: 1px solid var(--sand); border-radius: 50%; opacity: 0.35; pointer-events: none; }
+    .hero-ring-2 { position: absolute; bottom: 15%; left: 5%; width: 100px; height: 100px; border: 1px solid var(--coral); border-radius: 50%; opacity: 0.1; pointer-events: none; }
+    .hero-line { position: absolute; top: 30%; left: -3%; width: 200px; height: 1px; background: linear-gradient(90deg, transparent, var(--taupe), transparent); transform: rotate(-20deg); opacity: 0.3; pointer-events: none; }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .hero-photo-frame {
+      aspect-ratio: 3/4;
+      background: rgba(42, 31, 26, 0.03);
+      border: 1px solid var(--sand);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0; transform: translateY(20px);
+      animation: fade-up 0.6s ease-out 0.2s forwards;
+    }
+
+    .hero-photo-frame::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(232,80,58,0.05), transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-photo-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-photo-placeholder {
+      font-family: var(--serif);
+      font-size: 5rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--coral);
+    }
+
+    .hero-photo-hint {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    .hero-text {
+      opacity: 0; transform: translateY(20px);
+      animation: fade-up 0.6s ease-out 0.3s forwards;
+    }
+
+    .page-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+      font-weight: 300;
+      color: var(--espresso);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .page-hero h1 em {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--coral);
+    }
+
+    .hero-intro {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      color: var(--mocha);
+      line-height: 1.85;
+      max-width: 480px;
+    }
+
+    .hero-creds {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      color: var(--stone);
+      letter-spacing: 0.03em;
+      line-height: 1.8;
+      margin-top: 1.5rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--sand);
+    }
+
+    @keyframes fade-up { to { opacity: 1; transform: translateY(0); } }
+
+    /* ── SECTIONS ── */
+    .section { padding: 5rem 0; }
+    .section-ivory { background: var(--ivory); }
+
+    /* ── PROSE — centered reading column ── */
+    .prose-column {
+      max-width: 680px;
+    }
+
+    .prose-column p {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      color: var(--mocha);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .prose-column p:last-child { margin-bottom: 0; }
+
+    .prose-lead {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--espresso);
+      line-height: 1.65;
+      margin-bottom: 1.8rem !important;
+    }
+
+    .prose-closer {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--plum);
+      line-height: 1.65;
+      margin-top: 0.5rem;
+    }
+
+    .prose-highlight {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--espresso);
+    }
+
+    /* Optional inline photo break */
+    .story-photo-break {
+      margin: 2.5rem 0;
+      aspect-ratio: 16/9;
+      max-width: 540px;
+      background: rgba(42, 31, 26, 0.03);
+      border: 1px solid var(--sand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .story-photo-break::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(232,80,58,0.04), transparent 60%);
+      pointer-events: none;
+    }
+
+    .story-photo-hint {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── CREDENTIALS GRID ── */
+    .cred-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .cred-card {
+      padding: 2.2rem;
+      border: 1px solid var(--sand);
+      background: var(--cream);
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cred-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--coral), var(--plum));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .cred-card:hover {
+      border-color: var(--coral);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(42, 31, 26, 0.06);
+    }
+
+    .cred-card:hover::before { opacity: 1; }
+
+    .cred-badge-placeholder {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--coral-glow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .cred-badge-placeholder svg {
+      width: 22px;
+      height: 22px;
+      color: var(--coral);
+    }
+
+    .cred-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--espresso);
+      margin-bottom: 0.4rem;
+      line-height: 1.35;
+    }
+
+    .cred-subtitle {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      color: var(--coral);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.8rem;
+    }
+
+    .cred-detail {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      color: var(--mocha);
+      line-height: 1.7;
+    }
+
+    .cred-diploma-placeholder {
+      margin-top: 1.2rem;
+      padding: 0.8rem;
+      background: var(--ivory);
+      border: 1px dashed var(--sand);
+      text-align: center;
+    }
+
+    .cred-diploma-hint {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── METHOD LINK ── */
+    .method-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--coral);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: all 0.3s;
+      margin-top: 1rem;
+    }
+
+    .method-link:hover { gap: 0.8rem; }
+    .method-link svg { width: 14px; height: 14px; transition: transform 0.3s; }
+    .method-link:hover svg { transform: translateX(3px); }
+
+    /* ── CLOSING CTA ── */
+    .closing {
+      text-align: center;
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .closing::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, var(--coral-soft) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .closing-headline {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3vw, 2rem);
+      font-weight: 400;
+      color: var(--espresso);
+      margin-bottom: 1rem;
+      line-height: 1.35;
+      position: relative;
+      z-index: 1;
+    }
+
+    .closing-headline em { font-style: italic; color: var(--coral); }
+
+    .closing-sub {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      color: var(--mocha);
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--espresso); padding: 3rem 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem; }
+    .footer-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--cream); margin-bottom: 0.4rem; }
+    .footer-tagline { font-family: var(--display); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase; color: var(--muted); }
+    .footer-right { text-align: right; }
+    .footer-links { display: flex; gap: 1.5rem; margin-bottom: 0.8rem; }
+    .footer-links a { font-family: var(--sans); font-size: 0.78rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s; }
+    .footer-links a:hover { color: var(--cream); }
+    .footer-legal { font-family: var(--sans); font-size: 0.7rem; color: rgba(255,255,255,0.3); line-height: 1.8; }
+    .footer-legal a { color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.3s; }
+    .footer-legal a:hover { color: rgba(255,255,255,0.5); }
+
+    /* ── STICKY MOBILE CTA ── */
+    .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: var(--coral); padding: 0.9rem 1.5rem; display: none; justify-content: space-between; align-items: center; z-index: 150; transform: translateY(100%); transition: transform 0.3s ease; }
+    .sticky-cta.visible { transform: translateY(0); }
+    .sticky-cta-text { font-family: var(--sans); font-size: 0.8rem; color: #fff; }
+    .sticky-cta-link { font-family: var(--sans); font-size: 0.8rem; color: #fff; font-weight: 700; text-decoration: none; letter-spacing: 0.05em; }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: block; }
+      .nav-inner { justify-content: center; position: relative; }
+      .nav-hamburger { position: absolute; right: 1.5rem; }
+
+      .section { padding: 3.5rem 0; }
+      .page-hero { padding: 8rem 1.5rem 3rem; }
+      .hero-ring, .hero-ring-2, .hero-line { display: none; }
+
+      .hero-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-photo-frame { max-width: 300px; }
+
+      .cred-grid { grid-template-columns: 1fr; }
+
+      .sticky-cta { display: flex; }
+      .footer-inner { flex-direction: column; align-items: center; text-align: center; }
+      .footer-right { text-align: center; }
+      .footer-links { justify-content: center; }
+      .footer { padding-bottom: 5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .page-hero h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Veronika Naumchak</a>
+      <ul class="nav-links">
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="method.html">The Method</a></li>
+        <li><a href="index.html#work">Work With Me</a></li>
+        <li><a href="index.html#intake" class="nav-cta">Start Here</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="method.html" class="mobile-nav-link">The Method</a>
+    <a href="index.html#work" class="mobile-nav-link">Work With Me</a>
+    <a href="index.html#intake" class="mobile-cta mobile-nav-link">Start Here</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="hero-ring"></div>
+    <div class="hero-ring-2"></div>
+    <div class="hero-line"></div>
+    <div class="page-wrap">
+      <div class="hero-layout">
+        <div class="hero-photo-frame">
+          <!-- TODO: Replace with editorial portrait — warm, natural, confident. Not a studio headshot. -->
+          <div class="hero-photo-inner">
+            <span class="hero-photo-placeholder">V</span>
+            <span class="hero-photo-hint">Photo coming soon</span>
+          </div>
+        </div>
+        <div class="hero-text">
+          <div class="section-label">About</div>
+          <h1>I teach what I had to <em>learn the hard way.</em></h1>
+          <p class="hero-intro">Before I became a practitioner, I was a client. Before I could hold space for your transformation, I had to survive my own. This is who I am &mdash; not the CV version. The real one.</p>
+          <div class="hero-creds">
+            Certified RTT Practitioner&reg; &middot; CBH Level 5 Diploma, UK College of Hypnosis &amp; Hypnotherapy &middot; Somatic Modalities
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider-subtle"></div>
+
+  <!-- WHY IT MATTERS WHO YOU WORK WITH -->
+  <section class="section">
+    <div class="page-wrap">
+      <div class="section-label reveal">Why It Matters Who You Work With</div>
+      <div class="prose-column reveal">
+        <p>You can find qualified practitioners anywhere. Qualifications matter &mdash; but they're not what transforms you.</p>
+        <p>Your nervous system learns from the nervous system working with yours. Neuroscience calls it co-regulation &mdash; when the person guiding you has done the deep work themselves, your system starts to calibrate to theirs. Not because they told you to relax. Because their body is teaching yours what regulated actually feels like.</p>
+        <p>That's why who you work with isn't a detail. It's the thing that makes or breaks the entire process.</p>
+        <p class="prose-closer">The person guiding your shift should embody it. Not perform it. Not theorise about it. Actually live it.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider-subtle"></div>
+
+  <!-- MY STORY -->
+  <section class="section section-ivory">
+    <div class="page-wrap">
+      <div class="section-label reveal">My Story</div>
+      <div class="prose-column reveal">
+        <p class="prose-lead">I started my own therapeutic work at fifteen.</p>
+        <p>At fifteen, I left home for boarding school in Scotland &mdash; a different country, no family, no safety net. Within months, I developed a severe eating disorder. Three years of it. The kind where you don't know if you're going to come out the other side.</p>
+        <p>My godmother &mdash; a hypnotherapist and psychologist specialising in psychosomatics &mdash; was the first person who showed me what real therapeutic work could do. Not just talking about the problem. Reaching the part of me that was running it. That was the moment I understood: the mind can change the body. The subconscious can be rewritten. And the right person guiding you changes everything.</p>
+        <p>Through that work, I learned to reconnect with myself &mdash; my body, my impulses, my voice. To actually hear myself instead of overriding every signal. To be on my own team instead of at war with myself.</p>
+        <p class="prose-highlight">I healed the eating disorder completely. I've been free of it for eleven years.</p>
+      </div>
+
+      <!-- Optional photo break -->
+      <div class="story-photo-break reveal">
+        <!-- TODO: Candid lifestyle photo — natural setting, not posed -->
+        <span class="story-photo-hint">Photo placeholder</span>
+      </div>
+
+      <div class="prose-column reveal">
+        <p>But the bigger shift was realising I didn't have to live on autopilot. That I could take my life into my own hands &mdash; not react to it, but actually create it. That became the turning point for everything that followed.</p>
+        <p>Since then, life kept testing it. A toxic relationship that nearly erased me. War in my country. Cancer in my family. A nicotine addiction I carried for over a decade. Each time, I rebuilt &mdash; not back to who I was, but into someone clearer, stronger, more free.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider-subtle"></div>
+
+  <!-- WHAT DRIVES THIS -->
+  <section class="section">
+    <div class="page-wrap">
+      <div class="section-label reveal">What Drives This</div>
+      <div class="prose-column reveal">
+        <p>When I was going through my own hardships, I didn't just want someone with the right qualifications. I wanted someone who'd actually been where I was. Who understood the pain from the inside. That was harder to find than it should have been.</p>
+        <p>After years of my own transformations, I couldn't ignore it anymore &mdash; I keep seeing earlier versions of myself in the women around me. The same stuck places, the same conditioning running the show. I want to help them break free from it the same way I did.</p>
+        <p>That's why I specialised in evidence-based modalities &mdash; cognitive behavioural hypnotherapy, rapid transformational therapy, and somatic release work. These are clinically grounded approaches, not wellness trends. I chose them because they create real, lasting change &mdash; and because they're what worked on me.</p>
+        <p class="prose-closer">This isn't a career pivot. It's the thing my entire journey was building towards.</p>
+        <a href="method.html" class="method-link">See the full method <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- TRAINING & CREDENTIALS -->
+  <section class="section">
+    <div class="page-wrap">
+      <div class="section-label reveal">Training &amp; Credentials</div>
+      <div class="cred-grid">
+
+        <!-- CBH -->
+        <div class="cred-card reveal">
+          <div class="cred-badge-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div class="cred-title">Level 5 Higher Diploma in Cognitive Behavioural Hypnotherapy (Hypno-CBT&reg;)</div>
+          <div class="cred-subtitle">UK College of Hypnosis &amp; Hypnotherapy</div>
+          <div class="cred-detail">500-hour practitioner qualification &mdash; the UK's only externally verified Level 5 diploma in the field, awarded by NCFE. Integrates CBT, clinical hypnosis, and mindfulness into one evidence-based framework.</div>
+          <div class="cred-diploma-placeholder">
+            <span class="cred-diploma-hint">Diploma image coming soon</span>
+          </div>
+        </div>
+
+        <!-- RTT -->
+        <div class="cred-card reveal">
+          <div class="cred-badge-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div class="cred-title">Certified RTT Practitioner&reg;</div>
+          <div class="cred-subtitle">Rapid Transformational Therapy &mdash; developed by Marisa Peer</div>
+          <div class="cred-detail">Combines hypnotherapy, psychotherapy, and neuroscience to access and transform root-cause beliefs and behaviours.</div>
+          <div class="cred-diploma-placeholder">
+            <span class="cred-diploma-hint">Certificate image coming soon</span>
+          </div>
+        </div>
+
+        <!-- Somatic -->
+        <div class="cred-card reveal">
+          <div class="cred-badge-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div class="cred-title">Somatic Release Training</div>
+          <div class="cred-subtitle">Under Olga Divieyeva &mdash; psychologist, psychosomatics specialist</div>
+          <div class="cred-detail">Body-based trauma processing and nervous system regulation.</div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="closing">
+    <div class="page-wrap">
+      <h2 class="closing-headline reveal">If something's clicking &mdash; <em>that's not nothing.</em></h2>
+      <p class="closing-sub reveal">You don't need to have it figured out. You just need to be done with autopilot.</p>
+      <div class="reveal" style="position: relative; z-index: 1;">
+        <a href="index.html#intake" class="btn-primary">Tell Me What's Going On <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="page-wrap">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-logo">Veronika Naumchak</div>
+          <div class="footer-tagline">Stop explaining the pattern. Break it.</div>
+        </div>
+        <div class="footer-right">
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="method.html">The Method</a>
+            <a href="index.html#work">Work With Me</a>
+            <a href="https://instagram.com/veronika_mindbodysoul" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://tiktok.com/@veronika_mindbodysoul" target="_blank" rel="noopener">TikTok</a>
+            <a href="mailto:hello@veronikanaumchak.com">Email</a>
+          </div>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a> &middot; <a href="#">Terms</a> &middot; &copy; 2026 Veronika Naumchak
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- STICKY MOBILE CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <span class="sticky-cta-text">Something needs to change.</span>
+    <a href="index.html#intake" class="sticky-cta-link">Tell Me What's Going On &rarr;</a>
+  </div>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const stickyCta = document.getElementById('stickyCta');
+    const pageHero = document.querySelector('.page-hero');
+
+    function onScroll() {
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 10);
+      if (pageHero) {
+        const heroBottom = pageHero.offsetTop + pageHero.offsetHeight;
+        stickyCta.classList.toggle('visible', y > heroBottom - 100);
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
