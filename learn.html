@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn — Veronika Naumchak | Hypnotherapy & Somatic Coaching</title>
+  <meta name="description" content="Psychoeducation, nervous system science, and the patterns beneath the patterns. Explore Good Girl conditioning, fawn response, somatic healing, and more.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E◆%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Fraunces:ital,opsz,wght,WONK@0,9..144,300,0;0,9..144,400,0;0,9..144,500,0;0,9..144,600,0;0,9..144,700,0;1,9..144,300,0;1,9..144,400,0;1,9..144,500,0;1,9..144,600,0;1,9..144,700,0&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { font-variation-settings: 'WONK' 0 !important; }
+    .nav-logo, .footer-logo,
+    .hero-headline, .hero-headline *,
+    .hero-headline em, .hero-headline i,
+    .section-heading, .section-heading *,
+    .section-heading em, .section-heading i,
+    .gg-title, .gg-num, .gg-pattern, .gg-cta-text,
+    .ns-state-name, .ns-hero-text, .ns-note,
+    .cta-headline, .cta-headline *,
+    .cta-headline em, .cta-headline i,
+    [style*="Fraunces"], [style*="serif"] {
+      font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
+    }
+
+    :root {
+      --cream: #FDF6EE;
+      --ivory: #FAF0E4;
+      --linen: #F3E8DA;
+      --sand: #E8D9C8;
+      --taupe: #C4B5A4;
+
+      --espresso: #2A1F1A;
+      --coffee: #3D302A;
+      --mocha: #5C4D42;
+      --stone: #8A7B70;
+      --muted: #A89888;
+
+      --coral: #E8503A;
+      --coral-hot: #D43D28;
+      --coral-light: #F06B55;
+      --coral-glow: rgba(232, 80, 58, 0.12);
+      --coral-soft: rgba(232, 80, 58, 0.06);
+
+      --plum: #5C2751;
+      --plum-deep: #3E1A36;
+      --plum-light: #7A3B6B;
+
+      --terracotta: #C87B5A;
+      --gold: #D4A856;
+
+      --serif: 'Fraunces', Georgia, serif;
+      --display: 'Syne', sans-serif;
+      --sans: 'Bricolage Grotesque', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--espresso);
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    .page-wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── NAVIGATION ── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: var(--cream);
+      border-bottom: 1px solid var(--sand);
+      transition: box-shadow 0.3s;
+    }
+    .nav.scrolled { box-shadow: 0 2px 20px rgba(42, 31, 26, 0.06); }
+    .nav-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--espresso);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      align-items: center;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      color: var(--stone);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--espresso); }
+    .nav-cta {
+      font-family: var(--sans) !important;
+      font-size: 0.7rem !important;
+      font-weight: 600 !important;
+      color: var(--coral) !important;
+      letter-spacing: 0.1em !important;
+      padding: 0.55rem 1.3rem;
+      border: 1.5px solid var(--coral);
+      transition: all 0.3s !important;
+    }
+    .nav-cta:hover { background: var(--coral-glow) !important; }
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 28px;
+      height: 20px;
+      position: relative;
+      z-index: 300;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 100%;
+      height: 1.5px;
+      background: var(--espresso);
+      position: absolute;
+      left: 0;
+      transition: all 0.3s;
+    }
+    .nav-hamburger span:nth-child(1) { top: 0; }
+    .nav-hamburger span:nth-child(2) { top: 9px; }
+    .nav-hamburger span:nth-child(3) { top: 18px; }
+    .nav-hamburger.open span:nth-child(1) { top: 9px; transform: rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { top: 9px; transform: rotate(-45deg); }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 64px; left: 0; right: 0; bottom: 0;
+      background: var(--cream);
+      z-index: 199;
+      padding: 2rem 1.5rem;
+      flex-direction: column;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: var(--sans);
+      font-size: 1rem;
+      color: var(--espresso);
+      text-decoration: none;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--sand);
+      display: block;
+    }
+    .mobile-menu .mobile-cta {
+      margin-top: 2rem;
+      display: inline-block;
+      background: var(--coral);
+      color: #fff;
+      padding: 1rem 2rem;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      border-bottom: none;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 8rem 1.5rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px; height: 800px;
+      background:
+        radial-gradient(circle at 30% 40%, rgba(232, 80, 58, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(92, 39, 81, 0.06) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(212, 168, 86, 0.04) 0%, transparent 60%);
+      animation: hero-pulse 7s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes hero-pulse {
+      0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
+    }
+
+    .hero-label {
+      font-family: var(--display);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-headline {
+      font-family: var(--serif);
+      font-size: 3.2rem;
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--espresso);
+      max-width: 680px;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--coral);
+      font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
+    }
+
+    .hero-sub {
+      font-family: var(--sans);
+      font-size: 1.05rem;
+      color: var(--mocha);
+      max-width: 560px;
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── FEED / TIMELINE ── */
+    .feed {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+      position: relative;
+    }
+
+    /* Timeline line */
+    .feed::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 3rem;
+      width: 1px;
+      height: 100%;
+      background: var(--sand);
+    }
+
+    .feed-post {
+      position: relative;
+      margin-bottom: 4rem;
+      padding-left: 5rem;
+    }
+
+    .feed-post:last-child { margin-bottom: 0; }
+
+    /* Timeline dot */
+    .feed-post::before {
+      content: '';
+      position: absolute;
+      left: 2.55rem;
+      top: 0.3rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--cream);
+      border: 2px solid var(--coral);
+      z-index: 2;
+    }
+
+    .feed-date {
+      font-family: var(--display);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 1.2rem;
+    }
+
+    .feed-card {
+      background: #fff;
+      border: 1px solid var(--sand);
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+    .feed-card:hover {
+      box-shadow: 0 8px 30px rgba(42, 31, 26, 0.06);
+    }
+
+    .feed-card-gradient {
+      height: 4px;
+    }
+    .gradient-coral-plum { background: linear-gradient(90deg, var(--coral), var(--plum)); }
+    .gradient-plum-terracotta { background: linear-gradient(90deg, var(--plum), var(--terracotta)); }
+
+    .feed-card-header {
+      padding: 2.5rem 2.5rem 0;
+    }
+
+    .feed-card-tag {
+      font-family: var(--display);
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-heading {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--espresso);
+      margin-bottom: 0.8rem;
+    }
+    .section-heading em {
+      font-style: italic;
+      color: var(--coral);
+      font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
+    }
+
+    .section-sub {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      color: var(--mocha);
+      line-height: 1.7;
+      max-width: 640px;
+    }
+
+    .feed-card-body {
+      padding: 2rem 2.5rem 2.5rem;
+    }
+
+    /* ═══════════════════════════════════════
+       GOOD GIRL CONDITIONING GRID
+    ═══════════════════════════════════════ */
+    .gg-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    .gg-card {
+      border: 1px solid var(--sand);
+      margin-right: -1px;
+      margin-bottom: -1px;
+      padding: 2.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: default;
+    }
+
+    .gg-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 0;
+      background: linear-gradient(135deg, var(--coral) 0%, var(--plum) 100%);
+      transition: height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 0;
+    }
+
+    .gg-card:hover::before { height: 100%; }
+    .gg-card:hover { border-color: transparent; z-index: 2; transform: scale(1.02); }
+    .gg-card:hover .gg-icon { color: rgba(255,255,255,0.25); transform: rotate(-5deg) scale(1.1); }
+    .gg-card:hover .gg-num { color: rgba(255,255,255,0.3); }
+    .gg-card:hover .gg-title { color: #fff; }
+    .gg-card:hover .gg-desc { color: rgba(255,255,255,0.8); }
+    .gg-card:hover .gg-pattern { color: rgba(255,255,255,0.5); border-color: rgba(255,255,255,0.2); }
+
+    .gg-icon {
+      position: relative;
+      z-index: 1;
+      font-size: 3rem;
+      line-height: 1;
+      margin-bottom: 1.2rem;
+      color: var(--coral);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      display: block;
+    }
+
+    .gg-num {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      font-family: var(--serif);
+      font-size: 3.5rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--sand);
+      line-height: 1;
+      z-index: 1;
+      transition: color 0.4s;
+    }
+
+    .gg-title {
+      position: relative;
+      z-index: 1;
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--espresso);
+      margin-bottom: 0.6rem;
+      line-height: 1.25;
+      transition: color 0.4s;
+    }
+
+    .gg-desc {
+      position: relative;
+      z-index: 1;
+      font-size: 0.85rem;
+      color: var(--mocha);
+      line-height: 1.7;
+      margin-bottom: 0.8rem;
+      transition: color 0.4s;
+    }
+
+    .gg-pattern {
+      position: relative;
+      z-index: 1;
+      font-family: var(--serif);
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--plum-light);
+      line-height: 1.5;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--sand);
+      transition: color 0.4s, border-color 0.4s;
+    }
+
+    .gg-cta-banner {
+      grid-column: 1 / -1;
+      background: var(--espresso);
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid var(--espresso);
+    }
+
+    .gg-cta-text {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+    }
+    .gg-cta-text em { color: var(--coral-light); font-weight: 500; }
+
+    .gg-cta-btn {
+      padding: 0.8rem 2rem;
+      background: var(--coral);
+      color: #fff;
+      border: none;
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s;
+      white-space: nowrap;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .gg-cta-btn:hover { background: var(--coral-hot); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(232,80,58,0.3); }
+
+    /* ═══════════════════════════════════════
+       NERVOUS SYSTEM STATES
+    ═══════════════════════════════════════ */
+    .ns-wrapper { position: relative; }
+
+    .ns-hero-text {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--plum);
+      line-height: 1.5;
+    }
+
+    .ns-states-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .ns-state-card {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .ns-state-card:hover { transform: translateY(-6px); }
+
+    .ns-state-visual {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .ns-state-visual svg {
+      width: 70%;
+      height: 70%;
+      position: relative;
+      z-index: 1;
+    }
+    .ns-state-visual::after {
+      content: '';
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      opacity: 0.15;
+      filter: blur(30px);
+    }
+
+    .ns-fight .ns-state-visual { background: var(--coral); }
+    .ns-fight .ns-state-visual::after { background: #fff; }
+    .ns-fight svg { stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; }
+
+    .ns-flight .ns-state-visual { background: var(--terracotta); }
+    .ns-flight .ns-state-visual::after { background: #fff; }
+    .ns-flight svg { stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; }
+
+    .ns-freeze .ns-state-visual { background: var(--plum); }
+    .ns-freeze .ns-state-visual::after { background: #fff; }
+    .ns-freeze svg { stroke: rgba(255,255,255,0.9); fill: none; stroke-width: 2; stroke-linecap: round; }
+
+    .ns-fawn .ns-state-visual { background: var(--espresso); }
+    .ns-fawn .ns-state-visual::after { background: var(--gold); }
+    .ns-fawn svg { stroke: var(--gold); fill: none; stroke-width: 2; stroke-linecap: round; }
+
+    .ns-state-body {
+      padding: 1.5rem;
+      border: 1px solid var(--sand);
+      border-top: none;
+    }
+
+    .ns-state-name {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--espresso);
+      margin-bottom: 0.15rem;
+    }
+
+    .ns-state-tagline {
+      font-family: var(--display);
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+    .ns-fight .ns-state-tagline { color: var(--coral); }
+    .ns-flight .ns-state-tagline { color: var(--terracotta); }
+    .ns-freeze .ns-state-tagline { color: var(--plum); }
+    .ns-fawn .ns-state-tagline { color: var(--gold); }
+
+    .ns-state-desc {
+      font-size: 0.82rem;
+      color: var(--mocha);
+      line-height: 1.7;
+      margin-bottom: 0.6rem;
+    }
+
+    .ns-state-signs {
+      font-size: 0.75rem;
+      color: var(--stone);
+      line-height: 1.6;
+    }
+    .ns-state-signs strong {
+      color: var(--espresso);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    /* Regulation spectrum */
+    .ns-spectrum {
+      border: 1px solid var(--sand);
+      padding: 2.5rem;
+      background: var(--ivory);
+      position: relative;
+    }
+
+    .ns-spectrum-title {
+      font-family: var(--display);
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--coral);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .ns-bar-container {
+      position: relative;
+      height: 60px;
+      margin: 0 auto;
+      max-width: 800px;
+    }
+
+    .ns-bar {
+      position: absolute;
+      top: 20px;
+      left: 0;
+      right: 0;
+      height: 20px;
+      border-radius: 10px;
+      background: linear-gradient(90deg, var(--coral-hot) 0%, var(--coral) 20%, var(--terracotta) 35%, var(--gold) 50%, var(--plum-light) 70%, var(--plum) 85%, var(--espresso) 100%);
+    }
+
+    .ns-bar-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 3.5rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .ns-bar-label {
+      font-size: 0.7rem;
+      color: var(--stone);
+      text-align: center;
+    }
+    .ns-bar-label strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--espresso);
+      margin-bottom: 0.15rem;
+    }
+
+    .ns-window-marker {
+      position: absolute;
+      top: 8px;
+      left: 38%;
+      width: 24%;
+      height: 44px;
+      border: 2px solid var(--cream);
+      border-radius: 6px;
+      background: rgba(253,246,238,0.3);
+    }
+
+    .ns-window-label {
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--display);
+      font-size: 0.5rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--cream);
+      background: var(--espresso);
+      padding: 0.15rem 0.5rem;
+      white-space: nowrap;
+    }
+
+    .ns-note {
+      text-align: center;
+      margin-top: 2rem;
+      font-family: var(--serif);
+      font-size: 0.92rem;
+      font-style: italic;
+      color: var(--plum);
+      line-height: 1.5;
+    }
+
+    /* ── BOTTOM CTA ── */
+    .bottom-cta {
+      background: var(--espresso);
+      padding: 5rem 0;
+      text-align: center;
+    }
+    .cta-headline {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1.3;
+      margin-bottom: 1.2rem;
+    }
+    .cta-sub {
+      font-family: var(--sans);
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+    .btn-primary {
+      background: var(--coral);
+      color: #fff;
+      padding: 1rem 2.5rem;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      background: var(--coral-hot);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px var(--coral-glow);
+    }
+    .btn-primary svg { width: 16px; height: 16px; transition: transform 0.3s; }
+    .btn-primary:hover svg { transform: translateX(4px); }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--espresso); padding: 3rem 0; }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .footer-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--cream); margin-bottom: 0.4rem; }
+    .footer-tagline {
+      font-family: var(--display);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .footer-right { text-align: right; }
+    .footer-links { display: flex; gap: 1.5rem; margin-bottom: 0.8rem; }
+    .footer-links a {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--cream); }
+    .footer-legal {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.3);
+      line-height: 1.8;
+    }
+    .footer-legal a { color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.3s; }
+    .footer-legal a:hover { color: rgba(255,255,255,0.5); }
+
+    /* ── STICKY MOBILE CTA ── */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: var(--coral);
+      padding: 0.9rem 1.5rem;
+      display: none;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 150;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    .sticky-cta.visible { transform: translateY(0); }
+    .sticky-cta-text { font-family: var(--sans); font-size: 0.8rem; color: #fff; }
+    .sticky-cta-link { font-family: var(--sans); font-size: 0.8rem; color: #fff; font-weight: 700; text-decoration: none; letter-spacing: 0.05em; }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .gg-grid { grid-template-columns: repeat(2, 1fr); }
+      .ns-states-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: block; }
+      .nav-inner { justify-content: center; position: relative; }
+      .nav-hamburger { position: absolute; right: 1.5rem; }
+
+      .hero { min-height: 40vh; padding: 7rem 1.5rem 3rem; }
+      .hero-headline { font-size: 2.4rem; }
+
+      .feed::before { left: 1.5rem; }
+      .feed-post { padding-left: 3.5rem; }
+      .feed-post::before { left: 1.05rem; }
+
+      .feed-card-header { padding: 1.8rem 1.5rem 0; }
+      .feed-card-body { padding: 1.5rem; }
+      .section-heading { font-size: 1.6rem; }
+
+      .gg-card { padding: 2rem 1.5rem; }
+      .gg-cta-banner { flex-direction: column; gap: 1rem; text-align: center; padding: 1.5rem; }
+
+      .cta-headline { font-size: 1.7rem; }
+      .bottom-cta { padding: 3.5rem 0; }
+
+      .footer-inner { flex-direction: column; align-items: center; text-align: center; }
+      .footer-right { text-align: center; }
+      .footer-links { justify-content: center; }
+      .footer { padding-bottom: 5rem; }
+
+      .sticky-cta { display: flex; }
+    }
+
+    @media (max-width: 600px) {
+      .gg-grid { grid-template-columns: 1fr; }
+      .ns-states-grid { grid-template-columns: 1fr; }
+      .ns-window-marker { display: none; }
+      .ns-spectrum { padding: 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-headline { font-size: 2rem; }
+      .hero-sub { font-size: 0.95rem; }
+      .section-heading { font-size: 1.4rem; }
+      .gg-card { padding: 1.5rem 1.2rem; }
+      .gg-num { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Veronika Naumchak</a>
+      <ul class="nav-links">
+        <li><a href="/about">About</a></li>
+        <li><a href="/method">The Method</a></li>
+        <li><a href="/learn">Learn</a></li>
+        <li><a href="/#work">Work With Me</a></li>
+        <li><a href="/#intake" class="nav-cta">Start Here</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/about" class="mobile-nav-link">About</a>
+    <a href="/method" class="mobile-nav-link">The Method</a>
+    <a href="/learn" class="mobile-nav-link">Learn</a>
+    <a href="/#work" class="mobile-nav-link">Work With Me</a>
+    <a href="/#intake" class="mobile-nav-link mobile-cta">Start Here</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-label">LEARN</div>
+    <h1 class="hero-headline">The patterns running your life didn't ask for <em>permission.</em></h1>
+    <p class="hero-sub">Nervous system science, conditioning, and the programmes you never chose. This is where you start seeing what's actually driving you.</p>
+  </section>
+
+  <!-- FEED -->
+  <div class="feed">
+
+    <!-- POST 1: Good Girl Conditioning -->
+    <article class="feed-post reveal">
+      <div class="feed-date">2 March 2026</div>
+      <div class="feed-card">
+        <div class="feed-card-gradient gradient-coral-plum"></div>
+        <div class="feed-card-header">
+          <div class="feed-card-tag">GOOD GIRL CONDITIONING</div>
+          <h2 class="section-heading">9 Signs of Good Girl <em>Conditioning</em></h2>
+          <p class="section-sub">These aren't personality traits. They're survival strategies you learned before you had the language to question them.</p>
+        </div>
+        <div class="feed-card-body">
+          <div class="gg-grid">
+            <div class="gg-card">
+              <span class="gg-num">1</span>
+              <span class="gg-icon">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <circle cx="24" cy="24" r="16" opacity="0.3"/>
+                  <path d="M18 28 C18 22, 30 22, 30 28"/>
+                  <circle cx="19" cy="20" r="1.5" fill="currentColor" stroke="none"/>
+                  <circle cx="29" cy="20" r="1.5" fill="currentColor" stroke="none"/>
+                  <path d="M10 24 L2 24 M38 24 L46 24" stroke-dasharray="2 3"/>
+                </svg>
+              </span>
+              <h3 class="gg-title">You apologise for existing</h3>
+              <p class="gg-desc">"Sorry" before every sentence. Sorry for having needs. Sorry for taking up space in a room you were invited into.</p>
+              <div class="gg-pattern">"My needs are an inconvenience to others."</div>
+            </div>
+
+            <div class="gg-card">
+              <span class="gg-num">2</span>
+              <span class="gg-icon">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <path d="M14 34 C14 20, 24 14, 24 14 C24 14, 34 20, 34 34"/>
+                  <path d="M20 28 Q24 24, 28 28"/>
+                  <circle cx="20" cy="22" r="1" fill="currentColor" stroke="none"/>
+                  <circle cx="28" cy="22" r="1" fill="currentColor" stroke="none"/>
+                  <path d="M24 14 L24 8" stroke-dasharray="2 2"/>
+                </svg>
+              </span>
+              <h3 class="gg-title">You can't say no without guilt</h3>
+              <p class="gg-desc">Every boundary feels like a betrayal. You say yes and then resent it. You say no and then spiral for days.</p>
+              <div class="gg-pattern">"If I say no, they'll leave."</div>
+            </div>
+
+            <div class="gg-card">
+              <span class="gg-num">3</span>
+              <span class="gg-icon">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <path d="M12 36 L12 20 C12 14, 18 10, 24 10 C30 10, 36 14, 36 20 L36 36"/>
+                  <path d="M18 26 L30 26" opacity="0.5"/>
+                  <circle cx="20" cy="22" r="1" fill="currentColor" stroke="none"/>
+                  <circle cx="28" cy="22" r="1" fill="currentColor" stroke="none"/>
+                  <path d="M20 30 L28 30"/>
+                </svg>
+              </span>
+              <h3 class="gg-title">You shape-shift in relationships</h3>
+              <p class="gg-desc">You become who they need. Different personality for every friend, partner, colleague. The real one got buried years ago.</p>
+              <div class="gg-pattern">"If they see the real me, they won't stay."</div>
+            </div>
+
+            <div class="gg-card">
+              <span class="gg-num">4</span>
+              <span class="gg-icon">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <rect x="10" y="14" width="28" height="24" rx="2" opacity="0.3"/>
+                  <path d="M10 22 L38 22"/>
+                  <path d="M24 14 L24 10"/>
+                  <path d="M16 28 L32 28 M16 32 L28 32"/>
+                </svg>
+              </span>
+              <h3 class="gg-title">Rest feels like laziness</h3>
+              <p class="gg-desc">You earn rest through productivity. Doing nothing triggers genuine anxiety. Your worth is measured in output.</p>
+              <div class="gg-pattern">"I'm only valuable when I'm useful."</div>
+            </div>
+
+            <div class="gg-card">
+              <span class="gg-num">5</span>
+              <span class="gg-icon">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <circle cx="24" cy="20" r="10"/>
+                  <path d="M24 30 L24 42"/>
+                  <path d="M18 36 L30 36"/>
+                  <path d="M20 16 L20 18 M28 16 L28 18"/>
+                  <path d="M20 24 Q24 22, 28 24"/>
+                </svg>
+              </span>
+              <h3 class="gg-title">Anger terrifies you</h3>
+              <p class="gg-desc">You've learned to swallow rage. It comes out as passive-aggression, people-pleasing, or turning it inward on yourself.</p>
+              <div class="gg-pattern">"Angry women are dangerous. I must stay safe."</div>
+            </div>
+
+            <div class="gg-card">
+              <span class="gg-num">6</span>
+              <span class="gg-icon">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <path d="M16 34 C16 24, 24 18, 24 18"/>
+                  <path d="M32 34 C32 24, 24 18, 24 18"/>
+                  <circle cx="24" cy="14" r="4" opacity="0.4"/>
+                  <path d="M20 28 Q24 26, 28 28" opacity="0.5"/>
+                  <path d="M8 34 L40 34"/>
+                </svg>
+              </span>
+              <h3 class="gg-title">You over-explain everything</h3>
+              <p class="gg-desc">No can't just be no. You build a case, a defence, a justification. As if your boundaries need a legal brief.</p>
+              <div class="gg-pattern">"My reasons aren't good enough on their own."</div>
+            </div>
+
+            <div class="gg-card">
+              <span class="gg-num">7</span>
+              <span class="gg-icon">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <path d="M12 24 C12 16, 20 10, 24 10"/>
+                  <path d="M36 24 C36 16, 28 10, 24 10"/>
+                  <path d="M12 24 C12 32, 20 38, 24 38"/>
+                  <path d="M36 24 C36 32, 28 38, 24 38"/>
+                  <circle cx="24" cy="24" r="3" fill="currentColor" stroke="none" opacity="0.3"/>
+                </svg>
+              </span>
+              <h3 class="gg-title">You don't know what you want</h3>
+              <p class="gg-desc">Menus are agony. "What do you want?" is the hardest question. You've been so tuned to others, your own signal went offline.</p>
+              <div class="gg-pattern">"My desires are irrelevant."</div>
+            </div>
+
+            <div class="gg-card">
+              <span class="gg-num">8</span>
+              <span class="gg-icon">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <path d="M24 8 L24 16"/>
+                  <path d="M16 20 L24 16 L32 20"/>
+                  <path d="M16 20 L16 36 L32 36 L32 20"/>
+                  <path d="M22 36 L22 28 L26 28 L26 36"/>
+                  <path d="M18 24 L20 24 M28 24 L30 24"/>
+                </svg>
+              </span>
+              <h3 class="gg-title">You perform even when alone</h3>
+              <p class="gg-desc">The mask doesn't come off. You perform wellness, perform being fine, perform having it together. Even in your own head.</p>
+              <div class="gg-pattern">"If I stop performing, everything falls apart."</div>
+            </div>
+
+            <div class="gg-card">
+              <span class="gg-num">9</span>
+              <span class="gg-icon">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <path d="M14 24 C14 16, 24 10, 24 10 C24 10, 34 16, 34 24 C34 32, 28 38, 24 38 C20 38, 14 32, 14 24Z"/>
+                  <path d="M24 18 L24 28"/>
+                  <path d="M24 32 L24 34" stroke-dasharray="1 3"/>
+                </svg>
+              </span>
+              <h3 class="gg-title">Love feels like earning</h3>
+              <p class="gg-desc">You don't receive love. You work for it. Affection feels conditional because that's the only version you've ever known.</p>
+              <div class="gg-pattern">"Love is something I have to deserve."</div>
+            </div>
+
+            <div class="gg-cta-banner">
+              <div class="gg-cta-text">These aren't flaws. They're <em>programmes.</em> And programmes can be <em>rewritten.</em></div>
+              <a href="/#intake" class="gg-cta-btn">Begin the Conversation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- POST 2: Nervous System States -->
+    <article class="feed-post reveal">
+      <div class="feed-date">9 March 2026</div>
+      <div class="feed-card">
+        <div class="feed-card-gradient gradient-plum-terracotta"></div>
+        <div class="feed-card-header">
+          <div class="feed-card-tag">NERVOUS SYSTEM</div>
+          <h2 class="section-heading">Your Nervous System <em>Speaks First</em></h2>
+          <p class="section-sub">Before you think, before you choose, before you "decide" to people-please &mdash; your nervous system has already made the call.</p>
+        </div>
+        <div class="feed-card-body">
+          <div class="ns-wrapper">
+            <p class="ns-hero-text">"You didn't choose the fawn response. Your nervous system chose it for you &mdash; decades ago &mdash; and never got the update that you're safe now."</p>
+
+            <div class="ns-states-grid">
+              <!-- Fight -->
+              <div class="ns-state-card ns-fight">
+                <div class="ns-state-visual">
+                  <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="40" r="22"/>
+                    <path d="M42 36 L42 32 M58 36 L58 32"/>
+                    <path d="M40 48 L60 48"/>
+                    <path d="M30 65 L50 55 L70 65"/>
+                    <path d="M30 65 L20 58 M70 65 L80 58"/>
+                    <line x1="26" y1="28" x2="36" y2="24" stroke-width="3"/>
+                    <line x1="74" y1="28" x2="64" y2="24" stroke-width="3"/>
+                  </svg>
+                </div>
+                <div class="ns-state-body">
+                  <h3 class="ns-state-name">Fight</h3>
+                  <div class="ns-state-tagline">The Rage Beneath the Smile</div>
+                  <p class="ns-state-desc">Irritability. Control. Perfectionism. Criticising others to feel safe. The anger you were never allowed to express &mdash; leaking out sideways.</p>
+                  <div class="ns-state-signs">
+                    <strong>Shows up as:</strong>
+                    Snapping at people you love. Micromanaging. Jaw clenching. Road rage. Needing to be right.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Flight -->
+              <div class="ns-state-card ns-flight">
+                <div class="ns-state-visual">
+                  <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="40" r="22"/>
+                    <circle cx="43" cy="37" r="2.5"/>
+                    <circle cx="57" cy="37" r="2.5"/>
+                    <path d="M42 48 Q50 44, 58 48"/>
+                    <path d="M35 60 L28 80 M65 60 L72 80"/>
+                    <path d="M28 80 L22 78 M72 80 L78 78"/>
+                    <path d="M40 22 Q50 12, 60 22" stroke-dasharray="3 3"/>
+                  </svg>
+                </div>
+                <div class="ns-state-body">
+                  <h3 class="ns-state-name">Flight</h3>
+                  <div class="ns-state-tagline">The Escape Artist</div>
+                  <p class="ns-state-desc">Busyness as avoidance. Over-working. Over-exercising. Always moving so you never have to feel. The productive version of running away.</p>
+                  <div class="ns-state-signs">
+                    <strong>Shows up as:</strong>
+                    Can't sit still. Endless to-do lists. Scrolling for hours. Leaving relationships before they get too close.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Freeze -->
+              <div class="ns-state-card ns-freeze">
+                <div class="ns-state-visual">
+                  <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="42" r="22"/>
+                    <line x1="42" y1="38" x2="48" y2="38"/>
+                    <line x1="52" y1="38" x2="58" y2="38"/>
+                    <line x1="42" y1="50" x2="58" y2="50"/>
+                    <path d="M35 64 L35 85 M65 64 L65 85"/>
+                    <path d="M35 85 L30 85 L40 85 M65 85 L60 85 L70 85"/>
+                  </svg>
+                </div>
+                <div class="ns-state-body">
+                  <h3 class="ns-state-name">Freeze</h3>
+                  <div class="ns-state-tagline">The Shutdown</div>
+                  <p class="ns-state-desc">Numbness. Brain fog. Dissociation. Can't think, can't move, can't feel. The body's circuit breaker when everything becomes too much.</p>
+                  <div class="ns-state-signs">
+                    <strong>Shows up as:</strong>
+                    Zoning out mid-conversation. Feeling "nothing." Procrastination that feels paralysing, not lazy. Sleeping too much.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Fawn -->
+              <div class="ns-state-card ns-fawn">
+                <div class="ns-state-visual">
+                  <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="40" r="22"/>
+                    <path d="M42 36 Q45 34, 48 36"/>
+                    <path d="M52 36 Q55 34, 58 36"/>
+                    <path d="M40 48 Q50 54, 60 48"/>
+                    <path d="M30 60 Q36 56, 40 62 L38 80"/>
+                    <path d="M70 60 Q64 56, 60 62 L62 80"/>
+                    <path d="M40 70 L32 65 M60 70 L68 65" stroke-dasharray="2 2"/>
+                  </svg>
+                </div>
+                <div class="ns-state-body">
+                  <h3 class="ns-state-name">Fawn</h3>
+                  <div class="ns-state-tagline">The Good Girl Response</div>
+                  <p class="ns-state-desc">People-pleasing as survival. Becoming what others need. Abandoning your own feelings to manage theirs. The response that looks like kindness but feels like erasure.</p>
+                  <div class="ns-state-signs">
+                    <strong>Shows up as:</strong>
+                    Can't say no. Apologising constantly. Monitoring others' moods. Losing yourself in relationships. Chronic over-giving.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Regulation Spectrum -->
+            <div class="ns-spectrum">
+              <div class="ns-spectrum-title">The Window of Tolerance</div>
+              <div class="ns-bar-container">
+                <div class="ns-bar"></div>
+                <div class="ns-window-marker">
+                  <div class="ns-window-label">Window of Tolerance</div>
+                </div>
+              </div>
+              <div class="ns-bar-labels">
+                <div class="ns-bar-label"><strong>Hyperarousal</strong>Fight / Flight</div>
+                <div class="ns-bar-label"><strong>Regulated</strong>Present / Safe</div>
+                <div class="ns-bar-label"><strong>Hypoarousal</strong>Freeze / Collapse</div>
+              </div>
+            </div>
+
+            <p class="ns-note">"The work isn't about never leaving the window. It's about <em>widening</em> it &mdash; so your nervous system stops making emergency decisions in everyday situations."</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- BOTTOM CTA -->
+  <section class="bottom-cta">
+    <div class="page-wrap">
+      <div class="reveal">
+        <h2 class="cta-headline">You can keep reading about it. Or you can change it.</h2>
+        <p class="cta-sub">Understanding the pattern is step one. Rewiring it is the work.</p>
+        <a href="/#intake" class="btn-primary">
+          Tell Me What's Going On
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="1" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="page-wrap">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-logo">Veronika Naumchak</div>
+          <div class="footer-tagline">Stop explaining the pattern. Break it.</div>
+        </div>
+        <div class="footer-right">
+          <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/method">The Method</a>
+            <a href="/#work">Work With Me</a>
+            <a href="https://instagram.com/veronika_mindbodysoul" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://tiktok.com/@veronika_mindbodysoul" target="_blank" rel="noopener">TikTok</a>
+          </div>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a> &middot; <a href="#">Terms</a> &middot; &copy; 2026 Veronika Naumchak
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- STICKY MOBILE CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <span class="sticky-cta-text">Done reading about it?</span>
+    <a href="/#intake" class="sticky-cta-link">Tell Me What's Going On &rarr;</a>
+  </div>
+
+  <script>
+    // Nav scroll shadow
+    const nav = document.getElementById('nav');
+    const stickyCta = document.getElementById('stickyCta');
+    const heroSection = document.querySelector('.hero');
+
+    function onScroll() {
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 10);
+      if (heroSection) {
+        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+        stickyCta.classList.toggle('visible', y > heroBottom - 100);
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

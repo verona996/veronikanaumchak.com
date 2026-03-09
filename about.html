@@ -20,7 +20,10 @@
     .nav-logo, .footer-logo,
     .closing-headline, .closing-headline *,
     .prose-lead, .prose-closer,
-    .cred-title, .hero-photo-placeholder {
+    .cred-title, .hero-photo-placeholder,
+    .shift-word-struck, .shift-word-gold,
+    .coreg-connection-text,
+    .pull-quote-banner p {
       font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
     }
 
@@ -185,6 +188,256 @@
       font-style: italic;
       font-weight: 500;
       color: var(--coral);
+    }
+
+    /* ── THE SHIFT INFOGRAPHIC ── */
+    .shift-panel {
+      max-width: 540px;
+      margin: 2.5rem 0;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .shift-panel-inner {
+      background: linear-gradient(160deg, var(--coral) 0%, #D44030 50%, var(--plum) 100%);
+      padding: 4rem 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Concentric circles background */
+    .shift-panel-inner::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 420px; height: 420px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow:
+        0 0 0 60px transparent,
+        0 0 0 61px rgba(255,255,255,0.06),
+        0 0 0 130px transparent,
+        0 0 0 131px rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+
+    /* Crosshair lines */
+    .shift-panel-inner::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 420px; height: 1px;
+      background: rgba(255,255,255,0.04);
+      box-shadow: 0 0 0 0 transparent;
+      pointer-events: none;
+    }
+
+    .shift-crosshair-v {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 1px; height: 420px;
+      background: rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+
+    .shift-label {
+      font-family: var(--display);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .shift-word-struck {
+      font-family: var(--serif);
+      font-size: 3rem;
+      font-weight: 800;
+      color: rgba(255,255,255,0.35);
+      text-decoration: line-through;
+      text-decoration-thickness: 3px;
+      text-decoration-color: rgba(255,255,255,0.3);
+      line-height: 1;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+      font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
+    }
+
+    .shift-arrow {
+      margin: 0.8rem 0;
+      opacity: 0.45;
+      position: relative;
+      z-index: 1;
+    }
+
+    .shift-word-gold {
+      font-family: var(--serif);
+      font-size: 4rem;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 4px 30px rgba(0,0,0,0.15);
+      font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
+    }
+
+    .shift-sub {
+      font-family: var(--sans);
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.6;
+      max-width: 320px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .shift-sub strong {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* ── CO-REGULATION DIAGRAM ── */
+    .coreg-visual {
+      margin-top: 3rem;
+      padding: 3rem 2.5rem;
+      background: var(--ivory);
+      border: 1px solid var(--sand);
+      border-radius: 20px;
+    }
+
+    .coreg-title {
+      font-family: var(--display);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--coral);
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .coreg-diagram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+
+    .coreg-person {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      flex: 0 0 180px;
+    }
+
+    .coreg-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .coreg-person.--practitioner .coreg-circle {
+      background: linear-gradient(135deg, var(--plum) 0%, var(--plum-deep) 100%);
+      box-shadow: 0 0 0 3px var(--gold), 0 0 40px rgba(212,168,86,0.15);
+    }
+
+    .coreg-person.--client .coreg-circle {
+      background: linear-gradient(135deg, var(--ivory) 0%, var(--linen) 100%);
+      border: 2px dashed var(--stone);
+    }
+
+    .coreg-person-label {
+      font-family: var(--display);
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--espresso);
+    }
+
+    .coreg-person-desc {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      color: var(--mocha);
+      text-align: center;
+      line-height: 1.45;
+      max-width: 170px;
+    }
+
+    .coreg-connection {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      flex: 0 0 140px;
+    }
+
+    .coreg-wave-line {
+      width: 140px;
+      height: 40px;
+    }
+
+    @keyframes waveFlow {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -40; }
+    }
+
+    .coreg-wave-animated {
+      stroke-dasharray: 8 4;
+      animation: waveFlow 2s linear infinite;
+    }
+
+    .coreg-connection-text {
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--plum);
+      text-align: center;
+      line-height: 1.35;
+      font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
+    }
+
+    /* ── PULL QUOTE BANNER ── */
+    .pull-quote-banner {
+      margin-top: 2.5rem;
+      padding: 2rem 2.5rem;
+      background: var(--plum);
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .pull-quote-banner p {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.45;
+      font-style: italic;
+      font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
+    }
+
+    .pull-quote-banner p strong {
+      color: var(--gold);
+      font-weight: 600;
+      font-style: normal;
     }
 
     .hero-intro {
@@ -473,6 +726,20 @@
 
       .cred-grid { grid-template-columns: 1fr; }
 
+      .coreg-diagram { flex-direction: column; gap: 1.5rem; }
+      .coreg-person { flex: 0 0 auto; }
+      .coreg-connection { flex: 0 0 auto; }
+      .coreg-wave-line { transform: rotate(90deg); }
+      .coreg-visual { padding: 2.5rem 1.5rem; }
+
+      .shift-panel { max-width: 100%; }
+      .shift-panel-inner { padding: 3rem 2rem; }
+      .shift-word-struck { font-size: 2.2rem; }
+      .shift-word-gold { font-size: 3rem; }
+
+      .pull-quote-banner { padding: 1.8rem 1.5rem; }
+      .pull-quote-banner p { font-size: 1rem; }
+
       .sticky-cta { display: flex; }
       .footer-inner { flex-direction: column; align-items: center; text-align: center; }
       .footer-right { text-align: center; }
@@ -494,6 +761,7 @@
       <ul class="nav-links">
         <li><a href="/about" class="active">About</a></li>
         <li><a href="/method">The Method</a></li>
+        <li><a href="/learn">Learn</a></li>
         <li><a href="/#work">Work With Me</a></li>
         <li><a href="/#intake" class="nav-cta">Start Here</a></li>
       </ul>
@@ -506,6 +774,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="/about" class="mobile-nav-link">About</a>
     <a href="/method" class="mobile-nav-link">The Method</a>
+    <a href="/learn" class="mobile-nav-link">Learn</a>
     <a href="/#work" class="mobile-nav-link">Work With Me</a>
     <a href="/#intake" class="mobile-cta mobile-nav-link">Start Here</a>
   </div>
@@ -542,7 +811,54 @@
         <p>You can find qualified practitioners anywhere. Qualifications matter &mdash; but they're not what transforms you.</p>
         <p>Your nervous system learns from the nervous system working with yours. Neuroscience calls it co-regulation &mdash; when the person guiding you has done the deep work themselves, your system starts to calibrate to theirs. Not because they told you to relax. Because their body is teaching yours what regulated actually feels like.</p>
         <p>That's why who you work with isn't a detail. It's the thing that makes or breaks the entire process.</p>
-        <p class="prose-closer">The person guiding your shift should embody it. Not perform it. Not theorise about it. Actually live it.</p>
+      </div>
+
+      <!-- Co-regulation diagram -->
+      <div class="coreg-visual reveal">
+        <div class="coreg-title">How co-regulation works</div>
+        <div class="coreg-diagram">
+          <!-- Practitioner -->
+          <div class="coreg-person --practitioner">
+            <div class="coreg-circle">
+              <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <path d="M10 30 Q17 22 25 30 Q33 38 40 30 Q47 22 55 30" stroke="#D4A856" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <path d="M10 30 Q17 22 25 30 Q33 38 40 30 Q47 22 55 30" stroke="#D4A856" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.3" transform="translate(0, 8)"/>
+                <circle cx="30" cy="18" r="3" fill="#D4A856"/>
+              </svg>
+            </div>
+            <div class="coreg-person-label">Practitioner</div>
+            <div class="coreg-person-desc">Regulated. Has done the deep work themselves.</div>
+          </div>
+
+          <!-- Connection -->
+          <div class="coreg-connection">
+            <svg class="coreg-wave-line" viewBox="0 0 140 40" fill="none">
+              <path d="M0 20 Q17 5 35 20 Q52 35 70 20 Q87 5 105 20 Q122 35 140 20" stroke="var(--coral)" stroke-width="2" fill="none" stroke-linecap="round" class="coreg-wave-animated"/>
+              <path d="M0 20 Q17 35 35 20 Q52 5 70 20 Q87 35 105 20 Q122 5 140 20" stroke="var(--plum)" stroke-width="1.5" fill="none" stroke-linecap="round" class="coreg-wave-animated" opacity="0.4"/>
+            </svg>
+            <div class="coreg-connection-text">Their body teaches yours what regulated actually feels like</div>
+          </div>
+
+          <!-- Client -->
+          <div class="coreg-person --client">
+            <div class="coreg-circle">
+              <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <path d="M10 20 Q13 8 16 25 Q19 42 22 15 Q25 5 28 30 Q31 45 34 18 Q37 8 40 28 Q43 40 46 20 Q49 10 52 25" stroke="#4A3D35" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+                <circle cx="15" cy="15" r="2" fill="#4A3D35" opacity="0.3"/>
+                <circle cx="35" cy="12" r="1.5" fill="#4A3D35" opacity="0.4"/>
+                <circle cx="25" cy="40" r="2" fill="#4A3D35" opacity="0.25"/>
+                <circle cx="45" cy="35" r="1.5" fill="#4A3D35" opacity="0.35"/>
+              </svg>
+            </div>
+            <div class="coreg-person-label">Your system</div>
+            <div class="coreg-person-desc">Starts to calibrate. Not because they told you to relax.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pull quote banner -->
+      <div class="pull-quote-banner reveal">
+        <p>The person guiding your shift should <strong>embody it.</strong> Not perform it. Not theorise about it. <strong>Actually live it.</strong></p>
       </div>
     </div>
   </section>
@@ -561,14 +877,24 @@
         <p class="prose-highlight">I healed the eating disorder completely. I've been free of it for eleven years.</p>
       </div>
 
-      <!-- Optional photo break -->
-      <div class="story-photo-break reveal">
-        <!-- TODO: Candid lifestyle photo — natural setting, not posed -->
-        <span class="story-photo-hint">Photo placeholder</span>
-      </div>
-
       <div class="prose-column reveal">
         <p>But the bigger shift was realising I didn't have to live on autopilot. That I could take my life into my own hands &mdash; not react to it, but actually create it. That became the turning point for everything that followed.</p>
+
+      <!-- The Shift infographic -->
+      <div class="shift-panel">
+        <div class="shift-panel-inner">
+          <div class="shift-crosshair-v"></div>
+          <div class="shift-label">The Shift</div>
+          <div class="shift-word-struck">Reacting</div>
+          <div class="shift-arrow">
+            <svg width="24" height="40" viewBox="0 0 24 40" fill="none">
+              <path d="M12 0v36M4 28l8 8 8-8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="shift-word-gold">Creating</div>
+          <div class="shift-sub">Not from reading another self-help book. From <strong>rewiring the patterns</strong> that are running the show underneath.</div>
+        </div>
+      </div>
         <p>Since then, life kept testing it. A toxic relationship that nearly erased me. War in my country. Cancer in my family. A nicotine addiction I carried for over a decade. Each time, I rebuilt &mdash; not back to who I was, but into someone clearer, stronger, more free.</p>
       </div>
     </div>
@@ -642,7 +968,7 @@
   <!-- CLOSING CTA -->
   <section class="closing">
     <div class="page-wrap">
-      <h2 class="closing-headline reveal">If something's clicking &mdash; <em>that's not nothing.</em></h2>
+      <h2 class="closing-headline reveal">You already know something needs to <em>change.</em></h2>
       <p class="closing-sub reveal">You don't need to have it figured out. You just need to be done with autopilot.</p>
       <div class="reveal" style="position: relative; z-index: 1;">
         <a href="/#intake" class="btn-primary">Tell Me What's Going On <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -662,6 +988,7 @@
           <div class="footer-links">
             <a href="/">Home</a>
             <a href="/method">The Method</a>
+            <a href="/learn">Learn</a>
             <a href="/#work">Work With Me</a>
             <a href="https://instagram.com/veronika_mindbodysoul" target="_blank" rel="noopener">Instagram</a>
             <a href="https://tiktok.com/@veronika_mindbodysoul" target="_blank" rel="noopener">TikTok</a>
