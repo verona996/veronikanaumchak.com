@@ -24,7 +24,9 @@
     .callout-text, .insight-stat,
     .prose-highlight, .integration-emphasis,
     .modality-tagline, .layer-name,
-    .evidence-num, .mid-pull-text {
+    .evidence-num, .mid-pull-text,
+    .demystify-headline, .demystify-headline em,
+    .demystify-note {
       font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
     }
 
@@ -112,7 +114,7 @@
     .btn-primary:hover svg { transform: translateX(4px); }
 
     /* ── SECTION LABELS ── */
-    .section-label { font-family: var(--display); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.4em; text-transform: uppercase; color: var(--coral); margin-bottom: 1.5rem; }
+    .section-label { font-family: var(--display); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--coral); margin-bottom: 1.5rem; }
 
     .section-divider { height: 3px; background: linear-gradient(90deg, transparent, var(--coral) 20%, var(--plum) 50%, var(--coral) 80%, transparent); opacity: 0.15; margin: 0; }
     .section-divider-subtle { height: 1px; background: linear-gradient(90deg, transparent, var(--sand) 20%, var(--taupe) 50%, var(--sand) 80%, transparent); margin: 0; }
@@ -874,6 +876,94 @@
     .footer-legal a { color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.3s; }
     .footer-legal a:hover { color: rgba(255,255,255,0.5); }
 
+    /* ── HYPNOSIS DEMYSTIFIED ── */
+    .demystify-section {
+      padding: 5rem 0;
+      border-top: 1px solid var(--sand);
+    }
+
+    .demystify-headline {
+      font-family: var(--serif);
+      font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+      font-weight: 400;
+      color: var(--espresso);
+      margin-bottom: 0.5rem;
+      line-height: 1.35;
+      font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
+    }
+
+    .demystify-headline em {
+      font-style: italic;
+      color: var(--coral);
+      font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
+    }
+
+    .demystify-lead {
+      font-family: var(--sans);
+      font-size: 0.92rem;
+      color: var(--mocha);
+      line-height: 1.75;
+      max-width: 620px;
+      margin-bottom: 2.5rem;
+    }
+
+    .demystify-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .demystify-item {
+      padding: 1.5rem 1.8rem;
+      border: 1px solid var(--sand);
+      background: var(--ivory);
+      transition: border-color 0.3s;
+    }
+
+    .demystify-item:hover {
+      border-color: var(--coral);
+    }
+
+    .demystify-myth {
+      font-family: var(--display);
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 0.5rem;
+    }
+
+    .demystify-myth s {
+      text-decoration: line-through;
+      color: var(--muted);
+    }
+
+    .demystify-reality {
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      color: var(--espresso);
+      line-height: 1.7;
+      font-weight: 500;
+    }
+
+    .demystify-note {
+      font-family: var(--serif);
+      font-size: 0.92rem;
+      font-style: italic;
+      color: var(--coffee);
+      line-height: 1.7;
+      max-width: 620px;
+      padding-left: 1.2rem;
+      border-left: 3px solid var(--coral);
+      font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
+    }
+
+    @media (max-width: 800px) {
+      .demystify-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── STICKY MOBILE CTA ── */
     .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: var(--coral); padding: 0.9rem 1.5rem; display: none; justify-content: space-between; align-items: center; z-index: 150; transform: translateY(100%); transition: transform 0.3s ease; }
     .sticky-cta.visible { transform: translateY(0); }
@@ -1253,6 +1343,36 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- SECTION: HYPNOSIS DEMYSTIFIED -->
+  <section class="demystify-section">
+    <div class="page-wrap">
+      <div class="section-label reveal">Hypnosis &mdash; The Real Version</div>
+      <h2 class="demystify-headline reveal">What hypnosis <em>actually</em> is</h2>
+      <p class="demystify-lead reveal">If the word &ldquo;hypnosis&rdquo; makes you nervous, you're thinking of the stage version. Clinical hypnosis is nothing like that. Here's what it actually involves &mdash; and what it doesn't.</p>
+
+      <div class="demystify-grid">
+        <div class="demystify-item reveal">
+          <div class="demystify-myth"><s>You lose control</s></div>
+          <div class="demystify-reality">You're fully aware and in complete control throughout. You can open your eyes, speak, or stop at any point. Hypnosis is a collaborative process &mdash; nothing happens without your active participation.</div>
+        </div>
+        <div class="demystify-item reveal">
+          <div class="demystify-myth"><s>It's a trance or sleep state</s></div>
+          <div class="demystify-reality">It's a state of focused, relaxed attention &mdash; like being deeply absorbed in a film or a conversation. Your mind is more engaged, not less. Most clients say it's the most focused they've ever felt.</div>
+        </div>
+        <div class="demystify-item reveal">
+          <div class="demystify-myth"><s>Only certain people can be hypnotised</s></div>
+          <div class="demystify-reality">If you can daydream, get lost in a book, or zone out on a drive &mdash; you already experience natural hypnotic states daily. Clinical hypnosis simply uses that capacity with intention and direction.</div>
+        </div>
+        <div class="demystify-item reveal">
+          <div class="demystify-myth"><s>It's the therapist doing something to you</s></div>
+          <div class="demystify-reality">I guide the process. You do the internal work. Hypnosis amplifies your own capacity for change &mdash; it doesn't override it. The shift comes from inside you, not from me.</div>
+        </div>
+      </div>
+
+      <div class="demystify-note reveal">The reason hypnosis works is simple: it bypasses the part of your mind that argues with change and speaks directly to the part that drives your automatic responses. That's why knowing something isn't enough &mdash; and why this is.</div>
     </div>
   </section>
 
