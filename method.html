@@ -26,7 +26,8 @@
     .modality-tagline, .layer-name,
     .evidence-num, .mid-pull-text,
     .demystify-headline, .demystify-headline em,
-    .demystify-note {
+    .definition-analogy, .experience-subsection-title,
+    .experience-card h4, .hypnosis-closing-note {
       font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
     }
 
@@ -876,8 +877,8 @@
     .footer-legal a { color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.3s; }
     .footer-legal a:hover { color: rgba(255,255,255,0.5); }
 
-    /* ── HYPNOSIS DEMYSTIFIED ── */
-    .demystify-section {
+    /* ── CLINICAL HYPNOSIS SECTION ── */
+    .hypnosis-section {
       padding: 5rem 0;
       border-top: 1px solid var(--sand);
     }
@@ -898,57 +899,179 @@
       font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
     }
 
-    .demystify-lead {
+    .hypnosis-intro {
       font-family: var(--sans);
-      font-size: 0.92rem;
+      font-size: 0.95rem;
       color: var(--mocha);
       line-height: 1.75;
       max-width: 620px;
-      margin-bottom: 2.5rem;
+      margin-bottom: 3rem;
     }
 
-    .demystify-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;
-      margin-bottom: 2rem;
-    }
-
-    .demystify-item {
-      padding: 1.5rem 1.8rem;
-      border: 1px solid var(--sand);
+    .definition-block {
+      max-width: 660px;
+      margin-bottom: 3.5rem;
+      padding: 2.5rem;
       background: var(--ivory);
-      transition: border-color 0.3s;
+      border-left: 4px solid var(--plum);
+      position: relative;
     }
 
-    .demystify-item:hover {
+    .definition-block::after {
+      content: '';
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      width: 80px;
+      height: 80px;
+      border: 1px solid var(--sand);
+      border-radius: 50%;
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .definition-block p {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      color: var(--coffee);
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+    }
+
+    .definition-block p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .definition-analogy {
+      font-family: var(--serif) !important;
+      font-size: 1rem !important;
+      font-style: italic;
+      color: var(--plum) !important;
+      line-height: 1.7 !important;
+      margin-top: 1.5rem !important;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--sand);
+      font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
+    }
+
+    .definition-source {
+      display: block;
+      font-family: var(--display);
+      font-size: 0.55rem;
+      font-weight: 700;
+      font-style: normal;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-top: 1.5rem;
+    }
+
+    .experience-subsection-title {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--espresso);
+      margin-bottom: 1.5rem;
+      font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.2rem;
+      margin-bottom: 3rem;
+    }
+
+    .experience-card {
+      padding: 2rem 1.8rem;
+      border: 1px solid var(--sand);
+      background: var(--cream);
+      transition: all 0.3s;
+    }
+
+    .experience-card:hover {
       border-color: var(--coral);
+      box-shadow: 0 4px 16px rgba(42, 31, 26, 0.04);
+      transform: translateY(-2px);
     }
 
-    .demystify-myth {
+    .experience-label {
       font-family: var(--display);
       font-size: 0.55rem;
       font-weight: 700;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--stone);
-      margin-bottom: 0.5rem;
+      color: var(--coral);
+      margin-bottom: 0.6rem;
     }
 
-    .demystify-myth s {
-      text-decoration: line-through;
+    .experience-card h4 {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--espresso);
+      margin-bottom: 0.8rem;
+      font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
+    }
+
+    .experience-card p {
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      color: var(--mocha);
+      line-height: 1.75;
+    }
+
+    .myths-strip {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 2rem;
+    }
+
+    .myth-line {
+      display: flex;
+      align-items: baseline;
+      gap: 1.2rem;
+      padding: 1rem 1.5rem;
+      border: 1px solid var(--sand);
+      border-bottom: none;
+      background: var(--ivory);
+      transition: border-color 0.3s;
+    }
+
+    .myth-line:last-child {
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .myth-line:hover {
+      border-color: var(--coral);
+      z-index: 1;
+      position: relative;
+    }
+
+    .myth-crossed {
+      font-family: var(--display);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
       color: var(--muted);
+      white-space: nowrap;
+      min-width: 180px;
     }
 
-    .demystify-reality {
+    .myth-crossed s {
+      text-decoration-color: var(--coral);
+    }
+
+    .myth-correction {
       font-family: var(--sans);
       font-size: 0.88rem;
       color: var(--espresso);
-      line-height: 1.7;
       font-weight: 500;
+      line-height: 1.5;
     }
 
-    .demystify-note {
+    .hypnosis-closing-note {
       font-family: var(--serif);
       font-size: 0.92rem;
       font-style: italic;
@@ -961,7 +1084,10 @@
     }
 
     @media (max-width: 800px) {
-      .demystify-grid { grid-template-columns: 1fr; }
+      .experience-grid { grid-template-columns: 1fr; }
+      .myth-line { flex-direction: column; gap: 0.4rem; }
+      .myth-crossed { min-width: unset; }
+      .definition-block { padding: 1.8rem; }
     }
 
     /* ── STICKY MOBILE CTA ── */
@@ -1027,7 +1153,7 @@
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="/" class="nav-logo">
-        <span class="nav-logo-mark"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 85L35 15M35 15L55 85M45 15L65 85M65 15V85" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="nav-logo-mark"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="14" y1="12" x2="38" y2="88" stroke="#2A1F1A" stroke-width="6" stroke-linecap="round"/><line x1="38" y1="88" x2="54" y2="12" stroke="#2A1F1A" stroke-width="6" stroke-linecap="round"/><line x1="54" y1="12" x2="54" y2="88" stroke="#2A1F1A" stroke-width="6" stroke-linecap="round"/><line x1="54" y1="12" x2="80" y2="88" stroke="#E8503A" stroke-width="6" stroke-linecap="round"/><line x1="80" y1="12" x2="80" y2="88" stroke="#2A1F1A" stroke-width="6" stroke-linecap="round"/></svg></span>
         <span class="nav-logo-text">Home</span>
       </a>
       <ul class="nav-links">
@@ -1346,33 +1472,94 @@
     </div>
   </section>
 
-  <!-- SECTION: HYPNOSIS DEMYSTIFIED -->
-  <section class="demystify-section">
+  <!-- SECTION: WHAT IS CLINICAL HYPNOSIS -->
+  <section class="hypnosis-section">
     <div class="page-wrap">
       <div class="section-label reveal">Hypnosis &mdash; The Real Version</div>
-      <h2 class="demystify-headline reveal">What hypnosis <em>actually</em> is</h2>
-      <p class="demystify-lead reveal">If the word &ldquo;hypnosis&rdquo; makes you nervous, you're thinking of the stage version. Clinical hypnosis is nothing like that. Here's what it actually involves &mdash; and what it doesn't.</p>
+      <h2 class="demystify-headline reveal">What is clinical <em>hypnosis?</em></h2>
+      <p class="hypnosis-intro reveal">
+        Nothing to do with stage shows. Nothing to do with mind control.
+        Here's what it is, what it feels like, and what it doesn't involve.
+      </p>
 
-      <div class="demystify-grid">
-        <div class="demystify-item reveal">
-          <div class="demystify-myth"><s>You lose control</s></div>
-          <div class="demystify-reality">You're fully aware and in complete control throughout. You can open your eyes, speak, or stop at any point. Hypnosis is a collaborative process &mdash; nothing happens without your active participation.</div>
+      <!-- Definition block -->
+      <div class="definition-block reveal">
+        <p>
+          Clinical hypnosis is a collaborative process where your therapist guides you
+          to focus your attention inward &mdash; toward specific thoughts, feelings, and imagery &mdash;
+          using carefully structured verbal suggestions.
+        </p>
+        <p>
+          Your mind responds to these suggestions not because you're being controlled,
+          but because focused attention naturally heightens your capacity to experience
+          what's being described.
+        </p>
+        <p class="definition-analogy">
+          It's the same reason a vivid film can make you cry even though you know
+          it isn't real &mdash; your imagination responds as if the experience is happening.
+          Clinical hypnosis uses that same capacity, deliberately, for therapeutic change.
+        </p>
+        <cite class="definition-source">
+          Adapted from the British Psychological Society definition of hypnosis (2001)
+        </cite>
+      </div>
+
+      <!-- Experience cards -->
+      <h3 class="experience-subsection-title reveal">What you'll experience</h3>
+      <div class="experience-grid reveal">
+        <div class="experience-card">
+          <div class="experience-label">Attention</div>
+          <h4>Your focus sharpens</h4>
+          <p>
+            Like being absorbed in a conversation so good you forget where you are.
+            Your awareness narrows to what matters. Everything else falls away.
+          </p>
         </div>
-        <div class="demystify-item reveal">
-          <div class="demystify-myth"><s>It's a trance or sleep state</s></div>
-          <div class="demystify-reality">It's a state of focused, relaxed attention &mdash; like being deeply absorbed in a film or a conversation. Your mind is more engaged, not less. Most clients say it's the most focused they've ever felt.</div>
+        <div class="experience-card">
+          <div class="experience-label">Body</div>
+          <h4>Your body settles</h4>
+          <p>
+            Deep physical relaxation while your mind stays clear and engaged.
+            Most clients say it's the most mentally focused they've ever felt.
+          </p>
         </div>
-        <div class="demystify-item reveal">
-          <div class="demystify-myth"><s>Only certain people can be hypnotised</s></div>
-          <div class="demystify-reality">If you can daydream, get lost in a book, or zone out on a drive &mdash; you already experience natural hypnotic states daily. Clinical hypnosis simply uses that capacity with intention and direction.</div>
-        </div>
-        <div class="demystify-item reveal">
-          <div class="demystify-myth"><s>It's the therapist doing something to you</s></div>
-          <div class="demystify-reality">I guide the process. You do the internal work. Hypnosis amplifies your own capacity for change &mdash; it doesn't override it. The shift comes from inside you, not from me.</div>
+        <div class="experience-card">
+          <div class="experience-label">Agency</div>
+          <h4>You stay in charge</h4>
+          <p>
+            You can speak, open your eyes, or stop at any point. Nothing happens
+            without your participation. The suggestions don't feel imposed &mdash;
+            they feel like your own insights arriving.
+          </p>
         </div>
       </div>
 
-      <div class="demystify-note reveal">The reason hypnosis works is simple: it bypasses the part of your mind that argues with change and speaks directly to the part that drives your automatic responses. That's why knowing something isn't enough &mdash; and why this is.</div>
+      <!-- Compact myth strip -->
+      <div class="myths-strip reveal">
+        <div class="myth-line">
+          <span class="myth-crossed"><s>&ldquo;You lose control&rdquo;</s></span>
+          <span class="myth-correction">You gain it. You're more aware, not less.</span>
+        </div>
+        <div class="myth-line">
+          <span class="myth-crossed"><s>&ldquo;It's sleep or unconsciousness&rdquo;</s></span>
+          <span class="myth-correction">Focused wakefulness &mdash; closer to flow than sleep.</span>
+        </div>
+        <div class="myth-line">
+          <span class="myth-crossed"><s>&ldquo;The therapist does it to you&rdquo;</s></span>
+          <span class="myth-correction">You do the work. I guide the process.</span>
+        </div>
+        <div class="myth-line">
+          <span class="myth-crossed"><s>&ldquo;It's not evidence-based&rdquo;</s></span>
+          <span class="myth-correction">70+ years of clinical research. Recognised by the BPS, APA, and NICE.</span>
+        </div>
+      </div>
+
+      <!-- Closing note -->
+      <div class="hypnosis-closing-note reveal">
+        Clinical hypnosis doesn't work by switching off your thinking &mdash; it works by harnessing it.
+        Focused attention makes therapeutic suggestions land deeper, so change reaches
+        the emotional and automatic responses that insight alone can't shift.
+      </div>
     </div>
   </section>
 
@@ -1427,7 +1614,7 @@
       <div class="footer-inner">
         <div>
           <div class="footer-logo">
-            <span class="footer-logo-mark"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 85L35 15M35 15L55 85M45 15L65 85M65 15V85" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="footer-logo-mark"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="14" y1="12" x2="38" y2="88" stroke="#FDF6EE" stroke-width="6" stroke-linecap="round"/><line x1="38" y1="88" x2="54" y2="12" stroke="#FDF6EE" stroke-width="6" stroke-linecap="round"/><line x1="54" y1="12" x2="54" y2="88" stroke="#FDF6EE" stroke-width="6" stroke-linecap="round"/><line x1="54" y1="12" x2="80" y2="88" stroke="#E8503A" stroke-width="6" stroke-linecap="round"/><line x1="80" y1="12" x2="80" y2="88" stroke="#FDF6EE" stroke-width="6" stroke-linecap="round"/></svg></span>
             <span class="footer-logo-name">Veronika Naumchak</span>
           </div>
           <div class="footer-tagline">Stop explaining the pattern. Break it.</div>
