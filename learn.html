@@ -133,6 +133,19 @@
       transition: all 0.3s !important;
     }
     .nav-cta:hover { background: var(--coral-glow) !important; }
+
+    /* ── SCROLL PROGRESS ── */
+    .scroll-progress {
+      position: fixed;
+      top: 64px;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: var(--coral);
+      z-index: 201;
+      transition: none;
+    }
+
     .nav-hamburger {
       display: none;
       background: none;
@@ -909,6 +922,8 @@
     </div>
   </nav>
 
+  <div class="scroll-progress" id="scrollProgress"></div>
+
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="/about" class="mobile-nav-link">About</a>
@@ -1280,6 +1295,7 @@
     const nav = document.getElementById('nav');
     const stickyCta = document.getElementById('stickyCta');
     const heroSection = document.querySelector('.hero');
+    const scrollProgress = document.getElementById('scrollProgress');
 
     function onScroll() {
       const y = window.scrollY;
@@ -1287,6 +1303,10 @@
       if (heroSection) {
         const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
         stickyCta.classList.toggle('visible', y > heroBottom - 100);
+      }
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (docHeight > 0) {
+        scrollProgress.style.width = (y / docHeight * 100) + '%';
       }
     }
     window.addEventListener('scroll', onScroll, { passive: true });

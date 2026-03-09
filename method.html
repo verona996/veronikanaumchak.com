@@ -314,8 +314,8 @@
     .phase-card:nth-child(1) .phase-marker { background: var(--coral); }
     .phase-card:nth-child(2) .phase-marker { background: var(--terracotta); }
     .phase-card:nth-child(3) .phase-marker { background: var(--plum); }
-    .phase-card:nth-child(4) .phase-marker { background: var(--espresso); }
-    .phase-card:nth-child(5) .phase-marker { background: var(--coral); }
+    .phase-card:nth-child(4) .phase-marker { background: var(--gold); }
+    .phase-card:nth-child(5) .phase-marker { background: var(--terracotta); }
 
     /* Connecting line between phases */
     .phase-card {
@@ -629,14 +629,15 @@
     }
 
     .integration-circle {
-      width: 175px;
-      height: 175px;
+      width: 190px;
+      height: 190px;
       border-radius: 50%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
+      padding: 1.5rem;
       position: relative;
       z-index: 1;
     }
@@ -649,40 +650,42 @@
     .integration-circle:nth-child(2) {
       background: rgba(92, 39, 81, 0.2);
       border: 1px solid rgba(122, 59, 107, 0.3);
-      margin-top: -30px;
+      margin-top: -25px;
       z-index: 2;
     }
 
     .integration-circle:nth-child(3) {
       background: rgba(200, 123, 90, 0.15);
       border: 1px solid rgba(200, 123, 90, 0.3);
-      margin-top: -30px;
+      margin-top: -25px;
       z-index: 3;
     }
 
     .integration-circle-label {
       font-family: var(--display);
-      font-size: 0.6rem;
+      font-size: 0.55rem;
       font-weight: 700;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       color: rgba(255,255,255,0.7);
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.25rem;
     }
 
     .integration-circle-name {
       font-family: var(--serif);
-      font-size: 1rem;
+      font-size: 0.9rem;
       font-weight: 500;
       color: #fff;
+      line-height: 1.2;
     }
 
     .integration-circle-where {
       font-family: var(--sans);
-      font-size: 0.75rem;
+      font-size: 0.65rem;
       color: rgba(255,255,255,0.6);
-      margin-top: 0.3rem;
+      margin-top: 0.2rem;
       font-style: italic;
+      line-height: 1.3;
     }
 
     /* ── BRIDGE VISUAL — 3-layer diagram ── */
@@ -778,34 +781,37 @@
     /* ── EVIDENCE CALLOUT — for research stats ── */
     .evidence-strip {
       display: flex;
-      gap: 1.5rem;
+      gap: 1rem;
       margin: 1.5rem 0 1.2rem;
     }
 
     .evidence-badge {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
-      padding: 0.7rem 1rem;
+      gap: 0.75rem;
+      padding: 0.8rem 1.2rem;
       background: var(--ivory);
       border: 1px solid var(--sand);
       border-radius: 4px;
       flex: 1;
+      min-width: 0;
     }
 
     .evidence-num {
       font-family: var(--serif);
-      font-size: 1.4rem;
+      font-size: 1.1rem;
       font-weight: 500;
       color: var(--coral);
       line-height: 1;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .evidence-detail {
       font-family: var(--sans);
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       color: var(--stone);
-      line-height: 1.4;
+      line-height: 1.45;
     }
 
     /* ── MID-PAGE PULL QUOTE ── */
@@ -1312,9 +1318,11 @@
 
       .integration-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .integration-visual { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-      .integration-circle { width: 130px; height: 130px; }
+      .integration-circle { width: 140px; height: 140px; padding: 1rem; }
       .integration-circle:nth-child(2),
       .integration-circle:nth-child(3) { margin-top: 0; margin-left: -20px; }
+      .integration-circle-name { font-size: 0.8rem; }
+      .integration-circle-where { font-size: 0.58rem; }
 
       .sticky-cta { display: flex; }
       .footer-inner { flex-direction: column; align-items: center; text-align: center; }
@@ -1328,7 +1336,7 @@
       .phase-card { grid-template-columns: 48px 1fr; gap: 1rem; }
       .phase-marker { width: 48px; height: 48px; }
       .phase-marker svg { width: 18px; height: 18px; }
-      .integration-circle { width: 110px; height: 110px; }
+      .integration-circle { width: 120px; height: 120px; padding: 0.8rem; }
     }
   </style>
 </head>
