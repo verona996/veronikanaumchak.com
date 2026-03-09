@@ -632,7 +632,16 @@
       pointer-events: none;
     }
 
-    .bridge-inner { position: relative; z-index: 1; }
+    .bridge-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .bridge-text-col .section-label { margin-bottom: 1.5rem; }
 
     .bridge-text {
       font-family: var(--sans);
@@ -644,20 +653,120 @@
     }
     .bridge-text:last-of-type { margin-bottom: 0; }
 
-    .bridge-emphasis {
-      font-family: var(--serif);
-      font-size: 1.35rem;
-      font-style: italic;
-      font-weight: 300;
-      color: var(--plum);
-      max-width: 640px;
-      margin-bottom: 2rem;
-      line-height: 1.5;
+    /* Shift Panel */
+    .shift-panel {
+      max-width: 340px;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
     }
-    .bridge-caps {
+
+    .shift-panel-inner {
+      background: linear-gradient(160deg, var(--coral) 0%, #D44030 50%, var(--plum) 100%);
+      padding: 3.5rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shift-panel-inner::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 420px; height: 420px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow:
+        0 0 0 60px transparent,
+        0 0 0 61px rgba(255,255,255,0.06),
+        0 0 0 130px transparent,
+        0 0 0 131px rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+
+    .shift-panel-inner::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 420px; height: 1px;
+      background: rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+
+    .shift-crosshair-v {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 1px; height: 420px;
+      background: rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+
+    .shift-label {
+      font-family: var(--display);
+      font-size: 0.6rem;
       font-weight: 700;
-      color: var(--coral);
-      letter-spacing: 0.03em;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .shift-word-struck {
+      font-family: var(--serif);
+      font-size: 3rem;
+      font-weight: 800;
+      color: rgba(255,255,255,0.35);
+      text-decoration: line-through;
+      text-decoration-thickness: 3px;
+      text-decoration-color: rgba(255,255,255,0.3);
+      line-height: 1;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+      font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
+    }
+
+    .shift-arrow {
+      margin: 0.8rem 0;
+      opacity: 0.45;
+      position: relative;
+      z-index: 1;
+    }
+
+    .shift-word-gold {
+      font-family: var(--serif);
+      font-size: 4rem;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 4px 30px rgba(0,0,0,0.15);
+      font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
+    }
+
+    .shift-sub {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.6;
+      max-width: 280px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .shift-sub strong {
+      color: #fff;
+      font-weight: 600;
     }
 
     /* ── METHOD — two-column editorial layout ── */
@@ -1437,6 +1546,9 @@
       .pricing-strip { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
       .pricing-divider { width: 60px; height: 1px; }
 
+      .bridge-inner { grid-template-columns: 1fr; justify-items: center; gap: 2.5rem; }
+      .shift-panel { max-width: 300px; }
+
       .sticky-cta { display: flex; }
       .footer-inner { flex-direction: column; align-items: center; text-align: center; }
       .footer-right { text-align: center; }
@@ -1595,11 +1707,29 @@
   <section class="section bridge-section">
     <div class="page-wrap">
       <div class="bridge-inner">
-        <div class="section-label reveal">The Reality</div>
-        <p class="bridge-text reveal">Most of your life is running on autopilot. The thoughts you think, the way you react, the way you cope when things get hard &mdash; most of it isn't a choice. It's a programme you picked up a very long time ago and are completely unaware of.</p>
-        <p class="bridge-emphasis reveal">But it's time to stop <span class="bridge-caps">REACTING</span> to life and start <span class="bridge-caps">CREATING</span> it. Don't you think?</p>
-        <p class="bridge-text reveal">That shift, from surviving to choosing, doesn't come from reading another self-help book or journaling your way through it. It comes from rewiring the patterns that are running the show underneath. The beliefs you don't even know you're carrying. The programming that was written before you had any say in it.</p>
-        <p class="bridge-text reveal">That's what this work is.</p>
+
+        <div class="shift-panel reveal">
+          <div class="shift-panel-inner">
+            <div class="shift-crosshair-v"></div>
+            <div class="shift-label">The Shift</div>
+            <div class="shift-word-struck">Reacting</div>
+            <div class="shift-arrow">
+              <svg width="24" height="40" viewBox="0 0 24 40" fill="none">
+                <path d="M12 0v36M4 28l8 8 8-8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="shift-word-gold">Creating</div>
+            <div class="shift-sub">Not from reading another self-help book. From <strong>rewiring the patterns</strong> that are running the show underneath.</div>
+          </div>
+        </div>
+
+        <div class="bridge-text-col">
+          <div class="section-label reveal">The Reality</div>
+          <p class="bridge-text reveal">Most of your life is running on autopilot. The thoughts you think, the way you react, the way you cope when things get hard &mdash; most of it isn't a choice. It's a programme you picked up a very long time ago and are completely unaware of.</p>
+          <p class="bridge-text reveal">That shift, from surviving to choosing, doesn't come from reading another self-help book or journaling your way through it. It comes from rewiring the patterns that are running the show underneath. The beliefs you don't even know you're carrying. The programming that was written before you had any say in it.</p>
+          <p class="bridge-text reveal">That's what this work is.</p>
+        </div>
+
       </div>
     </div>
   </section>
