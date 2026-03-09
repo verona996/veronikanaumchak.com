@@ -401,28 +401,9 @@
       color: var(--coral);
     }
 
-    .hero-bridge {
-      font-family: var(--sans);
-      font-size: 1.05rem;
-      font-weight: 500;
-      color: var(--mocha);
-      letter-spacing: 0.01em;
-      margin-bottom: 1.5rem;
-      opacity: 0; transform: translateY(20px);
-      animation: fade-up 0.6s ease-out 0.25s forwards;
-    }
-
     .hero-cta-wrap {
       opacity: 0; transform: translateY(20px);
-      animation: fade-up 0.6s ease-out 0.5s forwards;
-    }
-
-    .hero-micro {
-      font-family: var(--sans);
-      font-size: 0.75rem;
-      color: var(--muted);
-      letter-spacing: 0.05em;
-      margin-top: 1.5rem;
+      animation: fade-up 0.6s ease-out 0.35s forwards;
     }
 
     .scroll-hint {
@@ -668,134 +649,75 @@
       align-items: center;
     }
 
-    .bridge-text-col .section-label { margin-bottom: 1.5rem; }
-
     .bridge-text {
       font-family: var(--sans);
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: var(--mocha);
       line-height: 1.9;
       max-width: 640px;
       margin-bottom: 1.8rem;
     }
-    .bridge-text:last-of-type { margin-bottom: 0; }
-    .bridge-accent { color: var(--coral); font-weight: 500; }
+    .bridge-text:last-of-type {
+      margin-bottom: 0;
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--espresso);
+      line-height: 1.4;
+      font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
+    }
+    .bridge-accent { color: var(--coral); font-family: var(--serif); font-style: italic; font-variation-settings: 'WONK' 0, 'opsz' 144 !important; }
 
-    /* Shift Panel */
+    /* Shift Panel — editorial typography */
     .shift-panel {
-      max-width: 340px;
-      border-radius: 20px;
-      overflow: hidden;
+      max-width: 300px;
       position: relative;
-    }
-
-    .shift-panel-inner {
-      background: linear-gradient(160deg, var(--coral) 0%, #D44030 50%, var(--plum) 100%);
-      padding: 3.5rem 2.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .shift-panel-inner::before {
-      content: '';
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 420px; height: 420px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow:
-        0 0 0 60px transparent,
-        0 0 0 61px rgba(255,255,255,0.06),
-        0 0 0 130px transparent,
-        0 0 0 131px rgba(255,255,255,0.04);
-      pointer-events: none;
-    }
-
-    .shift-panel-inner::after {
-      content: '';
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 420px; height: 1px;
-      background: rgba(255,255,255,0.04);
-      pointer-events: none;
-    }
-
-    .shift-crosshair-v {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 1px; height: 420px;
-      background: rgba(255,255,255,0.04);
-      pointer-events: none;
+      padding: 2.5rem 2.5rem 2.5rem 0;
+      border-right: 1px solid var(--sand);
     }
 
     .shift-label {
       font-family: var(--display);
-      font-size: 0.6rem;
+      font-size: 0.85rem;
       font-weight: 700;
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.65);
-      margin-bottom: 2rem;
-      position: relative;
-      z-index: 1;
+      color: var(--mocha);
+      margin-bottom: 2.5rem;
+      opacity: 0.6;
     }
 
     .shift-word-struck {
       font-family: var(--serif);
-      font-size: 3rem;
-      font-weight: 800;
-      color: rgba(255,255,255,0.35);
+      font-size: clamp(2.8rem, 5vw, 3.5rem);
+      font-weight: 300;
+      color: var(--sand);
       text-decoration: line-through;
-      text-decoration-thickness: 3px;
-      text-decoration-color: rgba(255,255,255,0.3);
+      text-decoration-thickness: 2px;
+      text-decoration-color: var(--mocha);
       line-height: 1;
       margin-bottom: 1rem;
-      position: relative;
-      z-index: 1;
       font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
     }
 
     .shift-arrow {
-      margin: 0.8rem 0;
-      opacity: 0.45;
-      position: relative;
-      z-index: 1;
+      margin: 1rem 0;
+      color: var(--mocha);
+      opacity: 0.3;
     }
 
     .shift-word-gold {
       font-family: var(--serif);
-      font-size: 4rem;
-      font-weight: 800;
-      color: var(--gold);
+      font-size: clamp(3.2rem, 5.5vw, 4rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--coral);
       line-height: 1;
-      margin-bottom: 1.5rem;
-      position: relative;
-      z-index: 1;
-      text-shadow: 0 4px 30px rgba(0,0,0,0.15);
       font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
     }
 
-    .shift-sub {
-      font-family: var(--sans);
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.8);
-      line-height: 1.6;
-      max-width: 280px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .shift-sub strong {
-      color: #fff;
-      font-weight: 600;
-    }
+    .shift-sub { display: none; }
 
     /* ── METHOD — two-column editorial layout ── */
     .method-grid {
@@ -1583,7 +1505,7 @@
       .pricing-divider { width: 60px; height: 1px; }
 
       .bridge-inner { grid-template-columns: 1fr; justify-items: center; gap: 2.5rem; }
-      .shift-panel { max-width: 300px; }
+      .shift-panel { max-width: 300px; border-right: none; border-bottom: 1px solid var(--sand); padding: 0 0 2.5rem 0; text-align: center; }
 
       .sticky-cta { display: flex; }
       .footer-inner { flex-direction: column; align-items: center; text-align: center; }
@@ -1641,11 +1563,9 @@
     <div class="hero-line-2"></div>
 
     <div class="hero-content">
-      <h1 class="hero-headline">You're not broken.<br>You're running a <em>programme.</em></h1>
-      <p class="hero-bridge">You've been surviving long enough. It's time to start living.</p>
+      <h1 class="hero-headline">You've been surviving long enough.<br>It's time to start <em>living.</em></h1>
       <div class="hero-cta-wrap">
         <a href="#intake" class="btn-primary">Tell Me What's Going On <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <div class="hero-micro">Online worldwide</div>
       </div>
     </div>
     <div class="scroll-hint" id="scrollHint">
@@ -1752,17 +1672,14 @@
       <div class="bridge-inner">
 
         <div class="shift-panel reveal">
-          <div class="shift-panel-inner">
-            <div class="shift-crosshair-v"></div>
-            <div class="shift-label">The Shift</div>
-            <div class="shift-word-struck">Reacting</div>
-            <div class="shift-arrow">
-              <svg width="24" height="40" viewBox="0 0 24 40" fill="none">
-                <path d="M12 0v36M4 28l8 8 8-8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div class="shift-word-gold">Creating</div>
+          <div class="shift-label">The Shift</div>
+          <div class="shift-word-struck">Reacting</div>
+          <div class="shift-arrow">
+            <svg width="20" height="36" viewBox="0 0 20 36" fill="none">
+              <path d="M10 0v32M3 25l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
+          <div class="shift-word-gold">Creating</div>
         </div>
 
         <div class="bridge-text-col">
