@@ -101,12 +101,26 @@
       height: 64px;
     }
     .nav-logo {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: var(--espresso);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
       text-decoration: none;
-      letter-spacing: -0.01em;
+    }
+    .nav-logo-mark {
+      width: 28px;
+      height: 28px;
+    }
+    .nav-logo-mark svg {
+      width: 100%;
+      height: 100%;
+    }
+    .nav-logo-text {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--espresso);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
     .nav-links {
       display: flex;
@@ -652,6 +666,7 @@
       margin-bottom: 1.8rem;
     }
     .bridge-text:last-of-type { margin-bottom: 0; }
+    .bridge-accent { color: var(--coral); font-weight: 500; }
 
     /* Shift Panel */
     .shift-panel {
@@ -1467,7 +1482,15 @@
       flex-wrap: wrap;
       gap: 2rem;
     }
-    .footer-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--cream); margin-bottom: 0.4rem; }
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 0.4rem;
+    }
+    .footer-logo-mark { width: 32px; height: 32px; }
+    .footer-logo-mark svg { width: 100%; height: 100%; }
+    .footer-logo-name { font-family: var(--serif); font-size: 1.1rem; color: var(--cream); }
     .footer-tagline {
       font-family: var(--display);
       font-size: 0.6rem;
@@ -1569,7 +1592,10 @@
   <!-- NAVIGATION -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
-      <a href="/" class="nav-logo">Veronika Naumchak</a>
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-mark"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 85L35 15M35 15L55 85M45 15L65 85M65 15V85" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="nav-logo-text">Home</span>
+      </a>
       <ul class="nav-links">
         <li><a href="/about">About</a></li>
         <li><a href="/method">The Method</a></li>
@@ -1721,14 +1747,13 @@
               </svg>
             </div>
             <div class="shift-word-gold">Creating</div>
-            <div class="shift-sub">Not from reading another self-help book. From <strong>rewiring the patterns</strong> that are running the show underneath.</div>
           </div>
         </div>
 
         <div class="bridge-text-col">
           <div class="section-label reveal">The Reality</div>
-          <p class="bridge-text reveal">Most of your life is running on autopilot. The thoughts you think, the way you react, the way you cope when things get hard &mdash; most of it isn't a choice. It's a programme you picked up a very long time ago and are completely unaware of.</p>
-          <p class="bridge-text reveal">That shift, from surviving to choosing, doesn't come from reading another self-help book or journaling your way through it. It comes from rewiring the patterns that are running the show underneath. The beliefs you don't even know you're carrying. The programming that was written before you had any say in it.</p>
+          <p class="bridge-text reveal">Most of your life is running on <span class="bridge-accent">autopilot</span>. The thoughts you think, the way you react, the way you cope when things get hard &mdash; most of it isn't a choice. It's a <span class="bridge-accent">programme</span> you picked up a very long time ago and are completely unaware of.</p>
+          <p class="bridge-text reveal">That shift, from surviving to choosing, doesn't come from reading another self-help book or journaling your way through it. It comes from <span class="bridge-accent">rewiring the patterns</span> that are running the show underneath. The beliefs you don't even know you're carrying. The programming that was written before you had any say in it.</p>
           <p class="bridge-text reveal">That's what this work is.</p>
         </div>
 
@@ -2118,7 +2143,10 @@
     <div class="page-wrap">
       <div class="footer-inner">
         <div>
-          <div class="footer-logo">Veronika Naumchak</div>
+          <div class="footer-logo">
+            <span class="footer-logo-mark"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 85L35 15M35 15L55 85M45 15L65 85M65 15V85" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="footer-logo-name">Veronika Naumchak</span>
+          </div>
           <div class="footer-tagline">Stop explaining the pattern. Break it.</div>
         </div>
         <div class="footer-right">
