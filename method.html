@@ -446,6 +446,7 @@
     }
 
     .modality-card:hover {
+      border-color: var(--coral);
       box-shadow: 0 6px 24px rgba(42, 31, 26, 0.06);
       transform: translateY(-2px);
     }
@@ -1207,6 +1208,61 @@
       transform: rotate(180deg);
     }
 
+    /* ── HOVER EFFECTS — PHASE ACCORDION ── */
+    .phase-header {
+      transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      margin: -1rem -1.5rem;
+    }
+
+    .phase-header:hover {
+      background: rgba(232, 217, 200, 0.25);
+      box-shadow: 0 2px 12px rgba(42, 31, 26, 0.06);
+      transform: translateX(4px);
+    }
+
+    .phase-header:hover .phase-name {
+      color: var(--coral);
+      transition: color 0.3s ease;
+    }
+
+    .phase-header:hover .phase-toggle svg {
+      color: var(--coral);
+      transition: color 0.3s ease;
+    }
+
+    /* ── HOVER EFFECTS — MODALITY CARDS ── */
+    .modality-card {
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    }
+
+    .modality-card:hover .modality-toggle svg {
+      color: var(--coral);
+      transition: color 0.3s ease;
+    }
+
+    /* ── TOUCH DEVICE SAFETY ── */
+    @media (hover: none) {
+      .phase-header:hover {
+        background: transparent;
+        box-shadow: none;
+        transform: none;
+      }
+      .phase-header:hover .phase-name,
+      .phase-header:hover .phase-toggle svg {
+        color: inherit;
+      }
+      .modality-card:hover {
+        border-color: var(--sand);
+        box-shadow: none;
+        transform: none;
+      }
+      .modality-card:hover .modality-toggle svg {
+        color: inherit;
+      }
+    }
+
     /* ── SCROLL PROGRESS ── */
     .scroll-progress {
       position: fixed;
@@ -1755,12 +1811,12 @@
             </div>
             <div class="integration-circle">
               <div class="integration-circle-label">Hypnotherapy</div>
-              <div class="integration-circle-name">Subconscious</div>
-              <div class="integration-circle-where">the emotional brain</div>
+              <div class="integration-circle-name">Emotional Mind</div>
+              <div class="integration-circle-where">beneath conscious awareness</div>
             </div>
             <div class="integration-circle">
               <div class="integration-circle-label">Somatic</div>
-              <div class="integration-circle-name">Somatic</div>
+              <div class="integration-circle-name">Body</div>
               <div class="integration-circle-where">nervous system</div>
             </div>
           </div>
