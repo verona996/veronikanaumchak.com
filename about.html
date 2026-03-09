@@ -206,125 +206,136 @@
       color: var(--coral);
     }
 
-    /* ── THE SHIFT INFOGRAPHIC ── */
+    /* ── THE SHIFT INFOGRAPHIC — editorial typography ── */
     .shift-panel {
-      max-width: 540px;
-      margin: 2.5rem 0;
-      border-radius: 20px;
-      overflow: hidden;
+      max-width: 300px;
+      margin: 2.5rem auto;
       position: relative;
-    }
-
-    .shift-panel-inner {
-      background: linear-gradient(160deg, var(--coral) 0%, #D44030 50%, var(--plum) 100%);
-      padding: 4rem 3rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      padding: 2.5rem;
+      border: 1px solid var(--sand);
       text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Concentric circles background */
-    .shift-panel-inner::before {
-      content: '';
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 420px; height: 420px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow:
-        0 0 0 60px transparent,
-        0 0 0 61px rgba(255,255,255,0.06),
-        0 0 0 130px transparent,
-        0 0 0 131px rgba(255,255,255,0.04);
-      pointer-events: none;
-    }
-
-    /* Crosshair lines */
-    .shift-panel-inner::after {
-      content: '';
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 420px; height: 1px;
-      background: rgba(255,255,255,0.04);
-      box-shadow: 0 0 0 0 transparent;
-      pointer-events: none;
-    }
-
-    .shift-crosshair-v {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 1px; height: 420px;
-      background: rgba(255,255,255,0.04);
-      pointer-events: none;
     }
 
     .shift-label {
       font-family: var(--display);
-      font-size: 0.6rem;
+      font-size: 0.85rem;
       font-weight: 700;
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.65);
-      margin-bottom: 2rem;
-      position: relative;
-      z-index: 1;
+      color: var(--mocha);
+      margin-bottom: 2.5rem;
+      opacity: 0.6;
     }
 
     .shift-word-struck {
       font-family: var(--serif);
-      font-size: 3rem;
-      font-weight: 800;
-      color: rgba(255,255,255,0.35);
+      font-size: clamp(2.8rem, 5vw, 3.5rem);
+      font-weight: 300;
+      color: var(--sand);
       text-decoration: line-through;
-      text-decoration-thickness: 3px;
-      text-decoration-color: rgba(255,255,255,0.3);
+      text-decoration-thickness: 2px;
+      text-decoration-color: var(--mocha);
       line-height: 1;
       margin-bottom: 1rem;
-      position: relative;
-      z-index: 1;
       font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
     }
 
     .shift-arrow {
-      margin: 0.8rem 0;
-      opacity: 0.45;
-      position: relative;
-      z-index: 1;
+      margin: 1rem 0;
+      color: var(--mocha);
+      opacity: 0.3;
     }
 
     .shift-word-gold {
       font-family: var(--serif);
-      font-size: 4rem;
-      font-weight: 800;
-      color: var(--gold);
+      font-size: clamp(3.2rem, 5.5vw, 4rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--coral);
       line-height: 1;
-      margin-bottom: 1.5rem;
-      position: relative;
-      z-index: 1;
-      text-shadow: 0 4px 30px rgba(0,0,0,0.15);
       font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
     }
 
-    .shift-sub {
+    .shift-sub { display: none; }
+
+    .shift-caption {
       font-family: var(--sans);
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.8);
+      font-size: 0.88rem;
+      color: var(--mocha);
       line-height: 1.6;
-      max-width: 320px;
-      position: relative;
-      z-index: 1;
+      margin-top: 2rem;
+      max-width: 280px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .shift-sub strong {
-      color: #fff;
+    .shift-caption strong {
+      color: var(--plum);
       font-weight: 600;
     }
+
+    /* ── PULL QUOTE BLOCK ── */
+    .pull-quote-block {
+      background: var(--ivory);
+      border-left: 3px solid var(--gold);
+      padding: 1.8rem 2.2rem;
+      margin: 2.5rem 0;
+      border-radius: 0 12px 12px 0;
+    }
+    .pull-quote-block p {
+      font-family: var(--serif) !important;
+      font-size: 1.15rem !important;
+      color: var(--plum) !important;
+      font-style: italic;
+      margin: 0 !important;
+      line-height: 1.55 !important;
+      font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
+    }
+
+    /* ── MODALITY PILLS ── */
+    .modality-pills { display: flex; gap: 16px; margin: 2rem 0; flex-wrap: wrap; }
+    .modality-pill {
+      flex: 1; min-width: 180px; padding: 1.2rem 1.5rem;
+      border: 1px solid var(--sand); border-radius: 12px;
+      background: var(--cream); cursor: default; transition: all 0.3s;
+    }
+    .modality-pill:hover { border-color: var(--coral); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(42, 31, 26, 0.06); }
+    @media (hover: none) { .modality-pill:hover { border-color: var(--sand); transform: none; box-shadow: none; } }
+    .modality-pill strong { display: block; color: var(--plum); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; }
+    .modality-pill p { font-size: 0.88rem !important; color: var(--stone) !important; margin: 0.5rem 0 0 !important; line-height: 1.45 !important; }
+
+    /* ── STORY VISUAL BREAKS ── */
+    .story-breath { width: 40px; height: 2px; background: var(--gold); margin: 2.5rem 0; opacity: 0.6; }
+
+    /* ── STAT HIGHLIGHT ── */
+    .stat-highlight { display: inline-flex; align-items: baseline; gap: 0.5rem; margin: 0.5rem 0 1.5rem; }
+    .stat-number { font-family: var(--serif); font-size: 2.5rem; color: var(--plum); font-weight: 700; line-height: 1; font-variation-settings: 'WONK' 0, 'opsz' 144 !important; }
+    .stat-label { font-size: 0.9rem; color: var(--stone); }
+
+    /* ── INSIGHT HIGHLIGHT ── */
+    .insight-highlight {
+      display: flex; align-items: flex-start; gap: 1rem;
+      margin: 2rem 0; padding: 1.5rem; border-radius: 12px;
+      background: linear-gradient(135deg, rgba(92, 39, 81, 0.04), rgba(92, 39, 81, 0.02));
+    }
+    .insight-highlight p { margin: 0 !important; font-size: 0.92rem !important; color: var(--mocha) !important; }
+    .insight-highlight strong { color: var(--plum); }
+
+    /* ── CREDENTIAL GRID FIXES ── */
+    .cred-grid .cred-card:last-child:nth-child(odd) { grid-column: 1 / -1; max-width: 540px; justify-self: center; }
+    .cred-card { cursor: pointer; display: flex; flex-direction: column; }
+    .cred-card .cred-detail { flex: 1; }
+
+    /* ── PULL QUOTE BANNER HOVER ── */
+    .pull-quote-banner { transition: transform 0.4s, box-shadow 0.4s; cursor: default; }
+    .pull-quote-banner:hover { transform: scale(1.01); box-shadow: 0 8px 32px rgba(92, 39, 81, 0.15); }
+    @media (hover: none) { .pull-quote-banner:hover { transform: none; box-shadow: none; } }
+
+    /* ── NAV ACTIVE STATE ── */
+    .nav-links a.active { color: var(--plum) !important; font-weight: 600; }
+
+    /* ── CLOSING CTA TRUST LINE ── */
+    .trust-line { font-family: var(--display); font-size: 0.75rem; color: var(--stone); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.5rem; position: relative; z-index: 1; }
 
     /* ── CO-REGULATION DIAGRAM ── */
     .coreg-visual {
@@ -752,9 +763,8 @@
       .coreg-visual { padding: 2.5rem 1.5rem; }
 
       .shift-panel { max-width: 100%; }
-      .shift-panel-inner { padding: 3rem 2rem; }
-      .shift-word-struck { font-size: 2.2rem; }
-      .shift-word-gold { font-size: 3rem; }
+      .modality-pills { flex-direction: column; }
+      .modality-pill { min-width: auto; }
 
       .pull-quote-banner { padding: 1.8rem 1.5rem; }
       .pull-quote-banner p { font-size: 1rem; }
@@ -833,7 +843,9 @@
       <div class="section-label reveal">Why It Matters Who You Work With</div>
       <div class="prose-column reveal">
         <p>You can find qualified practitioners anywhere. Qualifications matter &mdash; but they're not what transforms you.</p>
-        <p>Your nervous system learns from the nervous system working with yours. Neuroscience calls it co-regulation &mdash; when the person guiding you has done the deep work themselves, your system starts to calibrate to theirs. Not because they told you to relax. Because their body is teaching yours what regulated actually feels like.</p>
+        <div class="insight-highlight">
+          <p><strong>Neuroscience calls it co-regulation</strong> &mdash; your nervous system learns from the nervous system working with yours. When the person guiding you has done the deep work themselves, your system starts to calibrate to theirs. Not because they told you to relax. Because their body is teaching yours what regulated actually feels like.</p>
+        </div>
         <p>That's why who you work with isn't a detail. It's the thing that makes or breaks the entire process.</p>
       </div>
 
@@ -895,29 +907,31 @@
       <div class="section-label reveal">My Story</div>
       <div class="prose-column reveal">
         <p class="prose-lead">I started my own therapeutic work at fifteen.</p>
-        <p>At fifteen, I left home for boarding school in Scotland &mdash; a different country, no family, no safety net. Within months, I developed a severe eating disorder. Three years of it. The kind where you don't know if you're going to come out the other side.</p>
+        <p>I left home for boarding school in Scotland at that age &mdash; a different country, no family, no safety net. Within months, I developed a severe eating disorder. Three years of it. The kind where you don't know if you're going to come out the other side.</p>
         <p>My godmother &mdash; a hypnotherapist and psychologist specialising in psychosomatics &mdash; was the first person who showed me what real therapeutic work could do. Not just talking about the problem. Reaching the part of me that was running it. That was the moment I understood: the mind can change the body. The subconscious can be rewritten. And the right person guiding you changes everything.</p>
+        <div class="story-breath"></div>
         <p>Through that work, I learned to reconnect with myself &mdash; my body, my impulses, my voice. To actually hear myself instead of overriding every signal. To be on my own team instead of at war with myself.</p>
-        <p class="prose-highlight">I healed the eating disorder completely. I've been free of it for eleven years.</p>
+        <p class="prose-highlight">I healed the eating disorder completely.</p>
+        <div class="stat-highlight">
+          <span class="stat-number">11</span>
+          <span class="stat-label">years free</span>
+        </div>
       </div>
 
       <div class="prose-column reveal">
         <p>But the bigger shift was realising I didn't have to live on autopilot. That I could take my life into my own hands &mdash; not react to it, but actually create it. That became the turning point for everything that followed.</p>
 
       <!-- The Shift infographic -->
-      <div class="shift-panel">
-        <div class="shift-panel-inner">
-          <div class="shift-crosshair-v"></div>
-          <div class="shift-label">The Shift</div>
-          <div class="shift-word-struck">Reacting</div>
-          <div class="shift-arrow">
-            <svg width="24" height="40" viewBox="0 0 24 40" fill="none">
-              <path d="M12 0v36M4 28l8 8 8-8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="shift-word-gold">Creating</div>
-          <div class="shift-sub">Not from reading another self-help book. From <strong>rewiring the patterns</strong> that are running the show underneath.</div>
+      <div class="shift-panel reveal">
+        <div class="shift-label">The Shift</div>
+        <div class="shift-word-struck">Reacting</div>
+        <div class="shift-arrow">
+          <svg width="20" height="36" viewBox="0 0 20 36" fill="none">
+            <path d="M10 0v32M3 25l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
+        <div class="shift-word-gold">Creating</div>
+        <p class="shift-caption">Not from reading another self-help book. From <strong>rewiring the patterns</strong> that are running the show underneath.</p>
       </div>
         <p>Since then, life kept testing it. A toxic relationship that nearly erased me. War in my country. Cancer in my family. A nicotine addiction I carried for over a decade. Each time, I rebuilt &mdash; not back to who I was, but into someone clearer, stronger, more free.</p>
       </div>
@@ -933,7 +947,24 @@
       <div class="prose-column reveal">
         <p>When I was going through my own hardships, I didn't just want someone with the right qualifications. I wanted someone who'd actually been where I was. Who understood the pain from the inside. That was harder to find than it should have been.</p>
         <p>After years of my own transformations, I couldn't ignore it anymore &mdash; I keep seeing earlier versions of myself in the women around me. The same stuck places, the same conditioning running the show. I want to help them break free from it the same way I did.</p>
-        <p>That's why I specialised in evidence-based modalities &mdash; cognitive behavioural hypnotherapy, rapid transformational therapy, and somatic release work. These are clinically grounded approaches, not wellness trends. I chose them because they create real, lasting change &mdash; and because they're what worked on me.</p>
+        <div class="pull-quote-block reveal">
+          <p>I keep seeing earlier versions of myself in the women around me.</p>
+        </div>
+        <p>That's why I specialised in evidence-based modalities &mdash; clinically grounded approaches, not wellness trends. I chose them because they create real, lasting change &mdash; and because they're what worked on me.</p>
+        <div class="modality-pills reveal">
+          <div class="modality-pill">
+            <strong>CBH</strong>
+            <p>Cognitive Behavioural Hypnotherapy</p>
+          </div>
+          <div class="modality-pill">
+            <strong>RTT</strong>
+            <p>Rapid Transformational Therapy</p>
+          </div>
+          <div class="modality-pill">
+            <strong>Somatic</strong>
+            <p>Body-based trauma release work</p>
+          </div>
+        </div>
         <p class="prose-closer">This isn't a career pivot. It's the thing my entire journey was building towards.</p>
         <a href="/method" class="method-link">See the full method <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
@@ -956,9 +987,6 @@
           <div class="cred-title">Level 5 Higher Diploma in Cognitive Behavioural Hypnotherapy (Hypno-CBT&reg;)</div>
           <div class="cred-subtitle">UK College of Hypnosis &amp; Hypnotherapy</div>
           <div class="cred-detail">500-hour practitioner qualification &mdash; the UK's only externally verified Level 5 diploma in the field, awarded by NCFE. Integrates CBT, clinical hypnosis, and mindfulness into one evidence-based framework.</div>
-          <div class="cred-diploma-placeholder">
-            <span class="cred-diploma-hint">Diploma image coming soon</span>
-          </div>
         </div>
 
         <!-- RTT -->
@@ -969,15 +997,12 @@
           <div class="cred-title">Certified RTT Practitioner&reg;</div>
           <div class="cred-subtitle">Rapid Transformational Therapy &mdash; developed by Marisa Peer</div>
           <div class="cred-detail">Combines hypnotherapy, psychotherapy, and neuroscience to access and transform root-cause beliefs and behaviours.</div>
-          <div class="cred-diploma-placeholder">
-            <span class="cred-diploma-hint">Certificate image coming soon</span>
-          </div>
         </div>
 
         <!-- Somatic -->
         <div class="cred-card reveal">
           <div class="cred-badge-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z"/><path d="M4 18C4 14.69 7.58 12 12 12C16.42 12 20 14.69 20 18"/><path d="M7 9C7 9 9 11 12 11C15 11 17 9 17 9"/></svg>
           </div>
           <div class="cred-title">Somatic Release Training</div>
           <div class="cred-subtitle">Under Olga Divieyeva &mdash; psychologist, psychosomatics specialist</div>
@@ -995,6 +1020,7 @@
       <h2 class="closing-headline reveal">You already know something needs to <em>change.</em></h2>
       <p class="closing-sub reveal">You don't need to have it figured out. You just need to be done with autopilot.</p>
       <div class="reveal" style="position: relative; z-index: 1;">
+        <p class="trust-line">Free intake &middot; No commitment &middot; Completely confidential</p>
         <a href="/#intake" class="btn-primary">Tell Me What's Going On <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
