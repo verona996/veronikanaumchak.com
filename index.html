@@ -302,176 +302,192 @@
       overflow: hidden;
     }
 
-    /* Layered background — radial glow + decorative shapes */
+    /* ── HERO 3D PARALLAX SYSTEM ── */
+    .hero {
+      perspective: 1200px;
+      transform-style: preserve-3d;
+    }
+
+    /* Warm radial glow backdrop */
     .hero::before {
       content: '';
       position: absolute;
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
-      width: 800px; height: 800px;
+      width: 1400px; height: 1400px;
       background:
-        radial-gradient(circle at 30% 40%, rgba(232, 80, 58, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 70% 60%, rgba(92, 39, 81, 0.06) 0%, transparent 45%),
-        radial-gradient(circle at 50% 50%, rgba(212, 168, 86, 0.04) 0%, transparent 60%);
+        radial-gradient(ellipse at 30% 30%, rgba(232, 80, 58, 0.16) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 60%, rgba(92, 39, 81, 0.09) 0%, transparent 45%),
+        radial-gradient(ellipse at 50% 40%, rgba(212, 168, 86, 0.07) 0%, transparent 55%),
+        radial-gradient(ellipse at 65% 25%, rgba(232, 80, 58, 0.08) 0%, transparent 40%);
       animation: hero-pulse 7s ease-in-out infinite;
       pointer-events: none;
     }
 
-    /* Decorative ring — editorial accent */
-    .hero-ring {
+    /* Parallax layer container */
+    .hero-parallax {
       position: absolute;
-      top: 12%;
-      right: 8%;
-      width: 180px;
-      height: 180px;
-      border: 1px solid var(--sand);
-      border-radius: 50%;
-      opacity: 0.4;
+      inset: 0;
       pointer-events: none;
+      overflow: hidden;
     }
 
-    .hero-ring-2 {
+    /* Each element gets its own parallax speed via data-speed */
+    .hero-parallax [data-float] {
       position: absolute;
-      bottom: 15%;
-      left: 5%;
-      width: 120px;
-      height: 120px;
-      border: 1px solid var(--coral);
-      border-radius: 50%;
-      opacity: 0.12;
-      pointer-events: none;
+      will-change: transform;
+      transition: none;
     }
 
-    /* Diagonal decorative line */
-    .hero-line {
-      position: absolute;
-      top: 20%;
-      left: -5%;
-      width: 250px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--taupe), transparent);
-      transform: rotate(-25deg);
+    /* ── Large ring — top right, slow drift ── */
+    .hpx-ring-1 {
+      top: 4%; right: 2%;
+      width: 320px; height: 320px;
+      border: 1.5px solid var(--sand);
+      border-radius: 50%;
       opacity: 0.3;
-      pointer-events: none;
     }
 
-    .hero-line-2 {
-      position: absolute;
-      bottom: 25%;
-      right: -3%;
-      width: 200px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--coral), transparent);
-      transform: rotate(20deg);
-      opacity: 0.15;
-      pointer-events: none;
+    /* ── Coral ring — bottom left, medium drift ── */
+    .hpx-ring-2 {
+      bottom: 6%; left: 1%;
+      width: 220px; height: 220px;
+      border: 1.5px solid var(--coral);
+      border-radius: 50%;
+      opacity: 0.14;
     }
 
-    /* Additional decorative elements */
-    .hero-arc {
-      position: absolute;
-      top: 8%;
-      left: 12%;
-      width: 300px;
-      height: 300px;
+    /* ── Quarter arc — top left ── */
+    .hpx-arc {
+      top: 2%; left: 4%;
+      width: 450px; height: 450px;
       border: 1px solid var(--sand);
       border-radius: 50%;
       opacity: 0.18;
-      pointer-events: none;
-      clip-path: polygon(0 0, 60% 0, 60% 60%, 0 60%);
+      clip-path: polygon(0 0, 50% 0, 50% 50%, 0 50%);
     }
 
-    .hero-dots {
-      position: absolute;
-      top: 18%;
-      right: 15%;
-      pointer-events: none;
+    /* ── Quarter arc — bottom right ── */
+    .hpx-arc-2 {
+      bottom: 2%; right: 2%;
+      width: 300px; height: 300px;
+      border: 1px solid var(--taupe);
+      border-radius: 50%;
+      opacity: 0.13;
+      clip-path: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%);
+    }
+
+    /* ── Diagonal lines ── */
+    .hpx-line-1 {
+      top: 12%; left: -3%;
+      width: 400px; height: 1.5px;
+      background: linear-gradient(90deg, transparent 0%, var(--taupe) 40%, transparent 100%);
+      transform: rotate(-18deg);
+      opacity: 0.3;
+    }
+    .hpx-line-2 {
+      bottom: 16%; right: -3%;
+      width: 350px; height: 1.5px;
+      background: linear-gradient(90deg, transparent 0%, var(--coral) 50%, transparent 100%);
+      transform: rotate(14deg);
+      opacity: 0.18;
+    }
+    .hpx-line-3 {
+      top: 38%; left: 10%;
+      width: 200px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--sand), transparent);
+      transform: rotate(30deg);
+      opacity: 0.22;
+    }
+
+    /* ── Dot grid ── */
+    .hpx-dots {
+      top: 10%; right: 14%;
+      opacity: 0.28;
+    }
+
+    /* ── Organic wave ── */
+    .hpx-wave {
+      bottom: 14%; left: 3%;
       opacity: 0.2;
     }
 
-    .hero-wave-deco {
-      position: absolute;
-      bottom: 20%;
-      left: 8%;
-      pointer-events: none;
-      opacity: 0.12;
+    /* ── Cross ── */
+    .hpx-cross {
+      top: 22%; right: 20%;
+      width: 30px; height: 30px;
+      opacity: 0.22;
     }
-
-    .hero-cross {
-      position: absolute;
-      top: 30%;
-      right: 20%;
-      width: 24px;
-      height: 24px;
-      pointer-events: none;
-      opacity: 0.15;
+    .hpx-cross::before, .hpx-cross::after {
+      content: ''; position: absolute; background: var(--taupe);
     }
+    .hpx-cross::before { top: 50%; left: 0; width: 100%; height: 1px; transform: translateY(-50%); }
+    .hpx-cross::after { left: 50%; top: 0; width: 1px; height: 100%; transform: translateX(-50%); }
 
-    .hero-cross::before,
-    .hero-cross::after {
-      content: '';
-      position: absolute;
-      background: var(--taupe);
-    }
-
-    .hero-cross::before {
-      top: 50%; left: 0;
-      width: 100%; height: 1px;
-      transform: translateY(-50%);
-    }
-
-    .hero-cross::after {
-      left: 50%; top: 0;
-      width: 1px; height: 100%;
-      transform: translateX(-50%);
-    }
-
-    .hero-diamond {
-      position: absolute;
-      bottom: 30%;
-      right: 12%;
-      width: 16px;
-      height: 16px;
-      border: 1px solid var(--coral);
+    /* ── Diamond ── */
+    .hpx-diamond {
+      bottom: 25%; right: 8%;
+      width: 22px; height: 22px;
+      border: 1.5px solid var(--coral);
       transform: rotate(45deg);
-      opacity: 0.12;
-      pointer-events: none;
-    }
-
-    .hero-circle-sm {
-      position: absolute;
-      top: 40%;
-      left: 6%;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--sand);
-      opacity: 0.25;
-      pointer-events: none;
-    }
-
-    .hero-circle-sm-2 {
-      position: absolute;
-      top: 22%;
-      left: 25%;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--coral);
-      opacity: 0.12;
-      pointer-events: none;
-    }
-
-    .hero-circle-sm-3 {
-      position: absolute;
-      bottom: 35%;
-      right: 25%;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--taupe);
       opacity: 0.2;
-      pointer-events: none;
+    }
+
+    /* ── Small scattered dots ── */
+    .hpx-dot { border-radius: 50%; }
+    .hpx-dot-1 { top: 32%; left: 4%; width: 10px; height: 10px; background: var(--sand); opacity: 0.35; }
+    .hpx-dot-2 { top: 15%; left: 25%; width: 7px; height: 7px; background: var(--coral); opacity: 0.2; }
+    .hpx-dot-3 { bottom: 30%; right: 25%; width: 9px; height: 9px; background: var(--taupe); opacity: 0.3; }
+    .hpx-dot-4 { top: 8%; left: 42%; width: 5px; height: 5px; background: var(--coral); opacity: 0.15; }
+    .hpx-dot-5 { bottom: 18%; left: 35%; width: 6px; height: 6px; background: var(--sand); opacity: 0.25; }
+    .hpx-dot-6 { top: 45%; right: 6%; width: 8px; height: 8px; background: var(--taupe); opacity: 0.18; }
+
+    /* ── Floating orbit ring (animated) ── */
+    .hpx-orbit {
+      top: 50%; left: 50%;
+      width: 600px; height: 600px;
+      margin: -300px 0 0 -300px;
+      border: 1px solid var(--sand);
+      border-radius: 50%;
+      opacity: 0.08;
+      animation: hero-orbit 25s linear infinite;
+    }
+    @keyframes hero-orbit {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* ── Swoosh curve — coral accent ── */
+    .hpx-swoosh { top: 0; left: 0; width: 100%; height: 100%; opacity: 0.12; }
+
+    /* ── Parallax entrance animation ── */
+    .hero-parallax [data-float] {
+      opacity: 0;
+      animation: hpx-fade-in 1.2s ease-out forwards;
+    }
+    .hero-parallax [data-float]:nth-child(1) { animation-delay: 0.1s; }
+    .hero-parallax [data-float]:nth-child(2) { animation-delay: 0.15s; }
+    .hero-parallax [data-float]:nth-child(3) { animation-delay: 0.2s; }
+    .hero-parallax [data-float]:nth-child(4) { animation-delay: 0.25s; }
+    .hero-parallax [data-float]:nth-child(5) { animation-delay: 0.3s; }
+    .hero-parallax [data-float]:nth-child(6) { animation-delay: 0.35s; }
+    .hero-parallax [data-float]:nth-child(7) { animation-delay: 0.4s; }
+    .hero-parallax [data-float]:nth-child(8) { animation-delay: 0.45s; }
+    .hero-parallax [data-float]:nth-child(9) { animation-delay: 0.5s; }
+    .hero-parallax [data-float]:nth-child(10) { animation-delay: 0.55s; }
+    .hero-parallax [data-float]:nth-child(11) { animation-delay: 0.6s; }
+    .hero-parallax [data-float]:nth-child(12) { animation-delay: 0.65s; }
+    .hero-parallax [data-float]:nth-child(13) { animation-delay: 0.7s; }
+    .hero-parallax [data-float]:nth-child(14) { animation-delay: 0.75s; }
+    .hero-parallax [data-float]:nth-child(15) { animation-delay: 0.8s; }
+    .hero-parallax [data-float]:nth-child(16) { animation-delay: 0.85s; }
+    .hero-parallax [data-float]:nth-child(17) { animation-delay: 0.9s; }
+    .hero-parallax [data-float]:nth-child(18) { animation-delay: 0.95s; }
+    .hero-parallax [data-float]:nth-child(19) { animation-delay: 1.0s; }
+    .hero-parallax [data-float]:nth-child(20) { animation-delay: 1.05s; }
+    @keyframes hpx-fade-in {
+      from { opacity: 0; transform: translateY(20px) scale(0.95); }
+      to { opacity: var(--float-opacity, 1); transform: translateY(0) scale(1); }
     }
 
     /* Grain texture */
@@ -1597,7 +1613,7 @@
       .cred-bar-inner { gap: 1.5rem; }
       .cred-bar-item span { font-size: 0.65rem; }
 
-      .hero-ring, .hero-ring-2, .hero-line, .hero-line-2, .hero-arc, .hero-dots, .hero-wave-deco, .hero-cross, .hero-diamond, .hero-circle-sm, .hero-circle-sm-2, .hero-circle-sm-3 { display: none; }
+      .hero-parallax { display: none; }
 
       .doorway-grid { grid-template-columns: 1fr; }
       .method-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -1663,33 +1679,49 @@
 
   <!-- HERO -->
   <section class="hero" id="top">
-    <!-- Decorative elements -->
-    <div class="hero-ring"></div>
-    <div class="hero-ring-2"></div>
-    <div class="hero-line"></div>
-    <div class="hero-line-2"></div>
-    <div class="hero-arc"></div>
-    <div class="hero-cross"></div>
-    <div class="hero-diamond"></div>
-    <div class="hero-circle-sm"></div>
-    <div class="hero-circle-sm-2"></div>
-    <div class="hero-circle-sm-3"></div>
-    <!-- Dot cluster -->
-    <svg class="hero-dots" width="80" height="80" viewBox="0 0 80 80" fill="none">
-      <circle cx="10" cy="10" r="2" fill="var(--sand)"/>
-      <circle cx="30" cy="10" r="2" fill="var(--sand)"/>
-      <circle cx="50" cy="10" r="2" fill="var(--sand)"/>
-      <circle cx="10" cy="30" r="2" fill="var(--sand)"/>
-      <circle cx="30" cy="30" r="2" fill="var(--sand)"/>
-      <circle cx="50" cy="30" r="2" fill="var(--sand)"/>
-      <circle cx="10" cy="50" r="2" fill="var(--sand)"/>
-      <circle cx="30" cy="50" r="2" fill="var(--sand)"/>
-      <circle cx="50" cy="50" r="2" fill="var(--sand)"/>
-    </svg>
-    <!-- Organic wave -->
-    <svg class="hero-wave-deco" width="200" height="60" viewBox="0 0 200 60" fill="none">
-      <path d="M0 30 Q25 10, 50 30 Q75 50, 100 30 Q125 10, 150 30 Q175 50, 200 30" stroke="var(--taupe)" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.5"/>
-    </svg>
+    <!-- ── 3D PARALLAX LAYER ── -->
+    <div class="hero-parallax" id="heroParallax">
+      <!-- Large structural elements — slow parallax (0.2-0.4) -->
+      <div class="hpx-ring-1" data-float data-speed="0.25" data-rotate="0.02" style="--float-opacity: 0.3;"></div>
+      <div class="hpx-ring-2" data-float data-speed="0.35" data-rotate="-0.015" style="--float-opacity: 0.14;"></div>
+      <div class="hpx-arc" data-float data-speed="0.15" style="--float-opacity: 0.18;"></div>
+      <div class="hpx-arc-2" data-float data-speed="0.2" style="--float-opacity: 0.13;"></div>
+      <div class="hpx-orbit" data-float data-speed="0.1" style="--float-opacity: 0.08;"></div>
+
+      <!-- Lines — medium parallax (0.4-0.6) -->
+      <div class="hpx-line-1" data-float data-speed="0.45" style="--float-opacity: 0.3;"></div>
+      <div class="hpx-line-2" data-float data-speed="0.5" style="--float-opacity: 0.18;"></div>
+      <div class="hpx-line-3" data-float data-speed="0.55" style="--float-opacity: 0.22;"></div>
+
+      <!-- Swoosh curve -->
+      <svg class="hpx-swoosh" data-float data-speed="0.12" style="--float-opacity: 0.12;" viewBox="0 0 1200 500" fill="none" preserveAspectRatio="none">
+        <path d="M-50 400 Q200 100, 500 250 Q800 400, 1100 150 Q1200 100, 1300 120" stroke="var(--coral)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M-50 420 Q250 180, 550 300 Q850 420, 1150 200" stroke="var(--sand)" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+      </svg>
+
+      <!-- Dot grid -->
+      <svg class="hpx-dots" data-float data-speed="0.6" style="--float-opacity: 0.28;" width="100" height="100" viewBox="0 0 100 100" fill="none">
+        <circle cx="10" cy="10" r="2.5" fill="var(--sand)"/><circle cx="35" cy="10" r="2.5" fill="var(--sand)"/><circle cx="60" cy="10" r="2" fill="var(--sand)"/><circle cx="85" cy="10" r="1.5" fill="var(--sand)"/>
+        <circle cx="10" cy="35" r="2" fill="var(--sand)"/><circle cx="35" cy="35" r="2.5" fill="var(--sand)"/><circle cx="60" cy="35" r="2.5" fill="var(--sand)"/><circle cx="85" cy="35" r="2" fill="var(--sand)"/>
+        <circle cx="10" cy="60" r="1.5" fill="var(--sand)"/><circle cx="35" cy="60" r="2" fill="var(--sand)"/><circle cx="60" cy="60" r="2.5" fill="var(--sand)"/><circle cx="85" cy="60" r="2.5" fill="var(--sand)"/>
+        <circle cx="10" cy="85" r="2" fill="var(--sand)"/><circle cx="35" cy="85" r="1.5" fill="var(--sand)"/><circle cx="60" cy="85" r="2" fill="var(--sand)"/><circle cx="85" cy="85" r="2.5" fill="var(--sand)"/>
+      </svg>
+
+      <!-- Wave -->
+      <svg class="hpx-wave" data-float data-speed="0.4" style="--float-opacity: 0.2;" width="250" height="70" viewBox="0 0 250 70" fill="none">
+        <path d="M0 35 Q30 10, 60 35 Q90 60, 120 35 Q150 10, 180 35 Q210 60, 250 35" stroke="var(--taupe)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      </svg>
+
+      <!-- Small accent shapes — fast parallax (0.6-0.9) -->
+      <div class="hpx-cross" data-float data-speed="0.7" data-rotate="0.05" style="--float-opacity: 0.22;"></div>
+      <div class="hpx-diamond" data-float data-speed="0.75" data-rotate="-0.03" style="--float-opacity: 0.2;"></div>
+      <div class="hpx-dot hpx-dot-1" data-float data-speed="0.8" style="--float-opacity: 0.35;"></div>
+      <div class="hpx-dot hpx-dot-2" data-float data-speed="0.85" style="--float-opacity: 0.2;"></div>
+      <div class="hpx-dot hpx-dot-3" data-float data-speed="0.65" style="--float-opacity: 0.3;"></div>
+      <div class="hpx-dot hpx-dot-4" data-float data-speed="0.9" style="--float-opacity: 0.15;"></div>
+      <div class="hpx-dot hpx-dot-5" data-float data-speed="0.7" style="--float-opacity: 0.25;"></div>
+      <div class="hpx-dot hpx-dot-6" data-float data-speed="0.6" style="--float-opacity: 0.18;"></div>
+    </div>
 
     <div class="hero-content">
       <h1 class="hero-headline">You've been surviving long enough.<br>It's time to start <em>living.</em></h1>
@@ -2346,6 +2378,80 @@
         }
       });
     });
+
+    // ── 3D PARALLAX ENGINE ──
+    (function() {
+      const parallaxContainer = document.getElementById('heroParallax');
+      if (!parallaxContainer || window.innerWidth < 768) return;
+
+      const floaters = parallaxContainer.querySelectorAll('[data-float]');
+      let scrollY = 0;
+      let mouseX = 0;
+      let mouseY = 0;
+      let rafId = null;
+      const heroRect = { top: 0, height: 0 };
+
+      function updateHeroRect() {
+        const hero = document.querySelector('.hero');
+        if (hero) {
+          const r = hero.getBoundingClientRect();
+          heroRect.top = r.top + window.scrollY;
+          heroRect.height = r.height;
+        }
+      }
+      updateHeroRect();
+      window.addEventListener('resize', updateHeroRect);
+
+      // Track mouse for subtle depth shift
+      document.addEventListener('mousemove', (e) => {
+        mouseX = (e.clientX / window.innerWidth - 0.5) * 2;  // -1 to 1
+        mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+      });
+
+      function animate() {
+        scrollY = window.scrollY;
+        const scrollProgress = Math.max(0, Math.min(1, scrollY / heroRect.height));
+
+        floaters.forEach(el => {
+          const speed = parseFloat(el.dataset.speed) || 0.5;
+          const rotateSpeed = parseFloat(el.dataset.rotate) || 0;
+
+          // Scroll-driven vertical translation (faster elements = more movement)
+          const translateY = -(scrollY * speed * 0.8);
+
+          // Mouse-driven horizontal/vertical shift (parallax depth effect)
+          const mouseShiftX = mouseX * speed * 15;
+          const mouseShiftY = mouseY * speed * 10;
+
+          // Subtle rotation on scroll
+          const rotation = scrollY * rotateSpeed;
+
+          // Scale slightly as user scrolls (zoom-out effect for depth)
+          const scale = 1 - (scrollProgress * speed * 0.15);
+
+          // Opacity fade as elements scroll up
+          const baseOpacity = parseFloat(getComputedStyle(el).getPropertyValue('--float-opacity')) || 1;
+          const fadeOpacity = baseOpacity * (1 - scrollProgress * 0.7);
+
+          el.style.transform = `translate3d(${mouseShiftX}px, ${translateY + mouseShiftY}px, 0) rotate(${rotation}deg) scale(${scale})`;
+          el.style.opacity = Math.max(0, fadeOpacity);
+        });
+
+        rafId = requestAnimationFrame(animate);
+      }
+
+      // Only animate when hero is potentially visible
+      const heroObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if (!rafId) rafId = requestAnimationFrame(animate);
+          } else {
+            if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+          }
+        });
+      }, { threshold: 0 });
+      heroObserver.observe(document.querySelector('.hero'));
+    })();
   </script>
 
 </body>

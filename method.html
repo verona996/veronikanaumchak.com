@@ -789,26 +789,30 @@
     .evidence-badge {
       display: flex;
       align-items: center;
-      gap: 1rem;
-      padding: 1rem 1.2rem;
+      gap: 0;
+      padding: 0;
       background: var(--ivory);
       border: 1px solid var(--sand);
       border-radius: 4px;
       flex: 1 1 0;
       min-width: 0;
+      overflow: hidden;
     }
 
     .evidence-num {
       font-family: var(--serif);
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-weight: 500;
       font-variation-settings: 'WONK' 0, 'opsz' 144;
       color: var(--coral);
       line-height: 1;
       white-space: nowrap;
       flex-shrink: 0;
-      min-width: 4.5rem;
-      text-align: right;
+      width: 6.5rem;
+      text-align: center;
+      padding: 1rem 0;
+      border-right: 1px solid var(--sand);
+      background: rgba(232, 80, 58, 0.03);
     }
 
     .evidence-detail {
@@ -816,6 +820,7 @@
       font-size: 0.7rem;
       color: var(--stone);
       line-height: 1.45;
+      padding: 0.8rem 1rem;
     }
 
     /* ── MID-PAGE PULL QUOTE ── */
