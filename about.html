@@ -1074,21 +1074,21 @@
       <div class="resilience-visual reveal">
         <div class="resilience-label">The Resilience Path</div>
         <div class="resilience-wave">
-          <svg viewBox="0 0 600 140" fill="none" preserveAspectRatio="xMidYMid meet">
-            <!-- Faint diagonal guideline -->
-            <line x1="0" y1="125" x2="600" y2="15" stroke="var(--sand)" stroke-width="1" stroke-dasharray="4 6" class="resilience-baseline"/>
-            <!-- Rising path: upward diagonal with shallow dips, each cycle higher -->
-            <path class="resilience-path" d="M0 125 C25 125, 45 118, 65 112 C85 106, 90 100, 110 95 C130 90, 140 96, 160 92 C180 88, 185 80, 210 74 C235 68, 240 76, 265 70 C290 64, 295 56, 320 50 C345 44, 350 52, 375 46 C400 40, 405 34, 430 28 C455 22, 460 28, 485 24 C510 20, 530 16, 560 14 C580 12, 595 10, 600 10" stroke="var(--coral)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-            <!-- Rebuild dots at each peak -->
-            <circle cx="110" cy="95" r="3.5" fill="var(--coral)" class="resilience-dot resilience-dot-1"/>
-            <circle cx="265" cy="70" r="3.5" fill="var(--coral)" class="resilience-dot resilience-dot-2"/>
-            <circle cx="430" cy="28" r="4" fill="var(--coral)" class="resilience-dot resilience-dot-3"/>
-            <circle cx="595" cy="10" r="5" fill="var(--coral)" class="resilience-dot resilience-dot-4"/>
+          <svg viewBox="0 0 600 160" fill="none" preserveAspectRatio="xMidYMid meet">
+            <!-- Faint diagonal guideline showing upward trend -->
+            <line x1="0" y1="130" x2="600" y2="15" stroke="var(--sand)" stroke-width="1" stroke-dasharray="4 6" class="resilience-baseline"/>
+            <!-- Wave path: full amplitude cycles trending diagonally upward -->
+            <path class="resilience-path" d="M0 130 C30 130, 50 145, 80 140 C110 135, 120 80, 150 75 C180 70, 195 120, 220 115 C245 110, 260 55, 290 48 C320 41, 340 95, 365 88 C390 81, 405 30, 435 24 C465 18, 480 55, 500 48 C520 41, 540 12, 570 10 C585 9, 595 8, 600 8" stroke="var(--coral)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <!-- Rebuild dots at each peak (top of each wave) -->
+            <circle cx="150" cy="75" r="4" fill="var(--coral)" class="resilience-dot resilience-dot-1"/>
+            <circle cx="290" cy="48" r="4" fill="var(--coral)" class="resilience-dot resilience-dot-2"/>
+            <circle cx="435" cy="24" r="4.5" fill="var(--coral)" class="resilience-dot resilience-dot-3"/>
+            <circle cx="595" cy="8" r="5" fill="var(--coral)" class="resilience-dot resilience-dot-4"/>
             <!-- Peak labels -->
-            <text x="110" y="85" class="resilience-peak-label" text-anchor="middle">rebuild</text>
-            <text x="265" y="60" class="resilience-peak-label" text-anchor="middle">rebuild</text>
-            <text x="430" y="18" class="resilience-peak-label" text-anchor="middle">rebuild</text>
-            <text x="585" y="5" class="resilience-peak-label" text-anchor="middle" style="font-size: 0.6rem; fill: var(--coral);">now</text>
+            <text x="150" y="63" class="resilience-peak-label" text-anchor="middle">rebuild</text>
+            <text x="290" y="36" class="resilience-peak-label" text-anchor="middle">rebuild</text>
+            <text x="435" y="14" class="resilience-peak-label" text-anchor="middle">rebuild</text>
+            <text x="580" y="5" class="resilience-peak-label" text-anchor="middle" style="font-size: 0.6rem; fill: var(--coral);">now</text>
           </svg>
         </div>
         <p class="resilience-caption">Each time, I came back <strong>higher</strong>.</p>
