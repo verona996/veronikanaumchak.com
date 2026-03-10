@@ -367,6 +367,113 @@
       pointer-events: none;
     }
 
+    /* Additional decorative elements */
+    .hero-arc {
+      position: absolute;
+      top: 8%;
+      left: 12%;
+      width: 300px;
+      height: 300px;
+      border: 1px solid var(--sand);
+      border-radius: 50%;
+      opacity: 0.18;
+      pointer-events: none;
+      clip-path: polygon(0 0, 60% 0, 60% 60%, 0 60%);
+    }
+
+    .hero-dots {
+      position: absolute;
+      top: 18%;
+      right: 15%;
+      pointer-events: none;
+      opacity: 0.2;
+    }
+
+    .hero-wave-deco {
+      position: absolute;
+      bottom: 20%;
+      left: 8%;
+      pointer-events: none;
+      opacity: 0.12;
+    }
+
+    .hero-cross {
+      position: absolute;
+      top: 30%;
+      right: 20%;
+      width: 24px;
+      height: 24px;
+      pointer-events: none;
+      opacity: 0.15;
+    }
+
+    .hero-cross::before,
+    .hero-cross::after {
+      content: '';
+      position: absolute;
+      background: var(--taupe);
+    }
+
+    .hero-cross::before {
+      top: 50%; left: 0;
+      width: 100%; height: 1px;
+      transform: translateY(-50%);
+    }
+
+    .hero-cross::after {
+      left: 50%; top: 0;
+      width: 1px; height: 100%;
+      transform: translateX(-50%);
+    }
+
+    .hero-diamond {
+      position: absolute;
+      bottom: 30%;
+      right: 12%;
+      width: 16px;
+      height: 16px;
+      border: 1px solid var(--coral);
+      transform: rotate(45deg);
+      opacity: 0.12;
+      pointer-events: none;
+    }
+
+    .hero-circle-sm {
+      position: absolute;
+      top: 40%;
+      left: 6%;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--sand);
+      opacity: 0.25;
+      pointer-events: none;
+    }
+
+    .hero-circle-sm-2 {
+      position: absolute;
+      top: 22%;
+      left: 25%;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--coral);
+      opacity: 0.12;
+      pointer-events: none;
+    }
+
+    .hero-circle-sm-3 {
+      position: absolute;
+      bottom: 35%;
+      right: 25%;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--taupe);
+      opacity: 0.2;
+      pointer-events: none;
+    }
+
     /* Grain texture */
     .hero::after {
       content: '';
@@ -1490,7 +1597,7 @@
       .cred-bar-inner { gap: 1.5rem; }
       .cred-bar-item span { font-size: 0.65rem; }
 
-      .hero-ring, .hero-ring-2, .hero-line, .hero-line-2 { display: none; }
+      .hero-ring, .hero-ring-2, .hero-line, .hero-line-2, .hero-arc, .hero-dots, .hero-wave-deco, .hero-cross, .hero-diamond, .hero-circle-sm, .hero-circle-sm-2, .hero-circle-sm-3 { display: none; }
 
       .doorway-grid { grid-template-columns: 1fr; }
       .method-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -1561,6 +1668,28 @@
     <div class="hero-ring-2"></div>
     <div class="hero-line"></div>
     <div class="hero-line-2"></div>
+    <div class="hero-arc"></div>
+    <div class="hero-cross"></div>
+    <div class="hero-diamond"></div>
+    <div class="hero-circle-sm"></div>
+    <div class="hero-circle-sm-2"></div>
+    <div class="hero-circle-sm-3"></div>
+    <!-- Dot cluster -->
+    <svg class="hero-dots" width="80" height="80" viewBox="0 0 80 80" fill="none">
+      <circle cx="10" cy="10" r="2" fill="var(--sand)"/>
+      <circle cx="30" cy="10" r="2" fill="var(--sand)"/>
+      <circle cx="50" cy="10" r="2" fill="var(--sand)"/>
+      <circle cx="10" cy="30" r="2" fill="var(--sand)"/>
+      <circle cx="30" cy="30" r="2" fill="var(--sand)"/>
+      <circle cx="50" cy="30" r="2" fill="var(--sand)"/>
+      <circle cx="10" cy="50" r="2" fill="var(--sand)"/>
+      <circle cx="30" cy="50" r="2" fill="var(--sand)"/>
+      <circle cx="50" cy="50" r="2" fill="var(--sand)"/>
+    </svg>
+    <!-- Organic wave -->
+    <svg class="hero-wave-deco" width="200" height="60" viewBox="0 0 200 60" fill="none">
+      <path d="M0 30 Q25 10, 50 30 Q75 50, 100 30 Q125 10, 150 30 Q175 50, 200 30" stroke="var(--taupe)" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.5"/>
+    </svg>
 
     <div class="hero-content">
       <h1 class="hero-headline">You've been surviving long enough.<br>It's time to start <em>living.</em></h1>
@@ -1587,10 +1716,6 @@
       <div class="cred-bar-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         <span>Somatic Modalities</span>
-      </div>
-      <div class="cred-bar-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        <span>Online Worldwide</span>
       </div>
     </div>
   </div>
