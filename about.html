@@ -558,6 +558,7 @@
     /* ── PROSE — centered reading column ── */
     .prose-column {
       max-width: 680px;
+      margin: 0 auto;
     }
 
     .prose-column p {
@@ -1074,27 +1075,23 @@
         <div class="resilience-label">The Resilience Path</div>
         <div class="resilience-wave">
           <svg viewBox="0 0 600 140" fill="none" preserveAspectRatio="xMidYMid meet">
-            <!-- Baseline -->
-            <line x1="0" y1="90" x2="600" y2="90" stroke="var(--sand)" stroke-width="1" class="resilience-baseline"/>
-            <!-- Rising path: dips and rises, each peak higher -->
-            <path class="resilience-path" d="M0 90 C30 90, 50 115, 80 115 C110 115, 120 70, 160 70 C200 70, 220 110, 250 110 C280 110, 290 55, 330 55 C370 55, 385 100, 410 100 C435 100, 450 40, 490 40 C520 40, 545 30, 580 25 L600 22" stroke="var(--coral)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-            <!-- Peak dots -->
-            <circle cx="160" cy="70" r="4" fill="var(--coral)" class="resilience-dot resilience-dot-1"/>
-            <circle cx="330" cy="55" r="4" fill="var(--coral)" class="resilience-dot resilience-dot-2"/>
-            <circle cx="490" cy="40" r="4.5" fill="var(--coral)" class="resilience-dot resilience-dot-3"/>
-            <circle cx="595" cy="22" r="5" fill="var(--coral)" class="resilience-dot resilience-dot-4"/>
-            <!-- Valley labels -->
-            <text x="80" y="132" class="resilience-valley-label" text-anchor="middle">broke</text>
-            <text x="250" y="127" class="resilience-valley-label" text-anchor="middle">broke</text>
-            <text x="410" y="117" class="resilience-valley-label" text-anchor="middle">broke</text>
+            <!-- Faint diagonal guideline -->
+            <line x1="0" y1="125" x2="600" y2="15" stroke="var(--sand)" stroke-width="1" stroke-dasharray="4 6" class="resilience-baseline"/>
+            <!-- Rising path: upward diagonal with shallow dips, each cycle higher -->
+            <path class="resilience-path" d="M0 125 C25 125, 45 118, 65 112 C85 106, 90 100, 110 95 C130 90, 140 96, 160 92 C180 88, 185 80, 210 74 C235 68, 240 76, 265 70 C290 64, 295 56, 320 50 C345 44, 350 52, 375 46 C400 40, 405 34, 430 28 C455 22, 460 28, 485 24 C510 20, 530 16, 560 14 C580 12, 595 10, 600 10" stroke="var(--coral)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <!-- Rebuild dots at each peak -->
+            <circle cx="110" cy="95" r="3.5" fill="var(--coral)" class="resilience-dot resilience-dot-1"/>
+            <circle cx="265" cy="70" r="3.5" fill="var(--coral)" class="resilience-dot resilience-dot-2"/>
+            <circle cx="430" cy="28" r="4" fill="var(--coral)" class="resilience-dot resilience-dot-3"/>
+            <circle cx="595" cy="10" r="5" fill="var(--coral)" class="resilience-dot resilience-dot-4"/>
             <!-- Peak labels -->
-            <text x="160" y="60" class="resilience-peak-label" text-anchor="middle">rebuild</text>
-            <text x="330" y="45" class="resilience-peak-label" text-anchor="middle">rebuild</text>
-            <text x="490" y="30" class="resilience-peak-label" text-anchor="middle">rebuild</text>
-            <text x="585" y="14" class="resilience-peak-label" text-anchor="middle" style="font-size: 0.6rem; fill: var(--coral);">now</text>
+            <text x="110" y="85" class="resilience-peak-label" text-anchor="middle">rebuild</text>
+            <text x="265" y="60" class="resilience-peak-label" text-anchor="middle">rebuild</text>
+            <text x="430" y="18" class="resilience-peak-label" text-anchor="middle">rebuild</text>
+            <text x="585" y="5" class="resilience-peak-label" text-anchor="middle" style="font-size: 0.6rem; fill: var(--coral);">now</text>
           </svg>
         </div>
-        <p class="resilience-caption">Each time I broke, I came back <strong>higher</strong>.</p>
+        <p class="resilience-caption">Each time, I came back <strong>higher</strong>.</p>
       </div>
 
         <p>And each time, I learned to trust myself a little more. To hear my body and work with it, not against it. That inner trust turned into the ability to cope &mdash; cope with whatever life was about to throw at me. Not because I became tougher. Because I was finally on my own side.</p>
