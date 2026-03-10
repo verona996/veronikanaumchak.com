@@ -625,7 +625,7 @@
       color: var(--espresso);
       line-height: 1.05;
       letter-spacing: -0.02em;
-      margin-bottom: 2rem;
+      margin-bottom: 1.2rem;
       opacity: 0; transform: translateY(20px);
       animation: fade-up 0.6s ease-out 0.2s forwards;
     }
@@ -633,6 +633,21 @@
       font-style: italic;
       font-weight: 500;
       color: var(--coral);
+    }
+
+    .hero-sub {
+      font-family: var(--body);
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      font-weight: 400;
+      color: var(--espresso);
+      line-height: 1.5;
+      max-width: 540px;
+      margin-bottom: 2rem;
+      opacity: 0; transform: translateY(20px);
+      animation: hero-sub-in 0.6s ease-out 0.3s forwards;
+    }
+    @keyframes hero-sub-in {
+      to { opacity: 0.65; transform: translateY(0); }
     }
 
     .hero-cta-wrap {
@@ -1439,7 +1454,7 @@
       color: var(--coral);
       opacity: 0.5;
     }
-    .process-step h4 {
+    .process-step h3 {
       font-family: var(--serif);
       font-size: 1rem;
       font-weight: 400;
@@ -1836,7 +1851,8 @@
     </div>
 
     <div class="hero-content">
-      <h1 class="hero-headline">You've been surviving long enough.<br>It's time to start <em>living.</em></h1>
+      <h1 class="hero-headline">You've been performing long enough.<br>It's time to start <em>living.</em></h1>
+      <p class="hero-sub">Clinical hypnotherapy meets cognitive behavioural coaching — for the patterns you can't think your way out of.</p>
       <div class="hero-cta-wrap">
         <a href="#intake" class="btn-primary">Tell Me What's Going On <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
@@ -1867,7 +1883,7 @@
   <!-- DOORWAYS — The Six Core Wounds -->
   <section class="section" id="about">
     <div class="page-wrap">
-      <div class="section-label reveal">Which of These Is You</div>
+      <h2 class="section-label reveal">Which of These Is You</h2>
       <div class="doorway-grid">
 
         <div class="doorway-card reveal">
@@ -2178,28 +2194,28 @@
         <div class="process-step">
           <div class="process-num">1</div>
           <div>
-            <h4>Fill out the intake form</h4>
+            <h3>Fill out the intake form</h3>
             <p>Tell me your name, a bit about yourself, and what you'd like to address. Takes 2 minutes.</p>
           </div>
         </div>
         <div class="process-step">
           <div class="process-num">2</div>
           <div>
-            <h4>I review &amp; respond</h4>
+            <h3>I review &amp; respond</h3>
             <p>I'll assess whether your situation falls within my area of expertise. If it does, I'll get back to you to schedule a call. If it doesn't, I'll tell you that too.</p>
           </div>
         </div>
         <div class="process-step">
           <div class="process-num">3</div>
           <div>
-            <h4>15-minute intro call (free)</h4>
+            <h3>15-minute intro call (free)</h3>
             <p>We briefly discuss what you're dealing with, I explain how this work addresses it and how it's structured.</p>
           </div>
         </div>
         <div class="process-step">
           <div class="process-num">4</div>
           <div>
-            <h4>Initial consultation</h4>
+            <h3>Initial consultation</h3>
             <p>Full intake, conceptualisation, and personalised treatment plan. We map out exactly how we'll work together, which modalities fit your situation, and approximately how many sessions it will take. Then we begin.</p>
           </div>
         </div>
