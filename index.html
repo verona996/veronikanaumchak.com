@@ -450,7 +450,7 @@
       border: 1px solid var(--sand);
       border-radius: 50%;
       opacity: 0.08;
-      animation: hero-orbit 25s linear infinite;
+      animation: hero-orbit 30s linear infinite;
     }
     @keyframes hero-orbit {
       from { transform: rotate(0deg); }
@@ -460,34 +460,145 @@
     /* ── Swoosh curve — coral accent ── */
     .hpx-swoosh { top: 0; left: 0; width: 100%; height: 100%; opacity: 0.12; }
 
-    /* ── Parallax entrance animation ── */
-    .hero-parallax [data-float] {
-      opacity: 0;
-      animation: hpx-fade-in 1.2s ease-out forwards;
+    /* ── AMBIENT FLOATING — continuous motion for every element ── */
+
+    /* Large structural shapes — slow, wide drifts */
+    .hpx-ring-1 { animation: hpx-drift-a 18s ease-in-out infinite; }
+    .hpx-ring-2 { animation: hpx-drift-b 22s ease-in-out infinite; }
+    .hpx-arc { animation: hpx-drift-c 20s ease-in-out infinite; }
+    .hpx-arc-2 { animation: hpx-drift-d 24s ease-in-out infinite; }
+
+    /* Lines — gentle sway */
+    .hpx-line-1 { animation: hpx-sway-a 14s ease-in-out infinite; }
+    .hpx-line-2 { animation: hpx-sway-b 16s ease-in-out infinite; }
+    .hpx-line-3 { animation: hpx-sway-c 12s ease-in-out infinite; }
+
+    /* Swoosh — slow breathe */
+    .hpx-swoosh { animation: hpx-swoosh-breathe 10s ease-in-out infinite; }
+
+    /* Dot grid + wave — gentle bob */
+    .hpx-dots { animation: hpx-drift-e 15s ease-in-out infinite; }
+    .hpx-wave { animation: hpx-wave-float 13s ease-in-out infinite; }
+
+    /* Cross + diamond — slow rotate + drift */
+    .hpx-cross { animation: hpx-spin-drift-a 20s ease-in-out infinite; }
+    .hpx-diamond { animation: hpx-spin-drift-b 18s ease-in-out infinite; }
+
+    /* Small dots — fast, lively movement */
+    .hpx-dot-1 { animation: hpx-fly-a 8s ease-in-out infinite; }
+    .hpx-dot-2 { animation: hpx-fly-b 9s ease-in-out infinite; }
+    .hpx-dot-3 { animation: hpx-fly-c 7s ease-in-out infinite; }
+    .hpx-dot-4 { animation: hpx-fly-d 10s ease-in-out infinite; }
+    .hpx-dot-5 { animation: hpx-fly-e 8.5s ease-in-out infinite; }
+    .hpx-dot-6 { animation: hpx-fly-f 9.5s ease-in-out infinite; }
+
+    /* ── KEYFRAMES — each unique path so nothing looks mechanical ── */
+
+    /* Large drifts — wide elliptical paths */
+    @keyframes hpx-drift-a {
+      0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+      25% { transform: translate3d(25px, -15px, 0) rotate(1.5deg); }
+      50% { transform: translate3d(-10px, -30px, 0) rotate(-1deg); }
+      75% { transform: translate3d(-20px, -10px, 0) rotate(0.5deg); }
     }
-    .hero-parallax [data-float]:nth-child(1) { animation-delay: 0.1s; }
-    .hero-parallax [data-float]:nth-child(2) { animation-delay: 0.15s; }
-    .hero-parallax [data-float]:nth-child(3) { animation-delay: 0.2s; }
-    .hero-parallax [data-float]:nth-child(4) { animation-delay: 0.25s; }
-    .hero-parallax [data-float]:nth-child(5) { animation-delay: 0.3s; }
-    .hero-parallax [data-float]:nth-child(6) { animation-delay: 0.35s; }
-    .hero-parallax [data-float]:nth-child(7) { animation-delay: 0.4s; }
-    .hero-parallax [data-float]:nth-child(8) { animation-delay: 0.45s; }
-    .hero-parallax [data-float]:nth-child(9) { animation-delay: 0.5s; }
-    .hero-parallax [data-float]:nth-child(10) { animation-delay: 0.55s; }
-    .hero-parallax [data-float]:nth-child(11) { animation-delay: 0.6s; }
-    .hero-parallax [data-float]:nth-child(12) { animation-delay: 0.65s; }
-    .hero-parallax [data-float]:nth-child(13) { animation-delay: 0.7s; }
-    .hero-parallax [data-float]:nth-child(14) { animation-delay: 0.75s; }
-    .hero-parallax [data-float]:nth-child(15) { animation-delay: 0.8s; }
-    .hero-parallax [data-float]:nth-child(16) { animation-delay: 0.85s; }
-    .hero-parallax [data-float]:nth-child(17) { animation-delay: 0.9s; }
-    .hero-parallax [data-float]:nth-child(18) { animation-delay: 0.95s; }
-    .hero-parallax [data-float]:nth-child(19) { animation-delay: 1.0s; }
-    .hero-parallax [data-float]:nth-child(20) { animation-delay: 1.05s; }
-    @keyframes hpx-fade-in {
-      from { opacity: 0; transform: translateY(20px) scale(0.95); }
-      to { opacity: var(--float-opacity, 1); transform: translateY(0) scale(1); }
+    @keyframes hpx-drift-b {
+      0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+      25% { transform: translate3d(-20px, 18px, 0) rotate(-2deg); }
+      50% { transform: translate3d(15px, 25px, 0) rotate(1deg); }
+      75% { transform: translate3d(22px, 8px, 0) rotate(-0.5deg); }
+    }
+    @keyframes hpx-drift-c {
+      0%, 100% { transform: translate3d(0, 0, 0); }
+      33% { transform: translate3d(18px, -22px, 0); }
+      66% { transform: translate3d(-15px, -12px, 0); }
+    }
+    @keyframes hpx-drift-d {
+      0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+      33% { transform: translate3d(-25px, 15px, 0) rotate(1.5deg); }
+      66% { transform: translate3d(12px, 28px, 0) rotate(-1deg); }
+    }
+    @keyframes hpx-drift-e {
+      0%, 100% { transform: translate3d(0, 0, 0); }
+      50% { transform: translate3d(12px, -18px, 0); }
+    }
+
+    /* Line sway — horizontal + slight rotation */
+    @keyframes hpx-sway-a {
+      0%, 100% { transform: rotate(-18deg) translateX(0); }
+      50% { transform: rotate(-16deg) translateX(30px); }
+    }
+    @keyframes hpx-sway-b {
+      0%, 100% { transform: rotate(14deg) translateX(0); }
+      50% { transform: rotate(16deg) translateX(-25px); }
+    }
+    @keyframes hpx-sway-c {
+      0%, 100% { transform: rotate(30deg) translateX(0); }
+      50% { transform: rotate(28deg) translateX(20px); }
+    }
+
+    /* Swoosh breathe — scale pulse */
+    @keyframes hpx-swoosh-breathe {
+      0%, 100% { transform: scale(1) translateY(0); opacity: 0.12; }
+      50% { transform: scale(1.03) translateY(-8px); opacity: 0.16; }
+    }
+
+    /* Wave float */
+    @keyframes hpx-wave-float {
+      0%, 100% { transform: translate3d(0, 0, 0) scaleX(1); }
+      25% { transform: translate3d(10px, -8px, 0) scaleX(1.02); }
+      50% { transform: translate3d(-5px, -15px, 0) scaleX(0.98); }
+      75% { transform: translate3d(-12px, -5px, 0) scaleX(1.01); }
+    }
+
+    /* Spin + drift for accent shapes */
+    @keyframes hpx-spin-drift-a {
+      0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+      25% { transform: translate3d(8px, -12px, 0) rotate(45deg); }
+      50% { transform: translate3d(-5px, -20px, 0) rotate(90deg); }
+      75% { transform: translate3d(-10px, -8px, 0) rotate(135deg); }
+    }
+    @keyframes hpx-spin-drift-b {
+      0%, 100% { transform: rotate(45deg) translate3d(0, 0, 0); }
+      25% { transform: rotate(75deg) translate3d(-10px, 8px, 0); }
+      50% { transform: rotate(135deg) translate3d(5px, 15px, 0); }
+      75% { transform: rotate(95deg) translate3d(12px, 5px, 0); }
+    }
+
+    /* Small dots — fast, lively, irregular flight paths */
+    @keyframes hpx-fly-a {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      20% { transform: translate3d(15px, -20px, 0) scale(1.3); }
+      40% { transform: translate3d(-8px, -35px, 0) scale(0.8); }
+      60% { transform: translate3d(-20px, -15px, 0) scale(1.2); }
+      80% { transform: translate3d(5px, -5px, 0) scale(0.9); }
+    }
+    @keyframes hpx-fly-b {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      25% { transform: translate3d(-18px, 12px, 0) scale(1.4); }
+      50% { transform: translate3d(10px, -22px, 0) scale(0.7); }
+      75% { transform: translate3d(20px, 8px, 0) scale(1.1); }
+    }
+    @keyframes hpx-fly-c {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      33% { transform: translate3d(22px, -18px, 0) scale(1.5); }
+      66% { transform: translate3d(-15px, -30px, 0) scale(0.6); }
+    }
+    @keyframes hpx-fly-d {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      20% { transform: translate3d(-12px, -25px, 0) scale(0.8); }
+      50% { transform: translate3d(18px, -10px, 0) scale(1.3); }
+      80% { transform: translate3d(-5px, 15px, 0) scale(1.1); }
+    }
+    @keyframes hpx-fly-e {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      25% { transform: translate3d(10px, 20px, 0) scale(1.2); }
+      50% { transform: translate3d(-20px, -8px, 0) scale(0.9); }
+      75% { transform: translate3d(15px, -25px, 0) scale(1.4); }
+    }
+    @keyframes hpx-fly-f {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      30% { transform: translate3d(-15px, -18px, 0) scale(1.3); }
+      60% { transform: translate3d(20px, 10px, 0) scale(0.7); }
     }
 
     /* Grain texture */
@@ -2380,68 +2491,50 @@
     });
 
     // ── 3D PARALLAX ENGINE ──
+    // Uses CSS custom properties so JS scroll/mouse tracking
+    // doesn't override CSS keyframe animations on elements.
     (function() {
-      const parallaxContainer = document.getElementById('heroParallax');
-      if (!parallaxContainer || window.innerWidth < 768) return;
+      const container = document.getElementById('heroParallax');
+      if (!container || window.innerWidth < 768) return;
 
-      const floaters = parallaxContainer.querySelectorAll('[data-float]');
-      let scrollY = 0;
-      let mouseX = 0;
-      let mouseY = 0;
+      const hero = document.querySelector('.hero');
+      let heroH = hero.offsetHeight;
+      let mouseX = 0, mouseY = 0;
+      let smoothMouseX = 0, smoothMouseY = 0;
       let rafId = null;
-      const heroRect = { top: 0, height: 0 };
 
-      function updateHeroRect() {
-        const hero = document.querySelector('.hero');
-        if (hero) {
-          const r = hero.getBoundingClientRect();
-          heroRect.top = r.top + window.scrollY;
-          heroRect.height = r.height;
-        }
-      }
-      updateHeroRect();
-      window.addEventListener('resize', updateHeroRect);
+      window.addEventListener('resize', () => { heroH = hero.offsetHeight; });
 
-      // Track mouse for subtle depth shift
       document.addEventListener('mousemove', (e) => {
-        mouseX = (e.clientX / window.innerWidth - 0.5) * 2;  // -1 to 1
+        mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
         mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
       });
 
       function animate() {
-        scrollY = window.scrollY;
-        const scrollProgress = Math.max(0, Math.min(1, scrollY / heroRect.height));
+        const y = window.scrollY;
+        const progress = Math.min(1, y / heroH);
 
-        floaters.forEach(el => {
-          const speed = parseFloat(el.dataset.speed) || 0.5;
-          const rotateSpeed = parseFloat(el.dataset.rotate) || 0;
+        // Smooth mouse lerp for fluid feel
+        smoothMouseX += (mouseX - smoothMouseX) * 0.08;
+        smoothMouseY += (mouseY - smoothMouseY) * 0.08;
 
-          // Scroll-driven vertical translation (faster elements = more movement)
-          const translateY = -(scrollY * speed * 0.8);
+        // Set CSS custom properties on container — elements read these
+        container.style.setProperty('--scroll-y', y);
+        container.style.setProperty('--scroll-progress', progress);
+        container.style.setProperty('--mouse-x', smoothMouseX);
+        container.style.setProperty('--mouse-y', smoothMouseY);
 
-          // Mouse-driven horizontal/vertical shift (parallax depth effect)
-          const mouseShiftX = mouseX * speed * 15;
-          const mouseShiftY = mouseY * speed * 10;
-
-          // Subtle rotation on scroll
-          const rotation = scrollY * rotateSpeed;
-
-          // Scale slightly as user scrolls (zoom-out effect for depth)
-          const scale = 1 - (scrollProgress * speed * 0.15);
-
-          // Opacity fade as elements scroll up
-          const baseOpacity = parseFloat(getComputedStyle(el).getPropertyValue('--float-opacity')) || 1;
-          const fadeOpacity = baseOpacity * (1 - scrollProgress * 0.7);
-
-          el.style.transform = `translate3d(${mouseShiftX}px, ${translateY + mouseShiftY}px, 0) rotate(${rotation}deg) scale(${scale})`;
-          el.style.opacity = Math.max(0, fadeOpacity);
-        });
+        // Whole container: subtle scroll-up + mouse tilt for depth
+        const containerShiftY = -(y * 0.15);
+        const tiltX = smoothMouseX * 1.5;
+        const tiltY = smoothMouseY * 1;
+        container.style.transform = `translate3d(0, ${containerShiftY}px, 0) rotateY(${tiltX}deg) rotateX(${-tiltY}deg)`;
+        container.style.opacity = Math.max(0, 1 - progress * 0.8);
 
         rafId = requestAnimationFrame(animate);
       }
 
-      // Only animate when hero is potentially visible
-      const heroObserver = new IntersectionObserver((entries) => {
+      const obs = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             if (!rafId) rafId = requestAnimationFrame(animate);
@@ -2450,7 +2543,7 @@
           }
         });
       }, { threshold: 0 });
-      heroObserver.observe(document.querySelector('.hero'));
+      obs.observe(hero);
     })();
   </script>
 
