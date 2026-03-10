@@ -1681,11 +1681,11 @@
     .footer-legal {
       font-family: var(--sans);
       font-size: 0.7rem;
-      color: rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.5);
       line-height: 1.8;
     }
-    .footer-legal a { color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.3s; }
-    .footer-legal a:hover { color: rgba(255,255,255,0.5); }
+    .footer-legal a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s; }
+    .footer-legal a:hover { color: rgba(255,255,255,0.7); }
 
     /* ── STICKY MOBILE CTA ── */
     .sticky-cta {
@@ -1693,6 +1693,7 @@
       bottom: 0; left: 0; right: 0;
       background: var(--coral);
       padding: 0.9rem 1.5rem;
+      padding-bottom: calc(0.9rem + env(safe-area-inset-bottom));
       display: none;
       justify-content: space-between;
       align-items: center;
@@ -1772,7 +1773,7 @@
         <li><a href="#work">Work With Me</a></li>
         <li><a href="#intake" class="nav-cta">Start Here</a></li>
       </ul>
-      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -1791,7 +1792,7 @@
   <!-- HERO -->
   <section class="hero" id="top">
     <!-- ── 3D PARALLAX LAYER ── -->
-    <div class="hero-parallax" id="heroParallax">
+    <div class="hero-parallax" id="heroParallax" aria-hidden="true">
       <!-- Large structural elements — slow parallax (0.2-0.4) -->
       <div class="hpx-ring-1" data-float data-speed="0.25" data-rotate="0.02" style="--float-opacity: 0.3;"></div>
       <div class="hpx-ring-2" data-float data-speed="0.35" data-rotate="-0.015" style="--float-opacity: 0.14;"></div>
@@ -2092,7 +2093,7 @@
         </div>
       </div>
       <div style="text-align: center; margin-top: 2.5rem;" class="reveal">
-        <a href="method.html#foundations" class="btn-ghost" style="font-size: 0.75rem; padding: 0.8rem 2rem;">See the Clinical Detail <span>&rarr;</span></a>
+        <a href="/method#foundations" class="btn-ghost" style="font-size: 0.75rem; padding: 0.8rem 2rem;">See the Clinical Detail <span>&rarr;</span></a>
       </div>
     </div>
   </section>
@@ -2403,7 +2404,9 @@
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('open');
       mobileMenu.classList.toggle('open');
-      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+      const isOpen = mobileMenu.classList.contains('open');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
     document.querySelectorAll('.mobile-nav-link').forEach(link => {
@@ -2411,6 +2414,7 @@
         hamburger.classList.remove('open');
         mobileMenu.classList.remove('open');
         document.body.style.overflow = '';
+        hamburger.setAttribute('aria-expanded', 'false');
       });
     });
 
