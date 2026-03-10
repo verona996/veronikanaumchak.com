@@ -23,7 +23,8 @@
     .cred-title, .hero-photo-placeholder,
     .shift-word-struck, .shift-word-gold,
     .coreg-connection-text,
-    .pull-quote-banner p {
+    .pull-quote-banner p,
+    .footer-logo-name {
       font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
     }
 
@@ -115,6 +116,7 @@
 
     /* ── SECTION LABELS ── */
     .section-label { font-family: var(--display); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--coral); margin-bottom: 1.5rem; }
+    .page-hero .section-label { opacity: 1; transform: none; }
 
     .section-divider { height: 3px; background: linear-gradient(90deg, transparent, var(--coral) 20%, var(--plum) 50%, var(--coral) 80%, transparent); opacity: 0.15; margin: 0; }
     .section-divider-subtle { height: 1px; background: linear-gradient(90deg, transparent, var(--sand) 20%, var(--taupe) 50%, var(--sand) 80%, transparent); margin: 0; }
@@ -792,11 +794,11 @@
     .footer-links a { font-family: var(--sans); font-size: 0.78rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s; }
     .footer-links a:hover { color: var(--cream); }
     .footer-legal { font-family: var(--sans); font-size: 0.7rem; color: rgba(255,255,255,0.3); line-height: 1.8; }
-    .footer-legal a { color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.3s; }
-    .footer-legal a:hover { color: rgba(255,255,255,0.5); }
+    .footer-legal a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s; }
+    .footer-legal a:hover { color: rgba(255,255,255,0.7); }
 
     /* ── STICKY MOBILE CTA ── */
-    .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: var(--coral); padding: 0.9rem 1.5rem; display: none; justify-content: space-between; align-items: center; z-index: 150; transform: translateY(100%); transition: transform 0.3s ease; }
+    .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: var(--coral); padding: 0.9rem 1.5rem; padding-bottom: env(safe-area-inset-bottom); display: none; justify-content: space-between; align-items: center; z-index: 150; transform: translateY(100%); transition: transform 0.3s ease; }
     .sticky-cta.visible { transform: translateY(0); }
     .sticky-cta-text { font-family: var(--sans); font-size: 0.8rem; color: #fff; }
     .sticky-cta-link { font-family: var(--sans); font-size: 0.8rem; color: #fff; font-weight: 700; text-decoration: none; letter-spacing: 0.05em; }
@@ -933,6 +935,7 @@
 
     @media (max-width: 480px) {
       .page-hero h1 { font-size: 1.8rem; }
+      .closing-headline { font-size: clamp(1.35rem, 2.5vw, 1.7rem); }
     }
   </style>
 </head>
@@ -952,7 +955,7 @@
         <li><a href="/#work">Work With Me</a></li>
         <li><a href="/#intake" class="nav-cta">Start Here</a></li>
       </ul>
-      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -1010,7 +1013,7 @@
           <!-- Practitioner -->
           <div class="coreg-person --practitioner">
             <div class="coreg-circle">
-              <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+              <svg width="60" height="60" viewBox="0 0 60 60" fill="none" aria-hidden="true">
                 <path d="M10 30 Q17 22 25 30 Q33 38 40 30 Q47 22 55 30" stroke="#D4A856" stroke-width="2" fill="none" stroke-linecap="round"/>
                 <path d="M10 30 Q17 22 25 30 Q33 38 40 30 Q47 22 55 30" stroke="#D4A856" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.3" transform="translate(0, 8)"/>
                 <circle cx="30" cy="18" r="3" fill="#D4A856"/>
@@ -1022,7 +1025,7 @@
 
           <!-- Connection -->
           <div class="coreg-connection">
-            <svg class="coreg-wave-line" viewBox="0 0 140 40" fill="none">
+            <svg class="coreg-wave-line" viewBox="0 0 140 40" fill="none" aria-hidden="true">
               <path d="M0 20 Q17 5 35 20 Q52 35 70 20 Q87 5 105 20 Q122 35 140 20" stroke="var(--coral)" stroke-width="2" fill="none" stroke-linecap="round" class="coreg-wave-animated"/>
               <path d="M0 20 Q17 35 35 20 Q52 5 70 20 Q87 35 105 20 Q122 5 140 20" stroke="var(--plum)" stroke-width="1.5" fill="none" stroke-linecap="round" class="coreg-wave-animated" opacity="0.4"/>
             </svg>
@@ -1032,7 +1035,7 @@
           <!-- Client -->
           <div class="coreg-person --client">
             <div class="coreg-circle">
-              <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+              <svg width="60" height="60" viewBox="0 0 60 60" fill="none" aria-hidden="true">
                 <path d="M10 20 Q13 8 16 25 Q19 42 22 15 Q25 5 28 30 Q31 45 34 18 Q37 8 40 28 Q43 40 46 20 Q49 10 52 25" stroke="#4A3D35" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
                 <circle cx="15" cy="15" r="2" fill="#4A3D35" opacity="0.3"/>
                 <circle cx="35" cy="12" r="1.5" fill="#4A3D35" opacity="0.4"/>
@@ -1075,7 +1078,7 @@
       <div class="resilience-visual reveal">
         <div class="resilience-label">The Resilience Path</div>
         <div class="resilience-wave">
-          <svg viewBox="0 0 600 160" fill="none" preserveAspectRatio="xMidYMid meet">
+          <svg viewBox="0 0 600 160" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
             <!-- Faint diagonal guideline showing upward trend -->
             <line x1="0" y1="130" x2="600" y2="15" stroke="var(--sand)" stroke-width="1" stroke-dasharray="4 6" class="resilience-baseline"/>
             <!-- Wave path: full amplitude cycles trending diagonally upward -->
@@ -1141,7 +1144,7 @@
         <!-- CBH -->
         <div class="cred-card reveal reveal-delay-1">
           <div class="cred-badge-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
           </div>
           <div class="cred-title">Level 5 Higher Diploma in Cognitive Behavioural Hypnotherapy (Hypno-CBT&reg;)</div>
           <div class="cred-subtitle">UK College of Hypnosis &amp; Hypnotherapy</div>
@@ -1151,7 +1154,7 @@
         <!-- RTT -->
         <div class="cred-card reveal reveal-delay-2">
           <div class="cred-badge-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
           <div class="cred-title">Certified RTT Practitioner&reg;</div>
           <div class="cred-subtitle">Rapid Transformational Therapy &mdash; developed by Marisa Peer</div>
@@ -1161,7 +1164,7 @@
         <!-- Somatic -->
         <div class="cred-card reveal reveal-delay-3">
           <div class="cred-badge-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z"/><path d="M4 18C4 14.69 7.58 12 12 12C16.42 12 20 14.69 20 18"/><path d="M7 9C7 9 9 11 12 11C15 11 17 9 17 9"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z"/><path d="M4 18C4 14.69 7.58 12 12 12C16.42 12 20 14.69 20 18"/><path d="M7 9C7 9 9 11 12 11C15 11 17 9 17 9"/></svg>
           </div>
           <div class="cred-title">Somatic Release Training</div>
           <div class="cred-subtitle">Under Olga Divieyeva &mdash; psychologist, psychosomatics specialist</div>
@@ -1246,7 +1249,9 @@
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('open');
       mobileMenu.classList.toggle('open');
-      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+      const isOpen = mobileMenu.classList.contains('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     document.querySelectorAll('.mobile-nav-link').forEach(link => {
