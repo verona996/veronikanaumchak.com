@@ -60,7 +60,7 @@
       --sans: 'Bricolage Grotesque', sans-serif;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
 
     body {
       font-family: var(--sans);
@@ -254,7 +254,7 @@
 
     .hero-headline {
       font-family: var(--serif);
-      font-size: 3.2rem;
+      font-size: clamp(2rem, 5vw, 3.2rem);
       font-weight: 400;
       line-height: 1.15;
       color: var(--espresso);

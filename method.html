@@ -62,7 +62,7 @@
       --sans: 'Bricolage Grotesque', sans-serif;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
 
     body {
       font-family: var(--sans);
@@ -130,7 +130,7 @@
       padding: 10rem 1.5rem 4rem;
       text-align: center;
       position: relative;
-      overflow: visible;
+      overflow: hidden;
     }
     .page-hero::before {
       content: '';
@@ -1217,7 +1217,8 @@
       transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
       border-radius: 12px;
       padding: 1rem 1.5rem;
-      margin: -1rem -1.5rem;
+      margin: -1rem -1.5rem 0;
+      overflow: hidden;
     }
 
     .phase-header:hover {
