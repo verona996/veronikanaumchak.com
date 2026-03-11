@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | Veronika Naumchak</title>
+  <meta name="description" content="Privacy policy for veronikanaumchak.com. How your data is collected, used, and protected under Swiss law (nDSG).">
+  <meta property="og:title" content="Privacy Policy | Veronika Naumchak">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="/logo/favicon/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/logo/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/logo/favicon/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Fraunces:ital,opsz,wght,WONK@0,9..144,300,0;0,9..144,400,0;0,9..144,500,0;0,9..144,600,0;0,9..144,700,0;1,9..144,300,0;1,9..144,400,0;1,9..144,500,0;1,9..144,600,0;1,9..144,700,0&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { font-variation-settings: 'WONK' 0 !important; }
+
+    :root {
+      --cream: #FDF6EE;
+      --ivory: #FAF0E4;
+      --linen: #F3E8DA;
+      --sand: #E8D9C8;
+      --taupe: #C4B5A4;
+      --espresso: #2A1F1A;
+      --coffee: #3D302A;
+      --mocha: #5C4D42;
+      --stone: #8A7B70;
+      --muted: #A89888;
+      --coral: #E8503A;
+      --coral-hot: #D43D28;
+      --coral-glow: rgba(232, 80, 58, 0.12);
+      --plum: #5C2751;
+      --gold: #D4A856;
+      --serif: 'Fraunces', Georgia, serif;
+      --display: 'Syne', sans-serif;
+      --sans: 'Bricolage Grotesque', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--espresso);
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    .page-wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── NAVIGATION ── */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: var(--cream); border-bottom: 1px solid var(--sand); transition: box-shadow 0.3s; }
+    .nav.scrolled { box-shadow: 0 2px 20px rgba(42, 31, 26, 0.06); }
+    .nav-inner { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-logo-mark { width: 28px; height: 28px; }
+    .nav-logo-mark svg { width: 100%; height: 100%; }
+    .nav-logo-text { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; color: var(--espresso); letter-spacing: 0.08em; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 2.2rem; align-items: center; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.75rem; color: var(--stone); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--espresso); }
+    .nav-cta { font-family: var(--sans) !important; font-size: 0.7rem !important; font-weight: 600 !important; color: var(--coral) !important; letter-spacing: 0.1em !important; padding: 0.55rem 1.3rem; border: 1.5px solid var(--coral); transition: all 0.3s !important; }
+    .nav-cta:hover { background: var(--coral-glow) !important; }
+
+    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; width: 28px; height: 20px; position: relative; z-index: 300; }
+    .nav-hamburger span { display: block; width: 100%; height: 1.5px; background: var(--espresso); position: absolute; left: 0; transition: all 0.3s; }
+    .nav-hamburger span:nth-child(1) { top: 0; }
+    .nav-hamburger span:nth-child(2) { top: 9px; }
+    .nav-hamburger span:nth-child(3) { top: 18px; }
+    .nav-hamburger.open span:nth-child(1) { top: 9px; transform: rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { top: 9px; transform: rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; background: var(--cream); z-index: 199; padding: 2rem 1.5rem; flex-direction: column; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: var(--sans); font-size: 1rem; color: var(--espresso); text-decoration: none; padding: 1.2rem 0; border-bottom: 1px solid var(--sand); display: block; }
+    .mobile-menu .mobile-cta { margin-top: 2rem; display: inline-block; background: var(--coral); color: #fff; padding: 1rem 2rem; font-weight: 600; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-align: center; border-bottom: none; }
+
+    /* ── LEGAL PAGE CONTENT ── */
+    .legal-hero {
+      padding: 9rem 1.5rem 3rem;
+      text-align: center;
+    }
+
+    .legal-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      font-weight: 400;
+      color: var(--espresso);
+      line-height: 1.3;
+      margin-bottom: 0.6rem;
+      font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
+    }
+
+    .legal-hero .updated {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      color: var(--stone);
+      letter-spacing: 0.02em;
+    }
+
+    .legal-content {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 5rem;
+    }
+
+    .legal-content h2 {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--espresso);
+      margin-top: 2.5rem;
+      margin-bottom: 0.8rem;
+      line-height: 1.35;
+      font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
+    }
+
+    .legal-content h2:first-child { margin-top: 0; }
+
+    .legal-content p {
+      font-size: 0.92rem;
+      color: var(--mocha);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+
+    .legal-content ul {
+      margin: 0.5rem 0 1rem 1.2rem;
+      list-style: disc;
+    }
+
+    .legal-content li {
+      font-size: 0.92rem;
+      color: var(--mocha);
+      line-height: 1.75;
+      margin-bottom: 0.3rem;
+    }
+
+    .legal-content a {
+      color: var(--coral);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(232, 80, 58, 0.3);
+      transition: border-color 0.3s;
+    }
+
+    .legal-content a:hover {
+      border-color: var(--coral);
+    }
+
+    .legal-content strong {
+      font-weight: 600;
+      color: var(--espresso);
+    }
+
+    .section-divider-subtle { height: 1px; background: linear-gradient(90deg, transparent, var(--sand) 20%, var(--taupe) 50%, var(--sand) 80%, transparent); margin: 0; }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--espresso); padding: 3rem 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem; }
+    .footer-logo { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.4rem; }
+    .footer-logo-mark { width: 32px; height: 32px; }
+    .footer-logo-mark svg { width: 100%; height: 100%; }
+    .footer-logo-name { font-family: var(--serif); font-size: 1.1rem; color: var(--cream); font-variation-settings: 'WONK' 0, 'opsz' 144 !important; }
+    .footer-tagline { font-family: var(--display); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase; color: var(--muted); }
+    .footer-right { text-align: right; }
+    .footer-links { display: flex; gap: 1.5rem; margin-bottom: 0.8rem; }
+    .footer-links a { font-family: var(--sans); font-size: 0.78rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s; }
+    .footer-links a:hover { color: var(--cream); }
+    .footer-legal { font-family: var(--sans); font-size: 0.7rem; color: rgba(255,255,255,0.3); line-height: 1.8; }
+    .footer-legal a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s; }
+    .footer-legal a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: block; }
+      .nav-inner { justify-content: center; position: relative; }
+      .nav-hamburger { position: absolute; right: 1.5rem; }
+      .footer-inner { flex-direction: column; align-items: center; text-align: center; }
+      .footer-right { text-align: center; }
+      .footer-links { justify-content: center; flex-wrap: wrap; }
+    }
+
+    @media (max-width: 480px) {
+      .legal-hero h1 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-mark"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="8.13,10.25 28.27,89.75 36.01,89.75 15.87,10.25" fill="#2A1F1A"/><polygon points="46.21,10.25 34.46,89.75 42.04,89.75 53.79,10.25" fill="#2A1F1A"/><polygon points="50.25,10.25 50.25,89.75 57.75,89.75 57.75,10.25" fill="#2A1F1A"/><polygon points="47.86,10.25 76.57,89.75 86.14,89.75 57.43,10.25" fill="#E8503A"/><polygon points="76.25,10.25 76.25,89.75 83.75,89.75 83.75,10.25" fill="#2A1F1A"/></svg></span>
+        <span class="nav-logo-text">Home</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/about">About</a></li>
+        <li><a href="/method">The Method</a></li>
+        <li><a href="/learn">Learn</a></li>
+        <li><a href="/#work">Work With Me</a></li>
+        <li><a href="/#intake" class="nav-cta">Start Here</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/about" class="mobile-nav-link">About</a>
+    <a href="/method" class="mobile-nav-link">The Method</a>
+    <a href="/learn" class="mobile-nav-link">Learn</a>
+    <a href="/#work" class="mobile-nav-link">Work With Me</a>
+    <a href="/#intake" class="mobile-cta mobile-nav-link">Start Here</a>
+  </div>
+
+  <!-- PAGE CONTENT -->
+  <section class="legal-hero">
+    <div class="page-wrap">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: March 2026</p>
+    </div>
+  </section>
+
+  <div class="section-divider-subtle"></div>
+
+  <div class="legal-content">
+
+    <h2>Who I am</h2>
+    <p>This website is operated by <strong>Veronika Naumchak</strong>, a sole proprietorship (Einzelunternehmen) based in Z&uuml;rich, Switzerland.</p>
+    <p>Email: <a href="mailto:hello@veronikanaumchak.com">hello@veronikanaumchak.com</a><br>Website: <a href="https://veronikanaumchak.com">veronikanaumchak.com</a></p>
+
+    <h2>What data I collect</h2>
+    <p>I collect personal data only when you voluntarily provide it through the intake form on this website. The form asks for:</p>
+    <ul>
+      <li>First name and last name</li>
+      <li>Age</li>
+      <li>Email address</li>
+      <li>Whether you've had therapy or coaching before</li>
+      <li>A description of what you're dealing with</li>
+    </ul>
+    <p>I do not use tracking cookies, advertising pixels, or third-party analytics tools that collect personal data. No payment information is collected through this website.</p>
+
+    <h2>Why I collect it</h2>
+    <p>I use your intake form data for one purpose: to assess whether we're a good fit to work together and to contact you about next steps. That's it. I won't add you to a mailing list, sell your data, or share it with anyone except the service providers listed below.</p>
+
+    <h2>Who processes your data</h2>
+    <p>Your data passes through a small number of trusted service providers:</p>
+    <ul>
+      <li><strong>Formspree</strong> &mdash; processes and delivers form submissions. Their servers are in the US. <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">Formspree Privacy Policy</a></li>
+      <li><strong>Vercel</strong> &mdash; hosts this website. May process basic server logs (IP address, request time). Their servers are globally distributed. <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Vercel Privacy Policy</a></li>
+    </ul>
+    <p>I do not share your personal data with any other third parties.</p>
+
+    <h2>Where your data is stored</h2>
+    <p>Form submissions are delivered to my email and stored in Formspree's system. Both Formspree and Vercel are US-based companies. By submitting the intake form, you acknowledge that your data may be transferred to and processed in the United States.</p>
+
+    <h2>How long I keep it</h2>
+    <p>I retain intake form data for as long as it's needed to assess fit and follow up with you. If we don't end up working together, I delete your data within 12 months of submission. If we do work together, I retain relevant records for the duration of our professional relationship and for a reasonable period afterward as required for professional and legal purposes.</p>
+
+    <h2>Your rights under Swiss law</h2>
+    <p>Under the Swiss Federal Act on Data Protection (nDSG), you have the right to:</p>
+    <ul>
+      <li>Request access to the personal data I hold about you</li>
+      <li>Request correction of inaccurate data</li>
+      <li>Request deletion of your data</li>
+      <li>Object to the processing of your data</li>
+      <li>Request a copy of your data in a portable format</li>
+    </ul>
+    <p>To exercise any of these rights, email me at <a href="mailto:hello@veronikanaumchak.com">hello@veronikanaumchak.com</a>. I'll respond within 30 days.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If I make meaningful changes to this policy, I'll update the date at the top of this page. I won't notify you individually unless legally required to do so.</p>
+
+    <h2>Questions</h2>
+    <p>If you have any questions about how your data is handled, email me at <a href="mailto:hello@veronikanaumchak.com">hello@veronikanaumchak.com</a>.</p>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="page-wrap">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-logo">
+            <span class="footer-logo-mark"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="8.13,10.25 28.27,89.75 36.01,89.75 15.87,10.25" fill="#FDF6EE"/><polygon points="46.21,10.25 34.46,89.75 42.04,89.75 53.79,10.25" fill="#FDF6EE"/><polygon points="50.25,10.25 50.25,89.75 57.75,89.75 57.75,10.25" fill="#FDF6EE"/><polygon points="47.86,10.25 76.57,89.75 86.14,89.75 57.43,10.25" fill="#E8503A"/><polygon points="76.25,10.25 76.25,89.75 83.75,89.75 83.75,10.25" fill="#FDF6EE"/></svg></span>
+            <span class="footer-logo-name">Veronika Naumchak</span>
+          </div>
+          <div class="footer-tagline">Stop explaining the pattern. Break it.</div>
+        </div>
+        <div class="footer-right">
+          <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/method">The Method</a>
+            <a href="/learn">Learn</a>
+            <a href="/#work">Work With Me</a>
+            <a href="https://instagram.com/veronika_mindbodysoul" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://tiktok.com/@veronika_mindbodysoul" target="_blank" rel="noopener">TikTok</a>
+            <a href="mailto:hello@veronikanaumchak.com">Email</a>
+          </div>
+          <div class="footer-legal">
+            <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms</a> &middot; &copy; 2026 Veronika Naumchak
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      const isOpen = mobileMenu.classList.contains('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+
+</body>
+</html>
