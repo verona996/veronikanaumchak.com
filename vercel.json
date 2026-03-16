@@ -4,7 +4,8 @@
     { "source": "/method", "destination": "/method.html" },
     { "source": "/learn", "destination": "/learn.html" },
     { "source": "/privacy", "destination": "/privacy.html" },
-    { "source": "/terms", "destination": "/terms.html" }
+    { "source": "/terms", "destination": "/terms.html" },
+    { "source": "/start", "destination": "/start.html" }
   ],
   "headers": [
     {
