@@ -460,6 +460,22 @@
       color: var(--coffee);
     }
 
+    .result-common-humanity {
+      font-size: 15px;
+      font-style: italic;
+      color: var(--plum);
+      margin: 24px 0 8px;
+      line-height: 1.6;
+    }
+
+    .result-breathing-space {
+      font-size: 14px;
+      color: var(--stone);
+      font-style: italic;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
     .result-origin-heading {
       font-family: var(--display);
       font-size: 12px;
@@ -790,79 +806,79 @@
   // ════════════════════════════════════
   var questions = [
     {
-      q: "When something good happens, your first reaction:",
+      q: "When something good happens, my first reaction is:",
       opts: [
-        { text: "Wonder if you deserved it, or just got lucky", w: "W1" },
-        { text: "Check how someone else reacted before deciding how you feel", w: "W4" },
-        { text: "Already calculating what could go wrong", w: "W2" },
-        { text: "Think about sharing it in a way that won\u2019t seem like too much", w: "W3" }
+        { text: "Did I actually deserve this, or did I just get lucky?", w: "W1" },
+        { text: "I check how someone else reacted before I let myself feel anything", w: "W4" },
+        { text: "I\u2019m already thinking about what could go wrong", w: "W2" },
+        { text: "I think about how to share it without seeming like too much", w: "W3" }
       ]
     },
     {
-      q: "Your relationship with rest:",
+      q: "My relationship with rest:",
       opts: [
-        { text: "Rest when everyone else is taken care of", w: "W3" },
-        { text: "Mind won\u2019t stop even when body is still", w: "W2" },
-        { text: "Choose to rest but then can\u2019t tell if you actually wanted it or just thought you should", w: "W4" },
-        { text: "Guilty unless you\u2019ve earned it first", w: "W1" }
+        { text: "I rest when everyone else is taken care of", w: "W3" },
+        { text: "My mind won\u2019t stop even when my body is still", w: "W2" },
+        { text: "I choose to rest but then I can\u2019t tell if I actually wanted it or just thought I should", w: "W4" },
+        { text: "I can only rest if I feel like I\u2019ve earned it", w: "W1" }
       ]
     },
     {
-      q: "When someone pulls away or goes quiet:",
+      q: "When someone pulls away or goes quiet, I:",
       opts: [
-        { text: "Go back and forth \u2014 one moment sure it\u2019s fine, next moment sure you ruined it", w: "W4" },
-        { text: "Wonder what you did wrong \u2014 and what you need to do to fix it", w: "W1" },
-        { text: "Pull back yourself \u2014 give them space, check you\u2019re not being too much", w: "W3" },
-        { text: "Fix-it mode \u2014 need to know what\u2019s happening", w: "W2" }
+        { text: "Can\u2019t tell if something is actually wrong or if I\u2019m just reading it wrong", w: "W4" },
+        { text: "Immediately think: what\u2019s wrong with me? What did I do that wasn\u2019t good enough?", w: "W1" },
+        { text: "Pull back and give them space \u2014 I\u2019m probably being too much", w: "W3" },
+        { text: "I need to find out what\u2019s going on \u2014 I can\u2019t relax until I know", w: "W2" }
       ]
     },
     {
-      q: "Your inner critic sounds like:",
+      q: "My inner critic sounds like:",
       opts: [
         { text: "\u201CSomething\u2019s going to go wrong. Stay ready.\u201D", w: "W2" },
         { text: "\u201CYou\u2019re too much. You ask for too much.\u201D", w: "W3" },
         { text: "\u201CYou should have done better.\u201D", w: "W1" },
-        { text: "\u201CYour judgment is the problem. You can\u2019t trust yourself.\u201D", w: "W4" }
+        { text: "\u201CYou can\u2019t trust yourself. Your judgment is the problem.\u201D", w: "W4" }
       ]
     },
     {
-      q: "In relationships you tend to:",
+      q: "In relationships, I tend to:",
       opts: [
-        { text: "Defer to what the other person wants \u2014 easier than knowing what you want", w: "W4" },
-        { text: "Hold things together, anticipate needs, keep the peace", w: "W3" },
-        { text: "Find it hard to relax \u2014 always half-waiting for something", w: "W2" },
-        { text: "Feel like you have to keep proving you\u2019re worth staying for", w: "W1" }
+        { text: "Go along with what the other person wants \u2014 it\u2019s easier than figuring out what I want", w: "W4" },
+        { text: "Hold everything together, anticipate what\u2019s needed, keep the peace", w: "W3" },
+        { text: "Find it hard to relax \u2014 I\u2019m always half-waiting for something to go wrong", w: "W2" },
+        { text: "Feel like I have to keep proving I\u2019m worth staying for", w: "W1" }
       ]
     },
     {
-      q: "Your body and you:",
+      q: "My body and me:",
       opts: [
-        { text: "Tense \u2014 always slightly braced", w: "W2" },
-        { text: "Sends signals you don\u2019t trust \u2014 hunger, intuition, all unreliable", w: "W4" },
-        { text: "A project \u2014 something to manage, fix, or improve", w: "W1" },
-        { text: "Mostly invisible to you \u2014 until you wonder how others see it", w: "W3" }
+        { text: "I\u2019m always slightly tense \u2014 braced for something", w: "W2" },
+        { text: "My body sends signals I don\u2019t trust \u2014 hunger, intuition, all feel unreliable", w: "W4" },
+        { text: "It\u2019s a project \u2014 something I\u2019m always trying to manage, fix, or improve", w: "W1" },
+        { text: "I mostly forget about it \u2014 until I start wondering how others see me", w: "W3" }
       ]
     },
     {
-      q: "Thinking about what you actually need emotionally:",
+      q: "When I think about what I actually need emotionally:",
       opts: [
-        { text: "You\u2019ve been tracking others\u2019 needs and lost your own", w: "W3" },
-        { text: "Genuinely don\u2019t know \u2014 even when you check in with yourself, you don\u2019t trust the answer", w: "W4" },
-        { text: "Vague shame \u2014 needing things feels like weakness", w: "W1" },
-        { text: "Immediate check: is it safe to ask?", w: "W2" }
+        { text: "I\u2019ve been so focused on what everyone else needs, I\u2019ve lost track of my own", w: "W3" },
+        { text: "I genuinely don\u2019t know \u2014 even when I check in with myself, I don\u2019t trust the answer", w: "W4" },
+        { text: "I feel a vague shame \u2014 like needing things makes me weak", w: "W1" },
+        { text: "I immediately check: is it safe to ask for this?", w: "W2" }
       ]
     },
     {
-      q: "Outside you vs. inside you:",
+      q: "Outside me vs. inside me:",
       opts: [
-        { text: "Outside acts decided. Inside re-evaluates every choice made.", w: "W4" },
-        { text: "Outside performs well. Inside whispers \u201Cfraud.\u201D", w: "W1" },
-        { text: "Outside holds it all together. Inside barely keeping it from falling apart.", w: "W2" },
-        { text: "Outside gives. Inside quietly exhausted and invisible.", w: "W3" }
+        { text: "Outside I look decided. Inside I\u2019m re-evaluating every choice I made.", w: "W4" },
+        { text: "Outside I perform well. Inside a voice whispers \u201Cfraud.\u201D", w: "W1" },
+        { text: "Outside I hold it all together. Inside I\u2019m barely keeping it from falling apart.", w: "W2" },
+        { text: "Outside I give. Inside I\u2019m quietly exhausted and invisible.", w: "W3" }
       ]
     },
     {
-      q: "The sentence that makes you want to cry:",
+      q: "The sentence that makes me want to cry:",
       opts: [
         { text: "\u201CYour needs matter just as much as everyone else\u2019s.\u201D", w: "W3" },
         { text: "\u201CYou don\u2019t have to prove your worth with achievements.\u201D", w: "W1" },
@@ -871,7 +887,7 @@
       ]
     },
     {
-      q: "What you never say out loud:",
+      q: "What I never say out loud:",
       opts: [
         { text: "\u201CI\u2019m exhausted from holding everything together.\u201D", w: "W2" },
         { text: "\u201CI\u2019m exhausted from second-guessing myself at every turn.\u201D", w: "W4" },
@@ -889,10 +905,11 @@
       name: "The Performer",
       subline: "You\u2019ve been trying to earn something that was always already yours.",
       mirror: '<p>You probably wouldn\u2019t describe it as a wound. It just feels like... the way things are.</p><p>You work hard \u2014 harder than most people around you. You have high standards for your work, your relationships, your body, your life. And when you meet those standards, there\u2019s a brief moment of satisfaction before the next thought arrives: okay, but what about this other thing I haven\u2019t done yet?</p><p>People tell you you\u2019re impressive, capable, put together. But when they do, something doesn\u2019t quite click. The words land on the outside of you. There\u2019s always a quiet \u2018but\u2019 underneath \u2014 but they don\u2019t see the whole picture. But I got lucky. But if they saw how much effort it actually took, they wouldn\u2019t be impressed.</p><p>This doesn\u2019t always look like overachieving. Sometimes it looks like staying too long in situations where you\u2019re treated as less than you are \u2014 because a quiet part of you agrees with how they see you. Sometimes it looks like holding back, not applying, not speaking up \u2014 because putting yourself forward feels like claiming a value you\u2019re not sure you have.</p>',
-      origin: '<p>This belief usually gets picked up early \u2014 from an environment where love felt conditional. Where you were valued for what you did, not who you were. Where falling short meant a cooling of warmth, a withdrawal of attention. You learned, logically and protectively, that your worth was something to be earned. That belief has been running quietly ever since \u2014 in how you work, who you love, what you tolerate, and what you don\u2019t let yourself want.</p>',
+      origin: '<p>Of course you feel this way. It makes complete sense.</p><p>This belief usually gets picked up early \u2014 from an environment where love felt conditional. Where you were valued for what you did, not who you were. Where falling short meant a cooling of warmth, a look, a silence. A child in that situation does the only logical thing: she concludes that her worth depends on her output. That\u2019s not a flaw \u2014 it\u2019s a smart adaptation by a young mind trying to keep love stable. The belief has just been running quietly ever since \u2014 in how you work, who you love, what you tolerate, and what you don\u2019t let yourself want.</p>',
       bundleName: "The Enough Bundle",
       bundlePrice: "CHF 47",
-      bundleDesc: "A guided audio bundle to interrupt the belief that you have to earn your worth. Session audio + Daily audio + 30-day integration workbook.",
+      commonHumanity: "This is one of the most common core wounds. You are far from the only person carrying it.",
+      bundleDesc: "A guided audio that works with your nervous system \u2014 not just your thoughts \u2014 to shift this belief at the level it was installed. The session reaches what thinking alone can\u2019t. The daily audio reinforces the shift. The workbook integrates it into your real life.",
       bundleLink: "https://buy.stripe.com/test_7sYcN62Gp3u4gVp2Ww9EI00",
       available: true
     },
@@ -900,10 +917,11 @@
       name: "The Guardian",
       subline: "You\u2019ve been keeping watch for so long, you\u2019ve forgotten what it feels like to put it down.",
       mirror: '<p>From the outside, you\u2019re the one who has it together. The competent one. The reliable one. From the inside, it\u2019s a different story \u2014 there\u2019s something you can\u2019t quite turn off. A low hum of readiness, like you\u2019re always half-expecting something to go wrong.</p><p>It\u2019s not anxiety exactly \u2014 it\u2019s more like responsibility. Somewhere early, staying alert became the smart thing to do. You learned that if you let your guard down, if you weren\u2019t prepared, something could fall apart and it would be your fault. So you stay ready. You think three steps ahead. You have contingencies for your contingencies.</p><p>The exhausting part isn\u2019t the vigilance itself \u2014 it\u2019s that it never stops. Even when everything is fine, even when there\u2019s nothing to manage, your body doesn\u2019t believe it. Rest feels risky. Trusting that things will be okay without your intervention feels irresponsible. You\u2019re tired in a way that sleep doesn\u2019t fix.</p>',
-      origin: '<p>This usually comes from growing up in an environment that was unpredictable \u2014 emotionally, physically, or both. Maybe a parent whose mood changed without warning. Maybe a home where things could shift from calm to chaos quickly. You learned that the way to stay safe was to stay ready. That was a smart adaptation for a child. It\u2019s just that your nervous system never got the update that things are different now.</p>',
+      origin: '<p>Of course you learned to keep watch. It made complete sense at the time.</p><p>This usually comes from growing up in an environment that was unpredictable \u2014 emotionally, physically, or both. Maybe a parent whose mood changed without warning. Maybe a home where things could shift from calm to chaos quickly. A child in that world does the smart thing: she stays alert. She learns to predict, to prepare, to never be caught off guard. That wasn\u2019t anxiety \u2014 it was intelligence. Your nervous system just never got the update that things are different now.</p>',
       bundleName: "The Safety Bundle",
       bundlePrice: "Coming Soon",
-      bundleDesc: "A guided audio bundle for releasing hypervigilance and teaching your nervous system that it\u2019s safe to rest.",
+      commonHumanity: "More people carry this than you\u2019d think. You\u2019re not the only one who can\u2019t switch off.",
+      bundleDesc: "A guided audio that works with your nervous system to teach it what your mind already knows: you are safe. You can put it down.",
       bundleLink: null,
       available: false
     },
@@ -911,10 +929,11 @@
       name: "The Invisible One",
       subline: "You\u2019ve spent so long making sure everyone else is okay, you stopped asking if you were.",
       mirror: '<p>People would probably describe you as giving, caring, thoughtful. And you are. But underneath all that giving, there\u2019s a quiet exhaustion that nobody sees \u2014 because you\u2019ve gotten very good at making sure nobody has to.</p><p>You know exactly how everyone around you is feeling. You can read a room before you\u2019ve fully entered it. You anticipate what people need, smooth things over, keep the peace. What you\u2019re less sure about is what you need. That signal has gotten quieter over the years \u2014 not because you don\u2019t have needs, but because somewhere along the way, having them started to feel like a burden.</p><p>So you give. You show up for everyone. And when someone asks how you\u2019re doing, you say \u2018fine\u2019 \u2014 because the honest answer feels like too much. Like it would take up space that isn\u2019t really yours to take.</p>',
-      origin: '<p>This often starts in childhood \u2014 being the responsible one, the easy one, the one who managed a parent\u2019s emotions before your own were fully formed. You learned that love was warmer when you were helpful and quieter. That having needs was an inconvenience. That the safest way to belong was to make yourself useful and small. You learned to buy your place through giving \u2014 and it worked. But the cost has been higher than anyone knows.</p>',
+      origin: '<p>Of course you learned to put everyone else first. In your world, that was the safest thing to do.</p><p>This often starts in childhood \u2014 being the responsible one, the easy one, the one who managed a parent\u2019s emotions before your own were fully formed. You learned that love was warmer when you were helpful and quieter. That having needs was an inconvenience. A child in that situation does the logical thing: she becomes indispensable. She learns to buy belonging through giving. It worked \u2014 but the cost has been higher than anyone knows.</p>',
       bundleName: "The Reclamation Bundle",
       bundlePrice: "Coming Soon",
-      bundleDesc: "A guided audio bundle for reconnecting with your own needs and learning to take up space without guilt.",
+      commonHumanity: "So many people carry this quietly. You are not the only one who forgot to put herself on the list.",
+      bundleDesc: "A guided audio that helps you reconnect with your own needs and practice receiving \u2014 without the guilt, without the justification.",
       bundleLink: null,
       available: false
     },
@@ -922,10 +941,11 @@
       name: "The Second-Guesser",
       subline: "You\u2019re not indecisive. You learned that trusting yourself was the dangerous thing.",
       mirror: '<p>You make a decision. And then, almost immediately, you start taking it apart. Not because the decision was wrong \u2014 but because you\u2019re not sure you can trust yourself to know that. So you check. You ask someone. You look for confirmation that what you felt was correct before you let yourself act on it.</p><p>From the outside, this might look like overthinking or perfectionism. From the inside, it\u2019s something more specific \u2014 a deep uncertainty about whether your own judgment, your own instincts, your own reading of a situation can be relied on. Other people seem to just... know things. Decide things. Trust themselves. You wonder what that feels like.</p><p>The hardest part is that you often do know the answer. You feel it \u2014 a quiet certainty, somewhere in your chest, before the doubt arrives. But then the doubt arrives, and it\u2019s louder. So you defer. You wait. You ask someone else. And every time you do, the muscle of self-trust gets a little weaker.</p>',
-      origin: '<p>This usually comes from having your perceptions repeatedly questioned or overridden as a child. Maybe someone told you that you were \u2018too sensitive\u2019 or \u2018overreacting\u2019 when your reading of a situation was actually accurate. Maybe a parent solved your problems before you could, denying you the experience of trusting your own capacity. You learned \u2014 logically, protectively \u2014 that other people\u2019s certainty was more reliable than your own knowing. That adaptation made sense then. It\u2019s just been running unchecked ever since.</p>',
+      origin: '<p>Of course you stopped trusting yourself. In your world, that was the safest response.</p><p>This usually comes from having your perceptions repeatedly questioned or overridden as a child. Maybe someone told you that you were \u2018too sensitive\u2019 or \u2018overreacting\u2019 when your reading of a situation was actually accurate. Maybe a parent made decisions for you before you could, denying you the experience of trusting your own capacity. A child in that environment does the logical thing: she outsources her judgment to whoever seems more certain. That adaptation made sense then. It\u2019s just been running unchecked ever since.</p>',
       bundleName: "The Self-Trust Bundle",
       bundlePrice: "Coming Soon",
-      bundleDesc: "A guided audio bundle for rebuilding the connection between what you feel and what you allow yourself to act on.",
+      commonHumanity: "This wound is more common than you think \u2014 especially among perceptive, sensitive people. You\u2019re not alone in this.",
+      bundleDesc: "A guided audio that rebuilds the connection between what you feel and what you allow yourself to act on. Your instincts aren\u2019t broken \u2014 they just need you to start listening again.",
       bundleLink: null,
       available: false
     }
@@ -1237,11 +1257,13 @@
     html += '<p class="result-disclaimer">This reflects the pattern you most identified with \u2014 not a clinical diagnosis.</p>';
     html += '<div class="result-divider"></div>';
     html += '<div class="result-mirror">' + w.mirror + '</div>';
+    html += '<p class="result-common-humanity">' + (w.commonHumanity || '') + '</p>';
     html += '<div class="result-divider"></div>';
     html += '<p class="result-origin-heading">Where this comes from</p>';
     html += '<div class="result-origin">' + w.origin + '</div>';
     html += '<div class="result-divider"></div>';
-    html += '<h3 class="healing-heading">Ready to start healing this?</h3>';
+    html += '<p class="result-breathing-space">Take a moment with this before deciding anything. There\u2019s no rush.</p>';
+    html += '<h3 class="healing-heading">Ready to start working on this?</h3>';
     html += '<div class="bundle-card">';
     html += '<p class="bundle-rec">Recommended for you</p>';
     html += '<p class="bundle-name">' + w.bundleName + '</p>';
