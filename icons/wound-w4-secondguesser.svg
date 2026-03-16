@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <!-- W4: The Second-Guesser (Autonomy) — Compass with split/dual needle -->
+
+  <!-- Outer compass circle — espresso -->
+  <circle cx="40" cy="40" r="26" fill="none" stroke="#2A1F1A" stroke-width="2"/>
+
+  <!-- Cardinal tick marks — espresso -->
+  <line x1="40" y1="14" x2="40" y2="19" stroke="#2A1F1A" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="40" y1="61" x2="40" y2="66" stroke="#2A1F1A" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="14" y1="40" x2="19" y2="40" stroke="#2A1F1A" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="61" y1="40" x2="66" y2="40" stroke="#2A1F1A" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Inner circle — small -->
+  <circle cx="40" cy="40" r="3" fill="#2A1F1A"/>
+
+  <!-- Split needle — two needles pointing different directions (NW and NE), coral -->
+  <!-- Needle 1 — pointing upper-left -->
+  <line x1="40" y1="40" x2="24" y2="24" stroke="#E8503A" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Needle 2 — pointing upper-right -->
+  <line x1="40" y1="40" x2="56" y2="24" stroke="#E8503A" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Tail ends — espresso, lighter -->
+  <line x1="40" y1="40" x2="50" y2="54" stroke="#2A1F1A" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+  <line x1="40" y1="40" x2="30" y2="54" stroke="#2A1F1A" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+</svg>

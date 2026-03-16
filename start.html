@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Core Wound Quiz — Veronika Naumchak</title>
-  <meta name="description" content="Discover the core wound running your life. 10 questions. Uncomfortably accurate. Free quiz + guided audio bundles for real change.">
-  <meta property="og:title" content="What's Your Core Wound? — Free Quiz">
-  <meta property="og:description" content="10 questions. No wrong answers. Uncomfortably accurate. Discover the belief that's been running your life — and what to do about it.">
+  <meta name="description" content="10 questions to uncover the core wound running your choices in relationships, work, and self-worth. Free quiz by Veronika Naumchak, RTT Practitioner & Cognitive Behavioural Hypnotherapist.">
+  <meta property="og:title" content="Which Core Wound Is Running Your Life?">
+  <meta property="og:description" content="10 questions. Find out which unconscious belief is shaping your relationships, your work, and how you see yourself.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://veronikanaumchak.com/start">
+  <meta property="og:image" content="https://veronikanaumchak.com/logo/social-media/instagram-profile-1080.png">
   <link rel="icon" type="image/svg+xml" href="/logo/favicon/favicon.svg">
   <link rel="icon" type="image/x-icon" href="/logo/favicon/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon/favicon-32x32.png">
@@ -29,32 +31,36 @@
     *, *::before, *::after { font-variation-settings: 'WONK' 0 !important; }
 
     h1, h2, h3, h4, h5, h6,
-    .hero-headline, .hero-headline *,
-    .result-headline, .result-headline *,
-    .result-subline, .result-subline *,
-    .section-title, .section-title *,
-    .quiz-intro-title, .quiz-intro-title *,
-    .tie-headline, .tie-headline *,
-    em, i, strong, b {
+    .hero-cta-line, .quiz-question,
+    .result-wound-name, .result-subline,
+    .email-heading, .bundle-name,
+    .healing-heading, .tie-message,
+    em, i, strong, b,
+    [style*="Fraunces"], [style*="serif"] {
       font-variation-settings: 'WONK' 0, 'opsz' 144 !important;
     }
 
     :root {
       --cream: #FDF6EE;
       --ivory: #FAF0E4;
+      --linen: #F3E8DA;
       --sand: #E8D9C8;
+      --taupe: #C4B5A4;
+
       --espresso: #2A1F1A;
       --coffee: #3D302A;
       --mocha: #5C4D42;
       --stone: #8A7B70;
+
       --coral: #E8503A;
       --coral-hot: #D43D28;
-      --coral-light: #F06B55;
       --coral-glow: rgba(232, 80, 58, 0.12);
+
       --plum: #5C2751;
       --plum-deep: #3E1A36;
-      --terracotta: #C87B5A;
+
       --gold: #D4A856;
+
       --serif: 'Fraunces', Georgia, serif;
       --display: 'Syne', sans-serif;
       --sans: 'Bricolage Grotesque', sans-serif;
@@ -65,619 +71,655 @@
     body {
       font-family: var(--sans);
       background: var(--cream);
-      color: var(--espresso);
-      font-weight: 400;
-      line-height: 1.7;
-      font-size: 16px;
+      color: var(--mocha);
+      font-size: 17px;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      overflow-x: hidden;
     }
 
     .page-wrap {
       max-width: 540px;
       margin: 0 auto;
-      padding: 0 1.25rem;
+      padding: 0 24px;
     }
 
-    /* ── HERO ── */
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
     .hero {
-      min-height: 100dvh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 3rem 0 2rem;
+      padding: 80px 0 60px;
     }
 
-    .hero-label {
-      font-family: var(--display);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--coral);
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-headline {
-      font-family: var(--serif);
-      font-weight: 400;
-      font-size: 1.75rem;
-      line-height: 1.35;
-      color: var(--espresso);
-      margin-bottom: 1.5rem;
-      font-variation-settings: 'WONK' 0, 'opsz' 144;
-    }
-
-    .hero-body {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--mocha);
-      margin-bottom: 2rem;
-    }
-
-    .hero-cred {
-      font-size: 0.85rem;
-      color: var(--stone);
-      margin-bottom: 2.5rem;
-      line-height: 1.5;
-    }
-
-    .hero-cred strong {
+    .hero-context {
+      font-size: 17px;
+      line-height: 1.75;
       color: var(--coffee);
+      margin-bottom: 32px;
+    }
+
+    .hero-cta-line {
+      font-family: var(--serif);
+      font-variation-settings: 'WONK' 0, 'opsz' 144;
+      font-size: 22px;
       font-weight: 500;
+      color: var(--espresso);
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .hero-credential {
+      font-family: var(--display);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 40px;
     }
 
     .hero-buttons {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 12px;
     }
 
     .btn-primary {
-      display: block;
-      text-align: center;
-      padding: 1rem 1.5rem;
+      display: inline-block;
+      font-family: var(--display);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
       background: var(--coral);
-      color: var(--cream);
-      font-family: var(--sans);
-      font-size: 0.95rem;
-      font-weight: 500;
-      text-decoration: none;
+      color: #fff;
+      padding: 16px 32px;
       border: none;
+      border-radius: 0;
       cursor: pointer;
+      text-align: center;
+      text-decoration: none;
       transition: background 0.2s, transform 0.15s;
-      letter-spacing: 0.01em;
     }
 
     .btn-primary:hover { background: var(--coral-hot); }
     .btn-primary:active { transform: scale(0.98); }
 
     .btn-secondary {
-      display: block;
-      text-align: center;
-      padding: 1rem 1.5rem;
+      display: inline-block;
+      font-family: var(--display);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
       background: transparent;
-      color: var(--espresso);
-      font-family: var(--sans);
-      font-size: 0.95rem;
-      font-weight: 500;
-      text-decoration: none;
-      border: 1px solid var(--sand);
+      color: var(--coral);
+      padding: 16px 32px;
+      border: 2px solid var(--coral);
+      border-radius: 0;
       cursor: pointer;
-      transition: border-color 0.2s, color 0.2s;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
     }
 
     .btn-secondary:hover {
-      border-color: var(--coral);
-      color: var(--coral);
+      background: var(--coral);
+      color: #fff;
     }
 
-    /* ── QUIZ SECTION ── */
+    /* ═══════════════════════════════════════
+       QUIZ
+    ═══════════════════════════════════════ */
     .quiz-section {
-      padding: 4rem 0 3rem;
+      padding: 60px 0 40px;
+      border-top: 1px solid var(--sand);
     }
 
-    .quiz-intro {
-      margin-bottom: 2.5rem;
+    .quiz-intro-text {
+      font-size: 17px;
+      color: var(--coffee);
+      margin-bottom: 8px;
     }
 
-    .quiz-intro-title {
-      font-family: var(--serif);
-      font-weight: 400;
-      font-size: 1.5rem;
-      line-height: 1.35;
-      color: var(--espresso);
-      margin-bottom: 1rem;
-      font-variation-settings: 'WONK' 0, 'opsz' 144;
+    .quiz-note {
+      font-size: 14px;
+      color: var(--stone);
+      font-style: italic;
+      margin-bottom: 40px;
     }
 
-    .quiz-intro-body {
-      font-size: 0.95rem;
-      line-height: 1.8;
-      color: var(--mocha);
+    .quiz-area {
+      position: relative;
+      min-height: 400px;
     }
 
-    /* Progress bar */
-    .quiz-progress {
+    .progress-track {
       width: 100%;
       height: 3px;
       background: var(--sand);
-      margin-bottom: 2rem;
+      margin-bottom: 32px;
       overflow: hidden;
     }
 
-    .quiz-progress-fill {
+    .progress-fill {
       height: 100%;
       background: var(--coral);
-      width: 0%;
       transition: width 0.4s ease;
+      width: 10%;
     }
 
-    /* Question card */
-    .quiz-container {
-      position: relative;
-      min-height: 420px;
-    }
-
-    .quiz-card {
+    .q-card {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       opacity: 0;
-      transform: translateX(30px);
-      transition: opacity 0.35s ease, transform 0.35s ease;
+      transform: translateX(24px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
       pointer-events: none;
     }
 
-    .quiz-card.active {
+    .q-card.active {
+      position: relative;
       opacity: 1;
       transform: translateX(0);
       pointer-events: auto;
-      position: relative;
     }
 
-    .quiz-card.exit-left {
+    .q-card.exit-left {
       opacity: 0;
-      transform: translateX(-30px);
+      transform: translateX(-24px);
     }
 
-    .quiz-q-number {
+    .q-number {
       font-family: var(--display);
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.25em;
+      font-size: 11px;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--stone);
-      margin-bottom: 0.75rem;
+      margin-bottom: 12px;
     }
 
     .quiz-question {
       font-family: var(--serif);
-      font-weight: 400;
-      font-size: 1.2rem;
-      line-height: 1.4;
-      color: var(--espresso);
-      margin-bottom: 1.5rem;
       font-variation-settings: 'WONK' 0, 'opsz' 144;
+      font-size: 21px;
+      font-weight: 500;
+      color: var(--espresso);
+      line-height: 1.35;
+      margin-bottom: 24px;
     }
 
-    .quiz-options {
+    .answer-list {
+      list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.6rem;
-      margin-bottom: 1.5rem;
+      gap: 10px;
+      margin-bottom: 28px;
     }
 
-    .quiz-option {
-      padding: 0.9rem 1rem;
-      border: 1px solid var(--sand);
-      background: var(--cream);
+    .answer-item {
+      padding: 16px 20px;
+      border: 1.5px solid var(--sand);
+      background: #fff;
       cursor: pointer;
-      font-family: var(--sans);
-      font-size: 0.9rem;
-      line-height: 1.55;
+      font-size: 16px;
+      line-height: 1.5;
       color: var(--coffee);
-      transition: border-color 0.2s, background 0.2s, color 0.2s;
-      text-align: left;
-      -webkit-tap-highlight-color: transparent;
+      transition: border-color 0.2s, background 0.2s;
       user-select: none;
+      -webkit-user-select: none;
+      -webkit-tap-highlight-color: transparent;
     }
 
-    .quiz-option:hover {
-      border-color: var(--coral-light);
+    .answer-item:hover {
+      border-color: var(--taupe);
     }
 
-    .quiz-option.selected {
+    .answer-item.selected {
       border-color: var(--coral);
       background: var(--coral-glow);
       color: var(--espresso);
     }
 
-    .quiz-option.disabled {
-      opacity: 0.4;
-      pointer-events: none;
-    }
-
-    .quiz-nav {
+    .q-nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 0.5rem;
     }
 
-    .quiz-back {
+    .btn-back {
       font-family: var(--sans);
-      font-size: 0.85rem;
+      font-size: 14px;
       color: var(--stone);
       background: none;
       border: none;
       cursor: pointer;
-      padding: 0.5rem 0;
+      padding: 12px 0;
       transition: color 0.2s;
     }
 
-    .quiz-back:hover { color: var(--espresso); }
-    .quiz-back.hidden { visibility: hidden; }
+    .btn-back:hover { color: var(--coffee); }
+    .btn-back.hidden { visibility: hidden; }
 
-    .quiz-next {
-      padding: 0.75rem 2rem;
+    .btn-next {
+      font-family: var(--display);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
       background: var(--coral);
-      color: var(--cream);
-      font-family: var(--sans);
-      font-size: 0.9rem;
-      font-weight: 500;
+      color: #fff;
+      padding: 14px 28px;
       border: none;
+      border-radius: 0;
       cursor: pointer;
-      transition: background 0.2s, opacity 0.3s, transform 0.15s;
+      transition: background 0.2s, opacity 0.3s;
+      margin-left: auto;
       opacity: 0;
       pointer-events: none;
     }
 
-    .quiz-next.visible {
+    .btn-next.visible {
       opacity: 1;
       pointer-events: auto;
     }
 
-    .quiz-next:hover { background: var(--coral-hot); }
-    .quiz-next:active { transform: scale(0.97); }
+    .btn-next:hover { background: var(--coral-hot); }
 
-    /* Email capture */
-    .email-capture {
+    /* ═══════════════════════════════════════
+       EMAIL CAPTURE
+    ═══════════════════════════════════════ */
+    .email-section {
       display: none;
+      padding: 60px 0;
       text-align: center;
-      padding: 2rem 0;
     }
 
-    .email-capture.active {
+    .email-section.active {
       display: block;
       animation: fadeUp 0.4s ease;
     }
 
-    .email-capture-title {
+    .email-heading {
       font-family: var(--serif);
-      font-weight: 400;
-      font-size: 1.35rem;
-      line-height: 1.35;
-      color: var(--espresso);
-      margin-bottom: 0.75rem;
       font-variation-settings: 'WONK' 0, 'opsz' 144;
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--espresso);
+      margin-bottom: 12px;
     }
 
-    .email-capture-body {
-      font-size: 0.9rem;
-      color: var(--mocha);
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
+    .email-subtext {
+      font-size: 14px;
+      color: var(--stone);
+      margin-bottom: 32px;
     }
 
     .email-form {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 12px;
+      max-width: 400px;
+      margin: 0 auto;
     }
 
     .email-input {
-      padding: 0.9rem 1rem;
-      border: 1px solid var(--sand);
-      background: var(--cream);
       font-family: var(--sans);
-      font-size: 0.95rem;
+      font-size: 16px;
+      padding: 14px 16px;
+      border: 1.5px solid var(--sand);
+      border-radius: 0;
+      background: #fff;
       color: var(--espresso);
       outline: none;
       transition: border-color 0.2s;
-      width: 100%;
     }
 
-    .email-input:focus {
-      border-color: var(--coral);
-    }
+    .email-input:focus { border-color: var(--coral); }
+    .email-input::placeholder { color: var(--taupe); }
 
-    .email-input::placeholder {
-      color: var(--stone);
-    }
-
-    .email-submit {
-      padding: 1rem;
+    .btn-submit {
+      font-family: var(--display);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
       background: var(--coral);
-      color: var(--cream);
-      font-family: var(--sans);
-      font-size: 0.95rem;
-      font-weight: 500;
+      color: #fff;
+      padding: 16px 32px;
       border: none;
+      border-radius: 0;
       cursor: pointer;
       transition: background 0.2s;
     }
 
-    .email-submit:hover { background: var(--coral-hot); }
+    .btn-submit:hover { background: var(--coral-hot); }
+    .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
 
-    .email-privacy {
-      font-size: 0.75rem;
-      color: var(--stone);
-      margin-top: 0.5rem;
-    }
-
-    /* ── RESULTS ── */
-    .results-section {
+    /* ═══════════════════════════════════════
+       RESULTS
+    ═══════════════════════════════════════ */
+    .result-section {
       display: none;
-      padding: 3rem 0;
+      padding: 60px 0 40px;
     }
 
-    .results-section.active {
+    .result-section.active {
       display: block;
       animation: fadeUp 0.5s ease;
     }
 
-    .result-card {
-      margin-bottom: 3rem;
-    }
-
-    .result-wound-label {
+    .result-label {
       font-family: var(--display);
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.3em;
+      font-size: 11px;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--coral);
-      margin-bottom: 0.75rem;
+      color: var(--stone);
+      margin-bottom: 16px;
     }
 
-    .result-headline {
+    .result-wound-name {
       font-family: var(--serif);
-      font-weight: 500;
-      font-size: 1.6rem;
-      line-height: 1.3;
-      color: var(--espresso);
-      margin-bottom: 0.6rem;
       font-variation-settings: 'WONK' 0, 'opsz' 144;
+      font-size: 34px;
+      font-weight: 600;
+      color: var(--espresso);
+      line-height: 1.2;
+      margin-bottom: 10px;
     }
 
     .result-subline {
       font-family: var(--serif);
-      font-weight: 300;
-      font-style: italic;
-      font-size: 1.05rem;
-      line-height: 1.5;
-      color: var(--plum);
-      margin-bottom: 1rem;
       font-variation-settings: 'WONK' 0, 'opsz' 144;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--plum);
+      line-height: 1.45;
+      margin-bottom: 16px;
     }
 
     .result-disclaimer {
-      font-size: 0.75rem;
+      font-size: 13px;
       font-style: italic;
       color: var(--stone);
-      margin-bottom: 1.5rem;
-      line-height: 1.5;
+      margin-bottom: 32px;
     }
 
     .result-divider {
-      width: 40px;
+      width: 48px;
       height: 1px;
       background: var(--sand);
-      margin-bottom: 1.5rem;
+      margin: 32px 0;
     }
 
-    .result-mirror {
-      font-size: 0.95rem;
-      line-height: 1.85;
+    .result-mirror p {
+      margin-bottom: 16px;
+      font-size: 17px;
+      line-height: 1.75;
       color: var(--coffee);
-      margin-bottom: 1.5rem;
     }
 
-    .result-bridge {
-      font-size: 0.9rem;
-      line-height: 1.7;
-      color: var(--mocha);
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      border-left: 2px solid var(--gold);
-      background: rgba(212, 168, 86, 0.04);
-    }
-
-    .result-changes {
-      font-size: 0.85rem;
+    .result-origin-heading {
+      font-family: var(--display);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       color: var(--stone);
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
+      margin-bottom: 16px;
     }
 
-    .result-cta-area {
-      text-align: center;
+    .result-origin p {
+      margin-bottom: 16px;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--mocha);
     }
 
-    .result-cta-btn {
-      display: block;
-      padding: 1rem 1.5rem;
-      background: var(--coral);
-      color: var(--cream);
-      font-family: var(--sans);
-      font-size: 0.95rem;
+    .healing-heading {
+      font-family: var(--serif);
+      font-variation-settings: 'WONK' 0, 'opsz' 144;
+      font-size: 22px;
       font-weight: 500;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-      margin-bottom: 0.5rem;
+      color: var(--espresso);
+      margin-bottom: 24px;
     }
 
-    .result-cta-btn:hover { background: var(--coral-hot); }
-    .result-cta-btn:active { transform: scale(0.98); }
-
-    .result-cta-btn.coming-soon {
-      background: var(--sand);
-      color: var(--mocha);
-      cursor: default;
+    /* Bundle card */
+    .bundle-card {
+      border: 1.5px solid var(--sand);
+      padding: 32px 28px;
+      margin-bottom: 40px;
+      background: #fff;
     }
 
-    .result-cta-btn.coming-soon:hover { background: var(--sand); }
-
-    .result-cta-desc {
-      font-size: 0.8rem;
+    .bundle-rec {
+      font-family: var(--display);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       color: var(--stone);
-      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .bundle-name {
+      font-family: var(--serif);
+      font-variation-settings: 'WONK' 0, 'opsz' 144;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--espresso);
+      margin-bottom: 4px;
+    }
+
+    .bundle-price {
+      font-family: var(--display);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--coral);
+      margin-bottom: 16px;
+    }
+
+    .bundle-desc {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--mocha);
+      margin-bottom: 24px;
+    }
+
+    .bundle-note {
+      font-size: 13px;
+      color: var(--stone);
+      margin-top: 12px;
+    }
+
+    .bundle-coming-soon {
+      font-family: var(--display);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      padding: 14px 28px;
+      border: 1.5px solid var(--sand);
+      background: var(--ivory);
+      display: inline-block;
+      cursor: default;
     }
 
     .waitlist-form {
       display: flex;
-      gap: 0.5rem;
-      margin-top: 0.75rem;
+      gap: 8px;
+      margin-top: 16px;
     }
 
     .waitlist-input {
-      flex: 1;
-      padding: 0.7rem 0.75rem;
-      border: 1px solid var(--sand);
-      background: var(--cream);
       font-family: var(--sans);
-      font-size: 0.85rem;
+      font-size: 14px;
+      padding: 12px 14px;
+      border: 1.5px solid var(--sand);
+      border-radius: 0;
+      background: var(--cream);
       color: var(--espresso);
+      flex: 1;
       outline: none;
+      min-width: 0;
     }
 
     .waitlist-input:focus { border-color: var(--coral); }
 
-    .waitlist-submit {
-      padding: 0.7rem 1rem;
-      background: var(--plum);
-      color: var(--cream);
-      font-family: var(--sans);
-      font-size: 0.8rem;
-      font-weight: 500;
+    .btn-waitlist {
+      font-family: var(--display);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: var(--mocha);
+      color: #fff;
+      padding: 12px 18px;
       border: none;
+      border-radius: 0;
       cursor: pointer;
       white-space: nowrap;
       transition: background 0.2s;
     }
 
-    .waitlist-submit:hover { background: var(--plum-deep); }
+    .btn-waitlist:hover { background: var(--espresso); }
 
     .waitlist-success {
       display: none;
-      font-size: 0.85rem;
+      font-size: 14px;
       color: var(--plum);
-      margin-top: 0.5rem;
+      margin-top: 8px;
     }
 
-    /* Tie result */
-    .tie-header {
-      margin-bottom: 2rem;
-    }
-
-    .tie-headline {
-      font-family: var(--serif);
-      font-weight: 500;
-      font-size: 1.5rem;
-      line-height: 1.3;
-      color: var(--espresso);
-      margin-bottom: 0.5rem;
-      font-variation-settings: 'WONK' 0, 'opsz' 144;
-    }
-
-    .tie-subline {
-      font-family: var(--serif);
-      font-weight: 300;
-      font-style: italic;
-      font-size: 1rem;
-      color: var(--plum);
-      margin-bottom: 0.75rem;
-      font-variation-settings: 'WONK' 0, 'opsz' 144;
-    }
-
-    .tie-body {
-      font-size: 0.9rem;
-      color: var(--mocha);
-      line-height: 1.7;
-    }
-
+    /* Result card spacing for ties */
     .result-card + .result-card {
-      padding-top: 2rem;
+      padding-top: 40px;
       border-top: 1px solid var(--sand);
     }
 
-    /* ── FOOTER ── */
-    .start-footer {
-      padding: 3rem 0 2rem;
+    .tie-message {
+      font-family: var(--serif);
+      font-variation-settings: 'WONK' 0, 'opsz' 144;
+      font-style: italic;
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--coffee);
+      margin-bottom: 40px;
+    }
+
+    /* Share section */
+    .share-section {
+      padding: 40px 0;
+      text-align: center;
+      border-top: 1px solid var(--sand);
+    }
+
+    .share-text {
+      font-size: 16px;
+      color: var(--coffee);
+      margin-bottom: 16px;
+    }
+
+    .btn-copy {
+      font-family: var(--display);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: transparent;
+      color: var(--mocha);
+      padding: 12px 24px;
+      border: 1.5px solid var(--mocha);
+      border-radius: 0;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-copy:hover {
+      background: var(--mocha);
+      color: #fff;
+    }
+
+    .copy-confirm {
+      font-size: 13px;
+      color: var(--plum);
+      margin-top: 10px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .copy-confirm.visible { opacity: 1; }
+
+    .all-bundles-link {
+      display: inline-block;
+      font-family: var(--display);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--coral);
+      text-decoration: none;
+      margin-top: 20px;
+      transition: color 0.2s;
+    }
+
+    .all-bundles-link:hover { color: var(--coral-hot); }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ */
+    .site-footer {
+      padding: 48px 0;
       border-top: 1px solid var(--sand);
       text-align: center;
     }
 
     .footer-credit {
-      font-size: 0.8rem;
+      font-size: 14px;
       color: var(--stone);
-      margin-bottom: 0.5rem;
+      margin-bottom: 12px;
     }
 
     .footer-links {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.35rem;
+      gap: 6px;
     }
 
     .footer-links a {
-      font-size: 0.8rem;
-      color: var(--mocha);
+      font-size: 14px;
+      color: var(--stone);
       text-decoration: none;
       transition: color 0.2s;
     }
 
     .footer-links a:hover { color: var(--coral); }
 
-    /* ── ANIMATIONS ── */
+    /* ═══════════════════════════════════════
+       ANIMATIONS
+    ═══════════════════════════════════════ */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .fade-in {
-      animation: fadeUp 0.5s ease;
-    }
-
-    /* ── DESKTOP ── */
-    @media (min-width: 640px) {
-      .page-wrap { max-width: 520px; }
-
-      .hero-headline { font-size: 2.1rem; }
-      .quiz-question { font-size: 1.3rem; }
-      .result-headline { font-size: 1.8rem; }
-
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════ */
+    @media (min-width: 600px) {
+      .hero { padding: 120px 0 80px; }
+      .hero-cta-line { font-size: 26px; }
+      .result-wound-name { font-size: 38px; }
       .hero-buttons {
         flex-direction: row;
-        gap: 1rem;
+        gap: 16px;
       }
-
-      .btn-primary, .btn-secondary {
-        flex: 1;
-      }
-
-      .email-form {
-        flex-direction: row;
-      }
-
+      .btn-primary, .btn-secondary { flex: 1; }
+      .email-form { flex-direction: row; }
       .email-input { flex: 1; }
-      .email-submit { white-space: nowrap; }
+      .btn-submit { white-space: nowrap; }
     }
   </style>
 </head>
@@ -686,53 +728,49 @@
 <div class="page-wrap">
 
   <!-- ═══════════ HERO ═══════════ -->
-  <section class="hero" id="hero">
-    <div class="hero-label">Core wounds</div>
-    <h1 class="hero-headline">Most of us are running on a belief we didn't choose. Installed early. Running quietly. Shaping everything.</h1>
-    <p class="hero-cred"><strong>Veronika Naumchak</strong> — RTT Practitioner &amp; Cognitive Behavioural Hypnotherapist</p>
+  <section class="hero">
+    <p class="hero-context">Most of what drives your choices — in relationships, at work, in how you see yourself — traces back to a core belief you picked up long before you knew it was there. Some call them core wounds. They shape how you love, how you work, what you tolerate, and what you think you deserve.</p>
+    <p class="hero-cta-line">10 questions. Find out which one is running yours.</p>
+    <p class="hero-credential">Veronika Naumchak — RTT Practitioner &amp; Cognitive Behavioural Hypnotherapist</p>
     <div class="hero-buttons">
-      <a href="#quiz" class="btn-primary">Take the Core Wound Quiz</a>
-      <a href="https://veronika.gumroad.com/l/enough" class="btn-secondary" target="_blank" rel="noopener">I already know &rarr; The Enough Bundle</a>
+      <a href="#quiz" class="btn-primary">I'm ready to find out</a>
+      <a href="/bundles" class="btn-secondary">Explore the bundles</a>
     </div>
   </section>
 
   <!-- ═══════════ QUIZ ═══════════ -->
   <section class="quiz-section" id="quiz">
-    <div class="quiz-intro">
-      <h2 class="quiz-intro-title">Find your core wound.</h2>
-      <p class="quiz-intro-body">10 questions. No wrong answers. Uncomfortably accurate.<br>Choose up to 2 answers that feel most true — not what you think you should feel.</p>
+    <p class="quiz-intro-text">Choose the answer that feels most like you for each question.</p>
+    <p class="quiz-note">Sometimes more than one will feel relevant. Just go with the one that fits most.</p>
+
+    <div class="quiz-area" id="quizArea">
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <div id="quizContainer">
+        <!-- Rendered by JS -->
+      </div>
     </div>
 
-    <div class="quiz-progress">
-      <div class="quiz-progress-fill" id="progressFill"></div>
-    </div>
-
-    <div class="quiz-container" id="quizContainer">
-      <!-- Questions rendered by JS -->
-    </div>
-
-    <!-- Email capture -->
-    <div class="email-capture" id="emailCapture">
-      <h3 class="email-capture-title">You're one step away from your result.</h3>
-      <p class="email-capture-body">Where should I send it?</p>
-      <form class="email-form" id="emailForm" action="https://formspree.io/f/mlgpgooe" method="POST">
-        <input type="email" name="email" class="email-input" placeholder="Your email" required autocomplete="email">
-        <input type="hidden" name="wound_result" id="woundResultField" value="">
-        <input type="hidden" name="wound_scores" id="woundScoresField" value="">
-        <input type="hidden" name="_subject" value="Core Wound Quiz — New Result">
-        <button type="submit" class="email-submit">Send my results &rarr;</button>
+    <!-- Email capture (shown after Q10) -->
+    <div class="email-section" id="emailCapture">
+      <h2 class="email-heading">Enter your email to see your result.</h2>
+      <p class="email-subtext">We'll also send you a guide on your wound. No spam.</p>
+      <form class="email-form" id="emailForm">
+        <input type="email" class="email-input" id="emailInput" placeholder="your@email.com" required autocomplete="email">
+        <button type="submit" class="btn-submit" id="emailSubmitBtn">Show my result &rarr;</button>
       </form>
-      <p class="email-privacy">No spam. Unsubscribe anytime.</p>
     </div>
   </section>
 
   <!-- ═══════════ RESULTS ═══════════ -->
-  <section class="results-section" id="resultsSection">
-    <!-- Rendered by JS -->
+  <section class="result-section" id="resultSection">
+    <!-- Populated by JS -->
   </section>
 
   <!-- ═══════════ FOOTER ═══════════ -->
-  <footer class="start-footer">
+  <footer class="site-footer">
     <p class="footer-credit">Created by Veronika Naumchak</p>
     <div class="footer-links">
       <a href="https://www.instagram.com/veronika_mindbodysoul" target="_blank" rel="noopener">@veronika_mindbodysoul</a>
@@ -747,24 +785,26 @@
 (function() {
   'use strict';
 
-  // ── QUIZ DATA ──
-  const questions = [
+  // ════════════════════════════════════
+  // QUIZ DATA
+  // ════════════════════════════════════
+  var questions = [
     {
       q: "When something good happens, your first reaction:",
       opts: [
         { text: "Wonder if you deserved it, or just got lucky", w: "W1" },
         { text: "Check how someone else reacted before deciding how you feel", w: "W4" },
         { text: "Already calculating what could go wrong", w: "W2" },
-        { text: "Think about sharing it in a way that won't seem like too much", w: "W3" }
+        { text: "Think about sharing it in a way that won\u2019t seem like too much", w: "W3" }
       ]
     },
     {
       q: "Your relationship with rest:",
       opts: [
         { text: "Rest when everyone else is taken care of", w: "W3" },
-        { text: "Mind won't stop even when body is still", w: "W2" },
+        { text: "Mind won\u2019t stop even when body is still", w: "W2" },
         { text: "Choose to rest but then can\u2019t tell if you actually wanted it or just thought you should", w: "W4" },
-        { text: "Guilty unless you've earned it first", w: "W1" }
+        { text: "Guilty unless you\u2019ve earned it first", w: "W1" }
       ]
     },
     {
@@ -773,7 +813,7 @@
         { text: "Go back and forth \u2014 one moment sure it\u2019s fine, next moment sure you ruined it", w: "W4" },
         { text: "Wonder what you did wrong \u2014 and what you need to do to fix it", w: "W1" },
         { text: "Pull back yourself \u2014 give them space, check you\u2019re not being too much", w: "W3" },
-        { text: "Fix-it mode \u2014 need to know what's happening", w: "W2" }
+        { text: "Fix-it mode \u2014 need to know what\u2019s happening", w: "W2" }
       ]
     },
     {
@@ -791,14 +831,14 @@
         { text: "Defer to what the other person wants \u2014 easier than knowing what you want", w: "W4" },
         { text: "Hold things together, anticipate needs, keep the peace", w: "W3" },
         { text: "Find it hard to relax \u2014 always half-waiting for something", w: "W2" },
-        { text: "Feel like you have to keep proving you're worth staying for", w: "W1" }
+        { text: "Feel like you have to keep proving you\u2019re worth staying for", w: "W1" }
       ]
     },
     {
       q: "Your body and you:",
       opts: [
         { text: "Tense \u2014 always slightly braced", w: "W2" },
-        { text: "Sends signals you don't trust \u2014 hunger, intuition, all unreliable", w: "W4" },
+        { text: "Sends signals you don\u2019t trust \u2014 hunger, intuition, all unreliable", w: "W4" },
         { text: "A project \u2014 something to manage, fix, or improve", w: "W1" },
         { text: "Mostly invisible to you \u2014 until you wonder how others see it", w: "W3" }
       ]
@@ -806,7 +846,7 @@
     {
       q: "Thinking about what you actually need emotionally:",
       opts: [
-        { text: "You've been tracking others' needs and lost your own", w: "W3" },
+        { text: "You\u2019ve been tracking others\u2019 needs and lost your own", w: "W3" },
         { text: "Genuinely don\u2019t know \u2014 even when you check in with yourself, you don\u2019t trust the answer", w: "W4" },
         { text: "Vague shame \u2014 needing things feels like weakness", w: "W1" },
         { text: "Immediate check: is it safe to ask?", w: "W2" }
@@ -841,210 +881,193 @@
     }
   ];
 
-  // ── RESULT DATA ──
-  const woundData = {
+  // ════════════════════════════════════
+  // WOUND DATA
+  // ════════════════════════════════════
+  var woundData = {
     W1: {
-      label: "YOUR RESULT",
       name: "The Performer",
-      headline: "Your core wound is: The Performer",
       subline: "You\u2019ve been trying to earn something that was always already yours.",
-      disclaimer: "This reflects the pattern you most strongly identified with \u2014 not a clinical diagnosis.",
-      mirror: "You set the bar. You clear it. You move it higher. Not because you\u2019re blindly ambitious \u2014 but because somewhere very early, you learned that love had conditions. That you had to be good enough, productive enough, lovable enough to deserve your place. Maybe you overachieve to outrun it. Maybe you settle for less than you deserve because a quiet voice says this is all you\u2019re worth. Maybe you hide \u2014 keeping things small so there\u2019s less to lose. Different strategies, same wound underneath: the belief that who you are, without the performance, isn\u2019t enough.",
-      bridge: "This is the audio made for exactly this moment \u2014 when you\u2019ve just recognised something true and you want to do something about it.",
-      changes: "A guided audio to interrupt the belief that you must earn your worth. Best results come from repetition, not intensity.",
-      ctaText: "The Enough Bundle \u2014 CHF 47",
-      ctaUrl: "https://veronika.gumroad.com/l/enough",
-      ctaActive: true,
-      ctaDesc: "Session audio + Daily audio + Integration workbook. Instant download."
+      mirror: '<p>You probably wouldn\u2019t describe it as a wound. It just feels like... the way things are.</p><p>You work hard \u2014 harder than most people around you. You have high standards for your work, your relationships, your body, your life. And when you meet those standards, there\u2019s a brief moment of satisfaction before the next thought arrives: okay, but what about this other thing I haven\u2019t done yet?</p><p>People tell you you\u2019re impressive, capable, put together. But when they do, something doesn\u2019t quite click. The words land on the outside of you. There\u2019s always a quiet \u2018but\u2019 underneath \u2014 but they don\u2019t see the whole picture. But I got lucky. But if they saw how much effort it actually took, they wouldn\u2019t be impressed.</p><p>This doesn\u2019t always look like overachieving. Sometimes it looks like staying too long in situations where you\u2019re treated as less than you are \u2014 because a quiet part of you agrees with how they see you. Sometimes it looks like holding back, not applying, not speaking up \u2014 because putting yourself forward feels like claiming a value you\u2019re not sure you have.</p>',
+      origin: '<p>This belief usually gets picked up early \u2014 from an environment where love felt conditional. Where you were valued for what you did, not who you were. Where falling short meant a cooling of warmth, a withdrawal of attention. You learned, logically and protectively, that your worth was something to be earned. That belief has been running quietly ever since \u2014 in how you work, who you love, what you tolerate, and what you don\u2019t let yourself want.</p>',
+      bundleName: "The Enough Bundle",
+      bundlePrice: "CHF 47",
+      bundleDesc: "A guided audio bundle to interrupt the belief that you have to earn your worth. Session audio + Daily audio + 30-day integration workbook.",
+      bundleLink: "https://buy.stripe.com/test_7sYcN62Gp3u4gVp2Ww9EI00",
+      available: true
     },
     W2: {
-      label: "YOUR RESULT",
       name: "The Guardian",
-      headline: "Your core wound is: The Guardian",
       subline: "You\u2019ve been keeping watch for so long, you\u2019ve forgotten what it feels like to put it down.",
-      disclaimer: "This reflects the pattern you most strongly identified with \u2014 not a clinical diagnosis.",
-      mirror: "From the outside: competence. From the inside: something you can\u2019t turn off. Somewhere early, staying alert became the responsible thing to do. You learned that if you let your guard down, something would go wrong \u2014 and it would be your fault. So you don\u2019t let your guard down. Even when everything is fine, your body doesn\u2019t believe it.",
-      bridge: "This is the audio for the part of you exhausted from holding the watch \u2014 and ready to hear you\u2019re allowed to rest.",
-      changes: "A guided audio to teach your nervous system that safety is not something you have to earn through vigilance.",
-      ctaText: "The Safety Bundle \u2014 Coming Soon",
-      ctaUrl: null,
-      ctaActive: false,
-      ctaDesc: "Join the waitlist to be first when it launches."
+      mirror: '<p>From the outside, you\u2019re the one who has it together. The competent one. The reliable one. From the inside, it\u2019s a different story \u2014 there\u2019s something you can\u2019t quite turn off. A low hum of readiness, like you\u2019re always half-expecting something to go wrong.</p><p>It\u2019s not anxiety exactly \u2014 it\u2019s more like responsibility. Somewhere early, staying alert became the smart thing to do. You learned that if you let your guard down, if you weren\u2019t prepared, something could fall apart and it would be your fault. So you stay ready. You think three steps ahead. You have contingencies for your contingencies.</p><p>The exhausting part isn\u2019t the vigilance itself \u2014 it\u2019s that it never stops. Even when everything is fine, even when there\u2019s nothing to manage, your body doesn\u2019t believe it. Rest feels risky. Trusting that things will be okay without your intervention feels irresponsible. You\u2019re tired in a way that sleep doesn\u2019t fix.</p>',
+      origin: '<p>This usually comes from growing up in an environment that was unpredictable \u2014 emotionally, physically, or both. Maybe a parent whose mood changed without warning. Maybe a home where things could shift from calm to chaos quickly. You learned that the way to stay safe was to stay ready. That was a smart adaptation for a child. It\u2019s just that your nervous system never got the update that things are different now.</p>',
+      bundleName: "The Safety Bundle",
+      bundlePrice: "Coming Soon",
+      bundleDesc: "A guided audio bundle for releasing hypervigilance and teaching your nervous system that it\u2019s safe to rest.",
+      bundleLink: null,
+      available: false
     },
     W3: {
-      label: "YOUR RESULT",
       name: "The Invisible One",
-      headline: "Your core wound is: The Invisible One",
       subline: "You\u2019ve spent so long making sure everyone else is okay, you stopped asking if you were.",
-      disclaimer: "This reflects the pattern you most strongly identified with \u2014 not a clinical diagnosis.",
-      mirror: "\u201CSo giving.\u201D And you are. But there\u2019s a quiet exhaustion underneath. A growing sense you\u2019ve lost track of what you actually want. You became so fluent in reading the room, anticipating what everyone else needed, that your own needs went to the back of the queue. And after long enough, you stopped noticing they were even there.",
-      bridge: "This is the audio for the part of you that\u2019s been waiting quietly at the back of the room, hoping someone would eventually notice she had needs too.",
-      changes: "A guided audio to help you reconnect with your own needs without guilt or justification.",
-      ctaText: "The Reclamation Bundle \u2014 Coming Soon",
-      ctaUrl: null,
-      ctaActive: false,
-      ctaDesc: "Join the waitlist to be first when it launches."
+      mirror: '<p>People would probably describe you as giving, caring, thoughtful. And you are. But underneath all that giving, there\u2019s a quiet exhaustion that nobody sees \u2014 because you\u2019ve gotten very good at making sure nobody has to.</p><p>You know exactly how everyone around you is feeling. You can read a room before you\u2019ve fully entered it. You anticipate what people need, smooth things over, keep the peace. What you\u2019re less sure about is what you need. That signal has gotten quieter over the years \u2014 not because you don\u2019t have needs, but because somewhere along the way, having them started to feel like a burden.</p><p>So you give. You show up for everyone. And when someone asks how you\u2019re doing, you say \u2018fine\u2019 \u2014 because the honest answer feels like too much. Like it would take up space that isn\u2019t really yours to take.</p>',
+      origin: '<p>This often starts in childhood \u2014 being the responsible one, the easy one, the one who managed a parent\u2019s emotions before your own were fully formed. You learned that love was warmer when you were helpful and quieter. That having needs was an inconvenience. That the safest way to belong was to make yourself useful and small. You learned to buy your place through giving \u2014 and it worked. But the cost has been higher than anyone knows.</p>',
+      bundleName: "The Reclamation Bundle",
+      bundlePrice: "Coming Soon",
+      bundleDesc: "A guided audio bundle for reconnecting with your own needs and learning to take up space without guilt.",
+      bundleLink: null,
+      available: false
     },
     W4: {
-      label: "YOUR RESULT",
       name: "The Second-Guesser",
-      headline: "Your core wound is: The Second-Guesser",
-      subline: "You\u2019re not indecisive. You\u2019re someone who learned that your own judgment couldn\u2019t be trusted.",
-      disclaimer: "This reflects the pattern you most strongly identified with \u2014 not a clinical diagnosis.",
-      mirror: "This is dismantling a decision the moment after making it. Needing confirmation for what you already felt. Treating others\u2019 certainty as more reliable than your own. Somewhere early, you got the message that your instincts were wrong \u2014 that trusting yourself was the dangerous thing. So you outsourced it. And now, even when you know the answer, you can\u2019t let yourself land on it.",
-      bridge: "This is the audio for the part of you that already knows \u2014 and has been waiting for permission to trust herself.",
-      changes: "A guided audio to rebuild the connection between what you feel and what you allow yourself to act on.",
-      ctaText: "The Self-Trust Bundle \u2014 Coming Soon",
-      ctaUrl: null,
-      ctaActive: false,
-      ctaDesc: "Join the waitlist to be first when it launches."
+      subline: "You\u2019re not indecisive. You learned that trusting yourself was the dangerous thing.",
+      mirror: '<p>You make a decision. And then, almost immediately, you start taking it apart. Not because the decision was wrong \u2014 but because you\u2019re not sure you can trust yourself to know that. So you check. You ask someone. You look for confirmation that what you felt was correct before you let yourself act on it.</p><p>From the outside, this might look like overthinking or perfectionism. From the inside, it\u2019s something more specific \u2014 a deep uncertainty about whether your own judgment, your own instincts, your own reading of a situation can be relied on. Other people seem to just... know things. Decide things. Trust themselves. You wonder what that feels like.</p><p>The hardest part is that you often do know the answer. You feel it \u2014 a quiet certainty, somewhere in your chest, before the doubt arrives. But then the doubt arrives, and it\u2019s louder. So you defer. You wait. You ask someone else. And every time you do, the muscle of self-trust gets a little weaker.</p>',
+      origin: '<p>This usually comes from having your perceptions repeatedly questioned or overridden as a child. Maybe someone told you that you were \u2018too sensitive\u2019 or \u2018overreacting\u2019 when your reading of a situation was actually accurate. Maybe a parent solved your problems before you could, denying you the experience of trusting your own capacity. You learned \u2014 logically, protectively \u2014 that other people\u2019s certainty was more reliable than your own knowing. That adaptation made sense then. It\u2019s just been running unchecked ever since.</p>',
+      bundleName: "The Self-Trust Bundle",
+      bundlePrice: "Coming Soon",
+      bundleDesc: "A guided audio bundle for rebuilding the connection between what you feel and what you allow yourself to act on.",
+      bundleLink: null,
+      available: false
     }
   };
 
-  // ── STATE ──
-  let currentQ = 0;
-  let answers = []; // array of arrays, one per question
-  const scores = { W1: 0, W2: 0, W3: 0, W4: 0 };
+  // ════════════════════════════════════
+  // STATE
+  // ════════════════════════════════════
+  var currentQ = 0;
+  var totalQ = questions.length;
+  var selectedAnswer = []; // one per question, stores option index or null
+  var quizStarted = false;
 
-  // Init answers array
-  for (let i = 0; i < questions.length; i++) {
-    answers.push([]);
+  for (var i = 0; i < totalQ; i++) {
+    selectedAnswer.push(null);
   }
 
-  // ── RENDER QUESTIONS ──
-  const container = document.getElementById('quizContainer');
+  // ════════════════════════════════════
+  // RENDER QUESTIONS
+  // ════════════════════════════════════
+  var container = document.getElementById('quizContainer');
 
   function renderQuestions() {
-    let html = '';
-    questions.forEach(function(q, i) {
-      html += '<div class="quiz-card' + (i === 0 ? ' active' : '') + '" data-q="' + i + '">';
-      html += '<div class="quiz-q-number">Question ' + (i + 1) + ' of ' + questions.length + '</div>';
+    var html = '';
+    for (var i = 0; i < totalQ; i++) {
+      var q = questions[i];
+      var isFirst = i === 0;
+      var isLast = i === totalQ - 1;
+
+      html += '<div class="q-card' + (isFirst ? ' active' : '') + '" data-q="' + i + '">';
+      html += '<div class="q-number">Question ' + (i + 1) + ' of ' + totalQ + '</div>';
       html += '<h3 class="quiz-question">' + q.q + '</h3>';
-      html += '<div class="quiz-options">';
-      q.opts.forEach(function(opt, j) {
-        html += '<div class="quiz-option" data-q="' + i + '" data-opt="' + j + '" data-w="' + opt.w + '">' + opt.text + '</div>';
-      });
+      html += '<ul class="answer-list">';
+      for (var j = 0; j < q.opts.length; j++) {
+        html += '<li class="answer-item" data-q="' + i + '" data-opt="' + j + '" data-w="' + q.opts[j].w + '">' + q.opts[j].text + '</li>';
+      }
+      html += '</ul>';
+      html += '<div class="q-nav">';
+      html += '<button class="btn-back' + (isFirst ? ' hidden' : '') + '" data-dir="back">Back</button>';
+      html += '<button class="btn-next" data-dir="next">' + (isLast ? 'See my result' : 'Next') + '</button>';
       html += '</div>';
-      html += '<div class="quiz-nav">';
-      html += '<button class="quiz-back' + (i === 0 ? ' hidden' : '') + '" data-action="back">Back</button>';
-      html += '<button class="quiz-next" data-action="next">' + (i === questions.length - 1 ? 'See my result' : 'Next') + '</button>';
       html += '</div>';
-      html += '</div>';
-    });
+    }
     container.innerHTML = html;
   }
 
   renderQuestions();
-
-  // ── PROGRESS ──
-  function updateProgress() {
-    var fill = document.getElementById('progressFill');
-    var pct = ((currentQ + 1) / questions.length) * 100;
-    fill.style.width = pct + '%';
-  }
-
   updateProgress();
 
-  // ── OPTION SELECTION ──
-  container.addEventListener('click', function(e) {
-    var option = e.target.closest('.quiz-option');
-    if (!option) return;
+  // ════════════════════════════════════
+  // PROGRESS BAR
+  // ════════════════════════════════════
+  function updateProgress() {
+    var fill = document.getElementById('progressFill');
+    fill.style.width = ((currentQ + 1) / totalQ * 100) + '%';
+  }
 
-    var qi = parseInt(option.dataset.q);
-    var oi = parseInt(option.dataset.opt);
-    var w = option.dataset.w;
+  // ════════════════════════════════════
+  // ANSWER SELECTION (single select)
+  // ════════════════════════════════════
+  container.addEventListener('click', function(e) {
+    var item = e.target.closest('.answer-item');
+    if (!item) return;
+
+    var qi = parseInt(item.dataset.q);
+    var oi = parseInt(item.dataset.opt);
 
     if (qi !== currentQ) return;
 
-    var idx = answers[qi].indexOf(oi);
-
-    if (idx > -1) {
-      // Deselect
-      answers[qi].splice(idx, 1);
-      option.classList.remove('selected');
-    } else if (answers[qi].length < 2) {
-      // Select
-      answers[qi].push(oi);
-      option.classList.add('selected');
+    // Fire quiz_started on first interaction
+    if (!quizStarted) {
+      quizStarted = true;
+      if (typeof gtag === 'function') {
+        gtag('event', 'quiz_started');
+      }
     }
 
-    // Handle disabled state for unselected when 2 selected
-    var card = container.querySelector('.quiz-card[data-q="' + qi + '"]');
-    var allOpts = card.querySelectorAll('.quiz-option');
-    allOpts.forEach(function(o) {
-      var oIdx = parseInt(o.dataset.opt);
-      if (answers[qi].length >= 2 && answers[qi].indexOf(oIdx) === -1) {
-        o.classList.add('disabled');
-      } else {
-        o.classList.remove('disabled');
-      }
-    });
+    var card = container.querySelector('.q-card[data-q="' + qi + '"]');
+    var allItems = card.querySelectorAll('.answer-item');
 
-    // Show/hide next button
-    var nextBtn = card.querySelector('.quiz-next');
-    if (answers[qi].length > 0) {
-      nextBtn.classList.add('visible');
+    if (selectedAnswer[qi] === oi) {
+      // Tap same answer to deselect
+      selectedAnswer[qi] = null;
+      item.classList.remove('selected');
+      card.querySelector('.btn-next').classList.remove('visible');
     } else {
-      nextBtn.classList.remove('visible');
+      // Deselect previous, select new
+      allItems.forEach(function(a) { a.classList.remove('selected'); });
+      item.classList.add('selected');
+      selectedAnswer[qi] = oi;
+      card.querySelector('.btn-next').classList.add('visible');
     }
   });
 
-  // ── NAVIGATION ──
+  // ════════════════════════════════════
+  // NAVIGATION
+  // ════════════════════════════════════
   container.addEventListener('click', function(e) {
-    var btn = e.target.closest('[data-action]');
+    var btn = e.target.closest('[data-dir]');
     if (!btn) return;
 
-    var action = btn.dataset.action;
+    var dir = btn.dataset.dir;
 
-    if (action === 'next' && answers[currentQ].length > 0) {
-      if (currentQ === questions.length - 1) {
-        // Last question — show email capture
+    if (dir === 'next' && selectedAnswer[currentQ] !== null) {
+      if (currentQ === totalQ - 1) {
         showEmailCapture();
         return;
       }
-      goToQuestion(currentQ + 1);
-    } else if (action === 'back' && currentQ > 0) {
+      goToQuestion(currentQ + 1, false);
+    } else if (dir === 'back' && currentQ > 0) {
       goToQuestion(currentQ - 1, true);
     }
   });
 
   function goToQuestion(newQ, isBack) {
-    var cards = container.querySelectorAll('.quiz-card');
+    var cards = container.querySelectorAll('.q-card');
     var oldCard = cards[currentQ];
     var newCard = cards[newQ];
 
-    // Animate out
     oldCard.classList.remove('active');
-    if (!isBack) {
-      oldCard.classList.add('exit-left');
-    }
+    if (!isBack) oldCard.classList.add('exit-left');
 
     currentQ = newQ;
 
-    // Animate in
     setTimeout(function() {
       oldCard.classList.remove('exit-left');
       newCard.classList.add('active');
 
       // Restore selection state
-      var opts = newCard.querySelectorAll('.quiz-option');
-      opts.forEach(function(o) {
-        var oIdx = parseInt(o.dataset.opt);
-        if (answers[currentQ].indexOf(oIdx) > -1) {
-          o.classList.add('selected');
+      var items = newCard.querySelectorAll('.answer-item');
+      items.forEach(function(a) {
+        var oIdx = parseInt(a.dataset.opt);
+        if (selectedAnswer[currentQ] === oIdx) {
+          a.classList.add('selected');
         } else {
-          o.classList.remove('selected');
-        }
-        if (answers[currentQ].length >= 2 && answers[currentQ].indexOf(oIdx) === -1) {
-          o.classList.add('disabled');
-        } else {
-          o.classList.remove('disabled');
+          a.classList.remove('selected');
         }
       });
 
       // Next button state
-      var nextBtn = newCard.querySelector('.quiz-next');
-      if (answers[currentQ].length > 0) {
+      var nextBtn = newCard.querySelector('.btn-next');
+      if (selectedAnswer[currentQ] !== null) {
         nextBtn.classList.add('visible');
       } else {
         nextBtn.classList.remove('visible');
@@ -1054,179 +1077,211 @@
     }, 50);
   }
 
-  // ── EMAIL CAPTURE ──
+  // ════════════════════════════════════
+  // SCORE CALCULATION
+  // ════════════════════════════════════
   function calculateScores() {
-    // Reset
-    scores.W1 = 0; scores.W2 = 0; scores.W3 = 0; scores.W4 = 0;
-    for (var i = 0; i < questions.length; i++) {
-      answers[i].forEach(function(optIdx) {
-        var w = questions[i].opts[optIdx].w;
+    var scores = { W1: 0, W2: 0, W3: 0, W4: 0 };
+    for (var i = 0; i < totalQ; i++) {
+      if (selectedAnswer[i] !== null) {
+        var w = questions[i].opts[selectedAnswer[i]].w;
         scores[w]++;
-      });
+      }
     }
+    return scores;
   }
 
   function getResult() {
-    calculateScores();
+    var scores = calculateScores();
     var maxScore = Math.max(scores.W1, scores.W2, scores.W3, scores.W4);
     var winners = [];
     ['W1', 'W2', 'W3', 'W4'].forEach(function(w) {
       if (scores[w] === maxScore) winners.push(w);
     });
-    return winners;
+    return { winners: winners, scores: scores };
   }
 
+  // ════════════════════════════════════
+  // EMAIL CAPTURE
+  // ════════════════════════════════════
   function showEmailCapture() {
     // Hide quiz cards
-    var cards = container.querySelectorAll('.quiz-card');
+    var cards = container.querySelectorAll('.q-card');
     cards.forEach(function(c) { c.classList.remove('active'); });
+    document.querySelector('.progress-track').style.display = 'none';
 
-    var result = getResult();
-    document.getElementById('woundResultField').value = result.join(', ');
-    document.getElementById('woundScoresField').value = 'W1:' + scores.W1 + ' W2:' + scores.W2 + ' W3:' + scores.W3 + ' W4:' + scores.W4;
+    var emailSection = document.getElementById('emailCapture');
+    emailSection.classList.add('active');
 
-    document.getElementById('emailCapture').classList.add('active');
-
-    // Scroll to email capture
     setTimeout(function() {
-      document.getElementById('emailCapture').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      emailSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }, 100);
   }
 
-  // ── EMAIL FORM SUBMIT ──
   document.getElementById('emailForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    var form = e.target;
-    var formData = new FormData(form);
+    var email = document.getElementById('emailInput').value;
+    var submitBtn = document.getElementById('emailSubmitBtn');
+    var result = getResult();
 
-    // Submit to Formspree
-    fetch(form.action, {
+    submitBtn.textContent = 'Analysing...';
+    submitBtn.disabled = true;
+
+    // Submit to Formspree (non-blocking)
+    fetch('https://formspree.io/f/mlgpgooe', {
       method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    }).then(function(response) {
-      if (response.ok) {
-        showResults();
-      } else {
-        // Show results anyway — don't block the experience
-        showResults();
-      }
-    }).catch(function() {
-      // Show results even if network fails
-      showResults();
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        email: email,
+        wound_result: result.winners.join(', '),
+        wound_scores: JSON.stringify(result.scores),
+        _subject: 'Core Wound Quiz: ' + result.winners.map(function(w) { return woundData[w].name; }).join(' + ')
+      })
+    }).catch(function(err) {
+      console.log('Formspree submission failed:', err);
+    }).finally(function() {
+      showResult(result);
     });
+
+    // Fallback: show result after 3s no matter what
+    setTimeout(function() { showResult(result); }, 3000);
+  });
+
+  // ════════════════════════════════════
+  // SHOW RESULT
+  // ════════════════════════════════════
+  var resultShown = false;
+
+  function showResult(result) {
+    if (resultShown) return;
+    resultShown = true;
 
     // GA4 event
     if (typeof gtag === 'function') {
-      var result = getResult();
       gtag('event', 'quiz_completed', {
-        event_category: 'Core Wound Quiz',
-        event_label: result.join(', '),
-        wound_result: result.join(', ')
+        wound_result: result.winners.map(function(w) { return woundData[w].name; }).join(' + ')
       });
     }
-  });
 
-  // ── SHOW RESULTS ──
-  function showResults() {
-    var result = getResult();
-    var resultsDiv = document.getElementById('resultsSection');
-    var html = '';
-
-    // Hide quiz section content
+    // Hide email section
+    document.getElementById('emailCapture').classList.remove('active');
     document.getElementById('emailCapture').style.display = 'none';
 
-    if (result.length > 1) {
+    var section = document.getElementById('resultSection');
+    var html = '';
+
+    if (result.winners.length > 1) {
       // Tie
-      html += '<div class="tie-header">';
-      html += '<div class="result-wound-label">YOUR RESULT</div>';
-      html += '<h2 class="tie-headline">You\u2019re carrying two wounds equally.</h2>';
-      html += '<p class="tie-subline">More common than you think.</p>';
-      html += '<p class="tie-body">Start with whichever made you exhale. Then move to the second.</p>';
-      html += '</div>';
+      html += '<p class="tie-message">You\u2019re carrying two wounds with equal weight. That\u2019s more common than you\u2019d think \u2014 they often travel together. Start with whichever one made you exhale when you read it. That\u2019s the one your body is asking you to look at first.</p>';
     }
 
-    // Only show the winning wounds (or tied wounds)
-    result.forEach(function(w) {
-      var d = woundData[w];
-      html += renderResultCard(d, w);
+    result.winners.forEach(function(wKey) {
+      html += renderWoundCard(wKey);
     });
 
-    resultsDiv.innerHTML = html;
-    resultsDiv.classList.add('active');
+    // Share section
+    html += '<div class="share-section">';
+    html += '<p class="share-text">Send this quiz to someone who might need it.</p>';
+    html += '<button class="btn-copy" id="copyLinkBtn">Copy link</button>';
+    html += '<p class="copy-confirm" id="copyConfirm">Link copied!</p>';
+    html += '<br>';
+    html += '<a href="/bundles" class="all-bundles-link">See all bundles &rarr;</a>';
+    html += '</div>';
 
-    // Scroll to results
+    section.innerHTML = html;
+    section.classList.add('active');
+
     setTimeout(function() {
-      resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 100);
 
+    // Bind share button
+    document.getElementById('copyLinkBtn').addEventListener('click', function() {
+      navigator.clipboard.writeText('https://veronikanaumchak.com/start').then(function() {
+        if (typeof gtag === 'function') {
+          gtag('event', 'share_quiz');
+        }
+        var confirm = document.getElementById('copyConfirm');
+        confirm.classList.add('visible');
+        setTimeout(function() { confirm.classList.remove('visible'); }, 2500);
+      });
+    });
+
     // Bind waitlist forms
-    bindWaitlistForms();
+    section.querySelectorAll('.waitlist-form').forEach(function(form) {
+      form.addEventListener('submit', handleWaitlist);
+    });
   }
 
-  function renderResultCard(d, woundKey) {
-    var html = '<div class="result-card">';
-    if (!document.querySelector('.tie-header')) {
-      html += '<div class="result-wound-label">' + d.label + '</div>';
-    }
-    html += '<h2 class="result-headline">' + d.headline + '</h2>';
-    html += '<p class="result-subline">' + d.subline + '</p>';
-    html += '<p class="result-disclaimer">' + d.disclaimer + '</p>';
-    html += '<div class="result-divider"></div>';
-    html += '<p class="result-mirror">' + d.mirror + '</p>';
-    html += '<div class="result-bridge">' + d.bridge + '</div>';
-    html += '<p class="result-changes">' + d.changes + '</p>';
-    html += '<div class="result-cta-area">';
+  function renderWoundCard(wKey) {
+    var w = woundData[wKey];
+    var bundleHtml = '';
 
-    if (d.ctaActive) {
-      html += '<a href="' + d.ctaUrl + '" class="result-cta-btn" target="_blank" rel="noopener">' + d.ctaText + '</a>';
-      html += '<p class="result-cta-desc">' + d.ctaDesc + '</p>';
+    if (w.available) {
+      bundleHtml = '<a href="' + w.bundleLink + '" class="btn-primary" target="_blank" rel="noopener" style="display:block;text-decoration:none;margin-bottom:0;">Get the bundle</a>';
+      bundleHtml += '<p class="bundle-note">Instant download after purchase.</p>';
     } else {
-      html += '<div class="result-cta-btn coming-soon">' + d.ctaText + '</div>';
-      html += '<p class="result-cta-desc">' + d.ctaDesc + '</p>';
-      html += '<form class="waitlist-form" data-wound="' + woundKey + '" action="https://formspree.io/f/mlgpgooe" method="POST">';
-      html += '<input type="hidden" name="_subject" value="Waitlist — ' + d.name + ' Bundle">';
-      html += '<input type="hidden" name="waitlist_bundle" value="' + d.name + '">';
-      html += '<input type="email" name="email" class="waitlist-input" placeholder="Your email" required autocomplete="email">';
-      html += '<button type="submit" class="waitlist-submit">Join waitlist</button>';
-      html += '</form>';
-      html += '<p class="waitlist-success" data-wound="' + woundKey + '">You\u2019re on the list.</p>';
+      bundleHtml = '<span class="bundle-coming-soon">Coming Soon</span>';
+      bundleHtml += '<form class="waitlist-form" data-wound="' + wKey + '">';
+      bundleHtml += '<input type="email" class="waitlist-input" placeholder="Join the waitlist" required autocomplete="email">';
+      bundleHtml += '<button type="submit" class="btn-waitlist">Notify me</button>';
+      bundleHtml += '</form>';
+      bundleHtml += '<p class="waitlist-success" data-wound="' + wKey + '">You\u2019re on the list. We\u2019ll let you know.</p>';
     }
 
+    var html = '<div class="result-card">';
+    html += '<p class="result-label">Your Result</p>';
+    html += '<h2 class="result-wound-name">' + w.name + '</h2>';
+    html += '<p class="result-subline">' + w.subline + '</p>';
+    html += '<p class="result-disclaimer">This reflects the pattern you most identified with \u2014 not a clinical diagnosis.</p>';
+    html += '<div class="result-divider"></div>';
+    html += '<div class="result-mirror">' + w.mirror + '</div>';
+    html += '<div class="result-divider"></div>';
+    html += '<p class="result-origin-heading">Where this comes from</p>';
+    html += '<div class="result-origin">' + w.origin + '</div>';
+    html += '<div class="result-divider"></div>';
+    html += '<h3 class="healing-heading">Ready to start healing this?</h3>';
+    html += '<div class="bundle-card">';
+    html += '<p class="bundle-rec">Recommended for you</p>';
+    html += '<p class="bundle-name">' + w.bundleName + '</p>';
+    html += '<p class="bundle-price">' + w.bundlePrice + '</p>';
+    html += '<p class="bundle-desc">' + w.bundleDesc + '</p>';
+    html += bundleHtml;
     html += '</div>';
     html += '</div>';
+
     return html;
   }
 
-  function bindWaitlistForms() {
-    var forms = document.querySelectorAll('.waitlist-form');
-    forms.forEach(function(form) {
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        var woundKey = form.dataset.wound;
-        var formData = new FormData(form);
+  // ════════════════════════════════════
+  // WAITLIST
+  // ════════════════════════════════════
+  function handleWaitlist(e) {
+    e.preventDefault();
+    var form = e.target;
+    var email = form.querySelector('.waitlist-input').value;
+    var wKey = form.dataset.wound;
 
-        fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        }).then(function(response) {
-          form.style.display = 'none';
-          document.querySelector('.waitlist-success[data-wound="' + woundKey + '"]').style.display = 'block';
-        }).catch(function() {
-          form.style.display = 'none';
-          document.querySelector('.waitlist-success[data-wound="' + woundKey + '"]').style.display = 'block';
-        });
+    if (typeof gtag === 'function') {
+      gtag('event', 'waitlist_signup', { wound_label: wKey });
+    }
 
-        if (typeof gtag === 'function') {
-          gtag('event', 'waitlist_signup', {
-            event_category: 'Core Wound Quiz',
-            event_label: woundKey
-          });
-        }
-      });
+    fetch('https://formspree.io/f/mlgpgooe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        email: email,
+        waitlist_wound: wKey,
+        _subject: 'Waitlist: ' + woundData[wKey].bundleName
+      })
+    }).catch(function(err) {
+      console.log('Waitlist submission failed:', err);
     });
+
+    form.style.display = 'none';
+    var success = form.parentElement.querySelector('.waitlist-success[data-wound="' + wKey + '"]');
+    if (success) success.style.display = 'block';
   }
 
 })();
