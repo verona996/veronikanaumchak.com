@@ -1019,8 +1019,6 @@
     <p class="footer-credit">Created by Veronika Naumchak</p>
     <div class="footer-links">
       <a href="https://www.instagram.com/veronika_mindbodysoul" target="_blank" rel="noopener">@veronika_mindbodysoul</a>
-      <a href="mailto:hello@veronikanaumchak.com">hello@veronikanaumchak.com</a>
-      <a href="https://veronikanaumchak.com">About my practice &rarr;</a>
     </div>
   </footer>
 
@@ -1426,7 +1424,7 @@
     }
 
     result.winners.forEach(function(wKey) {
-      html += renderWoundCard(wKey);
+      html += renderWoundCard(wKey, result.scores);
     });
 
     // Share section
@@ -1434,8 +1432,6 @@
     html += '<p class="share-text">Send this quiz to someone who might need it.</p>';
     html += '<button class="btn-copy" id="copyLinkBtn">Copy link</button>';
     html += '<p class="copy-confirm" id="copyConfirm">Link copied!</p>';
-    html += '<br>';
-    html += '<a href="/bundles" class="all-bundles-link">See all bundles &rarr;</a>';
     html += '</div>';
 
     section.innerHTML = html;
@@ -1463,7 +1459,7 @@
     });
   }
 
-  function renderWoundCard(wKey) {
+  function renderWoundCard(wKey, scores) {
     var w = woundData[wKey];
 
     var html = '<div class="result-card">';
