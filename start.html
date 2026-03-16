@@ -476,6 +476,235 @@
       line-height: 1.6;
     }
 
+    /* Score breakdown */
+    .scores-breakdown {
+      margin: 16px 0 8px;
+    }
+
+    .score-row {
+      display: grid;
+      grid-template-columns: 1fr 100px 40px;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(232, 217, 200, 0.4);
+    }
+
+    .score-row:last-child { border-bottom: none; }
+
+    .score-row.score-winner {
+      padding: 12px;
+      margin: 0 -12px;
+      background: rgba(232, 80, 58, 0.05);
+    }
+
+    .score-label {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .score-archetype {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .score-belief {
+      font-size: 12px;
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    .score-bar-track {
+      height: 6px;
+      background: rgba(232, 217, 200, 0.4);
+      overflow: hidden;
+    }
+
+    .score-bar-fill {
+      height: 100%;
+      transition: width 0.6s ease;
+    }
+
+    .score-number {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      text-align: right;
+    }
+
+    .scores-note {
+      font-size: 13px;
+      color: var(--stone);
+      font-style: italic;
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+
+    /* Bundle card expanded */
+    .bundle-card-active {
+      border: 1.5px solid var(--espresso);
+      background: #fff;
+      padding: 28px 24px;
+      margin: 16px 0;
+    }
+
+    .bundle-price-big {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--coral);
+      margin-bottom: 12px;
+      font-variation-settings: 'WONK' 0, 'opsz' 144;
+    }
+
+    .bundle-pain {
+      font-size: 15px;
+      color: var(--mocha);
+      font-style: italic;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .bundle-whats-inside {
+      margin-bottom: 20px;
+    }
+
+    .bundle-inside-heading {
+      font-family: var(--display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 12px;
+    }
+
+    .bundle-contents {
+      list-style: none;
+      padding: 0;
+    }
+
+    .bundle-contents li {
+      position: relative;
+      padding: 8px 0 8px 20px;
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--coffee);
+      border-bottom: 1px solid rgba(232, 217, 200, 0.3);
+    }
+
+    .bundle-contents li:last-child { border-bottom: none; }
+
+    .bundle-contents li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 5px;
+      height: 5px;
+      background: var(--coral);
+      border-radius: 50%;
+    }
+
+    .bundle-contents li strong {
+      color: var(--espresso);
+      font-weight: 600;
+    }
+
+    .bundle-buy-btn {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      margin: 20px 0 8px;
+    }
+
+    .bundle-note {
+      font-size: 13px;
+      color: var(--stone);
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    /* Other bundles section */
+    .other-bundles {
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--sand);
+    }
+
+    .other-bundles-heading {
+      font-family: var(--display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 16px;
+    }
+
+    .other-bundle-card {
+      padding: 16px 20px;
+      border: 1px solid var(--sand);
+      background: var(--cream);
+      margin-bottom: 12px;
+    }
+
+    .other-bundle-card.other-bundle-soon {
+      opacity: 0.6;
+    }
+
+    .other-bundle-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .other-bundle-name {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--espresso);
+      font-variation-settings: 'WONK' 0, 'opsz' 144;
+    }
+
+    .other-bundle-score {
+      font-size: 12px;
+      color: var(--stone);
+      font-weight: 500;
+    }
+
+    .other-bundle-belief {
+      font-size: 13px;
+      font-style: italic;
+      color: var(--mocha);
+      margin-bottom: 10px;
+    }
+
+    .other-bundle-coming {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--stone);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .btn-other-bundle {
+      display: inline-block;
+      padding: 8px 16px;
+      background: var(--coral);
+      color: var(--cream);
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-other-bundle:hover { background: var(--coral-hot); }
+
     .result-origin-heading {
       font-family: var(--display);
       font-size: 12px;
@@ -1236,19 +1465,6 @@
 
   function renderWoundCard(wKey) {
     var w = woundData[wKey];
-    var bundleHtml = '';
-
-    if (w.available) {
-      bundleHtml = '<a href="' + w.bundleLink + '" class="btn-primary" target="_blank" rel="noopener" style="display:block;text-decoration:none;margin-bottom:0;">Get the bundle</a>';
-      bundleHtml += '<p class="bundle-note">Instant download after purchase.</p>';
-    } else {
-      bundleHtml = '<span class="bundle-coming-soon">Coming Soon</span>';
-      bundleHtml += '<form class="waitlist-form" data-wound="' + wKey + '">';
-      bundleHtml += '<input type="email" class="waitlist-input" placeholder="Join the waitlist" required autocomplete="email">';
-      bundleHtml += '<button type="submit" class="btn-waitlist">Notify me</button>';
-      bundleHtml += '</form>';
-      bundleHtml += '<p class="waitlist-success" data-wound="' + wKey + '">You\u2019re on the list. We\u2019ll let you know.</p>';
-    }
 
     var html = '<div class="result-card">';
     html += '<p class="result-label">Your Result</p>';
@@ -1262,17 +1478,87 @@
     html += '<p class="result-origin-heading">Where this comes from</p>';
     html += '<div class="result-origin">' + w.origin + '</div>';
     html += '<div class="result-divider"></div>';
-    html += '<p class="result-breathing-space">Take a moment with this before deciding anything. There\u2019s no rush.</p>';
-    html += '<h3 class="healing-heading">Ready to start working on this?</h3>';
-    html += '<div class="bundle-card">';
-    html += '<p class="bundle-rec">Recommended for you</p>';
-    html += '<p class="bundle-name">' + w.bundleName + '</p>';
-    html += '<p class="bundle-price">' + w.bundlePrice + '</p>';
-    html += '<p class="bundle-desc">' + w.bundleDesc + '</p>';
-    html += bundleHtml;
+
+    // ── SCORES BREAKDOWN ──
+    html += '<p class="result-origin-heading">Your full score breakdown</p>';
+    html += '<div class="scores-breakdown">';
+    var woundOrder = ['W1', 'W2', 'W3', 'W4'];
+    var woundLabels = { W1: 'The Performer', W2: 'The Guardian', W3: 'The Invisible One', W4: 'The Second-Guesser' };
+    var woundBeliefs = { W1: 'I am not enough', W2: 'I am not safe', W3: 'I do not matter', W4: 'I cannot trust myself' };
+    var maxPossible = totalQ; // max score = 10 (one per question)
+    woundOrder.forEach(function(k) {
+      var score = scores[k] || 0;
+      var pct = Math.round((score / maxPossible) * 100);
+      var isWinner = k === wKey;
+      var barColor = isWinner ? 'var(--coral)' : 'var(--sand)';
+      var textColor = isWinner ? 'var(--espresso)' : 'var(--stone)';
+      html += '<div class="score-row' + (isWinner ? ' score-winner' : '') + '">';
+      html += '<div class="score-label" style="color:' + textColor + '">';
+      html += '<span class="score-archetype">' + woundLabels[k] + '</span>';
+      html += '<span class="score-belief">\u201C' + woundBeliefs[k] + '\u201D</span>';
+      html += '</div>';
+      html += '<div class="score-bar-track"><div class="score-bar-fill" style="width:' + pct + '%;background:' + barColor + '"></div></div>';
+      html += '<span class="score-number" style="color:' + textColor + '">' + score + '/' + maxPossible + '</span>';
+      html += '</div>';
+    });
     html += '</div>';
+    html += '<p class="scores-note">Most people score across multiple wounds. They often travel together.</p>';
+
+    html += '<div class="result-divider"></div>';
+    html += '<p class="result-breathing-space">Take a moment with this before deciding anything. There\u2019s no rush.</p>';
+
+    // ── RECOMMENDED BUNDLE (expanded) ──
+    html += '<h3 class="healing-heading">Ready to start working on this?</h3>';
+    html += '<div class="bundle-card bundle-card-active">';
+    html += '<p class="bundle-rec">Recommended for you</p>';
+    html += '<h4 class="bundle-name">' + w.bundleName + '</h4>';
+    html += '<p class="bundle-price-big">' + w.bundlePrice + '</p>';
+    html += '<p class="bundle-pain">' + w.subline + '</p>';
+    html += '<div class="bundle-whats-inside">';
+    html += '<p class="bundle-inside-heading">What\u2019s inside:</p>';
+    html += '<ul class="bundle-contents">';
+    html += '<li><strong>The Session Audio</strong> (~18 min) \u2014 a guided hypnotherapy session that reaches the belief at the level it was formed</li>';
+    html += '<li><strong>The Daily Audio</strong> (~10 min) \u2014 a morning anchor to reinforce the shift, every day for 30 days</li>';
+    html += '<li><strong>The Integration Workbook</strong> (PDF) \u2014 30-day guided exercises, pattern interrupts, and real-world experiments to make the change stick</li>';
+    html += '</ul>';
+    html += '</div>';
+    if (w.available) {
+      html += '<a href="' + w.bundleLink + '" class="btn-primary bundle-buy-btn" target="_blank" rel="noopener">Get the bundle \u2014 ' + w.bundlePrice + '</a>';
+      html += '<p class="bundle-note">Instant download. Start today.</p>';
+    } else {
+      html += '<span class="bundle-coming-soon">Coming Soon</span>';
+      html += '<form class="waitlist-form" data-wound="' + wKey + '">';
+      html += '<input type="email" class="waitlist-input" placeholder="Join the waitlist" required autocomplete="email">';
+      html += '<button type="submit" class="btn-waitlist">Notify me</button>';
+      html += '</form>';
+      html += '<p class="waitlist-success" data-wound="' + wKey + '">You\u2019re on the list. We\u2019ll let you know.</p>';
+    }
     html += '</div>';
 
+    // ── OTHER BUNDLES (greyed out, right below) ──
+    html += '<div class="other-bundles">';
+    html += '<p class="other-bundles-heading">Also available</p>';
+    var otherWounds = woundOrder.filter(function(k) { return k !== wKey; });
+    otherWounds.forEach(function(k) {
+      var ow = woundData[k];
+      var myScore = scores[k] || 0;
+      html += '<div class="other-bundle-card' + (ow.available ? '' : ' other-bundle-soon') + '">';
+      html += '<div class="other-bundle-top">';
+      html += '<p class="other-bundle-name">' + ow.bundleName + '</p>';
+      html += '<span class="other-bundle-score">Your score: ' + myScore + '/' + maxPossible + '</span>';
+      html += '</div>';
+      html += '<p class="other-bundle-belief">\u201C' + woundBeliefs[k] + '\u201D</p>';
+      if (ow.available) {
+        html += '<a href="' + ow.bundleLink + '" class="btn-other-bundle" target="_blank" rel="noopener">Get this bundle \u2014 ' + ow.bundlePrice + '</a>';
+      } else {
+        html += '<span class="other-bundle-coming">Coming soon</span>';
+      }
+      html += '</div>';
+    });
+    html += '<a href="/bundles" class="btn-secondary" style="display:block;text-align:center;margin-top:24px;text-decoration:none;">Explore all bundles \u2192</a>';
+    html += '</div>';
+
+    html += '</div>'; // close result-card
     return html;
   }
 
