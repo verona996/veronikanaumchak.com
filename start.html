@@ -613,6 +613,59 @@
       font-weight: 600;
     }
 
+    .bundle-how-it-works {
+      margin-bottom: 20px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(232, 217, 200, 0.3);
+    }
+
+    .how-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .how-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--coffee);
+    }
+
+    .how-step-num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 24px;
+      height: 24px;
+      background: var(--coral);
+      color: var(--cream);
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 600;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .bundle-creator {
+      margin-bottom: 20px;
+      padding: 16px;
+      background: rgba(232, 217, 200, 0.15);
+    }
+
+    .bundle-creator-text {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--mocha);
+    }
+
+    .bundle-creator-text strong {
+      color: var(--espresso);
+      font-weight: 600;
+    }
+
     .bundle-buy-btn {
       display: block;
       text-align: center;
@@ -1521,9 +1574,25 @@
     html += '<li><strong>The Integration Workbook</strong> (PDF) \u2014 30-day guided exercises, pattern interrupts, and real-world experiments to make the change stick</li>';
     html += '</ul>';
     html += '</div>';
+
+    // How it works
+    html += '<div class="bundle-how-it-works">';
+    html += '<p class="bundle-inside-heading">How it works:</p>';
+    html += '<div class="how-steps">';
+    html += '<div class="how-step"><span class="how-step-num">1</span><span>Listen to the Session audio 3\u20135 times in your first week</span></div>';
+    html += '<div class="how-step"><span class="how-step-num">2</span><span>Switch to the Daily audio every morning for 30 days</span></div>';
+    html += '<div class="how-step"><span class="how-step-num">3</span><span>Use the workbook to track what shifts</span></div>';
+    html += '</div>';
+    html += '</div>';
+
+    // Creator bio
+    html += '<div class="bundle-creator">';
+    html += '<p class="bundle-creator-text">Created by <strong>Veronika Naumchak</strong> \u2014 certified RTT practitioner and cognitive behavioural hypnotherapist, completing her Level 5 clinical diploma at the UK College of Hypnosis & Hypnotherapy.</p>';
+    html += '</div>';
+
     if (w.available) {
       html += '<a href="' + w.bundleLink + '" class="btn-primary bundle-buy-btn" target="_blank" rel="noopener">Get the bundle \u2014 ' + w.bundlePrice + '</a>';
-      html += '<p class="bundle-note">Instant download. Start today.</p>';
+      html += '<p class="bundle-note">Instant download. Listen on any device. Not a subscription.</p>';
     } else {
       html += '<span class="bundle-coming-soon">Coming Soon</span>';
       html += '<form class="waitlist-form" data-wound="' + wKey + '">';
