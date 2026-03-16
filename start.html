@@ -1463,19 +1463,9 @@
     var w = woundData[wKey];
 
     var html = '<div class="result-card">';
-    html += '<p class="result-label">Your Result</p>';
-    html += '<h2 class="result-wound-name">' + w.name + '</h2>';
-    html += '<p class="result-subline">' + w.subline + '</p>';
-    html += '<p class="result-disclaimer">This reflects the pattern you most identified with \u2014 not a clinical diagnosis.</p>';
-    html += '<div class="result-divider"></div>';
-    html += '<div class="result-mirror">' + w.mirror + '</div>';
-    html += '<p class="result-common-humanity">' + (w.commonHumanity || '') + '</p>';
-    html += '<div class="result-divider"></div>';
-    html += '<p class="result-origin-heading">Where this comes from</p>';
-    html += '<div class="result-origin">' + w.origin + '</div>';
-    html += '<div class="result-divider"></div>';
+    html += '<p class="result-label">Your Results</p>';
 
-    // ── SCORES BREAKDOWN ──
+    // ── SCORES BREAKDOWN (first thing they see) ──
     html += '<p class="result-origin-heading">Your full score breakdown</p>';
     html += '<div class="scores-breakdown">';
     var woundOrder = ['W1', 'W2', 'W3', 'W4'];
@@ -1500,6 +1490,19 @@
     html += '</div>';
     html += '<p class="scores-note">Most people score across multiple wounds. They often travel together.</p>';
 
+    html += '<div class="result-divider"></div>';
+
+    // ── MAIN WOUND EXPLANATION ──
+    html += '<p class="result-origin-heading">Your primary wound</p>';
+    html += '<h2 class="result-wound-name">' + w.name + '</h2>';
+    html += '<p class="result-subline">' + w.subline + '</p>';
+    html += '<p class="result-disclaimer">This reflects the pattern you most identified with \u2014 not a clinical diagnosis.</p>';
+    html += '<div class="result-divider"></div>';
+    html += '<div class="result-mirror">' + w.mirror + '</div>';
+    html += '<p class="result-common-humanity">' + (w.commonHumanity || '') + '</p>';
+    html += '<div class="result-divider"></div>';
+    html += '<p class="result-origin-heading">Where this comes from</p>';
+    html += '<div class="result-origin">' + w.origin + '</div>';
     html += '<div class="result-divider"></div>';
 
     // ── RECOMMENDED BUNDLE (expanded) ──
