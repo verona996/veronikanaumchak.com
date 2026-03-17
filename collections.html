@@ -301,17 +301,22 @@
       width: 80px;
       height: 80px;
       min-width: 80px;
-      background: var(--linen);
+      background: var(--cream);
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
+    }
+    .wound-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
     .bundle-card.active .wound-icon {
-      background: var(--coral-soft);
-      border: 1px solid rgba(232, 80, 58, 0.15);
+      background: var(--cream);
     }
     .bundle-card.coming-soon .wound-icon {
-      background: var(--linen);
+      background: var(--cream);
     }
 
     .wound-icon-code {
@@ -682,7 +687,7 @@
       <article class="bundle-card active">
         <div class="bundle-header">
           <div class="wound-icon">
-            <span class="wound-icon-code">W1</span>
+            <img src="/icons/rewire-w1-worth.png" alt="Worth" width="80" height="80">
           </div>
           <div class="bundle-header-text">
             <div class="bundle-label">For The Performer &mdash; Worth</div>
@@ -708,7 +713,7 @@
       <article class="bundle-card coming-soon">
         <div class="bundle-header">
           <div class="wound-icon">
-            <span class="wound-icon-code">W2</span>
+            <img src="/icons/rewire-w2-safety.png" alt="Safety" width="80" height="80">
           </div>
           <div class="bundle-header-text">
             <div class="bundle-label">For The Guardian &mdash; Safety</div>
@@ -741,7 +746,7 @@
       <article class="bundle-card coming-soon">
         <div class="bundle-header">
           <div class="wound-icon">
-            <span class="wound-icon-code">W3</span>
+            <img src="/icons/rewire-w3-self.png" alt="Self" width="80" height="80">
           </div>
           <div class="bundle-header-text">
             <div class="bundle-label">For The Overgiver &mdash; Mattering</div>
@@ -774,7 +779,7 @@
       <article class="bundle-card coming-soon">
         <div class="bundle-header">
           <div class="wound-icon">
-            <span class="wound-icon-code">W4</span>
+            <img src="/icons/rewire-w4-trust.png" alt="Trust" width="80" height="80">
           </div>
           <div class="bundle-header-text">
             <div class="bundle-label">For The Second-Guesser &mdash; Autonomy</div>
