@@ -1475,38 +1475,35 @@
     submitBtn.textContent = 'Analysing...';
     submitBtn.disabled = true;
 
-    // Submit to Formspree (non-blocking)
-    fetch('https://formspree.io/f/mlgpgooe', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        email: email,
-        wound_result: result.winners.join(', '),
-        wound_scores: JSON.stringify(result.scores),
-        _subject: 'Core Wound Quiz: ' + result.winners.map(function(w) { return woundData[w].name; }).join(' + ')
-      })
-    }).catch(function(err) {
-      console.log('Formspree submission failed:', err);
-    }).finally(function() {
-      showResult(result);
-    });
-
-    // Submit to n8n webhook for Notion integration (sendBeacon guarantees delivery)
-    var n8nData = JSON.stringify({
+    var n8nPayload = {
       email: email,
       wound_result: result.winners[0],
       wound_scores: JSON.stringify(result.scores),
       _subject: 'Core Wound Quiz: ' + result.winners.map(function(w) { return woundData[w].name; }).join(' + ')
-    });
-    try {
-      navigator.sendBeacon('https://verona996.app.n8n.cloud/webhook/formspree-quiz', new Blob([n8nData], { type: 'application/json' }));
-    } catch(e) {
-      fetch('https://verona996.app.n8n.cloud/webhook/formspree-quiz', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: n8nData
-      }).catch(function(err) { console.log('n8n failed:', err); });
-    }
+    };
 
-    // Fallback: show result after 3s no matter what
+    var formspreePayload = {
+      email: email,
+      wound_result: result.winners.join(', '),
+      wound_scores: JSON.stringify(result.scores),
+      _subject: 'Core Wound Quiz: ' + result.winners.map(function(w) { return woundData[w].name; }).join(' + ')
+    };
+
+    // Send BOTH requests simultaneously, show result when EITHER completes
+    var n8nDone = fetch('https://verona996.app.n8n.cloud/webhook/formspree-quiz', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(n8nPayload)
+    }).catch(function(err) { console.log('n8n failed:', err); });
+
+    var formDone = fetch('https://formspree.io/f/mlgpgooe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(formspreePayload)
+    }).catch(function(err) { console.log('Formspree failed:', err); });
+
+    // Show result as soon as ANY request finishes (or after 3s max)
+    Promise.race([n8nDone, formDone]).finally(function() { showResult(result); });
     setTimeout(function() { showResult(result); }, 3000);
   });
 
