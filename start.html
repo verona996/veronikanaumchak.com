@@ -1489,22 +1489,14 @@
       _subject: 'Core Wound Quiz: ' + result.winners.map(function(w) { return woundData[w].name; }).join(' + ')
     };
 
-    // 1. Fire n8n via sendBeacon (guaranteed delivery even if page changes)
-    var n8nBlob = new Blob([JSON.stringify(n8nPayload)], { type: 'application/json' });
-    var beaconSent = false;
-    if (navigator.sendBeacon) {
-      beaconSent = navigator.sendBeacon('https://verona996.app.n8n.cloud/webhook/formspree-quiz', n8nBlob);
-    }
-
-    // 2. Also fire n8n via fetch as backup (keepalive survives page changes)
-    if (!beaconSent) {
-      fetch('https://verona996.app.n8n.cloud/webhook/formspree-quiz', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(n8nPayload),
-        keepalive: true
-      }).catch(function(err) { console.log('n8n fetch fallback failed:', err); });
-    }
+    // 1. Fire n8n webhook (fetch with credentials omitted to avoid CORS issues)
+    fetch('https://verona996.app.n8n.cloud/webhook/formspree-quiz', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(n8nPayload),
+      credentials: 'omit',
+      keepalive: true
+    }).catch(function(err) { console.log('n8n webhook failed:', err); });
 
     // 3. Send Formspree, then show result
     fetch('https://formspree.io/f/mlgpgooe', {
@@ -1716,19 +1708,14 @@
       console.log('Waitlist submission failed:', err);
     });
 
-    // Send to n8n for Notion (sendBeacon guarantees delivery)
-    var n8nWaitlist = JSON.stringify({
-      email: email,
-      waitlist_wound: wKey,
-      _subject: 'Waitlist: ' + woundData[wKey].bundleName
-    });
-    try {
-      navigator.sendBeacon('https://verona996.app.n8n.cloud/webhook/formspree-quiz', new Blob([n8nWaitlist], { type: 'application/json' }));
-    } catch(e) {
-      fetch('https://verona996.app.n8n.cloud/webhook/formspree-quiz', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: n8nWaitlist
-      }).catch(function(err) { console.log('n8n failed:', err); });
-    }
+    // Send to n8n for Notion (fetch with credentials omitted to avoid CORS issues)
+    fetch('https://verona996.app.n8n.cloud/webhook/formspree-quiz', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, waitlist_wound: wKey, _subject: 'Waitlist: ' + woundData[wKey].bundleName }),
+      credentials: 'omit',
+      keepalive: true
+    }).catch(function(err) { console.log('n8n waitlist failed:', err); });
 
     form.style.display = 'none';
     var success = form.parentElement.querySelector('.waitlist-success[data-wound="' + wKey + '"]');
