@@ -2459,6 +2459,22 @@
 
         const formData = new FormData(intakeForm);
 
+        // Send to n8n webhook for Notion Coaching Inquiries
+        fetch('https://verona996.app.n8n.cloud/webhook/contact-form', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            firstName: formData.get('firstName'),
+            lastName: formData.get('lastName'),
+            age: formData.get('age'),
+            email: formData.get('email'),
+            priorExperience: formData.get('priorExperience'),
+            presentingIssue: formData.get('presentingIssue')
+          }),
+          credentials: 'omit',
+          keepalive: true
+        }).catch(function(err) { console.log('n8n contact webhook failed:', err); });
+
         fetch(intakeForm.action, {
           method: 'POST',
           body: formData,
