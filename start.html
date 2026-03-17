@@ -1489,21 +1489,32 @@
       _subject: 'Core Wound Quiz: ' + result.winners.map(function(w) { return woundData[w].name; }).join(' + ')
     };
 
-    // Send BOTH requests simultaneously, show result when EITHER completes
-    var n8nDone = fetch('https://verona996.app.n8n.cloud/webhook/formspree-quiz', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(n8nPayload)
-    }).catch(function(err) { console.log('n8n failed:', err); });
+    // 1. Fire n8n via sendBeacon (guaranteed delivery even if page changes)
+    var n8nBlob = new Blob([JSON.stringify(n8nPayload)], { type: 'application/json' });
+    var beaconSent = false;
+    if (navigator.sendBeacon) {
+      beaconSent = navigator.sendBeacon('https://verona996.app.n8n.cloud/webhook/formspree-quiz', n8nBlob);
+    }
 
-    var formDone = fetch('https://formspree.io/f/mlgpgooe', {
+    // 2. Also fire n8n via fetch as backup (keepalive survives page changes)
+    if (!beaconSent) {
+      fetch('https://verona996.app.n8n.cloud/webhook/formspree-quiz', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(n8nPayload),
+        keepalive: true
+      }).catch(function(err) { console.log('n8n fetch fallback failed:', err); });
+    }
+
+    // 3. Send Formspree, then show result
+    fetch('https://formspree.io/f/mlgpgooe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(formspreePayload)
-    }).catch(function(err) { console.log('Formspree failed:', err); });
+    }).catch(function(err) { console.log('Formspree failed:', err); })
+    .finally(function() { showResult(result); });
 
-    // Show result as soon as ANY request finishes (or after 3s max)
-    Promise.race([n8nDone, formDone]).finally(function() { showResult(result); });
+    // Fallback: show result after 3s max even if Formspree is slow
     setTimeout(function() { showResult(result); }, 3000);
   });
 
