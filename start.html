@@ -460,6 +460,53 @@
       color: var(--coffee);
     }
 
+    .scroll-prompt {
+      text-align: center;
+      padding: 24px 0;
+      animation: bounceDown 2s infinite;
+    }
+
+    .scroll-prompt-text {
+      font-family: var(--sans);
+      font-size: 14px;
+      color: var(--coral);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .scroll-arrow {
+      font-size: 20px;
+      color: var(--coral);
+    }
+
+    @keyframes bounceDown {
+      0%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(6px); }
+      60% { transform: translateY(3px); }
+    }
+
+    .tie-intro {
+      margin: 24px 0;
+    }
+
+    .tie-intro-text {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--coffee);
+    }
+
+    .tie-bundle-intro {
+      font-size: 15px;
+      color: var(--mocha);
+      font-style: italic;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .wound-explanation {
+      margin-bottom: 32px;
+    }
+
     .result-common-humanity {
       font-size: 15px;
       font-style: italic;
@@ -1445,6 +1492,18 @@
       showResult(result);
     });
 
+    // Also submit to n8n webhook for Notion integration
+    fetch('https://verona996.app.n8n.cloud/webhook/formspree-quiz', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: email,
+        wound_result: result.winners[0],
+        wound_scores: JSON.stringify(result.scores),
+        _subject: 'Core Wound Quiz: ' + result.winners.map(function(w) { return woundData[w].name; }).join(' + ')
+      })
+    }).catch(function(err) { console.log('n8n webhook failed:', err); });
+
     // Fallback: show result after 3s no matter what
     setTimeout(function() { showResult(result); }, 3000);
   });
@@ -1458,78 +1517,32 @@
     if (resultShown) return;
     resultShown = true;
 
-    // GA4 event
     if (typeof gtag === 'function') {
       gtag('event', 'quiz_completed', {
         wound_result: result.winners.map(function(w) { return woundData[w].name; }).join(' + ')
       });
     }
 
-    // Hide email section
     document.getElementById('emailCapture').classList.remove('active');
     document.getElementById('emailCapture').style.display = 'none';
 
     var section = document.getElementById('resultSection');
     var html = '';
-
-    if (result.winners.length > 1) {
-      // Tie
-      html += '<p class="tie-message">You\u2019re carrying two wounds with equal weight. That\u2019s more common than you\u2019d think \u2014 they often travel together. Start with whichever one made you exhale when you read it. That\u2019s the one your body is asking you to look at first.</p>';
-    }
-
-    result.winners.forEach(function(wKey) {
-      html += renderWoundCard(wKey, result.scores);
-    });
-
-    // Share section
-    html += '<div class="share-section">';
-    html += '<p class="share-text">Send this quiz to someone who might need it.</p>';
-    html += '<button class="btn-copy" id="copyLinkBtn">Copy link</button>';
-    html += '<p class="copy-confirm" id="copyConfirm">Link copied!</p>';
-    html += '</div>';
-
-    section.innerHTML = html;
-    section.classList.add('active');
-
-    setTimeout(function() {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 100);
-
-    // Bind share button
-    document.getElementById('copyLinkBtn').addEventListener('click', function() {
-      navigator.clipboard.writeText('https://veronikanaumchak.com/start').then(function() {
-        if (typeof gtag === 'function') {
-          gtag('event', 'share_quiz');
-        }
-        var confirm = document.getElementById('copyConfirm');
-        confirm.classList.add('visible');
-        setTimeout(function() { confirm.classList.remove('visible'); }, 2500);
-      });
-    });
-
-    // Bind waitlist forms
-    section.querySelectorAll('.waitlist-form').forEach(function(form) {
-      form.addEventListener('submit', handleWaitlist);
-    });
-  }
-
-  function renderWoundCard(wKey, scores) {
-    var w = woundData[wKey];
-
-    var html = '<div class="result-card">';
-    html += '<p class="result-label">Your Results</p>';
-
-    // ── SCORES BREAKDOWN (first thing they see) ──
-    html += '<p class="result-origin-heading">Your full score breakdown</p>';
-    html += '<div class="scores-breakdown">';
+    var isTie = result.winners.length > 1;
     var woundOrder = ['W1', 'W2', 'W3', 'W4'];
     var woundLabels = { W1: 'The Performer', W2: 'The Guardian', W3: 'The Invisible One', W4: 'The Second-Guesser' };
     var woundBeliefs = { W1: 'I am not enough', W2: 'I am not safe', W3: 'I do not matter', W4: 'I cannot trust myself' };
-    var maxPossible = totalQ; // max score = 10 (one per question)
+    var maxPossible = totalQ;
+
+    // ── SINGLE SCORE BREAKDOWN (highlights ALL winners) ──
+    html += '<div class="result-card">';
+    html += '<p class="result-label">Your Results</p>';
+    html += '<p class="result-origin-heading">Your full score breakdown</p>';
+    html += '<div class="scores-breakdown">';
     woundOrder.forEach(function(k) {
-      var score = scores[k] || 0;
+      var score = result.scores[k] || 0;
       var pct = Math.round((score / maxPossible) * 100);
-      var isWinner = k === wKey;
+      var isWinner = result.winners.indexOf(k) > -1;
       var barColor = isWinner ? 'var(--coral)' : 'var(--sand)';
       var textColor = isWinner ? 'var(--espresso)' : 'var(--stone)';
       html += '<div class="score-row' + (isWinner ? ' score-winner' : '') + '">';
@@ -1543,92 +1556,130 @@
     });
     html += '</div>';
     html += '<p class="scores-note">Most people score across multiple wounds. They often travel together.</p>';
-
-    html += '<div class="result-divider"></div>';
-
-    // ── MAIN WOUND EXPLANATION ──
-    html += '<p class="result-origin-heading">Your primary wound</p>';
-    html += '<h2 class="result-wound-name">' + w.name + '</h2>';
-    html += '<p class="result-subline">' + w.subline + '</p>';
-    html += '<p class="result-disclaimer">This reflects the pattern you most identified with \u2014 not a clinical diagnosis.</p>';
-    html += '<div class="result-divider"></div>';
-    html += '<div class="result-mirror">' + w.mirror + '</div>';
-    html += '<p class="result-common-humanity">' + (w.commonHumanity || '') + '</p>';
-    html += '<div class="result-divider"></div>';
-    html += '<p class="result-origin-heading">Where this comes from</p>';
-    html += '<div class="result-origin">' + w.origin + '</div>';
-    html += '<div class="result-divider"></div>';
-
-    // ── RECOMMENDED BUNDLE (expanded) ──
-    html += '<h3 class="healing-heading">Ready to start working on this?</h3>';
-    html += '<div class="bundle-card bundle-card-active">';
-    html += '<p class="bundle-rec">Recommended for you</p>';
-    html += '<h4 class="bundle-name">' + w.bundleName + '</h4>';
-    html += '<p class="bundle-price-big">' + w.bundlePrice + '</p>';
-    html += '<p class="bundle-pain">' + w.subline + '</p>';
-    html += '<div class="bundle-whats-inside">';
-    html += '<p class="bundle-inside-heading">What\u2019s inside:</p>';
-    html += '<ul class="bundle-contents">';
-    html += '<li><strong>The Session Audio</strong> (~18 min) \u2014 a guided hypnotherapy session that reaches the belief at the level it was formed</li>';
-    html += '<li><strong>The Daily Audio</strong> (~10 min) \u2014 a morning anchor to reinforce the shift, every day for 30 days</li>';
-    html += '<li><strong>The Integration Workbook</strong> (PDF) \u2014 30-day guided exercises, pattern interrupts, and real-world experiments to make the change stick</li>';
-    html += '</ul>';
     html += '</div>';
 
-    // How it works
-    html += '<div class="bundle-how-it-works">';
-    html += '<p class="bundle-inside-heading">How it works:</p>';
-    html += '<div class="how-steps">';
-    html += '<div class="how-step"><span class="how-step-num">1</span><span>Listen to the Session audio 3\u20135 times in your first week</span></div>';
-    html += '<div class="how-step"><span class="how-step-num">2</span><span>Switch to the Daily audio every morning for 30 days</span></div>';
-    html += '<div class="how-step"><span class="how-step-num">3</span><span>Use the workbook to track what shifts</span></div>';
-    html += '</div>';
+    // ── SCROLL PROMPT ──
+    html += '<div class="scroll-prompt">';
+    html += '<p class="scroll-prompt-text">Read what this means</p>';
+    html += '<div class="scroll-arrow">\u2193</div>';
     html += '</div>';
 
-    // Creator bio
-    html += '<div class="bundle-creator">';
-    html += '<p class="bundle-creator-text">Created by <strong>Veronika Naumchak</strong> \u2014 certified RTT practitioner and cognitive behavioural hypnotherapist, completing her Level 5 clinical diploma at the UK College of Hypnosis & Hypnotherapy.</p>';
-    html += '</div>';
-
-    if (w.available) {
-      html += '<a href="' + w.bundleLink + '" class="btn-primary bundle-buy-btn" target="_blank" rel="noopener">Get the bundle \u2014 ' + w.bundlePrice + '</a>';
-      html += '<p class="bundle-note">Instant download. Listen on any device. Not a subscription.</p>';
-    } else {
-      html += '<span class="bundle-coming-soon">Coming Soon</span>';
-      html += '<form class="waitlist-form" data-wound="' + wKey + '">';
-      html += '<input type="email" class="waitlist-input" placeholder="Join the waitlist" required autocomplete="email">';
-      html += '<button type="submit" class="btn-waitlist">Notify me</button>';
-      html += '</form>';
-      html += '<p class="waitlist-success" data-wound="' + wKey + '">You\u2019re on the list. We\u2019ll let you know.</p>';
-    }
-    html += '</div>';
-
-    // ── OTHER BUNDLES (greyed out, right below) ──
-    html += '<div class="other-bundles">';
-    html += '<p class="other-bundles-heading">Also available</p>';
-    var otherWounds = woundOrder.filter(function(k) { return k !== wKey; });
-    otherWounds.forEach(function(k) {
-      var ow = woundData[k];
-      var myScore = scores[k] || 0;
-      html += '<div class="other-bundle-card' + (ow.available ? '' : ' other-bundle-soon') + '">';
-      html += '<div class="other-bundle-top">';
-      html += '<p class="other-bundle-name">' + ow.bundleName + '</p>';
-      html += '<span class="other-bundle-score">Your score: ' + myScore + '/' + maxPossible + '</span>';
+    // ── TIE INTRO ──
+    if (isTie) {
+      var winnerNames = result.winners.map(function(w) { return woundData[w].name; });
+      html += '<div class="tie-intro">';
+      html += '<p class="result-origin-heading">Your top ' + result.winners.length + ' wounds</p>';
+      html += '<p class="tie-intro-text">You scored equally in ' + result.winners.length + ' wounds: <strong>' + winnerNames.join(' & ') + '</strong>. This is common \u2014 they often fuel each other. Here\u2019s what each one looks like.</p>';
       html += '</div>';
-      html += '<p class="other-bundle-belief">\u201C' + woundBeliefs[k] + '\u201D</p>';
-      if (ow.available) {
-        html += '<a href="' + ow.bundleLink + '" class="btn-other-bundle" target="_blank" rel="noopener">Get this bundle \u2014 ' + ow.bundlePrice + '</a>';
+    }
+
+    // ── WOUND EXPLANATIONS ──
+    result.winners.forEach(function(wKey, idx) {
+      var w = woundData[wKey];
+      html += '<div class="wound-explanation">';
+      if (isTie) {
+        html += '<p class="result-origin-heading">Wound ' + (idx + 1) + ' of ' + result.winners.length + '</p>';
       } else {
-        html += '<span class="other-bundle-coming">Coming soon</span>';
+        html += '<p class="result-origin-heading">Your primary wound</p>';
+      }
+      html += '<h2 class="result-wound-name">' + w.name + '</h2>';
+      html += '<p class="result-subline">' + w.subline + '</p>';
+      html += '<p class="result-disclaimer">This reflects the pattern you most identified with \u2014 not a clinical diagnosis.</p>';
+      html += '<div class="result-divider"></div>';
+      html += '<div class="result-mirror">' + w.mirror + '</div>';
+      html += '<p class="result-common-humanity">' + (w.commonHumanity || '') + '</p>';
+      html += '<div class="result-divider"></div>';
+      html += '<p class="result-origin-heading">Where this comes from</p>';
+      html += '<div class="result-origin">' + w.origin + '</div>';
+      html += '<div class="result-divider"></div>';
+      html += '</div>';
+    });
+
+    // ── RECOMMENDED BUNDLES ──
+    if (isTie) {
+      html += '<h3 class="healing-heading">' + result.winners.length + ' bundles recommended for you</h3>';
+      html += '<p class="tie-bundle-intro">Because your wounds are intertwined, working on both will give you the strongest shift.</p>';
+    } else {
+      html += '<h3 class="healing-heading">Ready to start working on this?</h3>';
+    }
+
+    result.winners.forEach(function(wKey) {
+      var w = woundData[wKey];
+      html += '<div class="bundle-card bundle-card-active">';
+      html += '<p class="bundle-rec">Recommended for you</p>';
+      html += '<h4 class="bundle-name">' + w.bundleName + '</h4>';
+      html += '<p class="bundle-price-big">' + w.bundlePrice + '</p>';
+      html += '<p class="bundle-pain">' + w.subline + '</p>';
+      html += '<div class="bundle-whats-inside">';
+      html += '<p class="bundle-inside-heading">What\u2019s inside:</p>';
+      html += '<ul class="bundle-contents">';
+      html += '<li><strong>The Session Audio</strong> (~18 min) \u2014 a guided hypnotherapy session that reaches the belief at the level it was formed</li>';
+      html += '<li><strong>The Daily Audio</strong> (~10 min) \u2014 a morning anchor to reinforce the shift, every day for 30 days</li>';
+      html += '<li><strong>The Integration Workbook</strong> (PDF) \u2014 30-day guided exercises, pattern interrupts, and real-world experiments to make the change stick</li>';
+      html += '</ul></div>';
+      html += '<div class="bundle-how-it-works"><p class="bundle-inside-heading">How it works:</p><div class="how-steps">';
+      html += '<div class="how-step"><span class="how-step-num">1</span><span>Listen to the Session audio 3\u20135 times in your first week</span></div>';
+      html += '<div class="how-step"><span class="how-step-num">2</span><span>Switch to the Daily audio every morning for 30 days</span></div>';
+      html += '<div class="how-step"><span class="how-step-num">3</span><span>Use the workbook to track what shifts</span></div>';
+      html += '</div></div>';
+      html += '<div class="bundle-creator"><p class="bundle-creator-text">Created by <strong>Veronika Naumchak</strong> \u2014 certified RTT practitioner and cognitive behavioural hypnotherapist, completing her Level 5 clinical diploma at the UK College of Hypnosis & Hypnotherapy.</p></div>';
+      if (w.available) {
+        html += '<a href="' + w.bundleLink + '" class="btn-primary bundle-buy-btn" target="_blank" rel="noopener">Get the bundle \u2014 ' + w.bundlePrice + '</a>';
+        html += '<p class="bundle-note">Instant download. Listen on any device. Not a subscription.</p>';
+      } else {
+        html += '<span class="bundle-coming-soon">Coming Soon</span>';
+        html += '<form class="waitlist-form" data-wound="' + wKey + '"><input type="email" class="waitlist-input" placeholder="Join the waitlist" required autocomplete="email"><button type="submit" class="btn-waitlist">Notify me</button></form>';
+        html += '<p class="waitlist-success" data-wound="' + wKey + '">You\u2019re on the list. We\u2019ll let you know.</p>';
       }
       html += '</div>';
     });
-    html += '<a href="/bundles" class="btn-secondary" style="display:block;text-align:center;margin-top:24px;text-decoration:none;">Explore all bundles \u2192</a>';
+
+    // ── OTHER BUNDLES ──
+    var otherWounds = woundOrder.filter(function(k) { return result.winners.indexOf(k) === -1; });
+    if (otherWounds.length > 0) {
+      html += '<div class="other-bundles"><p class="other-bundles-heading">Also available</p>';
+      otherWounds.forEach(function(k) {
+        var ow = woundData[k];
+        var myScore = result.scores[k] || 0;
+        html += '<div class="other-bundle-card' + (ow.available ? '' : ' other-bundle-soon') + '">';
+        html += '<div class="other-bundle-top"><p class="other-bundle-name">' + ow.bundleName + '</p>';
+        html += '<span class="other-bundle-score">Your score: ' + myScore + '/' + maxPossible + '</span></div>';
+        html += '<p class="other-bundle-belief">\u201C' + woundBeliefs[k] + '\u201D</p>';
+        if (ow.available) {
+          html += '<a href="' + ow.bundleLink + '" class="btn-other-bundle" target="_blank" rel="noopener">Get this bundle \u2014 ' + ow.bundlePrice + '</a>';
+        } else { html += '<span class="other-bundle-coming">Coming soon</span>'; }
+        html += '</div>';
+      });
+      html += '<a href="/bundles" class="btn-secondary" style="display:block;text-align:center;margin-top:24px;text-decoration:none;">Explore all bundles \u2192</a>';
+      html += '</div>';
+    }
+
+    // ── SHARE ──
+    html += '<div class="share-section">';
+    html += '<p class="share-text">Send this quiz to someone who might need it.</p>';
+    html += '<button class="btn-copy" id="copyLinkBtn">Copy link</button>';
+    html += '<p class="copy-confirm" id="copyConfirm">Link copied!</p>';
     html += '</div>';
 
-    html += '</div>'; // close result-card
-    return html;
+    section.innerHTML = html;
+    section.classList.add('active');
+    setTimeout(function() { section.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
+
+    document.getElementById('copyLinkBtn').addEventListener('click', function() {
+      navigator.clipboard.writeText('https://veronikanaumchak.com/start').then(function() {
+        if (typeof gtag === 'function') { gtag('event', 'share_quiz'); }
+        var confirm = document.getElementById('copyConfirm');
+        confirm.classList.add('visible');
+        setTimeout(function() { confirm.classList.remove('visible'); }, 2500);
+      });
+    });
+
+    section.querySelectorAll('.waitlist-form').forEach(function(form) {
+      form.addEventListener('submit', handleWaitlist);
+    });
   }
+
+  // renderWoundCard removed — tie handling now built into showResult
 
   // ════════════════════════════════════
   // WAITLIST
@@ -1654,6 +1705,17 @@
     }).catch(function(err) {
       console.log('Waitlist submission failed:', err);
     });
+
+    // Also send to n8n for Notion
+    fetch('https://verona996.app.n8n.cloud/webhook/formspree-quiz', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: email,
+        waitlist_wound: wKey,
+        _subject: 'Waitlist: ' + woundData[wKey].bundleName
+      })
+    }).catch(function(err) { console.log('n8n waitlist failed:', err); });
 
     form.style.display = 'none';
     var success = form.parentElement.querySelector('.waitlist-success[data-wound="' + wKey + '"]');
