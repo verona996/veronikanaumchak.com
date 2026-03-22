@@ -1,0 +1,29 @@
+<svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background concentric circles -->
+  <circle cx="100" cy="100" r="88" stroke="#C87B5A" stroke-width="0.5" opacity="0.13"/>
+  <circle cx="100" cy="100" r="72" stroke="#C87B5A" stroke-width="0.5" opacity="0.08"/>
+
+  <!-- Anchor ring -->
+  <circle cx="100" cy="34" r="16" stroke="#2A1F1A" stroke-width="2"/>
+
+  <!-- Vertical shaft -->
+  <line x1="100" y1="18" x2="100" y2="162" stroke="#2A1F1A" stroke-width="2" stroke-linecap="square"/>
+
+  <!-- Horizontal crossbar / stock -->
+  <line x1="33" y1="80" x2="167" y2="80" stroke="#2A1F1A" stroke-width="2" stroke-linecap="square"/>
+
+  <!-- Crossbar end terminals -->
+  <line x1="33" y1="71" x2="33" y2="89" stroke="#2A1F1A" stroke-width="2" stroke-linecap="square"/>
+  <line x1="167" y1="71" x2="167" y2="89" stroke="#2A1F1A" stroke-width="2" stroke-linecap="square"/>
+
+  <!-- Terracotta accent dot -->
+  <circle cx="100" cy="80" r="10" fill="#C87B5A"/>
+
+  <!-- Anchor fluke arms -->
+  <line x1="100" y1="126" x2="60" y2="162" stroke="#2A1F1A" stroke-width="2" stroke-linecap="square"/>
+  <line x1="100" y1="126" x2="140" y2="162" stroke="#2A1F1A" stroke-width="2" stroke-linecap="square"/>
+
+  <!-- Fluke horizontal caps -->
+  <line x1="46" y1="162" x2="74" y2="162" stroke="#2A1F1A" stroke-width="2" stroke-linecap="square"/>
+  <line x1="126" y1="162" x2="154" y2="162" stroke="#2A1F1A" stroke-width="2" stroke-linecap="square"/>
+</svg>

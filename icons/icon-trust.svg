@@ -1,0 +1,49 @@
+<svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background concentric circles -->
+  <circle cx="100" cy="100" r="88" stroke="#C87B5A" stroke-width="0.5" opacity="0.13"/>
+  <circle cx="100" cy="100" r="72" stroke="#C87B5A" stroke-width="0.5" opacity="0.08"/>
+
+  <!-- Compass outer ring -->
+  <circle cx="100" cy="100" r="65" stroke="#2A1F1A" stroke-width="2"/>
+
+  <!-- Inner ring (double-line effect) -->
+  <circle cx="100" cy="100" r="57" stroke="#2A1F1A" stroke-width="0.8" opacity="0.45"/>
+
+  <!-- Cardinal tick marks -->
+  <line x1="100" y1="35" x2="100" y2="22" stroke="#2A1F1A" stroke-width="2" stroke-linecap="square"/>
+  <line x1="165" y1="100" x2="178" y2="100" stroke="#2A1F1A" stroke-width="2" stroke-linecap="square"/>
+  <line x1="100" y1="165" x2="100" y2="178" stroke="#2A1F1A" stroke-width="2" stroke-linecap="square"/>
+  <line x1="35" y1="100" x2="22" y2="100" stroke="#2A1F1A" stroke-width="2" stroke-linecap="square"/>
+
+  <!-- Compass needle — faceted diamond kite shape -->
+  <path d="M100,42 L87,100 L100,158 L113,100 Z"
+    stroke="#2A1F1A" stroke-width="2" stroke-linejoin="miter" fill="none"/>
+
+  <!-- Crown: upper table line -->
+  <line x1="94" y1="67" x2="106" y2="67" stroke="#2A1F1A" stroke-width="1.1"/>
+  <!-- Crown: top to table corners -->
+  <line x1="100" y1="42" x2="94" y2="67" stroke="#2A1F1A" stroke-width="1.1"/>
+  <line x1="100" y1="42" x2="106" y2="67" stroke="#2A1F1A" stroke-width="1.1"/>
+  <!-- Crown: table to widest -->
+  <line x1="94" y1="67" x2="87" y2="100" stroke="#2A1F1A" stroke-width="1.1"/>
+  <line x1="106" y1="67" x2="113" y2="100" stroke="#2A1F1A" stroke-width="1.1"/>
+
+  <!-- Pavilion: lower cut line -->
+  <line x1="94" y1="133" x2="106" y2="133" stroke="#2A1F1A" stroke-width="1.1"/>
+  <!-- Pavilion: widest to cut -->
+  <line x1="87" y1="100" x2="94" y2="133" stroke="#2A1F1A" stroke-width="1.1"/>
+  <line x1="113" y1="100" x2="106" y2="133" stroke="#2A1F1A" stroke-width="1.1"/>
+  <!-- Pavilion: cut to bottom -->
+  <line x1="94" y1="133" x2="100" y2="158" stroke="#2A1F1A" stroke-width="1.1"/>
+  <line x1="106" y1="133" x2="100" y2="158" stroke="#2A1F1A" stroke-width="1.1"/>
+
+  <!-- Center vertical descent -->
+  <line x1="100" y1="42" x2="100" y2="158" stroke="#2A1F1A" stroke-width="0.7" opacity="0.45"/>
+
+  <!-- Inner crown descent lines -->
+  <line x1="94" y1="67" x2="100" y2="100" stroke="#2A1F1A" stroke-width="0.7" opacity="0.4"/>
+  <line x1="106" y1="67" x2="100" y2="100" stroke="#2A1F1A" stroke-width="0.7" opacity="0.4"/>
+
+  <!-- Terracotta pivot dot -->
+  <circle cx="100" cy="100" r="10" fill="#C87B5A"/>
+</svg>

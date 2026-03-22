@@ -1,0 +1,38 @@
+<svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background concentric circles -->
+  <circle cx="100" cy="100" r="88" stroke="#C87B5A" stroke-width="0.5" opacity="0.13"/>
+  <circle cx="100" cy="100" r="72" stroke="#C87B5A" stroke-width="0.5" opacity="0.08"/>
+
+  <!-- Outer kite / diamond shape -->
+  <path d="M100,18 L158,96 L100,178 L42,96 Z"
+    stroke="#2A1F1A" stroke-width="2" stroke-linejoin="miter" fill="none"/>
+
+  <!-- Girdle — horizontal at widest point -->
+  <line x1="42" y1="96" x2="158" y2="96" stroke="#2A1F1A" stroke-width="1.2"/>
+
+  <!-- Crown: table line -->
+  <line x1="78" y1="54" x2="122" y2="54" stroke="#2A1F1A" stroke-width="1.2"/>
+  <!-- Crown: top vertex to table corners -->
+  <line x1="100" y1="18" x2="78" y2="54" stroke="#2A1F1A" stroke-width="1.2"/>
+  <line x1="100" y1="18" x2="122" y2="54" stroke="#2A1F1A" stroke-width="1.2"/>
+  <!-- Crown: table corners to girdle points -->
+  <line x1="78" y1="54" x2="42" y2="96" stroke="#2A1F1A" stroke-width="1.2"/>
+  <line x1="122" y1="54" x2="158" y2="96" stroke="#2A1F1A" stroke-width="1.2"/>
+  <!-- Crown inner descent -->
+  <line x1="78" y1="54" x2="100" y2="96" stroke="#2A1F1A" stroke-width="0.8" opacity="0.5"/>
+  <line x1="122" y1="54" x2="100" y2="96" stroke="#2A1F1A" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- Pavilion: lower cut line -->
+  <line x1="66" y1="138" x2="134" y2="138" stroke="#2A1F1A" stroke-width="1.2"/>
+  <!-- Pavilion: girdle to lower cut -->
+  <line x1="42" y1="96" x2="66" y2="138" stroke="#2A1F1A" stroke-width="1.2"/>
+  <line x1="158" y1="96" x2="134" y2="138" stroke="#2A1F1A" stroke-width="1.2"/>
+  <!-- Pavilion: lower cut to bottom vertex -->
+  <line x1="66" y1="138" x2="100" y2="178" stroke="#2A1F1A" stroke-width="1.2"/>
+  <line x1="134" y1="138" x2="100" y2="178" stroke="#2A1F1A" stroke-width="1.2"/>
+  <!-- Pavilion center descent -->
+  <line x1="100" y1="96" x2="100" y2="178" stroke="#2A1F1A" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- Terracotta dot at girdle — the precious core -->
+  <circle cx="100" cy="96" r="11" fill="#C87B5A"/>
+</svg>

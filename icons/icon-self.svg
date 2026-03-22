@@ -1,0 +1,30 @@
+<svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background concentric circles -->
+  <circle cx="100" cy="100" r="88" stroke="#C87B5A" stroke-width="0.5" opacity="0.13"/>
+  <circle cx="100" cy="100" r="72" stroke="#C87B5A" stroke-width="0.5" opacity="0.08"/>
+
+  <!-- Outer eye shape (vesica piscis) -->
+  <path d="M24,100 C48,36 152,36 176,100 C152,164 48,164 24,100 Z"
+    stroke="#2A1F1A" stroke-width="2" fill="none"/>
+
+  <!-- Inner eye shape (iris ring) -->
+  <path d="M58,100 C72,62 128,62 142,100 C128,138 72,138 58,100 Z"
+    stroke="#2A1F1A" stroke-width="1.1" fill="none"/>
+
+  <!-- Horizontal axis — tip to tip -->
+  <line x1="24" y1="100" x2="176" y2="100"
+    stroke="#2A1F1A" stroke-width="1.1" opacity="0.45"/>
+
+  <!-- Vertical axis — crown to culet -->
+  <line x1="100" y1="53" x2="100" y2="147"
+    stroke="#2A1F1A" stroke-width="1.1" opacity="0.45"/>
+
+  <!-- Diagonal facet axes (gem-cut language) -->
+  <line x1="55" y1="72" x2="145" y2="128"
+    stroke="#2A1F1A" stroke-width="0.7" opacity="0.28"/>
+  <line x1="145" y1="72" x2="55" y2="128"
+    stroke="#2A1F1A" stroke-width="0.7" opacity="0.28"/>
+
+  <!-- Terracotta dot — the essential self -->
+  <circle cx="100" cy="100" r="10" fill="#C87B5A"/>
+</svg>
