@@ -8,6 +8,18 @@
   <meta property="og:title" content="Veronika Naumchak — Stop Explaining the Pattern. Break It.">
   <meta property="og:description" content="Clinical hypnotherapy and somatic coaching for women who understand their patterns but can't break them. Online worldwide.">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Veronika Naumchak">
+  <meta property="og:url" content="https://veronikanaumchak.com/">
+  <meta property="og:image" content="https://veronikanaumchak.com/logo/social-media/instagram-profile-1080.png">
+  <meta property="og:image:width" content="1080">
+  <meta property="og:image:height" content="1080">
+  <meta property="og:image:alt" content="Veronika Naumchak — hypnotherapy and somatic coaching">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Veronika Naumchak — Stop Explaining the Pattern. Break It.">
+  <meta name="twitter:description" content="Clinical hypnotherapy and somatic coaching for women who understand their patterns but can't break them. Online worldwide.">
+  <meta name="twitter:image" content="https://veronikanaumchak.com/logo/social-media/instagram-profile-1080.png">
+  <link rel="canonical" href="https://veronikanaumchak.com/">
+  <meta name="theme-color" content="#FDF6EE">
   <link rel="icon" type="image/svg+xml" href="/logo/favicon/favicon.svg">
   <link rel="icon" type="image/x-icon" href="/logo/favicon/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon/favicon-32x32.png">
@@ -27,6 +39,15 @@
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     *, *::before, *::after { font-variation-settings: 'WONK' 0 !important; }
+
+    /* A11y: focus, reduced motion, skip link, sr-only */
+    *:focus-visible { outline: 2px solid #E8503A; outline-offset: 2px; border-radius: 2px; }
+    .skip-link { position: absolute; top: -60px; left: 8px; background: #2A1F1A; color: #FDF6EE; padding: 10px 16px; z-index: 99999; text-decoration: none; border-radius: 4px; font-family: 'Bricolage Grotesque', sans-serif; font-size: 14px; font-weight: 600; }
+    .skip-link:focus { top: 8px; }
+    .sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+    }
     [style*="Fraunces"], [style*="serif"],
     .hero-headline, .hero-headline *,
     .method-headline, .method-headline *,
@@ -1786,6 +1807,7 @@
   </style>
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
 
   <!-- NAVIGATION -->
   <nav class="nav" id="nav">
@@ -1806,6 +1828,7 @@
       </button>
     </div>
   </nav>
+  <span id="main" tabindex="-1"></span>
 
   <div class="scroll-progress" id="scrollProgress"></div>
 
@@ -1867,7 +1890,7 @@
       <h1 class="hero-headline">You've been performing long enough.<br>It's time to start <em>living.</em></h1>
       <p class="hero-sub">Clinical hypnotherapy meets cognitive behavioural coaching — for the patterns you can't think your way out of.</p>
       <div class="hero-cta-wrap">
-        <a href="#intake" class="btn-primary">Tell Me What's Going On <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#intake" class="btn-primary">Tell Me What's Going On <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
     <div class="scroll-hint" id="scrollHint">
@@ -2276,10 +2299,10 @@
           </div>
           <div class="form-field">
             <label for="presentingIssue">What would you like to address?</label>
-            <textarea id="presentingIssue" name="presentingIssue" required rows="4" placeholder="E.g., I've been struggling with anxiety that shows up as tightness in my chest. I've tried therapy before but I still feel stuck in the same patterns."></textarea>
-            <div class="form-hint">A few sentences is enough. We'll explore everything properly together.</div>
+            <textarea id="presentingIssue" name="presentingIssue" required rows="4" aria-describedby="presentingIssue-hint" placeholder="E.g., I've been struggling with anxiety that shows up as tightness in my chest. I've tried therapy before but I still feel stuck in the same patterns."></textarea>
+            <div class="form-hint" id="presentingIssue-hint">A few sentences is enough. We'll explore everything properly together.</div>
           </div>
-          <button type="submit" class="btn-primary btn-submit">Submit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+          <button type="submit" class="btn-primary btn-submit">Submit <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
           <div class="form-note">I'll respond within 48 hours. If we're a fit, I'll invite you to a 15-minute intro call.</div>
         </form>
       </div>
@@ -2292,65 +2315,65 @@
       <div class="section-label reveal">Questions</div>
       <div class="faq-list">
         <div class="faq-item reveal">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-panel-1">
             <span>What actually happens in a session?</span>
-            <span class="faq-icon"></span>
+            <span class="faq-icon" aria-hidden="true"></span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-panel-1" role="region" aria-label="What actually happens in a session?">
             <div class="faq-answer-inner">We start with an <strong>initial consultation</strong> &mdash; a full clinical intake where I assess what's going on, map the beliefs and patterns driving it, and build a personalised treatment plan. You'll understand exactly what we're working on, why, and how we'll approach it before we begin.<br><br>Each treatment session after that follows a structured arc: we check in on how the week has been, review any between-session work, then move into the main therapeutic intervention &mdash; which could be cognitive restructuring, behavioural work, or imagery, depending on what phase we're in. Where appropriate, sessions include a <strong>hypnosis component</strong> to install and reinforce new beliefs at a subconscious level. We close with a summary and I assign specific homework &mdash; self-hypnosis recordings, thought tracking, or real-world experiments &mdash; because the work between sessions matters as much as the session itself. Sessions are 60 minutes. <a href="/method" style="color: var(--coral); text-decoration: underline;">See the full method &rarr;</a></div>
           </div>
         </div>
         <div class="faq-item reveal">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-panel-2">
             <span>What modalities do you use? Will I be hypnotised?</span>
-            <span class="faq-icon"></span>
+            <span class="faq-icon" aria-hidden="true"></span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-panel-2" role="region" aria-label="What modalities do you use?">
             <div class="faq-answer-inner">The backbone is <strong>cognitive behavioural hypnotherapy (CBH)</strong> &mdash; an evidence-based clinical framework that integrates CBT (structured cognitive and behavioural tools) with clinical hypnosis. Research shows that the average client receiving CBT combined with hypnosis improved more than approximately 70% of clients receiving CBT alone (Kirsch et al., 1995). CBH provides the structure: identifying the beliefs driving your patterns, disputing them with precision, and then using hypnosis to install the new beliefs at the subconscious level &mdash; bridging the gap between what you <em>know</em> and what you actually <em>feel</em>.<br><br>Alongside CBH, I draw on <strong>RTT</strong> (Rapid Transformational Therapy&reg;) when regression to root-cause moments is the right tool, and <strong>somatic release work</strong> for what the body is holding that the mind can't reach. These three modalities integrate into <a href="/method" style="color: var(--coral); text-decoration: underline;">The Inner Shift Method</a>.<br><br>As for hypnosis itself: it's a state of focused, relaxed attention &mdash; not unconsciousness, not a stage trick. You're fully aware and in complete control throughout. Most people describe it as the most focused they've ever felt.</div>
           </div>
         </div>
         <div class="faq-item reveal">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-panel-3">
             <span>How many sessions will I need?</span>
-            <span class="faq-icon"></span>
+            <span class="faq-icon" aria-hidden="true"></span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-panel-3" role="region" aria-label="How many sessions will I need?">
             <div class="faq-answer-inner">It depends on what we're working on and how deep the roots go. Some patterns shift in a few sessions, others need more time. We map this out together during your initial consultation &mdash; I build a personalised treatment plan so you know exactly what we're doing and roughly how long it takes. I won't keep you in sessions you don't need. The goal is to make you your own therapist, not to create dependency.</div>
           </div>
         </div>
         <div class="faq-item reveal">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-panel-4">
             <span>Is this therapy? Is it confidential?</span>
-            <span class="faq-icon"></span>
+            <span class="faq-icon" aria-hidden="true"></span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-panel-4" role="region" aria-label="Is this therapy? Is it confidential?">
             <div class="faq-answer-inner">This is complementary therapy using evidence-based modalities &mdash; CBH, RTT, CBT, and somatic processing. It is not psychotherapy or psychiatry, and does not replace medical or psychiatric treatment. Think of it as clinically grounded, structured work designed to get you from point A to point B. Everything you share is completely confidential.</div>
           </div>
         </div>
         <div class="faq-item reveal">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-panel-5">
             <span>How do online sessions work?</span>
-            <span class="faq-icon"></span>
+            <span class="faq-icon" aria-hidden="true"></span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-panel-5" role="region" aria-label="How do online sessions work?">
             <div class="faq-answer-inner">All sessions happen over video call &mdash; you can be anywhere in the world. You'll need a quiet space, a stable connection, and headphones. Hypnotherapy and somatic work translate fully online &mdash; what matters is the internal state, not the physical room. Most clients find that being in their own space actually makes the work easier to access.</div>
           </div>
         </div>
         <div class="faq-item reveal">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-panel-6">
             <span>What happens after I submit the form?</span>
-            <span class="faq-icon"></span>
+            <span class="faq-icon" aria-hidden="true"></span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-panel-6" role="region" aria-label="What happens after I submit the form?">
             <div class="faq-answer-inner">I personally review every submission within 48 hours. If this work is a fit for what you're describing, I'll invite you to a free 15-minute intro call &mdash; you tell me what's going on, I explain how this work addresses it, and we make sure we're on the same page. If it isn't the right fit, I'll tell you honestly. No pressure, no sales pitch.</div>
           </div>
         </div>
         <div class="faq-item reveal">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-panel-7">
             <span>What is the investment?</span>
-            <span class="faq-icon"></span>
+            <span class="faq-icon" aria-hidden="true"></span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-panel-7" role="region" aria-label="What is the investment?">
             <div class="faq-answer-inner">The 15-minute intro call is free &mdash; no obligation. The initial consultation is CHF 60 and covers a full intake, clinical conceptualisation, and your personalised treatment plan. Therapy sessions are CHF 120 each (60 minutes). You'll know exactly what to expect before we begin &mdash; no hidden costs, no surprises.</div>
           </div>
         </div>
@@ -2363,7 +2386,7 @@
     <div class="page-wrap">
       <h2 class="closing-headline reveal">You already know something needs to change.<br><em>This is where it starts.</em></h2>
       <div class="reveal" style="position: relative; z-index: 1;">
-        <a href="#intake" class="btn-primary">Tell Me What's Going On <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#intake" class="btn-primary">Tell Me What's Going On <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
   </section>
@@ -2404,6 +2427,11 @@
   </div>
 
   <script>
+    // A11y: hide decorative SVGs (no aria-label, no <title>) from screen readers
+    document.querySelectorAll('svg:not([aria-hidden]):not([aria-label]):not([aria-labelledby])').forEach(function(s) {
+      if (!s.querySelector('title')) { s.setAttribute('aria-hidden', 'true'); s.setAttribute('focusable', 'false'); }
+    });
+
     const nav = document.getElementById('nav');
     const scrollHint = document.getElementById('scrollHint');
     const stickyCta = document.getElementById('stickyCta');
