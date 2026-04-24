@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Core Wound Quiz — Veronika Naumchak</title>
-  <meta name="description" content="10 questions to uncover the core wound running your choices in relationships, work, and self-worth. Free quiz by Veronika Naumchak, RTT Practitioner & Cognitive Behavioural Hypnotherapist.">
-  <meta property="og:title" content="Which Core Wound Is Running Your Life?">
+  <title>Which Character Are You Playing? — Veronika Naumchak</title>
+  <meta name="description" content="10 questions to uncover the character you're playing — the role you got cast in as a kid and how it's still running your adult life. Free diagnostic by Veronika Naumchak, RTT Practitioner & Cognitive Behavioural Hypnotherapist.">
+  <meta property="og:title" content="Which Character Are You Playing?">
   <meta property="og:description" content="10 questions. Find out which unconscious belief is shaping your relationships, your work, and how you see yourself.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://veronikanaumchak.com/start">
   <meta property="og:image" content="https://veronikanaumchak.com/logo/social-media/instagram-profile-1080.png">
   <meta property="og:image:width" content="1080">
   <meta property="og:image:height" content="1080">
-  <meta property="og:image:alt" content="Which Core Wound Is Running Your Life?">
+  <meta property="og:image:alt" content="Which Character Are You Playing?">
   <meta property="og:site_name" content="Veronika Naumchak">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Which Core Wound Is Running Your Life?">
+  <meta name="twitter:title" content="Which Character Are You Playing?">
   <meta name="twitter:description" content="10 questions. Find out which unconscious belief is shaping your relationships, your work, and how you see yourself.">
   <meta name="twitter:image" content="https://veronikanaumchak.com/logo/social-media/instagram-profile-1080.png">
   <link rel="canonical" href="https://veronikanaumchak.com/start">
@@ -51,7 +51,7 @@
 
     h1, h2, h3, h4, h5, h6,
     .hero-cta-line, .quiz-question,
-    .result-wound-name, .result-subline,
+    .result-character-name, .result-subline,
     .email-heading, .bundle-name,
     .healing-heading, .tie-message,
     em, i, strong, b,
@@ -438,7 +438,7 @@
       margin-bottom: 16px;
     }
 
-    .result-wound-name {
+    .result-character-name {
       font-family: var(--serif);
       font-variation-settings: 'WONK' 0, 'opsz' 144;
       font-size: 34px;
@@ -522,7 +522,7 @@
       line-height: 1.6;
     }
 
-    .wound-explanation {
+    .character-explanation {
       margin-bottom: 32px;
     }
 
@@ -1076,7 +1076,7 @@
     @media (min-width: 600px) {
       .hero { padding: 120px 0 80px; }
       .hero-cta-line { font-size: 26px; }
-      .result-wound-name { font-size: 38px; }
+      .result-character-name { font-size: 38px; }
       .hero-buttons {
         flex-direction: row;
         gap: 16px;
@@ -1121,7 +1121,7 @@
     <!-- Email capture (shown after Q10) -->
     <div class="email-section" id="emailCapture">
       <h2 class="email-heading">Enter your email to see your result.</h2>
-      <p class="email-subtext">We'll also send you a guide on your wound. No spam.</p>
+      <p class="email-subtext">We'll also send you a guide on your character. No spam.</p>
       <form class="email-form" id="emailForm">
         <label for="emailInput" class="sr-only">Email address</label>
         <input type="email" class="email-input" id="emailInput" placeholder="your@email.com" required autocomplete="email">
@@ -1259,17 +1259,17 @@
   ];
 
   // ════════════════════════════════════
-  // WOUND DATA
+  // CHARACTER DATA
   // ════════════════════════════════════
-  var woundData = {
+  var characterData = {
     W1: {
       name: "The Performer",
       subline: "You\u2019ve been trying to earn something that was always already yours.",
-      mirror: '<p>You probably wouldn\u2019t describe it as a wound. It just feels like... the way things are.</p><p>You work hard \u2014 harder than most people around you. You have high standards for your work, your relationships, your body, your life. And when you meet those standards, there\u2019s a brief moment of satisfaction before the next thought arrives: okay, but what about this other thing I haven\u2019t done yet?</p><p>People tell you you\u2019re impressive, capable, put together. But when they do, something doesn\u2019t quite click. The words land on the outside of you. There\u2019s always a quiet \u2018but\u2019 underneath \u2014 but they don\u2019t see the whole picture. But I got lucky. But if they saw how much effort it actually took, they wouldn\u2019t be impressed.</p><p>This doesn\u2019t always look like overachieving. Sometimes it looks like staying too long in situations where you\u2019re treated as less than you are \u2014 because a quiet part of you agrees with how they see you. Sometimes it looks like holding back, not applying, not speaking up \u2014 because putting yourself forward feels like claiming a value you\u2019re not sure you have.</p>',
+      mirror: '<p>You probably wouldn\u2019t describe it as a character. It just feels like... the way things are.</p><p>You work hard \u2014 harder than most people around you. You have high standards for your work, your relationships, your body, your life. And when you meet those standards, there\u2019s a brief moment of satisfaction before the next thought arrives: okay, but what about this other thing I haven\u2019t done yet?</p><p>People tell you you\u2019re impressive, capable, put together. But when they do, something doesn\u2019t quite click. The words land on the outside of you. There\u2019s always a quiet \u2018but\u2019 underneath \u2014 but they don\u2019t see the whole picture. But I got lucky. But if they saw how much effort it actually took, they wouldn\u2019t be impressed.</p><p>This doesn\u2019t always look like overachieving. Sometimes it looks like staying too long in situations where you\u2019re treated as less than you are \u2014 because a quiet part of you agrees with how they see you. Sometimes it looks like holding back, not applying, not speaking up \u2014 because putting yourself forward feels like claiming a value you\u2019re not sure you have.</p>',
       origin: '<p>Of course you feel this way. It makes complete sense.</p><p>This belief usually gets picked up early \u2014 from an environment where love felt conditional. Where you were valued for what you did, not who you were. Where falling short meant a cooling of warmth, a look, a silence. A child in that situation does the only logical thing: she concludes that her worth depends on her output. That\u2019s not a flaw \u2014 it\u2019s a smart adaptation by a young mind trying to keep love stable. The belief has just been running quietly ever since \u2014 in how you work, who you love, what you tolerate, and what you don\u2019t let yourself want.</p>',
       bundleName: "The Worth Rewire",
       bundlePrice: "CHF 47",
-      commonHumanity: "This is one of the most common core wounds. You are far from the only person carrying it.",
+      commonHumanity: "This is one of the most common characters. You are far from the only person playing it.",
       bundleDesc: "A guided audio that works with your nervous system \u2014 not just your thoughts \u2014 to shift this belief at the level it was installed. The session reaches what thinking alone can\u2019t. The daily audio reinforces the shift. The workbook integrates it into your real life.",
       bundleLink: "https://buy.stripe.com/test_7sYcN62Gp3u4gVp2Ww9EI00",
       available: true
@@ -1305,7 +1305,7 @@
       origin: '<p>Of course you stopped trusting yourself. In your world, that was the safest response.</p><p>This usually comes from having your perceptions repeatedly questioned or overridden as a child. Maybe someone told you that you were \u2018too sensitive\u2019 or \u2018overreacting\u2019 when your reading of a situation was actually accurate. Maybe a parent made decisions for you before you could, denying you the experience of trusting your own capacity. A child in that environment does the logical thing: she outsources her judgment to whoever seems more certain. That adaptation made sense then. It\u2019s just been running unchecked ever since.</p>',
       bundleName: "The Self-Trust Rewire",
       bundlePrice: "Coming Soon",
-      commonHumanity: "This wound is more common than you think \u2014 especially among perceptive, sensitive people. You\u2019re not alone in this.",
+      commonHumanity: "This character is more common than you think \u2014 especially among perceptive, sensitive people. You\u2019re far from alone in playing it.",
       bundleDesc: "A guided audio that rebuilds the connection between what you feel and what you allow yourself to act on. Your instincts aren\u2019t broken \u2014 they just need you to start listening again.",
       bundleLink: null,
       available: false
@@ -1511,16 +1511,16 @@
 
     var n8nPayload = {
       email: email,
-      wound_result: result.winners[0],
-      wound_scores: JSON.stringify(result.scores),
-      _subject: 'Core Wound Quiz: ' + result.winners.map(function(w) { return woundData[w].name; }).join(' + ')
+      character_result: result.winners[0],
+      character_scores: JSON.stringify(result.scores),
+      _subject: 'Character Diagnostic: ' + result.winners.map(function(w) { return characterData[w].name; }).join(' + ')
     };
 
     var formspreePayload = {
       email: email,
-      wound_result: result.winners.join(', '),
-      wound_scores: JSON.stringify(result.scores),
-      _subject: 'Core Wound Quiz: ' + result.winners.map(function(w) { return woundData[w].name; }).join(' + ')
+      character_result: result.winners.join(', '),
+      character_scores: JSON.stringify(result.scores),
+      _subject: 'Character Diagnostic: ' + result.winners.map(function(w) { return characterData[w].name; }).join(' + ')
     };
 
     // 1. Fire n8n webhook (fetch with credentials omitted to avoid CORS issues)
@@ -1555,7 +1555,7 @@
 
     if (typeof gtag === 'function') {
       gtag('event', 'quiz_completed', {
-        wound_result: result.winners.map(function(w) { return woundData[w].name; }).join(' + ')
+        character_result: result.winners.map(function(w) { return characterData[w].name; }).join(' + ')
       });
     }
 
@@ -1565,9 +1565,9 @@
     var section = document.getElementById('resultSection');
     var html = '';
     var isTie = result.winners.length > 1;
-    var woundOrder = ['W1', 'W2', 'W3', 'W4'];
-    var woundLabels = { W1: 'The Performer', W2: 'The Guardian', W3: 'The Overgiver', W4: 'The Second-Guesser' };
-    var woundBeliefs = { W1: 'I am not enough', W2: 'I am not safe', W3: 'I only matter when I\u2019m giving', W4: 'I cannot trust myself' };
+    var characterOrder = ['W1', 'W2', 'W3', 'W4'];
+    var characterLabels = { W1: 'The Performer', W2: 'The Guardian', W3: 'The Overgiver', W4: 'The Second-Guesser' };
+    var characterBeliefs = { W1: 'I am not enough', W2: 'I am not safe', W3: 'I only matter when I\u2019m giving', W4: 'I cannot trust myself' };
     var maxPossible = totalQ;
 
     // ── SINGLE SCORE BREAKDOWN (highlights ALL winners) ──
@@ -1575,7 +1575,7 @@
     html += '<p class="result-label">Your Results</p>';
     html += '<p class="result-origin-heading">Your full score breakdown</p>';
     html += '<div class="scores-breakdown">';
-    woundOrder.forEach(function(k) {
+    characterOrder.forEach(function(k) {
       var score = result.scores[k] || 0;
       var pct = Math.round((score / maxPossible) * 100);
       var isWinner = result.winners.indexOf(k) > -1;
@@ -1583,15 +1583,15 @@
       var textColor = isWinner ? 'var(--espresso)' : 'var(--stone)';
       html += '<div class="score-row' + (isWinner ? ' score-winner' : '') + '">';
       html += '<div class="score-label" style="color:' + textColor + '">';
-      html += '<span class="score-archetype">' + woundLabels[k] + '</span>';
-      html += '<span class="score-belief">\u201C' + woundBeliefs[k] + '\u201D</span>';
+      html += '<span class="score-archetype">' + characterLabels[k] + '</span>';
+      html += '<span class="score-belief">\u201C' + characterBeliefs[k] + '\u201D</span>';
       html += '</div>';
       html += '<div class="score-bar-track"><div class="score-bar-fill" style="width:' + pct + '%;background:' + barColor + '"></div></div>';
       html += '<span class="score-number" style="color:' + textColor + '">' + score + '/' + maxPossible + '</span>';
       html += '</div>';
     });
     html += '</div>';
-    html += '<p class="scores-note">Most people score across multiple wounds. They often travel together.</p>';
+    html += '<p class="scores-note">Most people score across multiple characters. They often travel together.</p>';
     html += '</div>';
 
     // ── SCROLL PROMPT ──
@@ -1602,23 +1602,23 @@
 
     // ── TIE INTRO ──
     if (isTie) {
-      var winnerNames = result.winners.map(function(w) { return woundData[w].name; });
+      var winnerNames = result.winners.map(function(w) { return characterData[w].name; });
       html += '<div class="tie-intro">';
-      html += '<p class="result-origin-heading">Your top ' + result.winners.length + ' wounds</p>';
-      html += '<p class="tie-intro-text">You scored equally in ' + result.winners.length + ' wounds: <strong>' + winnerNames.join(' & ') + '</strong>. This is common \u2014 they often fuel each other. Here\u2019s what each one looks like.</p>';
+      html += '<p class="result-origin-heading">Your top ' + result.winners.length + ' characters</p>';
+      html += '<p class="tie-intro-text">You scored equally in ' + result.winners.length + ' characters: <strong>' + winnerNames.join(' & ') + '</strong>. This is common \u2014 they often fuel each other. Here\u2019s what each one looks like.</p>';
       html += '</div>';
     }
 
-    // ── WOUND EXPLANATIONS ──
+    // ── CHARACTER EXPLANATIONS ──
     result.winners.forEach(function(wKey, idx) {
-      var w = woundData[wKey];
-      html += '<div class="wound-explanation">';
+      var w = characterData[wKey];
+      html += '<div class="character-explanation">';
       if (isTie) {
-        html += '<p class="result-origin-heading">Wound ' + (idx + 1) + ' of ' + result.winners.length + '</p>';
+        html += '<p class="result-origin-heading">Character ' + (idx + 1) + ' of ' + result.winners.length + '</p>';
       } else {
-        html += '<p class="result-origin-heading">Your primary wound</p>';
+        html += '<p class="result-origin-heading">Your primary character</p>';
       }
-      html += '<h2 class="result-wound-name">' + w.name + '</h2>';
+      html += '<h2 class="result-character-name">' + w.name + '</h2>';
       html += '<p class="result-subline">' + w.subline + '</p>';
       html += '<p class="result-disclaimer">This reflects the pattern you most identified with \u2014 not a clinical diagnosis.</p>';
       html += '<div class="result-divider"></div>';
@@ -1634,13 +1634,13 @@
     // ── RECOMMENDED BUNDLES ──
     if (isTie) {
       html += '<h3 class="healing-heading">' + result.winners.length + ' Rewires recommended for you</h3>';
-      html += '<p class="tie-bundle-intro">Because your wounds are intertwined, working on both will give you the strongest shift.</p>';
+      html += '<p class="tie-bundle-intro">Because your characters are intertwined, working on both will give you the strongest shift.</p>';
     } else {
       html += '<h3 class="healing-heading">Ready to start working on this?</h3>';
     }
 
     result.winners.forEach(function(wKey) {
-      var w = woundData[wKey];
+      var w = characterData[wKey];
       html += '<div class="bundle-card bundle-card-active">';
       html += '<p class="bundle-rec">Recommended for you</p>';
       html += '<h4 class="bundle-name">' + w.bundleName + '</h4>';
@@ -1664,23 +1664,23 @@
         html += '<p class="bundle-note">Instant download. Listen on any device. Not a subscription.</p>';
       } else {
         html += '<span class="bundle-coming-soon">Coming Soon</span>';
-        html += '<form class="waitlist-form" data-wound="' + wKey + '"><label class="sr-only" for="waitlist-' + wKey + '">Email address for waitlist</label><input type="email" id="waitlist-' + wKey + '" class="waitlist-input" placeholder="Join the waitlist" aria-label="Join the waitlist — email address" required autocomplete="email"><button type="submit" class="btn-waitlist">Notify me</button></form>';
-        html += '<p class="waitlist-success" data-wound="' + wKey + '">You\u2019re on the list. We\u2019ll let you know.</p>';
+        html += '<form class="waitlist-form" data-character="' + wKey + '"><label class="sr-only" for="waitlist-' + wKey + '">Email address for waitlist</label><input type="email" id="waitlist-' + wKey + '" class="waitlist-input" placeholder="Join the waitlist" aria-label="Join the waitlist — email address" required autocomplete="email"><button type="submit" class="btn-waitlist">Notify me</button></form>';
+        html += '<p class="waitlist-success" data-character="' + wKey + '">You\u2019re on the list. We\u2019ll let you know.</p>';
       }
       html += '</div>';
     });
 
     // ── OTHER BUNDLES ──
-    var otherWounds = woundOrder.filter(function(k) { return result.winners.indexOf(k) === -1; });
-    if (otherWounds.length > 0) {
+    var otherCharacters = characterOrder.filter(function(k) { return result.winners.indexOf(k) === -1; });
+    if (otherCharacters.length > 0) {
       html += '<div class="other-bundles"><p class="other-bundles-heading">Also available</p>';
-      otherWounds.forEach(function(k) {
-        var ow = woundData[k];
+      otherCharacters.forEach(function(k) {
+        var ow = characterData[k];
         var myScore = result.scores[k] || 0;
         html += '<div class="other-bundle-card' + (ow.available ? '' : ' other-bundle-soon') + '">';
         html += '<div class="other-bundle-top"><p class="other-bundle-name">' + ow.bundleName + '</p>';
         html += '<span class="other-bundle-score">Your score: ' + myScore + '/' + maxPossible + '</span></div>';
-        html += '<p class="other-bundle-belief">\u201C' + woundBeliefs[k] + '\u201D</p>';
+        html += '<p class="other-bundle-belief">\u201C' + characterBeliefs[k] + '\u201D</p>';
         if (ow.available) {
           html += '<a href="' + ow.bundleLink + '" class="btn-other-bundle" target="_blank" rel="noopener">Start this Rewire \u2014 ' + ow.bundlePrice + '</a>';
         } else { html += '<span class="other-bundle-coming">Coming soon</span>'; }
@@ -1715,7 +1715,7 @@
     });
   }
 
-  // renderWoundCard removed — tie handling now built into showResult
+  // renderCharacterCard removed — tie handling now built into showResult
 
   // ════════════════════════════════════
   // WAITLIST
@@ -1724,10 +1724,10 @@
     e.preventDefault();
     var form = e.target;
     var email = form.querySelector('.waitlist-input').value;
-    var wKey = form.dataset.wound;
+    var wKey = form.dataset.character;
 
     if (typeof gtag === 'function') {
-      gtag('event', 'waitlist_signup', { wound_label: wKey });
+      gtag('event', 'waitlist_signup', { character_label: wKey });
     }
 
     fetch('https://formspree.io/f/mlgpgooe', {
@@ -1735,8 +1735,8 @@
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
         email: email,
-        waitlist_wound: wKey,
-        _subject: 'Waitlist: ' + woundData[wKey].bundleName
+        waitlist_character: wKey,
+        _subject: 'Waitlist: ' + characterData[wKey].bundleName
       })
     }).catch(function(err) {
       console.log('Waitlist submission failed:', err);
@@ -1746,13 +1746,13 @@
     fetch('https://verona996.app.n8n.cloud/webhook/formspree-quiz', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email, waitlist_wound: wKey, _subject: 'Waitlist: ' + woundData[wKey].bundleName }),
+      body: JSON.stringify({ email: email, waitlist_character: wKey, _subject: 'Waitlist: ' + characterData[wKey].bundleName }),
       credentials: 'omit',
       keepalive: true
     }).catch(function(err) { console.log('n8n waitlist failed:', err); });
 
     form.style.display = 'none';
-    var success = form.parentElement.querySelector('.waitlist-success[data-wound="' + wKey + '"]');
+    var success = form.parentElement.querySelector('.waitlist-success[data-character="' + wKey + '"]');
     if (success) success.style.display = 'block';
   }
 
